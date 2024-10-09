@@ -40,5 +40,8 @@ def create_ds():
     ds = ray.data.from_items([{"path": path} for path in BUNDLE_DIR.rglob("*")])
 
     # build patient dataset
-    patient_ds = ds.map(parse_bundle_entries).take_all()
-    print(patient_ds)
+    patient_ds = ds.map(parse_bundle_entries)
+    patient_ds.write_parquet("./patient_ds/")
+
+
+create_ds()
