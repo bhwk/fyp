@@ -1,8 +1,4 @@
-from typing import Any
 import pathlib
-import glob
-import ray
-import re
 import os
 import json
 
@@ -64,6 +60,7 @@ def flat_to_string(flattened_json):
 
 def flatten_bundle(bundle_path):
     file_name = bundle_path.stem
+    print(f"Flattening {file_name}")
     with open(bundle_path) as raw:
         bundle = json.load(raw)
 

@@ -1,74 +1,98 @@
-import taskgen
+import asyncio
+import aiofiles
+from typing import List
+from chromadb.utils import embedding_functions
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+import os
+import chromadb
+from collections import deque
 
 
-def llm(system_prompt: str, user_prompt: str) -> str:
-    from openai import OpenAI
+sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
+    model_name="all-MiniLM-L6-v2"
+)
 
-    client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
-    response = client.chat.completions.create(
-        model="openhermes",
-        temperature=0,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
+
+def create_chroma_db(documents: List[str], path: str, name: str):
+    chroma_client = chromadb.PersistentClient(path=path)
+    db = chroma_client.create_collection(
+        name=name, embedding_function=sentence_transformer_ef
+    )
+    for i, d in enumerate(documents):
+        db.add(documents=[d], ids=[str(i)])
+    return db
+
+
+def load_chroma_collection(path: str, name: str):
+    chroma_client = chromadb.PersistentClient(path=path)
+    return chroma_client.get_collection(
+        name=name, embedding_function=sentence_transformer_ef
     )
 
-    if response.choices[0].message.content is not None:
-        return response.choices[0].message.content
-    else:
-        return ""
+
+def get_relevant_document(query: str, db, n_results: int):
+    results = db.query(query_texts=[query], n_results=n_results)
+    return [doc[0] for doc in results["documents"]]
 
 
-sentence_style = taskgen.Function(
-    fn_description="Give the user a recommendation based on the <user_input>.",
-    output_format={"output": "sentence"},
-    fn_name="sentence_with_user_recommendation",
-    llm=llm,
-)
+def read_file(path: Path):
+    with path.open() as f:
+        return f.read()
 
 
-def jaccard_similarity(query, document):
-    query = query.lower().split(" ")
-    document = document.lower().split(" ")
-    intersection = set(query).intersection(set(document))
-    union = set(query).union(set(document))
-    return len(intersection) / len(union)
+async def load_file(filename):
+    async with aiofiles.open(filename, mode="r") as f:
+        return await f.read()
 
 
-def provide_recommendation_based_on_user_input(
-    shared_variables, user_input: str
-) -> str:
-    """Matches user_input against corpus of documents and returns the best recommendation"""
-    corpus_of_documents = shared_variables["Corpus"]
-    similarities = []
-    for doc in corpus_of_documents:
-        similarity = jaccard_similarity(user_input, doc)
-        similarities.append(similarity)
-    return corpus_of_documents[similarities.index(max(similarities))]
+async def process_batch(batch):
+    tasks = [load_file(filename) for filename in batch]
+    return await asyncio.gather(*tasks)
 
 
-corpus_of_documents = [
-    "Take a leisurely walk in the park and enjoy the fresh air.",
-    "Visit a local museum and discover something new.",
-    "Attend a live music concert and feel the rhythm.",
-    "Go for a hike and admire the natural scenery.",
-    "Have a picnic with friends and share some laughs.",
-    "Explore a new cuisine by dining at an ethnic restaurant.",
-    "Take a yoga class and stretch your body and mind.",
-    "Join a local sports league and enjoy some friendly competition.",
-    "Attend a workshop or lecture on a topic you're interested in.",
-    "Visit an amusement park and ride the roller coasters.",
-]
+async def load_files_async(dir_path, batch_size=1000):
+    filenames = [file for file in dir_path.iterdir()]
+    results = []
+
+    file_queue = deque(filenames)
+
+    while file_queue:
+        batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
+        batch_results = await process_batch(batch)
+        results.extend(batch_results)
+
+        print(f"Processed {len(results)} files out of {len(filenames)}")
+
+    return results
 
 
-my_agent = taskgen.Agent(
-    "Activity assistant",
-    "You are an agent that makes gives the user the best recommendation based on their query",
-    shared_variables={"Corpus": corpus_of_documents},
-    global_context="Corpus: <Corpus>",
-    llm=llm,
-)
-my_agent.assign_functions([provide_recommendation_based_on_user_input])
-output = my_agent.run("I like to hike")
-output = my_agent.reply_user()
+def load_documents(dir_path: Path) -> List[str]:
+    text_files = []
+
+    with ThreadPoolExecutor() as executor:
+        results = executor.map(read_file, dir_path.iterdir())
+
+        text_files = list(results)
+    return text_files
+
+
+async def main():
+    # check if folder for db exists
+    db_folder = "chroma_db"
+    if not os.path.exists(db_folder):
+        os.makedirs(db_folder)
+
+    ## Comment this when I don't have to create the db from scratch
+    # Load documents to create db
+    FLAT_FILE_PATH = "./temp/flat"
+    text_path = Path(FLAT_FILE_PATH)
+    print("Loading documents into DB...please wait.")
+    text_files = await load_files_async(text_path)
+    db_path = os.path.join(os.getcwd(), db_folder)
+    db = create_chroma_db(text_files, db_path, "patient_db")
+    print("Creation complete.")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
