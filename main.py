@@ -3,10 +3,10 @@ import aiofiles
 from typing import List
 from chromadb.utils import embedding_functions
 from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor
 import os
 import chromadb
 from collections import deque
+import time
 
 
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
@@ -36,11 +36,6 @@ def get_relevant_document(query: str, db, n_results: int):
     return [doc[0] for doc in results["documents"]]
 
 
-def read_file(path: Path):
-    with path.open() as f:
-        return f.read()
-
-
 async def load_file(filename):
     async with aiofiles.open(filename, mode="r") as f:
         return await f.read()
@@ -51,10 +46,12 @@ async def process_batch(batch):
     return await asyncio.gather(*tasks)
 
 
-async def load_files_async(dir_path, batch_size=1000):
+async def load_files_async(dir_path, batch_size=100):
     filenames = [file for file in dir_path.iterdir()]
     results = []
-
+    start_time = time.time()
+    # testing
+    filenames = filenames[:1000]
     file_queue = deque(filenames)
 
     while file_queue:
@@ -62,19 +59,20 @@ async def load_files_async(dir_path, batch_size=1000):
         batch_results = await process_batch(batch)
         results.extend(batch_results)
 
-        print(f"Processed {len(results)} files out of {len(filenames)}")
+        elapsed_time = time.time() - start_time
+        estimated_total_time = (elapsed_time / len(results)) * len(filenames)
+        remaining_time = estimated_total_time - elapsed_time
+        print(
+            f"Processed {len(results)}/{len(filenames)} "
+            f"({len(results)/len(filenames)*100:.2f}%) "
+            f"| Elapsed: {elapsed_time:.2f}s "
+            f"| Remaining: {remaining_time:.2f}s "
+        )
+
+        # try not to overload HDD
+        await asyncio.sleep(0.01)
 
     return results
-
-
-def load_documents(dir_path: Path) -> List[str]:
-    text_files = []
-
-    with ThreadPoolExecutor() as executor:
-        results = executor.map(read_file, dir_path.iterdir())
-
-        text_files = list(results)
-    return text_files
 
 
 async def main():
@@ -87,7 +85,6 @@ async def main():
     # Load documents to create db
     FLAT_FILE_PATH = "./temp/flat"
     text_path = Path(FLAT_FILE_PATH)
-    print("Loading documents into DB...please wait.")
     text_files = await load_files_async(text_path)
     db_path = os.path.join(os.getcwd(), db_folder)
     db = create_chroma_db(text_files, db_path, "patient_db")
