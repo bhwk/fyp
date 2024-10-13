@@ -9,15 +9,15 @@ from collections import deque
 import time
 
 
-sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
-    model_name="all-MiniLM-L6-v2"
+SENTENCE_TRANSFORMER_EF = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
+    model_name="BAAI/bge-small-en-v1.5"
 )
 
 
 def create_chroma_db(documents: List[str], path: str, name: str):
     chroma_client = chromadb.PersistentClient(path=path)
     db = chroma_client.create_collection(
-        name=name, embedding_function=sentence_transformer_ef
+        name=name, embedding_function=SENTENCE_TRANSFORMER_EF
     )
     for i, d in enumerate(documents):
         db.add(documents=[d], ids=[str(i)])
@@ -27,13 +27,8 @@ def create_chroma_db(documents: List[str], path: str, name: str):
 def load_chroma_collection(path: str, name: str):
     chroma_client = chromadb.PersistentClient(path=path)
     return chroma_client.get_collection(
-        name=name, embedding_function=sentence_transformer_ef
+        name=name, embedding_function=SENTENCE_TRANSFORMER_EF
     )
-
-
-def get_relevant_document(query: str, db, n_results: int):
-    results = db.query(query_texts=[query], n_results=n_results)
-    return [doc[0] for doc in results["documents"]]
 
 
 async def load_file(filename):
@@ -46,12 +41,16 @@ async def process_batch(batch):
     return await asyncio.gather(*tasks)
 
 
-async def load_files_async(dir_path, batch_size=100):
-    filenames = [file for file in dir_path.iterdir()]
+async def load_files_async(dir_path: Path, batch_size=100):
+    dirs: list[Path] = [dir for dir in dir_path.iterdir() if dir.is_dir()]
+    filenames = []
+    # set to 100 patients for testing
+    for dir in dirs[:100]:
+        files = [file for file in dir.iterdir()]
+        filenames.extend(files)
+
     results = []
     start_time = time.time()
-    # testing
-    filenames = filenames[:1000]
     file_queue = deque(filenames)
 
     while file_queue:
