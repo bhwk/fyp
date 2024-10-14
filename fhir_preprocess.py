@@ -119,7 +119,7 @@ async def load_and_flatten_bundles(dir_path: pathlib.Path, batch_size=100):
 
 async def main():
     if not os.path.exists(FLAT_FILE_PATH):
-        os.mkdir(FLAT_FILE_PATH)
+        os.makedirs(FLAT_FILE_PATH)
     await load_and_flatten_bundles(BUNDLE_DIR)
 
 

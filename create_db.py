@@ -5,6 +5,7 @@ from chromadb.utils import embedding_functions
 from pathlib import Path
 import os
 import chromadb
+from chromadb.utils.batch_utils import create_batches
 from collections import deque
 import time
 
@@ -19,8 +20,14 @@ def create_chroma_db(documents: List[str], path: str, name: str):
     db = chroma_client.create_collection(
         name=name, embedding_function=SENTENCE_TRANSFORMER_EF
     )
-    for i, d in enumerate(documents):
-        db.add(documents=[d], ids=[str(i)])
+    max_batch_size = chroma_client.get_max_batch_size()
+    batches = create_batches(
+        api=chroma_client, ids=list(*range(len(documents))), documents=documents
+    )
+
+    for batch in batches:
+        db.add(batch[0], documents=batch[3])
+
     return db
 
 
