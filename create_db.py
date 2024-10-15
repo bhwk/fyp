@@ -8,23 +8,35 @@ import chromadb
 from chromadb.utils.batch_utils import create_batches
 from collections import deque
 import time
+import torch
 
 
+# CHECK IF GPU IS AVAILABLE
+device = "cuda" if torch.cuda.is_available() else "cpu"
 SENTENCE_TRANSFORMER_EF = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
-    model_name="BAAI/bge-small-en-v1.5"
+    model_name="BAAI/bge-small-en-v1.5", device=device
 )
 
 
 def create_chroma_db(documents: List[str], path: str, name: str):
     chroma_client = chromadb.PersistentClient(path=path)
     db = chroma_client.create_collection(
-        name=name, embedding_function=SENTENCE_TRANSFORMER_EF
+        name=name,
+        embedding_function=SENTENCE_TRANSFORMER_EF,
+        metadata={
+            "hnsw:space": "cosine",
+            "hnsw:construction_ef": 600,
+            "hnsw:search_ef": 1000,
+            "hnsw:M": 60,
+        },
     )
-    max_batch_size = chroma_client.get_max_batch_size()
     batches = create_batches(
-        api=chroma_client, ids=list(*range(len(documents))), documents=documents
+        api=chroma_client,
+        ids=[str(i) for i in range(len(documents))],
+        documents=documents,
     )
 
+    print("Creating database now")
     for batch in batches:
         db.add(batch[0], documents=batch[3])
 
@@ -52,7 +64,8 @@ async def load_files_async(dir_path: Path, batch_size=100):
     dirs: list[Path] = [dir for dir in dir_path.iterdir() if dir.is_dir()]
     filenames = []
     # set to 100 patients for testing
-    for dir in dirs[:100]:
+    # for dir in dirs[:100]:
+    for dir in dirs:
         files = [file for file in dir.iterdir()]
         filenames.extend(files)
 

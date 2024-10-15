@@ -1,3 +1,4 @@
+from importlib.metadata import metadata
 import os
 import chromadb
 from chromadb.utils import embedding_functions
@@ -9,17 +10,18 @@ SENTENCE_TRANSFORMER = embedding_functions.SentenceTransformerEmbeddingFunction(
 )
 
 PROMPT_TEMPLATE = """
-Answer the question based only on the following context:
+Use the following context to enhance your answer to the query:
 {context}
  - -
-Answer the question based on the above context: {question}
+Answer the query based on the above context: {query}
 """
 
 
 def load_chroma_collection(path: str, name: str):
     chroma_client = chromadb.PersistentClient(path=path)
     return chroma_client.get_collection(
-        name=name, embedding_function=SENTENCE_TRANSFORMER
+        name=name,
+        embedding_function=SENTENCE_TRANSFORMER,
     )
 
 
@@ -36,13 +38,15 @@ def main():
     db_path = os.path.join(os.getcwd(), db_folder)
     db = load_chroma_collection(db_path, "patient_db")
 
-    query = "List records of interest for patient Ferdinand55"
+    index = "Arnold"
+    query = "What can you tell me about Arnold?"
 
-    results = get_relevant_document(query, db, 10)
+    results = get_relevant_document(index, db, 5)
+    pprint(results)
 
     context_text = "\n\n - - \n\n".join(results)
 
-    prompt = f"Use the following context as reference when you answer the query: {context_text}- -Answer the question based on the above context: {query}"
+    prompt = f"Use the following context to help your answer to the query: {context_text}- -Query: {query}"
 
     response = ollama.chat(
         model="openhermes", messages=[{"role": "system", "content": prompt}]
