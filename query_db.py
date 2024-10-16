@@ -1,59 +1,56 @@
-from importlib.metadata import metadata
-import os
+from llama_index.core import (
+    VectorStoreIndex,
+    Settings,
+)
+from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.llms.ollama import Ollama
 import chromadb
-from chromadb.utils import embedding_functions
-from pprint import pprint
-import ollama
-
-SENTENCE_TRANSFORMER = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
-    model_name="BAAI/bge-small-en-v1.5"
+import logging
+import sys
+from llama_index.core.callbacks import (
+    CallbackManager,
+    LlamaDebugHandler,
 )
 
-PROMPT_TEMPLATE = """
-Use the following context to enhance your answer to the query:
-{context}
- - -
-Answer the query based on the above context: {query}
-"""
 
-
-def load_chroma_collection(path: str, name: str):
-    chroma_client = chromadb.PersistentClient(path=path)
-    return chroma_client.get_collection(
-        name=name,
-        embedding_function=SENTENCE_TRANSFORMER,
+def get_db(callback_manager):
+    db = chromadb.PersistentClient("./chroma_db/")
+    chroma_collection = db.get_collection(
+        "patient_db",
     )
-
-
-def get_relevant_document(query: str, db, n_results: int):
-    results = db.query(query_texts=[query], n_results=n_results)
-    return results["documents"][0]
-
-
-def main():
-    db_folder = "chroma_db"
-    if not os.path.exists(db_folder):
-        os.makedirs(db_folder)
-
-    db_path = os.path.join(os.getcwd(), db_folder)
-    db = load_chroma_collection(db_path, "patient_db")
-
-    index = "Arnold"
-    query = "What can you tell me about Arnold?"
-
-    results = get_relevant_document(index, db, 5)
-    pprint(results)
-
-    context_text = "\n\n - - \n\n".join(results)
-
-    prompt = f"Use the following context to help your answer to the query: {context_text}- -Query: {query}"
-
-    response = ollama.chat(
-        model="openhermes", messages=[{"role": "system", "content": prompt}]
+    vector_store = ChromaVectorStore(
+        chroma_collection=chroma_collection,
     )
+    embed_model = HuggingFaceEmbedding(
+        model_name="BAAI/bge-small-en-v1.5",
+        callback_manager=callback_manager,
+        parallel_process=True,
+    )
+    index = VectorStoreIndex.from_vector_store(vector_store, embed_model=embed_model)
 
-    print(response["message"]["content"])
+    return index
 
 
 if __name__ == "__main__":
-    main()
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+    llama_debug = LlamaDebugHandler(print_trace_on_end=True)
+    callback_manager = CallbackManager([llama_debug])
+    # Set to local llm
+    Settings.llm = Ollama(model="openhermes", request_timeout=500)
+
+    # uncomment on first run
+    # index = create_db(callback_manager)
+
+    # retrieves ALREADY created db
+    index = get_db(callback_manager)
+    query_engine = index.as_query_engine()
+
+    while True:
+        user_input = input("Enter query: ")
+        if not user_input:
+            continue
+        else:
+            response = query_engine.query(f"{user_input}")
+            print(response)

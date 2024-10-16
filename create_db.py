@@ -1,28 +1,36 @@
-import asyncio
-import aiofiles
-from typing import List
-from chromadb.utils import embedding_functions
-from pathlib import Path
-import os
+from llama_index.core import (
+    VectorStoreIndex,
+    SimpleDirectoryReader,
+    Settings,
+    StorageContext,
+)
+from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.llms.ollama import Ollama
 import chromadb
-from chromadb.utils.batch_utils import create_batches
-from collections import deque
-import time
-import torch
-
-
-# CHECK IF GPU IS AVAILABLE
-device = "cuda" if torch.cuda.is_available() else "cpu"
-SENTENCE_TRANSFORMER_EF = embedding_functions.SentenceTransformerEmbeddingFunction(  # pyright: ignore [reportAttributeAccessIssue]
-    model_name="BAAI/bge-small-en-v1.5", device=device
+import logging
+import sys
+from llama_index.core.callbacks import (
+    CallbackManager,
+    LlamaDebugHandler,
 )
 
 
-def create_chroma_db(documents: List[str], path: str, name: str):
-    chroma_client = chromadb.PersistentClient(path=path)
-    db = chroma_client.create_collection(
-        name=name,
-        embedding_function=SENTENCE_TRANSFORMER_EF,
+def create_db(callback_manager):
+    documents = SimpleDirectoryReader(
+        input_dir="./temp/flat", recursive=True
+    ).load_data(show_progress=True)
+
+    embed_model = HuggingFaceEmbedding(
+        model_name="BAAI/bge-small-en-v1.5",
+        parallel_process=True,
+        callback_manager=callback_manager,
+        embed_batch_size=100,
+    )
+
+    db = chromadb.PersistentClient("./chroma_db/")
+    chroma_collection = db.get_or_create_collection(
+        "patient_db",
         metadata={
             "hnsw:space": "cosine",
             "hnsw:construction_ef": 600,
@@ -30,85 +38,26 @@ def create_chroma_db(documents: List[str], path: str, name: str):
             "hnsw:M": 60,
         },
     )
-    batches = create_batches(
-        api=chroma_client,
-        ids=[str(i) for i in range(len(documents))],
-        documents=documents,
+    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+    storage_context = StorageContext.from_defaults(vector_store=vector_store)
+
+    index = VectorStoreIndex.from_documents(
+        documents,
+        storage_context=storage_context,
+        embed_model=embed_model,
+        callback_manager=callback_manager,
+        show_progress=True,
     )
 
-    print("Creating database now")
-    for batch in batches:
-        db.add(batch[0], documents=batch[3])
-
-    return db
-
-
-def load_chroma_collection(path: str, name: str):
-    chroma_client = chromadb.PersistentClient(path=path)
-    return chroma_client.get_collection(
-        name=name, embedding_function=SENTENCE_TRANSFORMER_EF
-    )
-
-
-async def load_file(filename):
-    async with aiofiles.open(filename, mode="r") as f:
-        return await f.read()
-
-
-async def process_batch(batch):
-    tasks = [load_file(filename) for filename in batch]
-    return await asyncio.gather(*tasks)
-
-
-async def load_files_async(dir_path: Path, batch_size=100):
-    dirs: list[Path] = [dir for dir in dir_path.iterdir() if dir.is_dir()]
-    filenames = []
-    # set to 100 patients for testing
-    # for dir in dirs[:100]:
-    for dir in dirs:
-        files = [file for file in dir.iterdir()]
-        filenames.extend(files)
-
-    results = []
-    start_time = time.time()
-    file_queue = deque(filenames)
-
-    while file_queue:
-        batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
-        batch_results = await process_batch(batch)
-        results.extend(batch_results)
-
-        elapsed_time = time.time() - start_time
-        estimated_total_time = (elapsed_time / len(results)) * len(filenames)
-        remaining_time = estimated_total_time - elapsed_time
-        print(
-            f"Processed {len(results)}/{len(filenames)} "
-            f"({len(results)/len(filenames)*100:.2f}%) "
-            f"| Elapsed: {elapsed_time:.2f}s "
-            f"| Remaining: {remaining_time:.2f}s "
-        )
-
-        # try not to overload HDD
-        await asyncio.sleep(0.01)
-
-    return results
-
-
-async def main():
-    # check if folder for db exists
-    db_folder = "chroma_db"
-    if not os.path.exists(db_folder):
-        os.makedirs(db_folder)
-
-    ## Comment this when I don't have to create the db from scratch
-    # Load documents to create db
-    FLAT_FILE_PATH = "./temp/flat"
-    text_path = Path(FLAT_FILE_PATH)
-    text_files = await load_files_async(text_path)
-    db_path = os.path.join(os.getcwd(), db_folder)
-    db = create_chroma_db(text_files, db_path, "patient_db")
-    print("Creation complete.")
+    return index
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+    llama_debug = LlamaDebugHandler(print_trace_on_end=True)
+    callback_manager = CallbackManager([llama_debug])
+    # Set to local llm
+    Settings.llm = Ollama(model="openhermes", request_timeout=500)
+
+    index = create_db(callback_manager)
