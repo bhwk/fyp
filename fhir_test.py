@@ -49,9 +49,6 @@ async def process_bundle(bundle_path):
         "name": f"{patient_data["name"][0]["given"][0]} {patient_data["name"][0]["family"]}",
         "birth_date": patient_data["birthDate"],
         "conditions": [cond.get("code", {}).get("text", "") for cond in conditions],
-        "observations": [extract_observation_value(obs) for obs in observations],
-        "medications": [extract_medication_value(med) for med in medications],
-        "procedures": [extract_procedure_value(procedure) for procedure in procedures],
         "allergies": [extract_allergy_information(allergy) for allergy in allergies],
     }
 

@@ -3,23 +3,47 @@ from llama_index.core import (
     SimpleDirectoryReader,
     Settings,
     StorageContext,
+    Document,
 )
+from llama_index.core.schema import TextNode
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
 import chromadb
 import logging
 import sys
+import json
+import pathlib
 from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
 )
 
+FILE_DIR = pathlib.Path("./temp/flat")
+
+
+def load_json(file_path):
+    with open(file_path, mode="r") as f:
+        content = f.read()
+        return json.loads(content)
+
 
 def create_db(callback_manager):
-    documents = SimpleDirectoryReader(
-        input_dir="./temp/flat", recursive=True
-    ).load_data(show_progress=True)
+    patient_objects = [load_json(file) for file in FILE_DIR.iterdir()]
+
+    documents = [
+        Document(doc_id=object["id"], text=object["text"], metadata=object["metadata"])  # type: ignore
+        for object in patient_objects
+    ]
+
+    nodes = [
+        TextNode(id_=object["id"], text=object["text"], metadata=object["metadata"])  # type: ignore
+        for object in patient_objects
+    ]
+
+    # documents = SimpleDirectoryReader(
+    #     input_dir="./temp/flat", recursive=True
+    # ).load_data(show_progress=True)
 
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-small-en-v1.5",
@@ -41,13 +65,20 @@ def create_db(callback_manager):
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
-    index = VectorStoreIndex.from_documents(
-        documents,
-        storage_context=storage_context,
+    index = VectorStoreIndex(
+        nodes=nodes,
         embed_model=embed_model,
-        callback_manager=callback_manager,
+        storage_context=storage_context,
         show_progress=True,
     )
+
+    # index = VectorStoreIndex.from_documents(
+    #     documents,
+    #     storage_context=storage_context,
+    #     embed_model=embed_model,
+    #     callback_manager=callback_manager,
+    #     show_progress=True,
+    # )
 
     return index
 
