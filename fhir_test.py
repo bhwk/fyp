@@ -20,150 +20,64 @@ async def load_bundle(bundle_path):
 async def process_bundle(bundle_path):
     file_name = bundle_path.stem
     bundle = await load_bundle(bundle_path)
-    patient_data, observations, conditions, medications, procedures, allergies = (
-        extract_patient_data(bundle)
+    patient = find_patient(bundle)
+
+    for i, entry in enumerate(bundle["entry"]):
+        data = filter_entry(entry)
+        if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):
+            os.makedirs(f"{FLAT_FILE_PATH}/{file_name}")
+        async with aiofiles.open(
+            f"{FLAT_FILE_PATH}/{file_name}/{file_name}_{i}.txt", "w"
+        ) as out:
+            await out.write(
+                f"Patient name is {patient["PatientFirstName"]} {patient['PatientFamilyName']}\n{data}"
+            )
+
+
+def filter_entry(entry):
+    if entry["resource"]["resourceType"] == "Observation":
+        return extract_observation(entry["resource"])
+
+
+def extract_observation(entry):
+    # Extract necessary fields from observation resource
+    status = entry["status"]
+    category = entry["category"][0]["coding"][0]["display"]
+    code = entry["code"]["coding"][0]["display"]
+    effective_time = datetime.fromisoformat(entry["effectiveDateTime"]).strftime(
+        "%d/%m/%Y %H:%M:%S"
     )
-
-    patient_text = f"Patient {patient_data["name"][0]["given"][0]} \
-        {patient_data["name"][0]["family"]}\
-        gender {patient_data["gender"]}\
-        born {patient_data["birthDate"]}\
-        {patient_data["maritalStatus"]["text"]} " + (
-        f"deceased {patient_data.get("deceasedDateTime", "")}"
-        if "deceasedDateTime" in patient_data or "deceasedBoolean" in patient_data
-        else "alive"
-    )
-    observation_text = " ".join(
-        [extract_observation_value(obs) for obs in observations]
-    )
-    condition_texts = " ".join(
-        [cond.get("code", {}).get("text", "") for cond in conditions]
-    )
-    medication_texts = " ".join([extract_medication_value(med) for med in medications])
-
-    allergy_texts = " ".join(
-        [extract_allergy_information(allergy) for allergy in allergies]
-    )
-
-    metadata = {
-        "name": f"{patient_data["name"][0]["given"][0]} {patient_data["name"][0]["family"]}",
-        "birth_date": patient_data["birthDate"],
-        "conditions": [cond.get("code", {}).get("text", "") for cond in conditions],
-        "allergies": [extract_allergy_information(allergy) for allergy in allergies],
-    }
-
-    # procedure_texts = " ".join(
-    #    [extract_procedure_value(procedure) for procedure in procedures]
-    # )
-
-    combined_texts = f"{patient_text}\nObservations: {observation_text}\nConditions: {condition_texts}\nMedications: {medication_texts}\nAllergies: {allergy_texts}"
-
-    patient_object = {
-        "id": patient_data["id"],
-        "text": combined_texts,
-        "metadata": metadata,
-    }
-
-    async with aiofiles.open(
-        f"{FLAT_FILE_PATH}/{file_name}_processed.json", "w"
-    ) as out:
-        await out.write(json.dumps(patient_object, indent=4))
-
-
-def extract_allergy_information(allergy):
-    return allergy["code"]["text"]
-
-
-def extract_medication_value(medication):
-    medication_name = medication.get("medicationCodeableConcept", {}).get("text", "")
-    status = medication.get("status", "")
-
-    return f"{medication_name} {status}"
-
-
-def extract_procedure_value(procedure):
-    name = procedure["code"]["text"]
-    status = procedure["status"]
-    period = ""
-    if "performedPeriod" in procedure:
-        start_date = datetime.fromisoformat(
-            procedure["performedPeriod"]["start"]
-        ).strftime("%Y:%m:%d")
-        end_date = datetime.fromisoformat(procedure["performedPeriod"]["end"]).strftime(
-            "%Y:%m:%d"
+    issued = datetime.fromisoformat(entry["issued"]).strftime("%d/%m/%Y %H:%M:%S")
+    value = (
+        format(
+            f"{entry["valueQuantity"]["value"]:.2f} {entry["valueQuantity"]["unit"]}"
         )
+        if "valueQuantity" in entry
+        else "None"
+    )
+    return f"Entry is type {entry["resourceType"]}. Status is {status}. Category is {category}. \
+    Code is {code}. This entry was effective on {effective_time}. This entry was issued {issued}. \
+    Value quantity for entry is {value}"
 
-        period = f"{start_date}-{end_date}"
 
-    return f"{name} {status} {period}"
+def filter_patient(entry):
+    return entry["resource"]["resourceType"] == "Patient"
 
 
-def extract_observation_value(observation):
-    """Extract the main value from an Observation based on available fields."""
-    if "valueQuantity" in observation:
-        # Extract numerical value with unit
-        quantity = observation["valueQuantity"]
-        text = observation["code"]["text"]
-        date_time = datetime.fromisoformat(observation["issued"]).strftime("%Y:%m:%d")
-
-        return (
-            f"{text} {quantity['value']} {quantity['unit']} {date_time}"
-            if "unit" in quantity
-            else f"{text} {quantity["value"]}"
-        )
-
-    elif "valueCodeableConcept" in observation:
-        # Extract coded value (e.g., LOINC code description)
-        return observation["valueCodeableConcept"]["text"]
-
-    elif "valueBoolean" in observation:
-        # Extract boolean value
-        return "True" if observation["valueBoolean"] else "False"
-
-    elif "valueString" in observation:
-        # Extract plain text value
-        return observation["valueString"]
-
+def find_patient(bundle):
+    patients = list(filter(filter_patient, bundle["entry"]))
+    if len(patients) < 1:
+        raise Exception("No patient found")
     else:
-        # If no recognizable value field is present
-        return "None"
-
-
-def extract_patient_data(fhir_data):
-    patient_resource = fhir_data["entry"][0]["resource"]
-    observations = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "Observation"
-    ]
-    conditions = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "Condition"
-    ]
-    medications = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "MedicationRequest"
-    ]
-    procedures = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "Procedure"
-    ]
-    allergies = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "AllergyIntolerance"
-    ]
-    return (
-        patient_resource,
-        observations,
-        conditions,
-        medications,
-        procedures,
-        allergies,
-    )
+        patient = patients[0]["resource"]
+        patient_id = patient["id"]
+        patient_given_name = patient["name"][0]["given"][0]
+        patient_family_name = patient["name"][0]["family"]
+        return {
+            "PatientFirstName": patient_given_name,
+            "PatientFamilyName": patient_family_name,
+            "PatientID": patient_id,
+        }
 
 
 async def process_batch(batch):

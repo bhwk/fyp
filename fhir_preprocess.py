@@ -68,33 +68,6 @@ async def load_bundle(bundle_path):
         return json.loads(content)
 
 
-async def process_bundle_test(bundle_path):
-    file_name = bundle_path.stem
-    bundle = await load_bundle(bundle_path)
-    patient = find_patient(bundle)
-    patient_data, observations, conditions, medications = extract_patient_data(bundle)
-
-
-def extract_patient_data(fhir_data):
-    patient_resource = fhir_data["entry"][0]["resource"]
-    observations = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "Observation"
-    ]
-    conditions = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "Condition"
-    ]
-    medications = [
-        entry["resource"]
-        for entry in fhir_data["entry"]
-        if entry["resource"]["resourceType"] == "MedicationRequest"
-    ]
-    return patient_resource, observations, conditions, medications
-
-
 async def process_bundle(bundle_path):
     file_name = bundle_path.stem
     bundle = await load_bundle(bundle_path)
