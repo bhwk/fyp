@@ -24,19 +24,27 @@ async def process_bundle(bundle_path):
 
     for i, entry in enumerate(bundle["entry"]):
         data = filter_entry(entry)
-        if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):
-            os.makedirs(f"{FLAT_FILE_PATH}/{file_name}")
-        async with aiofiles.open(
-            f"{FLAT_FILE_PATH}/{file_name}/{file_name}_{i}.txt", "w"
-        ) as out:
-            await out.write(
-                f"Patient name is {patient["PatientFirstName"]} {patient['PatientFamilyName']}\n{data}"
+        if data is not None:
+            data["metadata"]["id"] = patient["PatientID"]
+            data["metadata"]["Name"] = (
+                f"{patient["PatientFirstName"]} {patient["PatientFamilyName"]}"
             )
+            if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):
+                os.makedirs(f"{FLAT_FILE_PATH}/{file_name}")
+            async with aiofiles.open(
+                f"{FLAT_FILE_PATH}/{file_name}/{file_name}_{i}.txt", "w"
+            ) as out:
+                await out.write(json.dumps(data, indent=4))
+        else:
+            continue
 
 
 def filter_entry(entry):
     if entry["resource"]["resourceType"] == "Observation":
-        return extract_observation(entry["resource"])
+        return {
+            "text": extract_observation(entry["resource"]),
+            "metadata": {"resourceType": "Observation"},
+        }
 
 
 def extract_observation(entry):
@@ -48,16 +56,24 @@ def extract_observation(entry):
         "%d/%m/%Y %H:%M:%S"
     )
     issued = datetime.fromisoformat(entry["issued"]).strftime("%d/%m/%Y %H:%M:%S")
-    value = (
-        format(
+    if "valueQuantity" in entry:
+        value = format(
             f"{entry["valueQuantity"]["value"]:.2f} {entry["valueQuantity"]["unit"]}"
         )
-        if "valueQuantity" in entry
-        else "None"
-    )
-    return f"Entry is type {entry["resourceType"]}. Status is {status}. Category is {category}. \
-    Code is {code}. This entry was effective on {effective_time}. This entry was issued {issued}. \
-    Value quantity for entry is {value}"
+    elif "valueCodeableConcept" in entry:
+        # Extract coded value (e.g., LOINC code description)
+        value = entry["valueCodeableConcept"]["text"]
+
+    elif "valueBoolean" in entry:
+        # Extract boolean value
+        value = "True" if entry["valueBoolean"] else "False"
+
+    elif "valueString" in entry:
+        # Extract plain text value
+        value = entry["valueString"]
+    else:
+        value = "None"
+    return f"Entry is type {entry["resourceType"]}. Status is {status}. Category is {category}. Code is {code}. This entry was effective on {effective_time}. This entry was issued {issued}. Value quantity for entry is {value}"
 
 
 def filter_patient(entry):

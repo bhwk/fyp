@@ -1,30 +1,51 @@
 import logging
 import sys
-from llama_index.core import VectorStoreIndex, Settings, get_response_synthesizer
-from llama_index.core.retrievers import VectorIndexRetriever
-from llama_index.core.query_engine import RetrieverQueryEngine
-from llama_index.core.postprocessor import SimilarityPostprocessor
+from llama_index.core import (
+    VectorStoreIndex,
+    Settings,
+    StorageContext,
+    SimpleDirectoryReader,
+)
 from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
 )
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
+import pathlib
 from llama_index.vector_stores.postgres import PGVectorStore
+import psycopg2
 from sqlalchemy import make_url
-from llama_index.core.query_engine import RetryQueryEngine
-from llama_index.core.evaluation import RelevancyEvaluator
 
 # Uncomment to see debug logs
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
+FILE_DIR = pathlib.Path("./temp/flat")
 
-def get_db():
+
+def create_db(callback_manager):
+    documents = SimpleDirectoryReader(
+        input_dir="./temp/flat", recursive=True
+    ).load_data(show_progress=True)
+
+    embed_model = HuggingFaceEmbedding(
+        model_name="BAAI/bge-base-en-v1.5",
+        parallel_process=True,
+        callback_manager=callback_manager,
+        embed_batch_size=100,
+    )
+
     connection_string = "postgresql://postgres:password@localhost:5432"
     db_name = "vector_db"
-    url = make_url(connection_string)
+    conn = psycopg2.connect(connection_string)
+    conn.autocommit = True
 
+    with conn.cursor() as c:
+        c.execute(f"DROP DATABASE IF EXISTS {db_name}")
+        c.execute(f"CREATE DATABASE {db_name}")
+
+    url = make_url(connection_string)
     vector_store = PGVectorStore.from_params(
         database=db_name,
         host=url.host,
@@ -32,8 +53,8 @@ def get_db():
         port=url.port,  # type: ignore
         user=url.username,
         table_name="patient_records",
+        embed_dim=768,  # openai embedding dimension
         hybrid_search=True,
-        embed_dim=768,
         hnsw_kwargs={
             "hnsw_m": 16,
             "hnsw_ef_construction": 64,
@@ -44,32 +65,26 @@ def get_db():
 
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
-        callback_manager=callback_manager,
+        parallel_process=True,
+        embed_batch_size=100,
     )
-    index = VectorStoreIndex.from_vector_store(
-        vector_store=vector_store, embed_model=embed_model
+
+    storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    index = VectorStoreIndex.from_documents(
+        documents,
+        storage_context=storage_context,
+        embed_model=embed_model,
+        show_progress=True,
     )
     return index
 
 
 if __name__ == "__main__":
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
     # Set to local llm
     Settings.llm = Ollama(model="openhermes", request_timeout=500)
 
-    index = get_db()
-
-    query_engine = index.as_query_engine(
-        similarity_top_k=2,
-        sparse_top_k=5,
-        vector_store_query_mode="hybrid",
-    )
-    query_response_evaluator = RelevancyEvaluator()
-    # retry_query_engine = RetryQueryEngine(query_engine, query_response_evaluator)
-    while True:
-        query = input("Input: ")
-        response = query_engine.query(query)
-        print(response)
-        # retry_response = retry_query_engine.query(query)
-        # print(retry_response)
+    index = create_db(callback_manager)

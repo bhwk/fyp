@@ -25,7 +25,7 @@ logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 FILE_DIR = pathlib.Path("./temp/flat")
 
 
-def create_db(callback_manager):
+def create_db():
     connection_string = "postgresql://postgres:password@localhost:5432"
     db_name = "vector_db"
     conn = psycopg2.connect(connection_string)
@@ -43,7 +43,7 @@ def create_db(callback_manager):
         port=url.port,  # type: ignore
         user=url.username,
         table_name="patient_records",
-        embed_dim=768,  # openai embedding dimension
+        embed_dim=768,
         hybrid_search=True,
         hnsw_kwargs={
             "hnsw_m": 16,
@@ -55,7 +55,14 @@ def create_db(callback_manager):
 
     # load patient records into database
 
-    patient_objects = [load_json(file) for file in FILE_DIR.iterdir()]
+    patient_objects = [
+        load_json(file) for file in FILE_DIR.iterdir() if not file.is_dir()
+    ]
+
+    # patient_dirs = [dir for dir in FILE_DIR.iterdir()]
+    # patient_objects = []
+    # for dir in patient_dirs:
+    #     patient_objects.extend(load_json(file) for file in dir.iterdir())
 
     documents = [
         Document(doc_id=object["id"], text=object["text"], metadata=object["metadata"])  # type: ignore
@@ -65,7 +72,6 @@ def create_db(callback_manager):
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
         parallel_process=True,
-        callback_manager=callback_manager,
         embed_batch_size=100,
     )
 
@@ -91,4 +97,4 @@ if __name__ == "__main__":
     # Set to local llm
     Settings.llm = Ollama(model="openhermes", request_timeout=500)
 
-    index = create_db(callback_manager)
+    index = create_db()
