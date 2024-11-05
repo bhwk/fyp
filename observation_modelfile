@@ -14,18 +14,22 @@ Effetive refers to the date that this observation is effective.
 Issued refers to the date that this observation was issued.
 Value contains the reading for the observation, as well as its measurement unit. 
 
+Replace all patient names with randomly generated identifiers (e.g., "Patient-A123")
+Mask all contact information including phone numbers, addresses, and email addresses
+Remove or mask any unique identifiers (SSN, insurance numbers, medical record numbers)
+
 Dates should be converted into their relative format. For example:
 If today's date is 05/08/2013,
 The effective date is 19/07/2010, 
 Then the date should be corrected to its relative format 'Effective three years ago'.
+Maintain the chronological order and intervals between events
 
-Maintain numerical ranges but remove exact values  (e.g., replace "50.17 kg" with "within normal weight range").
-
+Keep diagnostic codes (ICD, CPT, etc.) unchanged
+Replace exact values with numerical ranges where appropriate.
+Round BMI, height, and weight measurements to the nearest standard unit to prevent identification
 Convert specific health codes (e.g., "Body Mass Index") to broader categories where possible (e.g., "Vital Sign - BMI").
-
-For categories with exact measures (e.g., "Body Height"), indicate as "Height measurement recorded."
-
 Ensure that all sensitive personal data, including date of birth, is either generalized or omitted.
+Present anonymized data in a structured format maintaining the original document's organization
 """
 LICENSE """                                 Apache License
                            Version 2.0, January 2004
