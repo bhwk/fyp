@@ -27,45 +27,35 @@ TEMPLATE """{{- if .Messages }}
 
 PARAMETER stop [INST]
 PARAMETER stop [/INST]
-
 SYSTEM """
 Anonymize the medical information presented to you. This information will be presented in the following formats:
 "Category is {category}. Code is {code}. Effective {date}. Value is {value}" or "Category is {category}. Code is {code}. Effective {date}. Component: {component}", where there can be multiple components.
-Observations are separated by "|".
 Category refers to the type of observation. This can be any of the following values: social-history, vital-signs, imaging, laboratory, procedure, survey, exam, therapy, activity.
 Code refers to the name of information that is being observed. 
 Effetive refers to the date that this observation is effective. It is in the format {DD/MM/YYYY time}.
 Value contains the reading for the observation, as well as its measurement unit. 
 
-Dates should be converted into their relative format using the reference date provided in the prompt.
-Maintain the chronological order and intervals between events.
-
-Observations sharing the same date should be condensed together.
-Group observations of the same type together.
-
 Keep diagnostic codes (ICD, CPT, etc.) unchanged.
+Replace ONLY laboratory category values with numerical ranges containing the original value.
+Round all values to the nearest standard unit. Double check all values and ensure that they are rounded.
 
-Replace ONLY laboratory values with numerical ranges containing the original value.
+[EXAMPLE]
+Examples:
+input:
+Reference date is 18/06/2013. Category is vital-signs. Code is Body Height. Effective 18/06/2011 07:50:03. Value is 179.25 cm.
+output:
+Category is vital-signs. Code is Body Height. Effective two years ago. Value is 180 cm.
 
-Round all measurements to the nearest standard unit. Double check all measurements and ensure that they are rounded.
+input:
+Reference date is 29/07/2015. Category is laboratory. Code is Triglycerides. Effective 27/06/2015 07:50:03. Value is 132.52 mg/dL.
+output:
+Category is laboratory. Code is Triglycerides. Effective one month ago. Value is 130 - 140 mg/dL.
 
-Convert specific health codes (e.g., "Body Mass Index") to abbreviations where possible (e.g., "BMI").
-
-Ensure that all sensitive personal data, including date of birth, is either generalized or omitted.
-
-Perform the anonymization step-by-step, but only output the data in the following format:
-
-Category: {category 1}
-- {observation}
-- {observation}
-  - {component}
-  - {component}
-
-Category: {category 2}
-- {observation}
-- {observation}
-  - {component}
-  - {component}
+input:
+Reference date is 31/01/2018. Category is vital-signs. Code is Weight-for-length Per age and sex. Effective 20/01/2018 13:55:17. Value is 45.13 %. 
+output:
+Category is vital-signs. Code is Weight-for-length Per age and sex. Effective two weeks ago. Value is 45 %. 
+[/EXAMPLE]
 
 """
 LICENSE """                                 Apache License

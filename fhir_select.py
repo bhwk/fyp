@@ -110,13 +110,12 @@ def extract_procedure_value(procedure):
 
 def extract_observation_value(entry):
     """Extract the main value from an Observation based on available fields."""
-    status = entry["status"]
     category = entry["category"][0]["coding"][0]["display"]
     code = entry["code"]["coding"][0]["display"]
     effective_time = datetime.fromisoformat(entry["effectiveDateTime"]).strftime(
         "%d/%m/%Y %H:%M:%S"
     )
-    issued = datetime.fromisoformat(entry["issued"]).strftime("%d/%m/%Y %H:%M:%S")
+    # issued = datetime.fromisoformat(entry["issued"]).strftime("%d/%m/%Y %H:%M:%S")
     if "valueQuantity" in entry:
         value = format(
             f"{entry["valueQuantity"]["value"]:.2f} {entry["valueQuantity"]["unit"]}"
@@ -128,9 +127,34 @@ def extract_observation_value(entry):
         value = "True" if entry["valueBoolean"] else "False"
     elif "valueString" in entry:
         value = entry["valueString"]
+
+    elif "component" in entry:
+        # have to extract components from the observation
+        component_list = []
+        for component in entry["component"]:
+            comp_code = component["code"]["coding"][0]["display"]
+            if "valueQuantity" in component:
+                comp_value = format(
+                    f"{component["valueQuantity"]["value"]:.2f} {component["valueQuantity"]["unit"]}"
+                )
+            elif "valueCodeableConcept" in component:
+                # Extract coded value (e.g., LOINC code description)
+                comp_value = component["valueCodeableConcept"]["text"]
+            elif "valueBoolean" in component:
+                comp_value = "True" if component["valueBoolean"] else "False"
+            elif "valueString" in component:
+                comp_value = component["valueString"]
+            else:
+                comp_value = "None"
+            component_list.append(
+                format(f"Component is {comp_code}. Value is {comp_value}")
+            )
+        components = " ".join(component_list)
+        return f"Category is {category}. Code is {code}. Effective {effective_time}. {components}."
+
     else:
         value = "None"
-    return f"Category is {category}. Code is {code}. Effective on {effective_time}. Issued {issued}. Value is {value}."
+    return f"Category is {category}. Code is {code}. Effective {effective_time}. Value is {value}."
 
 
 def extract_patient_data(fhir_data):
