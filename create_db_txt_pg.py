@@ -32,7 +32,6 @@ def create_db(callback_manager):
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
         parallel_process=True,
-        callback_manager=callback_manager,
         embed_batch_size=100,
     )
 
@@ -61,12 +60,6 @@ def create_db(callback_manager):
             "hnsw_ef_search": 40,
             "hnsw_dist_method": "vector_cosine_ops",
         },
-    )
-
-    embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5",
-        parallel_process=True,
-        embed_batch_size=100,
     )
 
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
