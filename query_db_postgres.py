@@ -1,9 +1,6 @@
 import logging
 import sys
-from llama_index.core import VectorStoreIndex, Settings, get_response_synthesizer
-from llama_index.core.retrievers import VectorIndexRetriever
-from llama_index.core.query_engine import RetrieverQueryEngine
-from llama_index.core.postprocessor import SimilarityPostprocessor
+from llama_index.core import VectorStoreIndex, Settings
 from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
@@ -12,8 +9,6 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
 from llama_index.vector_stores.postgres import PGVectorStore
 from sqlalchemy import make_url
-from llama_index.core.query_engine import RetryQueryEngine
-from llama_index.core.evaluation import RelevancyEvaluator
 
 # Uncomment to see debug logs
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -44,7 +39,6 @@ def get_db():
 
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
-        callback_manager=callback_manager,
     )
     index = VectorStoreIndex.from_vector_store(
         vector_store=vector_store, embed_model=embed_model
@@ -52,24 +46,20 @@ def get_db():
     return index
 
 
+def retrieve_context(index, query):
+    retriever = index.as_retriever(similarity_top_k=5)
+    nodes = retriever.retrieve(query)
+    return nodes
+
+
 if __name__ == "__main__":
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
     # Set to local llm
-    Settings.llm = Ollama(model="openhermes", request_timeout=500)
+    Settings.llm = Ollama(model="mistral:7b-instruct-v0.3-q8_0", request_timeout=500)
 
     index = get_db()
 
-    query_engine = index.as_query_engine(
-        similarity_top_k=2,
-        sparse_top_k=5,
-        vector_store_query_mode="hybrid",
-    )
-    query_response_evaluator = RelevancyEvaluator()
-    # retry_query_engine = RetryQueryEngine(query_engine, query_response_evaluator)
-    while True:
-        query = input("Input: ")
-        response = query_engine.query(query)
-        print(response)
-        # retry_response = retry_query_engine.query(query)
-        # print(retry_response)
+    nodes = retrieve_context(index, "Which patients have hypertension?")
+    for node in nodes:
+        print(node)
