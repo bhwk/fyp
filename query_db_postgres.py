@@ -1,6 +1,7 @@
 import logging
 import sys
 from llama_index.core import VectorStoreIndex, Settings
+from llama_index.core.base.embeddings.base import similarity
 from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
@@ -52,6 +53,13 @@ def retrieve_context(index, query):
     return nodes
 
 
+def query_as_engine(index: VectorStoreIndex, query):
+    query_engine = index.as_query_engine(similarity_top_k=5)
+    response = query_engine.query(query)
+
+    print(response)
+
+
 if __name__ == "__main__":
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
@@ -59,7 +67,10 @@ if __name__ == "__main__":
     Settings.llm = Ollama(model="mistral:7b-instruct-v0.3-q8_0", request_timeout=500)
 
     index = get_db()
+    query = "Which patients have Chronic sinusitis ?"
 
-    nodes = retrieve_context(index, "Which patients have hypertension?")
+    nodes = retrieve_context(index, query)
     for node in nodes:
         print(node)
+
+    query_as_engine(index, query)
