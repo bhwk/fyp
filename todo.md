@@ -1,6 +1,3 @@
 # Todo
-
-- [ ] follow [guide](https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1)
-- [ ] use ray data
-- [ ] look up synthea for their synthetic ehr records
-- [ ] look up FHIR spec
+- [ ] Figure out better RAG storage structure. Chunks getting cutoff, we're losing context in these nodes.
+- [ ] Maybe migrate to a structured DB. Use SQL to retrieve context instead of using Vector embeddings since our data is mostly structured.
