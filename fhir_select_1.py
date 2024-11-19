@@ -40,8 +40,10 @@ async def process_bundle(bundle_path):
     patient_object["patient_info"]["maritalStatus"] = patient_data["maritalStatus"][
         "text"
     ]
-    if "deceasedDateTime" or "deceasedBoolean" in patient_data:
+    if "deceasedDateTime" in patient_data:
         patient_object["patient_info"]["deceased"] = True
+    elif "deceasedBoolean" in patient_data:
+        patient_object["patient_info"]["deceased"] = patient_data["deceasedBoolean"]
     else:
         patient_object["patient_info"]["deceased"] = False
 
@@ -53,6 +55,7 @@ async def process_bundle(bundle_path):
         effective_date, value = extract_observation_value(observation)
         if effective_date not in patient_object:
             patient_object[effective_date] = dict()
+        if "observations" not in patient_object[effective_date]:
             patient_object[effective_date]["observations"] = list()
         patient_object[effective_date]["observations"].append(value)
 
@@ -73,7 +76,9 @@ async def process_bundle(bundle_path):
             continue
         if date not in patient_object:
             patient_object[date] = dict()
+        if "procedures" not in patient_object[date]:
             patient_object[date]["procedures"] = list()
+
         patient_object[date]["procedures"].append(value)
 
     # Write out the combined patient info_file
@@ -136,9 +141,9 @@ def extract_procedure_value(procedure):
     if "performedPeriod" in procedure:
         start_date = datetime.fromisoformat(
             procedure["performedPeriod"]["start"]
-        ).strftime("%Y/%m/%d")
+        ).strftime("%d/%m/%Y")
         end_date = datetime.fromisoformat(procedure["performedPeriod"]["end"]).strftime(
-            "%Y/%m/%d"
+            "%d/%m/%Y"
         )
 
         if status == "completed":
