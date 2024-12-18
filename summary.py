@@ -4,10 +4,9 @@ from llama_index.llms.ollama import Ollama
 
 
 llm = Ollama(
-    model="phi3.5",
+    model="llama3",
     request_timeout=1000,
-    context_window=10000,
-    additional_kwargs={"top_k": 10},
+    context_window=5000,
 )
 
 
@@ -18,10 +17,16 @@ def load_text_files_recursive(directory: pathlib.Path):
         with file_path.open("r", encoding="utf-8") as f:
             text = f.read()
 
-        response = llm.complete(f"Generate a summary of the following:\n{text}")
+        response = llm.complete(
+            f"Generate a summary that includes ALL information from the following:\n{text}\n"
+        )
 
-        with file_path.open("w", encoding="utf-8") as w:
-            w.write(str(response))
+        if not os.path.exists(f"./temp/summary/{file_path.parent.stem}"):
+            os.makedirs(f"./temp/summary/{file_path.parent.stem}")
+        with open(
+            f"./temp/summary/{file_path.parent.stem}/{file_path.stem}.txt", "w"
+        ) as f:
+            f.write(str(response))
 
 
 load_text_files_recursive(pathlib.Path("./temp/flat/"))
