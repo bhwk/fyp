@@ -6,6 +6,14 @@ import json
 from collections import deque
 import time
 from datetime import datetime
+from llama_index.llms.ollama import Ollama
+
+llm = Ollama(
+    model="phi3.5",
+    request_timeout=1000,
+    context_window=10000,
+    additional_kwargs={"top_k": 10},
+)
 
 FLAT_FILE_PATH = "./temp/flat"
 BUNDLE_DIR = pathlib.Path("./fhir/")
@@ -87,7 +95,7 @@ async def process_bundle(bundle_path):
     ) as out:
         patient_info = patient_object["patient_info"]
 
-        patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} MaritalStatus: {patient_info["maritalStatus"]} Deceased: {patient_info["deceased"]}"
+        patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} Deceased: {patient_info["deceased"]} MaritalStatus: {patient_info["maritalStatus"]}"
 
         combined_conditions = " ".join(patient_info["conditions"])
         combined_medications = " ".join(patient_info["medications"])
@@ -115,7 +123,7 @@ async def process_bundle(bundle_path):
             patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} MaritalStatus: {patient_info["maritalStatus"]} Deceased: {patient_info["deceased"]}"
 
             await out.write(
-                f"{patient}\nObservations: {combined_observations}\nProcedures: {combined_procedures}"
+                f"{patient}\nEncounter Date: {key}\nObservations: {combined_observations}\nProcedures: {combined_procedures}"
             )
 
 
@@ -251,7 +259,7 @@ async def process_batch(batch):
 
 
 async def load_and_process_bundles(dir_path: pathlib.Path, batch_size=100):
-    filenames = [file for file in dir_path.iterdir()]
+    filenames = [file for file in dir_path.iterdir()][:10]
     results = []
     start_time = time.time()
 
