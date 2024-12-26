@@ -2,10 +2,13 @@ import logging
 import sys
 from llama_index.core import (
     VectorStoreIndex,
+    KeywordTableIndex,
     Settings,
     StorageContext,
     SimpleDirectoryReader,
 )
+from llama_index.core.storage.index_store import SimpleIndexStore
+from llama_index.core.storage.docstore import SimpleDocumentStore
 from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
@@ -21,13 +24,13 @@ from sqlalchemy import make_url
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-FILE_DIR = pathlib.Path("./temp/flat")
+FILE_DIR = pathlib.Path("./temp/flat/")
 
 
 def create_db(callback_manager):
-    documents = SimpleDirectoryReader(
-        input_dir="./temp/flat", recursive=True
-    ).load_data(show_progress=True)
+    documents = SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data(
+        show_progress=True
+    )
 
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
@@ -62,14 +65,20 @@ def create_db(callback_manager):
         },
     )
 
-    storage_context = StorageContext.from_defaults(vector_store=vector_store)
-    index = VectorStoreIndex.from_documents(
+    storage_context = StorageContext.from_defaults(
+        vector_store=vector_store,
+    )
+    keyword_index = KeywordTableIndex.from_documents(
+        documents, storage_context=storage_context, show_progress=True
+    )
+    vector_index = VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
         embed_model=embed_model,
         show_progress=True,
     )
-    return index
+
+    storage_context.persist("./index/")
 
 
 if __name__ == "__main__":
@@ -78,6 +87,10 @@ if __name__ == "__main__":
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
     # Set to local llm
-    Settings.llm = Ollama(model="openhermes", request_timeout=500)
+    Settings.llm = Ollama(
+        model="llama3",
+        request_timeout=1000,
+        context_window=8000,
+    )
 
-    index = create_db(callback_manager)
+    create_db(callback_manager)

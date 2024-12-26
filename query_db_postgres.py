@@ -59,7 +59,7 @@ def get_db():
     )
 
     keyword_index = load_index_from_storage(
-        storage_context=storage_context, index_id="bed81a32-6dca-45b0-9534-a44f823a361c"
+        storage_context=storage_context, index_id="f3a8b382-58da-4cf0-b93e-a35a18f54e55"
     )
 
     embed_model = HuggingFaceEmbedding(
@@ -106,19 +106,7 @@ def query_as_engine(index: VectorStoreIndex, query):
     print(response)
 
 
-def keyword_query(query: str):
-    documents = SimpleDirectoryReader(
-        input_dir="./temp/summary/", recursive=True
-    ).load_data(show_progress=True)
-    index = KeywordTableIndex.from_documents(documents)
-    query_engine = index.as_query_engine()
-
-    response = query_engine.query(query)
-
-    print(response)
-
-
-def determine_node_context(node: NodeWithScore, query: str) -> str:
+def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
     """
     Given an input query and a node, determine if the node contains information that will answer the query,
     and extract only the relevant information from this node
@@ -128,7 +116,7 @@ def determine_node_context(node: NodeWithScore, query: str) -> str:
         "Given the context information and prior knowledge, "
         "evalute the context information against the query and determine if there is information that can answer the query."
         "IF so, generate a response that contains only the relevant information from this chunk of text "
-        "in a sentence that will HELP answer the query."
+        "that will HELP answer the query."
         "OTHERWISE, reply with NONE"
         "Context information is below.\n"
         "---------------------\n"
@@ -142,53 +130,48 @@ def determine_node_context(node: NodeWithScore, query: str) -> str:
     response_synthesizer = get_response_synthesizer(
         text_qa_template=qa_prompt, verbose=True
     )
-    response = response_synthesizer.synthesize(query, nodes=[node])
+    response = response_synthesizer.synthesize(query, nodes=nodes)
     return str(response)
 
 
 if __name__ == "__main__":
-    llama_debug = LlamaDebugHandler(print_trace_on_end=True)
-    callback_manager = CallbackManager([llama_debug])
     # Set to local llm
-    # Settings.llm = Ollama(
-    #     model="mistral-nemo", request_timeout=3600, context_window=10000
-    # )
-    Settings.llm = Gemini(
-        model="models/gemini-1.5-flash",
-        api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    Settings.llm = Ollama(
+        model="mistral-nemo", request_timeout=3600, context_window=10000
     )
+    # Settings.llm = Gemini(
+    #     model="models/gemini-1.5-flash",
+    #     api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    # )
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
     )
 
     vector_index, keyword_index = get_db()
 
-    vector_query_engine = vector_index.as_query_engine(
-        vector_store_query_mode="hybrid", sparse_top_k=2, verbose=True
-    )
     vector_retriever = vector_index.as_retriever(
         vector_store_query_mode="hybrid", sparse_top_k=2, verbose=True
     )
-    keyword_query_engine = keyword_index.as_query_engine(verbose=True)
     keyword_retriever = keyword_index.as_retriever(verbose=True)
 
-    query = "What are the blood pressure readings for patients with hypertension?"
+    query = "Which patients have hypertension?"
+    keyword_query = Settings.llm.complete(
+        f"Based on the following query, extract the keywords and output as plaintext, using commas to separate multiple keywords. Query: {query}"
+    ).text
 
-    vector_resp = vector_query_engine.query(query)
+    keyword_nodes = keyword_retriever.retrieve(keyword_query)
+    print(keyword_nodes)
     vector_nodes = vector_retriever.retrieve(query)
+    print(vector_nodes)
 
-    keyword_resp = keyword_query_engine.query(query)
-    keyword_nodes = keyword_retriever.retrieve(query)
-
-    print("Vector engine resp: ", str(vector_resp))
-    print("Vector Nodes:")
-    for node in vector_nodes:
-        print(node)
-
-    print("Keyword engine resp: ", str(keyword_resp))
-    print("keyword nodes:")
-    for node in keyword_nodes:
-        print(node)
+    print(
+        "Extracted Keyword nodes context:\n",
+        determine_nodes_context(keyword_nodes, query),
+    )
+    print(
+        "Extracted Vector nodes context:\n",
+        determine_nodes_context(vector_nodes, query),
+    )
 
     # nodes = retrieve_context(index, query)
     #

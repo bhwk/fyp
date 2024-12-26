@@ -5,16 +5,74 @@ from llama_index.core.callbacks import (
     CallbackManager,
     LlamaDebugHandler,
 )
+from llama_index.core import PromptTemplate
 from llama_index.core.agent import ReActAgent
-from llama_index.core.tools import FunctionTool, QueryEngineTool
+from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
+from llama_index.llms.gemini import Gemini
 from llama_index.vector_stores.postgres import PGVectorStore
 from sqlalchemy import make_url
 
 # Uncomment to see debug logs
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+
+
+query_system_header_str = """\
+
+You are an agent designed to send appropriate queries to a RAG system based on the input query provided to you.\
+You are to determine from the context information retrieved the necessary information required to answer the query,
+and generate a succint summary containing all the information that can answer the query.
+
+## Tools
+You have access to a wide variety of tools. You are responsible for using
+the tools in any sequence you deem appropriate to complete the task at hand.
+This may require breaking the task into subtasks and using different tools
+to complete each subtask.
+
+You have access to the following tools:
+{tool_desc}
+
+## Output Format
+To answer the question, please use the following format.
+
+```
+Thought: I need to use a tool to help me answer the question.
+Action: tool name (one of {tool_names}) if using a tool.
+Action Input: the input to the tool, in a JSON format representing the kwargs (e.g. {{"input": "hello world", "num_beams": 5}})
+```
+
+Please ALWAYS start with a Thought.
+
+Please use a valid JSON format for the Action Input. Do NOT do this {{'input': 'hello world', 'num_beams': 5}}.
+
+If this format is used, the user will respond in the following format:
+
+```
+Observation: tool response
+```
+
+You should keep repeating the above format until you have enough information
+to answer the question without using any more tools. At that point, you MUST respond
+in the one of the following two formats:
+
+```
+Thought: I can answer without using any more tools.
+Answer: [your answer here]
+```
+
+```
+Thought: I cannot answer the question with the provided tools.
+Answer: Sorry, I cannot answer your query.
+```
+
+Determine if your answer can satisfy the query properly. If not, continue repeating the previous instructions.
+Your answer should be in the form of a synthetic summary containing all the information necessary to answer the query.
+
+
+"""
+query_system_prompt = PromptTemplate(query_system_header_str)
 
 
 def get_db():
@@ -52,23 +110,33 @@ if __name__ == "__main__":
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
     # Set to local llm
-    Settings.llm = Ollama(model="mistral-nemo", request_timeout=500)
+    # Settings.llm = Ollama(
+    #     model="mistral-nemo", request_timeout=3600, context_window=10000
+    # )
+
+    Settings.llm = Gemini(
+        model="models/gemini-1.5-flash",
+        api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    )
 
     index = get_db()
     query_engine = index.as_query_engine()
     query_tool = QueryEngineTool.from_defaults(
         query_engine,
-        name="patient_records",
+        name="patient_records_RAG",
         description=(
-            "A RAG engine with patient observations sorted by date."
-            "There is a master record tagged with patient_info that contains information about the patient's conditions and medications"
-            "Use a detailed plain text question as input to the tool."
+            "Provides information about patient readings, medications, conditions, and allergies."
+            "Provides information about patient observations and procedures."
+            "All files are sorted by date."
+            "Use a succinct plain text string as input."
+            "Information that can be queried: Conditions, Medications, Observations, Procedures"
         ),
     )
 
-    agent = ReActAgent.from_tools([query_tool], verbose=True)
+    agent = ReActAgent.from_tools([query_tool], verbose=True)  # type: ignore
+    agent.update_prompts({"agent_worker:system_prompt": query_system_prompt})
 
     response = agent.chat(
-        "Which patients have a history of diabetes? Suggest a care plan for each patient that is still alive."
+        "What are some common risk factors between patients with diabetes?"
     )
     print(response)
