@@ -1,4 +1,5 @@
 # Todo
 
-- [ ] Figure out how to improve zero-shot report generation
-- [ ] Maybe migrate to a structured DB. Use SQL to retrieve context instead of using Vector embeddings since our data is mostly structured.
+- [ ] Use metadata extraction to possibly improve vector search
+- [ ] Find a way to relate synth context to original query without confusing the model
+- [ ] Figure out a workflow for agents, create appropriate functions to carry out retrieval, synth, and response

@@ -1,27 +1,19 @@
 import logging
 import sys
 from llama_index.core import (
-    SimpleDirectoryReader,
     VectorStoreIndex,
-    KeywordTableIndex,
     Settings,
     PromptTemplate,
     StorageContext,
     load_index_from_storage,
     get_response_synthesizer,
 )
+from llama_index.core.indices.base import BaseIndex
+from llama_index.core.storage.docstore.simple_docstore import DocumentStore
 from llama_index.core.storage.index_store import SimpleIndexStore
-from llama_index.core.storage.docstore import SimpleDocumentStore
-from llama_index.core.callbacks import (
-    CallbackManager,
-    LlamaDebugHandler,
-)
-from llama_index.core.response_synthesizers import CompactAndRefine
-from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.schema import NodeWithScore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
-from llama_index.core.retrievers import QueryFusionRetriever
 from llama_index.llms.gemini import Gemini
 from llama_index.vector_stores.postgres import PGVectorStore
 from sqlalchemy import make_url
@@ -53,9 +45,9 @@ def get_db():
         },
     )
     index_store = SimpleIndexStore.from_persist_dir("./index/")
-    document_store = SimpleDocumentStore.from_persist_dir("./index/")
+    docstore = DocumentStore.from_persist_dir("./index/")
     storage_context = StorageContext.from_defaults(
-        vector_store=vector_store, index_store=index_store, docstore=document_store
+        vector_store=vector_store, index_store=index_store, docstore=docstore
     )
 
     keyword_index = load_index_from_storage(
@@ -71,41 +63,6 @@ def get_db():
     return (vector_index, keyword_index)
 
 
-def retrieve_context(index: VectorStoreIndex, query: str) -> List[NodeWithScore]:
-    vector_retriever = index.as_retriever(
-        vector_store_query_mode="default",
-        similarity_top_k=5,
-    )
-    text_retriever = index.as_retriever(
-        vector_store_query_mode="sparse",
-        sparse_top_k=5,  # interchangeable with sparse_top_k in this context
-    )
-    retriever = QueryFusionRetriever(
-        [vector_retriever, text_retriever],
-        similarity_top_k=5,
-        num_queries=1,  # set this to 1 to disable query generation
-        mode="relative_score",  # type: ignore
-        use_async=False,
-    )
-    nodes = retriever.retrieve(str_or_query_bundle=query)
-
-    response_synthesizer = CompactAndRefine()
-    query_engine = RetrieverQueryEngine(
-        retriever=retriever,
-        response_synthesizer=response_synthesizer,
-    )
-    print(query_engine.query(query))
-
-    return nodes
-
-
-def query_as_engine(index: VectorStoreIndex, query):
-    query_engine = index.as_query_engine(similarity_top_k=5)
-    response = query_engine.query(query)
-
-    print(response)
-
-
 def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
     """
     Given an input query and a node, determine if the node contains information that will answer the query,
@@ -115,8 +72,7 @@ def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
         "You will be provided with a chunk of information."
         "Given the context information and prior knowledge, "
         "evalute the context information against the query and determine if there is information that can answer the query."
-        "IF so, generate a response that contains only the relevant information from this chunk of text "
-        "that will HELP answer the query."
+        "IF so, generate a response that contains the relevant information structured such that it answers the query"
         "OTHERWISE, reply with NONE"
         "Context information is below.\n"
         "---------------------\n"
@@ -134,59 +90,92 @@ def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
     return str(response)
 
 
+def retrieve_context(
+    vector_index: VectorStoreIndex, keyword_index: BaseIndex, query: str
+) -> List[NodeWithScore]:
+    """
+    Given an input query, run both semantic and keyword search over the query, returning the most relevant nodes.
+    """
+
+    # create node retrievers
+    vector_retriever = vector_index.as_retriever(
+        vector_store_query_mode="hybrid", sparse_top_k=2, verbose=True
+    )
+    keyword_retriever = keyword_index.as_retriever(verbose=True)
+
+    # use llm to extract keywords from query for better performance
+    extracted_keywords = Settings.llm.complete(
+        f"Based on the following query, extract the keywords and output as plaintext, using commas to separate multiple keywords. Query: {query}"
+    )
+
+    # retrieve nodes
+    vector_nodes: List[NodeWithScore] = vector_retriever.retrieve(query)
+    keyword_nodes: List[NodeWithScore] = keyword_retriever.retrieve(
+        extracted_keywords.text
+    )
+
+    # Return combined list
+    return vector_nodes + keyword_nodes
+
+
+def synthesize_context(query: str, relevant_text: str) -> str:
+    """Given the input context and query, generate synthetic context and query that removes PII"""
+
+    response = Settings.llm.complete(
+        f"""
+        Given the following context information, perform the following operations:
+
+        Anonymization: The patient’s name and any identifying information must be removed or replaced with placeholders (e.g., "[Anonymized]").
+        Clinical Data Requirements:
+            Summarize relevant vitals (e.g., blood pressure, BMI, glucose levels) with appropriate medical context.
+            Round all values.
+        Tone and Clarity:
+            Use formal and professional language. Avoid abbreviations unless they are common medical terms (e.g., "BP" for blood pressure).
+            Write in full sentences, ensuring clarity for medical professionals reviewing the report.
+
+        Formatting:
+            Preserve original form of information presented
+
+        CONTEXT INFORMATION:
+        {relevant_text}
+        QUERY:
+        {query}
+    """
+    )
+
+    return str(response)
+
+
 if __name__ == "__main__":
     # Set to local llm
-    Settings.llm = Ollama(
-        model="mistral-nemo", request_timeout=3600, context_window=10000
-    )
-    # Settings.llm = Gemini(
-    #     model="models/gemini-1.5-flash",
-    #     api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    # Settings.llm = Ollama(
+    #     model="mistral-nemo", request_timeout=3600, context_window=10000
     # )
+    Settings.llm = Gemini(
+        model="models/gemini-1.5-flash",
+        api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    )
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
     )
 
     vector_index, keyword_index = get_db()
 
-    vector_retriever = vector_index.as_retriever(
-        vector_store_query_mode="hybrid", sparse_top_k=2, verbose=True
-    )
-    keyword_retriever = keyword_index.as_retriever(verbose=True)
+    query = "Show me blood pressure readings for Monserrate4_Mills423"
 
-    query = "Which patients have hypertension?"
-    keyword_query = Settings.llm.complete(
-        f"Based on the following query, extract the keywords and output as plaintext, using commas to separate multiple keywords. Query: {query}"
-    ).text
+    context_nodes = retrieve_context(vector_index, keyword_index, query)
 
-    keyword_nodes = keyword_retriever.retrieve(keyword_query)
-    print(keyword_nodes)
-    vector_nodes = vector_retriever.retrieve(query)
-    print(vector_nodes)
+    relevant_text = determine_nodes_context(context_nodes, query)
+    print("Extracted text:\n", relevant_text)
 
-    print(
-        "Extracted Keyword nodes context:\n",
-        determine_nodes_context(keyword_nodes, query),
-    )
-    print(
-        "Extracted Vector nodes context:\n",
-        determine_nodes_context(vector_nodes, query),
-    )
-
-    # nodes = retrieve_context(index, query)
-    #
-    # print(determine_context(query, nodes))
-
-    # synthetic_context = []
-    # for node in nodes:
-    #     print(node)
-    #     synthetic_context.append(determine_node_context(node, query))
-    #
-    # synthetic_context = " ".join(synthetic_context)
-    # print(synthetic_context)
-    #
     # response = Settings.llm.complete(
-    #     f"Based off the following context information, answer the query.CONTEXT:\n{synthetic_context}\nQUERY:\n{query}\nANSWER:\n"
+    #     f"RETRIEVED INFORMATION:{relevant_text}\nQUERY:{query}"
     # )
+    #
+    # print(str(response))
 
-    # print(response)
+    synth_context = synthesize_context(query, relevant_text)
+    print("Synth context:\n", synth_context)
+    synth_response = Settings.llm.complete(f"CONTEXT:{synth_context}\nQUERY:{query}")
+
+    print(str(synth_response))
