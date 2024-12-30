@@ -1,5 +1,6 @@
 import logging
 import sys
+import nltk
 from llama_index.core import (
     VectorStoreIndex,
     KeywordTableIndex,
@@ -7,6 +8,8 @@ from llama_index.core import (
     StorageContext,
     SimpleDirectoryReader,
 )
+from llama_index.extractors.entity import EntityExtractor
+from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core.storage.index_store import SimpleIndexStore
 from llama_index.core.storage.docstore import SimpleDocumentStore
 from llama_index.core.callbacks import (
@@ -25,6 +28,8 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 FILE_DIR = pathlib.Path("./temp/flat/")
+
+nltk.download("punkt_tab")
 
 
 def create_db(callback_manager):
@@ -68,14 +73,19 @@ def create_db(callback_manager):
     storage_context = StorageContext.from_defaults(
         vector_store=vector_store,
     )
-    keyword_index = KeywordTableIndex.from_documents(
-        documents, storage_context=storage_context, show_progress=True
-    )
     vector_index = VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
         embed_model=embed_model,
         show_progress=True,
+        transformations=[
+            SentenceSplitter(chunk_size=1024),
+            EntityExtractor(prediction_threshold=0.5, device="cuda"),
+        ],
+    )
+
+    keyword_index = KeywordTableIndex.from_documents(
+        documents, storage_context=storage_context, show_progress=True
     )
 
     storage_context.persist("./index/")
@@ -90,7 +100,7 @@ if __name__ == "__main__":
     Settings.llm = Ollama(
         model="llama3",
         request_timeout=1000,
-        context_window=8000,
+        context_window=3000,
     )
 
     create_db(callback_manager)
