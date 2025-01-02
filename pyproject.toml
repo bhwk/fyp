@@ -25,3 +25,26 @@ executionEnvironments = [
   ] },
   { root = "src" },
 ]
+
+[tool.poetry]
+name = "fyp"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+tokenizers = "^0.21.0"
+llama-index-embeddings-huggingface = "^0.4.0"
+llama-index-llms-ollama = "^0.5.0"
+llama-index-llms-gemini = "^0.4.2"
+llama-index-vector-stores-postgres = "^0.4.1"
+pyright = "^1.1.391"
+llama-index-readers-file = "^0.4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
