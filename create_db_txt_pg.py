@@ -8,8 +8,6 @@ from llama_index.core import (
     StorageContext,
     SimpleDirectoryReader,
 )
-from llama_index.extractors.entity import EntityExtractor
-from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core.storage.index_store import SimpleIndexStore
 from llama_index.core.storage.docstore import SimpleDocumentStore
 from llama_index.core.callbacks import (
@@ -78,10 +76,6 @@ def create_db(callback_manager):
         storage_context=storage_context,
         embed_model=embed_model,
         show_progress=True,
-        transformations=[
-            SentenceSplitter(chunk_size=1024),
-            EntityExtractor(prediction_threshold=0.5, device="cuda"),
-        ],
     )
 
     keyword_index = KeywordTableIndex.from_documents(

@@ -22,6 +22,10 @@ from llama_index.llms.gemini import Gemini
 from llama_index.vector_stores.postgres import PGVectorStore
 from sqlalchemy import make_url
 from typing import List
+import json
+
+from llama_index.core.tools import FunctionTool
+from llama_index.core.agent import ReActAgent
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
@@ -54,8 +58,15 @@ def get_db():
         vector_store=vector_store, index_store=index_store, docstore=docstore
     )
 
+    keyword_index_id = ""
+    with open("./index/index_store.json") as f:
+        data = json.load(f)
+        for key in data["index_store/data"].keys():
+            if data["index_store/data"][key]["__type__"] == "keyword_table":
+                keyword_index_id = key
+
     keyword_index = load_index_from_storage(
-        storage_context=storage_context, index_id="af9d3fe5-e4fb-48f6-bc54-f9b5cab1454d"
+        storage_context=storage_context, index_id=keyword_index_id
     )
 
     embed_model = HuggingFaceEmbedding(
@@ -69,7 +80,11 @@ def get_db():
 
 def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
     """
-    Given an input query and a list of nodes, extract only the relevant information from each node that will answer the query.
+    nodes: List[NodeWithScore]
+    query: str
+
+    Function takes in a list of NodeWithScore, and an input query.
+    Using the input query, function will extract information that will answer the query from nodes, and collate them into a response.
     """
     qa_prompt_tmpl = (
         "You will be provided with a chunk of information."
@@ -121,7 +136,11 @@ def retrieve_context(query: str) -> List[NodeWithScore]:
 
 def search_for_patient_observations(patient_name: str, query: str):
     """
-    Takes in an input query to search for observations (e.g. blood pressure, glucose levels, etc.). Matches retrieved nodes to patient_name, and returns nodes that contain the patient's name.
+    patient_name: Name of the patient.
+    query: Information to search for. Include the patient's name in the query.
+
+    Takes in an input query to search for observations (e.g. blood pressure, glucose levels, etc.). Matches 25 retrieved nodes to patient_name, and returns nodes that contain the patient's name. Include the patient's name in the query.
+    Will call determine_node_context, and returns the response of the function.
     """
 
     vector_retriever = VECTOR_INDEX.as_retriever(
@@ -132,9 +151,9 @@ def search_for_patient_observations(patient_name: str, query: str):
 
     filtered_nodes = list(filter(lambda node: patient_name in node.text, nodes))
 
-    postprocessor = SimilarityPostprocessor(similarity_cutoff=0.5)
+    context_nodes = determine_nodes_context(filtered_nodes, query)
 
-    return postprocessor.postprocess_nodes(filtered_nodes)
+    return context_nodes
 
 
 def synthesize_content(query: str, relevant_text: str) -> str:
@@ -189,24 +208,41 @@ def search_for_patients_with_specified_condition(condition: str) -> List[NodeWit
 
 if __name__ == "__main__":
     # Set to local llm
-    # Settings.llm = Ollama(
-    #     model="mistral-nemo", request_timeout=3600, context_window=10000
-    # )
-    Settings.llm = Gemini(
-        model="models/gemini-1.5-flash",
-        api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    Settings.llm = Ollama(
+        model="mistral-nemo", request_timeout=3600, context_window=10000
     )
+    # Settings.llm = Gemini(
+    #     model="models/gemini-1.5-flash",
+    #     api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
+    # )
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
     )
 
     VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
-    query = "What do blood pressure readings for Monserrate4_Mills423 look like?"
+    query = "What do blood pressure readings for Monserrate4 Mills423 look like?"
 
-    condition_nodes = search_for_patients_with_specified_condition("hypertension")
-    print(len(condition_nodes))
-    print(condition_nodes)
+    search_for_patients_with_condition_tool = FunctionTool.from_defaults(
+        fn=search_for_patients_with_specified_condition
+    )
+    search_for_patient_observations_tool = FunctionTool.from_defaults(
+        fn=search_for_patient_observations
+    )
+
+    determine_node_context_tool = FunctionTool.from_defaults(fn=determine_nodes_context)
+
+    agent = ReActAgent.from_tools(
+        [
+            search_for_patients_with_condition_tool,
+            search_for_patient_observations_tool,
+            determine_node_context_tool,
+        ],
+        verbose=True,
+    )
+
+    response = agent.chat(query)
+    print(response)
 
     # llm_planning = Settings.llm.complete(f"""
     # Given the following query, think step by step and break it down into steps on how you would answer it.
