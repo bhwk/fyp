@@ -8,10 +8,6 @@ from llama_index.core import (
     load_index_from_storage,
     get_response_synthesizer,
 )
-from llama_index.core.postprocessor import (
-    KeywordNodePostprocessor,
-    SimilarityPostprocessor,
-)
 from llama_index.core.indices.base import BaseIndex
 from llama_index.core.storage.docstore.simple_docstore import DocumentStore
 from llama_index.core.storage.index_store import SimpleIndexStore
