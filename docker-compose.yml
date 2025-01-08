@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vector_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ollama-docker
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    depends_on:
+      - postgres
+    ports:
+      - "7869:11434" # Adjust based on Ollama's API port
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/vector_db
+    volumes:
+      - ollama_data:/data
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/usr/bin/bash", "/entrypoint.sh"]
+    networks:
+      - ollama-docker
+
+  dev-container:
+    build:
+      context: .
+      dockerfile: ./dev-container.dockerfile
+    container_name: dev-container
+    volumes:
+      - ./src/:/workspace
+    depends_on:
+      - postgres
+      - ollama
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/vector_db
+
+volumes:
+  postgres_data:
+  ollama_data:
+
+networks:
+  ollama-docker:
+    external: false
