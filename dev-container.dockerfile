@@ -14,8 +14,6 @@ RUN python3 -m venv $POETRY_VENV \
 ENV PATH="${PATH}:${POETRY_VENV}/bin"
 
 WORKDIR /workspace
-
-COPY poetry.lock pyproject.toml ./
 RUN poetry install
 
 CMD ["bash"]

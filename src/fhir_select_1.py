@@ -19,13 +19,13 @@ FLAT_FILE_PATH = "./temp/flat"
 BUNDLE_DIR = pathlib.Path("./fhir/")
 
 
-async def load_bundle(bundle_path):
+async def load_bundle(bundle_path: pathlib.Path):
     async with aiofiles.open(bundle_path, mode="r") as f:
         content = await f.read()
         return json.loads(content)
 
 
-async def process_bundle(bundle_path):
+async def process_bundle(bundle_path: pathlib.Path):
     file_name = bundle_path.stem
 
     if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):

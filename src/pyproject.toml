@@ -8,7 +8,8 @@ exclude = [
 ]
 ignore = ["src/oldstuff"]
 defineConstant = { DEBUG = true }
-stubPath = "src/stubs"
+
+typeCheckingMode = "basic"
 
 reportMissingImports = "error"
 reportMissingTypeStubs = false
@@ -43,6 +44,8 @@ llama-index-llms-gemini = "^0.4.2"
 llama-index-vector-stores-postgres = "^0.4.1"
 pyright = "^1.1.391"
 llama-index-readers-file = "^0.4.1"
+llama-index = "^0.12.10"
+aiofiles = "^24.1.0"
 
 
 [build-system]
