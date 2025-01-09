@@ -8,13 +8,6 @@ import time
 from datetime import datetime
 from llama_index.llms.ollama import Ollama
 
-llm = Ollama(
-    model="phi3.5",
-    request_timeout=1000,
-    context_window=10000,
-    additional_kwargs={"top_k": 10},
-)
-
 FLAT_FILE_PATH = "./temp/flat"
 BUNDLE_DIR = pathlib.Path("./fhir/")
 

@@ -1,5 +1,6 @@
 import logging
 import sys
+import os
 import nltk
 from llama_index.core import (
     VectorStoreIndex,
@@ -91,8 +92,10 @@ if __name__ == "__main__":
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
     callback_manager = CallbackManager([llama_debug])
     # Set to local llm
+
     Settings.llm = Ollama(
         model="llama3",
+        base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
         request_timeout=1000,
         context_window=3000,
     )

@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: vector_db
     ports:
-      - "5432:5432"
+      - "8000:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -36,13 +36,14 @@ services:
     container_name: dev-container
     networks:
       - ollama-docker
-    volumes:
-      - ./src/:/workspace
     depends_on:
       - postgres
       - ollama
     environment:
       DATABASE_URL: postgres://postgres:password@postgres:5432/vector_db
+      OLLAMA_URL: http://ollama:11434
+    volumes:
+      - ./src/:/workspace/src
     tty: true
 
 volumes:

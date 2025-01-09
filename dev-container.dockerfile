@@ -1,19 +1,17 @@
 FROM python:3.12
 
-# Configure poetry version
-ENV POETRY_VERSION=2.0.0
-ENV POETRY_HOME=/opt/poetry
-ENV POETRY_VENV=/opt/poetry-venv
-ENV POETRY_CACHE_DIR=/opt/.cache
+RUN apt-get update && apt-get install -y \
+    python3 python3-pip curl \
+    && apt-get clean
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
-# Install poetry separate from interpreter
-RUN python3 -m venv $POETRY_VENV \
-    && $POETRY_VENV/bin/pip install -U pip setuptools \
-    && $POETRY_VENV/bin/pip install poetry==${POETRY_VERSION}
-
-ENV PATH="${PATH}:${POETRY_VENV}/bin"
+# Add poetry to path
+ENV PATH="/root/.local/bin:$PATH"
 
 WORKDIR /workspace
+COPY ./src/poetry.lock ./src/poetry.lock
+COPY ./src/pyproject.toml ./src/pyproject.toml
+WORKDIR /workspace/src
 RUN poetry install
 
 CMD ["bash"]

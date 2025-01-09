@@ -1,5 +1,6 @@
 import logging
 import sys
+import os
 from llama_index.core import (
     VectorStoreIndex,
     Settings,
@@ -28,12 +29,11 @@ logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 
 def get_db():
-    connection_string = "postgresql://postgres:password@localhost:5432"
-    db_name = "vector_db"
-    url = make_url(connection_string)
+    connection_string = os.environ.get("DATABASE_URL")
+    url = make_url(connection_string)  # pyright: ignore[]
 
     vector_store = PGVectorStore.from_params(
-        database=db_name,
+        database=url.database,
         host=url.host,
         password=url.password,
         port=url.port,  # type: ignore
@@ -205,7 +205,10 @@ def search_for_patients_with_specified_condition(condition: str) -> List[NodeWit
 if __name__ == "__main__":
     # Set to local llm
     Settings.llm = Ollama(
-        model="mistral-nemo", request_timeout=3600, context_window=10000
+        model="mistral-nemo",
+        request_timeout=3600,
+        context_window=10000,
+        base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
     )
     # Settings.llm = Gemini(
     #     model="models/gemini-1.5-flash",
