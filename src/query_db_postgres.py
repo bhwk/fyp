@@ -9,13 +9,11 @@ from llama_index.core import (
     load_index_from_storage,
     get_response_synthesizer,
 )
-from llama_index.core.indices.base import BaseIndex
 from llama_index.core.storage.docstore.simple_docstore import DocumentStore
 from llama_index.core.storage.index_store import SimpleIndexStore
 from llama_index.core.schema import NodeWithScore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
-from llama_index.llms.gemini import Gemini
 from llama_index.vector_stores.postgres import PGVectorStore
 from sqlalchemy import make_url
 from typing import List
@@ -24,8 +22,8 @@ import json
 from llama_index.core.tools import FunctionTool
 from llama_index.core.agent import ReActAgent
 
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+# logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 
 def get_db():
@@ -64,12 +62,8 @@ def get_db():
     keyword_index = load_index_from_storage(
         storage_context=storage_context, index_id=keyword_index_id
     )
-
-    embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5",
-    )
     vector_index = VectorStoreIndex.from_vector_store(
-        vector_store=vector_store, embed_model=embed_model
+        vector_store=vector_store
     )
     return (vector_index, keyword_index)
 
@@ -191,7 +185,7 @@ def search_for_patients_with_specified_condition(condition: str) -> List[NodeWit
     Takes in an input string of specific condition name to look up. Returns a list of 10 patient nodes that contain the condition name.
     """
     keyword_retriever = KEYWORD_INDEX.as_retriever(
-        verbose=True, retriever_mode="Simple"
+        verbose=True, retriever_mode="simple"
     )
     nodes = keyword_retriever.retrieve(condition)
 
@@ -199,7 +193,7 @@ def search_for_patients_with_specified_condition(condition: str) -> List[NodeWit
 
     filtered_nodes = list(filter(lambda node: condition in node.text, nodes))
 
-    return filtered_nodes
+    return determine_nodes_context(filtered_nodes)
 
 
 if __name__ == "__main__":
@@ -207,20 +201,15 @@ if __name__ == "__main__":
     Settings.llm = Ollama(
         model="mistral-nemo",
         request_timeout=3600,
-        context_window=10000,
+        context_window=16000,
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
     )
-    # Settings.llm = Gemini(
-    #     model="models/gemini-1.5-flash",
-    #     api_key="AIzaSyBoOaUIrtSIemKQROi7IFijhG-2CDN-AIA",
-    # )
     Settings.embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5",
+        model_name="./bge-base-en-v1.5",
     )
 
     VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
-    query = "What do blood pressure readings for Monserrate4 Mills423 look like?"
 
     search_for_patients_with_condition_tool = FunctionTool.from_defaults(
         fn=search_for_patients_with_specified_condition
@@ -240,7 +229,8 @@ if __name__ == "__main__":
         verbose=True,
     )
 
-    response = agent.chat(query)
+    query = "Which patients have diabetes?"
+    response = agent.chat(f"{query}")
     print(response)
 
     # llm_planning = Settings.llm.complete(f"""

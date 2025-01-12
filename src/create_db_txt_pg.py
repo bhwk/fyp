@@ -28,32 +28,29 @@ logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 FILE_DIR = pathlib.Path("./temp/flat/")
 
-nltk.download("punkt_tab")
-
-
 def create_db(callback_manager):
+    embed_model = HuggingFaceEmbedding(
+        model_name="./bge-base-en-v1.5",
+        embed_batch_size=100,
+    )
+
     documents = SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data(
         show_progress=True
     )
 
-    embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5",
-        parallel_process=True,
-        embed_batch_size=100,
-    )
-
-    connection_string = "postgresql://postgres:password@localhost:5432"
-    db_name = "vector_db"
+    connection_string = "postgresql://postgres:password@postgres:5432"
     conn = psycopg2.connect(connection_string)
     conn.autocommit = True
 
-    with conn.cursor() as c:
-        c.execute(f"DROP DATABASE IF EXISTS {db_name}")
-        c.execute(f"CREATE DATABASE {db_name}")
-
+    connection_string = os.environ.get("DATABASE_URL")
     url = make_url(connection_string)
+
+    with conn.cursor() as c:
+        c.execute(f"DROP DATABASE IF EXISTS {url.database}")
+        c.execute(f"CREATE DATABASE {url.database}")
+
     vector_store = PGVectorStore.from_params(
-        database=db_name,
+        database=url.database,
         host=url.host,
         password=url.password,
         port=url.port,  # type: ignore
@@ -94,10 +91,10 @@ if __name__ == "__main__":
     # Set to local llm
 
     Settings.llm = Ollama(
-        model="llama3",
+        model="mistral-nemo",
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
         request_timeout=1000,
-        context_window=3000,
+        context_window=8000,
     )
 
     create_db(callback_manager)
