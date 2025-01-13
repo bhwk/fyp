@@ -1,6 +1,13 @@
 import logging
 import sys
 import os
+from custom_retriever import CustomRetriever
+from llama_index.core.query_engine import RetrieverQueryEngine
+from llama_index.core.retrievers import (
+    VectorIndexRetriever,
+    KeywordTableSimpleRetriever,
+)
+from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.core import (
     VectorStoreIndex,
     Settings,
@@ -62,9 +69,7 @@ def get_db():
     keyword_index = load_index_from_storage(
         storage_context=storage_context, index_id=keyword_index_id
     )
-    vector_index = VectorStoreIndex.from_vector_store(
-        vector_store=vector_store
-    )
+    vector_index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
     return (vector_index, keyword_index)
 
 
@@ -180,9 +185,9 @@ def synthesize_content(query: str, relevant_text: str) -> str:
     return str(response)
 
 
-def search_for_patients_with_specified_condition(condition: str) -> List[NodeWithScore]:
+def search_for_patients_with_specified_condition(query: str, condition: str) -> str:
     """
-    Takes in an input string of specific condition name to look up. Returns a list of 10 patient nodes that contain the condition name.
+    Takes in an input string of specific condition name to look up.
     """
     keyword_retriever = KEYWORD_INDEX.as_retriever(
         verbose=True, retriever_mode="simple"
@@ -193,15 +198,19 @@ def search_for_patients_with_specified_condition(condition: str) -> List[NodeWit
 
     filtered_nodes = list(filter(lambda node: condition in node.text, nodes))
 
-    return determine_nodes_context(filtered_nodes)
+    response_synth = get_response_synthesizer()
+
+    response = response_synth.synthesize(query_str=query, nodes=filtered_nodes)
+
+    return str(response)
 
 
 if __name__ == "__main__":
     # Set to local llm
     Settings.llm = Ollama(
-        model="mistral-nemo",
+        model="qwq",
         request_timeout=3600,
-        context_window=16000,
+        context_window=32000,
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
     )
     Settings.embed_model = HuggingFaceEmbedding(
@@ -209,7 +218,6 @@ if __name__ == "__main__":
     )
 
     VECTOR_INDEX, KEYWORD_INDEX = get_db()
-
 
     search_for_patients_with_condition_tool = FunctionTool.from_defaults(
         fn=search_for_patients_with_specified_condition
@@ -220,35 +228,32 @@ if __name__ == "__main__":
 
     determine_node_context_tool = FunctionTool.from_defaults(fn=determine_nodes_context)
 
-    agent = ReActAgent.from_tools(
-        [
-            search_for_patients_with_condition_tool,
-            search_for_patient_observations_tool,
-            determine_node_context_tool,
-        ],
-        verbose=True,
+    vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, similarity_top_k=10)
+    keyword_retriever = KeywordTableSimpleRetriever(index=KEYWORD_INDEX)
+
+    custom_retriever = CustomRetriever(
+        vector_retriever=vector_retriever,
+        keyword_retriever=keyword_retriever,
+        mode="OR",
+    )
+    response_synth = get_response_synthesizer()
+
+    custom_query_engine = RetrieverQueryEngine(
+        retriever=custom_retriever, response_synthesizer=response_synth
     )
 
+    retrieve_tool = QueryEngineTool(
+        query_engine=custom_query_engine,
+        metadata=ToolMetadata(
+            name="retrieve_patient_information",
+            description="""A tool for running keyword and semantic search for information about patients.
+                                         Only contains patient information on a local database.""",
+        ),
+    )
+
+    agent = ReActAgent.from_tools(tools=[retrieve_tool], verbose=True)
     query = "Which patients have diabetes?"
-    response = agent.chat(f"{query}")
-    print(response)
 
-    # llm_planning = Settings.llm.complete(f"""
-    # Given the following query, think step by step and break it down into steps on how you would answer it.
-    #
-    # You have access to the following tools:
-    # - search_for_condition(condition: str) -> List[NodeWithScore]: Takes in an input string of condition name to look up. Returns a list of patient nodes that contain the condition name.
-    # - retrieve_context: Given an input query, run both semantic and keyword search over the query, returning the most relevant nodes. May not return all nodes that contain the right information.
-    # - determine_nodes_context(nodes: List[NodeWithScore], query: str): Given an input query and a list of nodes, extract only the relevant information from each node that will answer the query.
-    #
-    # Make use of all tools you have to answer the query.
-    #
-    # Do not explain your steps. Output in the following format:
-    # Step 1: ---
-    # Step 2: ---
-    # ... and so on.
-    #
-    # Query: {query}
-    # """)
+    response = agent.chat(query)
 
-    # print(llm_planning.text)
+    print(str(response))
