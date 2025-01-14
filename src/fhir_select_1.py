@@ -88,7 +88,7 @@ async def process_bundle(bundle_path: pathlib.Path):
     ) as out:
         patient_info = patient_object["patient_info"]
 
-        patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} Deceased: {patient_info["deceased"]} MaritalStatus: {patient_info["maritalStatus"]}"
+        patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} " + ("Alive " if patient_info["deceased"] is False else "Deceased " ) + f"MaritalStatus: {patient_info["maritalStatus"]}"
 
         combined_conditions = " ".join(patient_info["conditions"])
         combined_medications = " ".join(patient_info["medications"])

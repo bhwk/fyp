@@ -91,7 +91,7 @@ if __name__ == "__main__":
     # Set to local llm
 
     Settings.llm = Ollama(
-        model="mistral-nemo",
+        model="qwq",
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
         request_timeout=1000,
         context_window=8000,

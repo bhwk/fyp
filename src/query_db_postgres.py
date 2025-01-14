@@ -2,7 +2,8 @@ import logging
 import sys
 import os
 from custom_retriever import CustomRetriever
-from llama_index.core.query_engine import RetrieverQueryEngine
+from llama_index.core.query_engine import RetrieverQueryEngine, SubQuestionQueryEngine
+from llama_index.core.tools import QueryPlanTool
 from llama_index.core.retrievers import (
     VectorIndexRetriever,
     KeywordTableSimpleRetriever,
@@ -27,7 +28,7 @@ from typing import List
 import json
 
 from llama_index.core.tools import FunctionTool
-from llama_index.core.agent import ReActAgent
+from llama_index.core.agent import ReActAgent, StructuredPlannerAgent, FunctionCallingAgentWorker, ReActAgentWorker
 
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
@@ -69,7 +70,9 @@ def get_db():
     keyword_index = load_index_from_storage(
         storage_context=storage_context, index_id=keyword_index_id
     )
-    vector_index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
+    vector_index = VectorStoreIndex.from_vector_store(
+        vector_store=vector_store
+    )
     return (vector_index, keyword_index)
 
 
@@ -187,7 +190,7 @@ def synthesize_content(query: str, relevant_text: str) -> str:
 
 def search_for_patients_with_specified_condition(query: str, condition: str) -> str:
     """
-    Takes in an input string of specific condition name to look up.
+    Takes in an input string of specific condition name to look up. 
     """
     keyword_retriever = KEYWORD_INDEX.as_retriever(
         verbose=True, retriever_mode="simple"
@@ -205,6 +208,7 @@ def search_for_patients_with_specified_condition(query: str, condition: str) -> 
     return str(response)
 
 
+
 if __name__ == "__main__":
     # Set to local llm
     Settings.llm = Ollama(
@@ -219,6 +223,7 @@ if __name__ == "__main__":
 
     VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
+
     search_for_patients_with_condition_tool = FunctionTool.from_defaults(
         fn=search_for_patients_with_specified_condition
     )
@@ -228,32 +233,42 @@ if __name__ == "__main__":
 
     determine_node_context_tool = FunctionTool.from_defaults(fn=determine_nodes_context)
 
-    vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, similarity_top_k=10)
+    vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, vector_store_query_mode="hybrid", sparse_top_k=10)
     keyword_retriever = KeywordTableSimpleRetriever(index=KEYWORD_INDEX)
 
-    custom_retriever = CustomRetriever(
-        vector_retriever=vector_retriever,
-        keyword_retriever=keyword_retriever,
-        mode="OR",
-    )
+
+
+
+    custom_retriever = CustomRetriever(vector_retriever=vector_retriever, keyword_retriever=keyword_retriever, mode="OR")
+
     response_synth = get_response_synthesizer()
 
-    custom_query_engine = RetrieverQueryEngine(
-        retriever=custom_retriever, response_synthesizer=response_synth
-    )
+    custom_query_engine = RetrieverQueryEngine(retriever=custom_retriever, response_synthesizer=response_synth)
+    condition_query_engine = RetrieverQueryEngine(retriever=keyword_retriever, response_synthesizer=response_synth)
 
-    retrieve_tool = QueryEngineTool(
-        query_engine=custom_query_engine,
-        metadata=ToolMetadata(
-            name="retrieve_patient_information",
-            description="""A tool for running keyword and semantic search for information about patients.
-                                         Only contains patient information on a local database.""",
-        ),
-    )
+    retrieve_tool = QueryEngineTool(query_engine=custom_query_engine, 
+                               metadata= ToolMetadata(
+                                         name="retrieve_patient_information",
+                                         description="""A tool for running keyword and semantic search for information about patients.
+                                         Only contains patient information on a local database."""))
 
-    agent = ReActAgent.from_tools(tools=[retrieve_tool], verbose=True)
-    query = "Which patients have diabetes?"
+    search_condition_tool = QueryEngineTool(query_engine=condition_query_engine,
+                                            metadata = ToolMetadata(
+                                                name ="search_medical_condition",
+                                                description="""A tool to search for patients with the specified medical condition."""
+                                            ))
+    
 
+    query_engine = SubQuestionQueryEngine.from_defaults(query_engine_tools=[retrieve_tool, search_condition_tool])
+    search_tool = QueryEngineTool(query_engine=query_engine,
+                                  metadata=ToolMetadata(
+                                      name="complex_query_search",
+                                      description="""A tool to break down queries in sub-queries and solve step-by-step. 
+                                      Has access to other query engines that contain patient information."""
+                                  ))
+
+    agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool], verbose =True)
+    query = "Which patients have hypertension? What do their blood pressure readings look like?"
     response = agent.chat(query)
 
-    print(str(response))
+    # print(str(response))
