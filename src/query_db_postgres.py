@@ -1,9 +1,6 @@
-import logging
-import sys
 import os
 from custom_retriever import CustomRetriever
 from llama_index.core.query_engine import RetrieverQueryEngine, SubQuestionQueryEngine
-from llama_index.core.tools import QueryPlanTool
 from llama_index.core.retrievers import (
     VectorIndexRetriever,
     KeywordTableSimpleRetriever,
@@ -19,16 +16,12 @@ from llama_index.core import (
 )
 from llama_index.core.storage.docstore.simple_docstore import DocumentStore
 from llama_index.core.storage.index_store import SimpleIndexStore
-from llama_index.core.schema import NodeWithScore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
 from llama_index.vector_stores.postgres import PGVectorStore
+from llama_index.core.agent import ReActAgent
 from sqlalchemy import make_url
-from typing import List
 import json
-
-from llama_index.core.tools import FunctionTool
-from llama_index.core.agent import ReActAgent, StructuredPlannerAgent, FunctionCallingAgentWorker, ReActAgentWorker
 
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
@@ -76,84 +69,6 @@ def get_db():
     return (vector_index, keyword_index)
 
 
-def determine_nodes_context(nodes: List[NodeWithScore], query: str) -> str:
-    """
-    nodes: List[NodeWithScore]
-    query: str
-
-    Function takes in a list of NodeWithScore, and an input query.
-    Using the input query, function will extract information that will answer the query from nodes, and collate them into a response.
-    """
-    qa_prompt_tmpl = (
-        "You will be provided with a chunk of information."
-        "Given the context information and prior knowledge, "
-        "evalute the context information against the query and determine if there is information that can answer the query."
-        "IF so, generate a response that contains the relevant information structured such that it answers the query"
-        "OTHERWISE, reply with NONE"
-        "Context information is below.\n"
-        "---------------------\n"
-        "{context_str}\n"
-        "---------------------\n"
-        "Query: {query_str}\n"
-        "Answer: "
-    )
-    qa_prompt = PromptTemplate(qa_prompt_tmpl)
-
-    response_synthesizer = get_response_synthesizer(
-        text_qa_template=qa_prompt, verbose=True
-    )
-    response = response_synthesizer.synthesize(query, nodes=nodes)
-    return str(response)
-
-
-def retrieve_context(query: str) -> List[NodeWithScore]:
-    """
-    Given an input query, run both semantic and keyword search over the query, returning the most relevant nodes.
-    """
-
-    # create node retrievers
-    vector_retriever = VECTOR_INDEX.as_retriever(
-        vector_store_query_mode="hybrid", sparse_top_k=2, verbose=True
-    )
-    keyword_retriever = KEYWORD_INDEX.as_retriever(verbose=True)
-
-    # use llm to extract keywords from query for better performance
-    extracted_keywords = Settings.llm.complete(
-        f"Based on the following query, extract the keywords and output as plaintext, using commas to separate multiple keywords. Query: {query}"
-    )
-
-    # retrieve nodes
-    vector_nodes: List[NodeWithScore] = vector_retriever.retrieve(query)
-    keyword_nodes: List[NodeWithScore] = keyword_retriever.retrieve(
-        extracted_keywords.text
-    )
-
-    # Return combined list
-    return vector_nodes + keyword_nodes
-
-
-def search_for_patient_observations(patient_name: str, query: str):
-    """
-    patient_name: Name of the patient.
-    query: Information to search for. Include the patient's name in the query.
-
-    Takes in an input query to search for observations (e.g. blood pressure, glucose levels, etc.). Matches 25 retrieved nodes to patient_name, and returns nodes that contain the patient's name. Include the patient's name in the query.
-    Will call determine_node_context, and returns the response of the function.
-    """
-
-    vector_retriever = VECTOR_INDEX.as_retriever(
-        vector_store_query_mode="hybrid", sparse_top_k="25", verbose=True
-    )
-
-    nodes: List[NodeWithScore] = vector_retriever.retrieve(query)
-
-    filtered_nodes = list(filter(lambda node: patient_name in node.text, nodes))
-
-    context_nodes = determine_nodes_context(filtered_nodes, query)
-
-    return context_nodes
-
-
 def synthesize_content(query: str, relevant_text: str) -> str:
     """Given the input context and query, generate synthetic context and query that removes PII"""
 
@@ -188,34 +103,17 @@ def synthesize_content(query: str, relevant_text: str) -> str:
     return str(response)
 
 
-def search_for_patients_with_specified_condition(query: str, condition: str) -> str:
-    """
-    Takes in an input string of specific condition name to look up. 
-    """
-    keyword_retriever = KEYWORD_INDEX.as_retriever(
-        verbose=True, retriever_mode="simple"
-    )
-    nodes = keyword_retriever.retrieve(condition)
-
-    print(nodes)
-
-    filtered_nodes = list(filter(lambda node: condition in node.text, nodes))
-
-    response_synth = get_response_synthesizer()
-
-    response = response_synth.synthesize(query_str=query, nodes=filtered_nodes)
-
-    return str(response)
-
 
 
 if __name__ == "__main__":
     # Set to local llm
     Settings.llm = Ollama(
-        model="qwq",
+        model="qwen2.5:32b",
         request_timeout=3600,
         context_window=32000,
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
+        temperature=0.7,
+        additional_kwargs={"top_k": 20, "top_p": 0.8}
     )
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="./bge-base-en-v1.5",
@@ -224,33 +122,53 @@ if __name__ == "__main__":
     VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
 
-    search_for_patients_with_condition_tool = FunctionTool.from_defaults(
-        fn=search_for_patients_with_specified_condition
-    )
-    search_for_patient_observations_tool = FunctionTool.from_defaults(
-        fn=search_for_patient_observations
-    )
-
-    determine_node_context_tool = FunctionTool.from_defaults(fn=determine_nodes_context)
-
     vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, vector_store_query_mode="hybrid", sparse_top_k=10)
     keyword_retriever = KeywordTableSimpleRetriever(index=KEYWORD_INDEX)
-
-
-
 
     custom_retriever = CustomRetriever(vector_retriever=vector_retriever, keyword_retriever=keyword_retriever, mode="OR")
 
     response_synth = get_response_synthesizer()
 
-    custom_query_engine = RetrieverQueryEngine(retriever=custom_retriever, response_synthesizer=response_synth)
-    condition_query_engine = RetrieverQueryEngine(retriever=keyword_retriever, response_synthesizer=response_synth)
+    qa_prompt_template = (
+        """Context information is below.
+        -------
+        {context_str}
+        -------
+        Given the context information and not prior knowledge,
+        answer the query.
+        Ensure that your answer is concise, and does not include explanations.
+        Query: {query_str}
+        Answer: """
+        )
+    qa_prompt = PromptTemplate(qa_prompt_template)
 
-    retrieve_tool = QueryEngineTool(query_engine=custom_query_engine, 
+    refine_prompt_template = (
+        """The original query is as follows: {query_str}
+        We have provided an existing answer. {existing_answer}
+        We have the opportunity to refine the existing answer (if needed) with more context below.
+        ------
+        {context_msg}
+        ------
+        Given the new context, refine the existing answer to better answer the query.
+        If the context is not useful, return the original answer.
+        Ensure that your answer is concise.
+        Refined answer: """
+    )
+
+    refine_prompt = PromptTemplate(refine_prompt_template)
+
+    custom_synth = get_response_synthesizer(text_qa_template=qa_prompt, refine_template=refine_prompt)
+
+    readings_query_engine = RetrieverQueryEngine(retriever = vector_retriever, response_synthesizer=custom_synth)
+    condition_query_engine = RetrieverQueryEngine(retriever=keyword_retriever, response_synthesizer=custom_synth)
+
+    retrieve_tool = QueryEngineTool(query_engine=readings_query_engine, 
                                metadata= ToolMetadata(
-                                         name="retrieve_patient_information",
-                                         description="""A tool for running keyword and semantic search for information about patients.
-                                         Only contains patient information on a local database."""))
+                                         name="retrieve_patient_medical_readings",
+                                         description="""A tool for running semantic search for information about patients.
+                                         Only contains patient information on a local database.
+                                         Information consists of medical observations.
+                                         Specifying a patient's name is optional. (e.g. glucose readings for [patient])"""))
 
     search_condition_tool = QueryEngineTool(query_engine=condition_query_engine,
                                             metadata = ToolMetadata(
@@ -268,7 +186,7 @@ if __name__ == "__main__":
                                   ))
 
     agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool], verbose =True)
-    query = "Which patients have hypertension? What do their blood pressure readings look like?"
+    query = "Which patients have hypertension? What are their blood pressure readings?"
     response = agent.chat(query)
 
     # print(str(response))
