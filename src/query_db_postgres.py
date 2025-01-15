@@ -1,6 +1,6 @@
 import os
 from custom_retriever import CustomRetriever
-from llama_index.core.query_engine import RetrieverQueryEngine, SubQuestionQueryEngine
+from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.retrievers import (
     VectorIndexRetriever,
     KeywordTableSimpleRetriever,
@@ -67,42 +67,6 @@ def get_db():
         vector_store=vector_store
     )
     return (vector_index, keyword_index)
-
-
-def synthesize_content(query: str, relevant_text: str) -> str:
-    """Given the input context and query, generate synthetic context and query that removes PII"""
-
-    response = Settings.llm.complete(
-        f"""
-        Given the following context information, perform the following operations:
-
-        Anonymization: The patient’s name and any identifying information must be removed or replaced with placeholders (e.g., "[Anonymized]").
-        Clinical Data Requirements:
-            Summarize relevant vitals (e.g., blood pressure, BMI, glucose levels) with appropriate medical context.
-            Round all values.
-        Tone and Clarity:
-            Use formal and professional language. Avoid abbreviations unless they are common medical terms (e.g., "BP" for blood pressure).
-            Write in full sentences, ensuring clarity for medical professionals reviewing the report.
-
-        Formatting:
-            Preserve original form of information presented
-
-        You are to also generate a synthetic query that can be answered by the generated context.
-        Output in the format:
-
-        "Synthetic Query": GENERATED QUERY,
-        "Synthetic Context": GENERATED CONTEXT
-
-        CONTEXT INFORMATION:
-        {relevant_text}
-        QUERY:
-        {query}
-    """
-    )
-
-    return str(response)
-
-
 
 
 if __name__ == "__main__":
@@ -186,28 +150,37 @@ if __name__ == "__main__":
     ))]
     agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively.")
 
-    query = "What do blood pressure for hypertension patients look like?"
+    query = input("ENTER QUERY: ")
     response = agent.chat(query)
     print(f"RESPONSE FROM RETRIEVAL/INFERENCE AGENT:\n{str(response)}")
 
     synth_agent_prompt = f"""
-        You are an expert data anonymization agent. Your task is to identify and replace all Personally Identifiable Information (PII) in the given text and query.
+        You are an expert data anonymization and summarization agent. Your task is to identify and replace all Personally Identifiable Information (PII) in the given text and query.
         Follow these rules:
         1. The patient's name and any identifying information must be removed or replaced with placeholders (e.g., "[NAME]").
         2. Replace specific locations (e.g, cities, countries, landmarks) with [LOCATION].
         3. Replace specific dates with "[DATE]".
         4. Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
-        5. Replace medical record numbers, insurance IDs, or any unique identifiers with "[NUMBER]".
-        6. Preserve the original structure and meaning of the text but remove any direct identifiers.
-        7. Replace mentions of specific medication dosages with "[DOSAGE]".
-        8. Maintain the overall meaning and structure of the text but remove any direct identifiers or sensitive information.
-        9. Summarize and round all relevant vitals with appropriate medical context.
+        5. Preserve the original structure and meaning of the text but remove any direct identifiers.
+        6. Replace mentions of medication dosages with "[DOSAGE]".
+        7. Maintain the overall meaning and structure of the text but remove any direct identifiers or sensitive information.
+        8. Summarize and round all vitals with appropriate medical context.
+        9. Extract the key points from the text and summarize it.
 
-        Return the fully anonymized text, ensuring it remains coherent and grammatically correct. Use placeholders consistently.
+        Return the fully anonymized text, ensuring it remains coherent and grammatically correct.
+        Furthermore, based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning.
+
+        Output in the format:
+        Generated Query: [GENERATED QUERY]
+        Context: [ANONYMIZED TEXT]
     """
 
     synthesis_agent = ReActAgent.from_tools(tools=[], verbose=True, context=synth_agent_prompt)
 
-    #synth_response = synthesis_agent.chat(f"""{str(response)}""")
-    #print(f"RESPONSE FROM SYNTHESIS AGENT:\n{synth_response}")
+    synth_response = synthesis_agent.chat(f"""
+                                        Original Query: {query}
+                                        Text:
+                                        {str(response)}
+""")
+    print(f"RESPONSE FROM SYNTHESIS AGENT:\n{synth_response}")
 
