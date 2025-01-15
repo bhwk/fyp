@@ -113,7 +113,7 @@ if __name__ == "__main__":
         context_window=32000,
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
         temperature=0.7,
-        additional_kwargs={"top_k": 20, "top_p": 0.8}
+        additional_kwargs={"top_k": 20, "top_p": 0.8, "min_p": 0.05}
     )
     Settings.embed_model = HuggingFaceEmbedding(
         model_name="./bge-base-en-v1.5",
@@ -136,7 +136,7 @@ if __name__ == "__main__":
         -------
         Given the context information and not prior knowledge,
         answer the query.
-        Ensure that your answer is concise, and does not include explanations.
+        Ensure that your answer is concise and includes the information needed to answer the query.
         Query: {query_str}
         Answer: """
         )
@@ -164,29 +164,50 @@ if __name__ == "__main__":
 
     retrieve_tool = QueryEngineTool(query_engine=readings_query_engine, 
                                metadata= ToolMetadata(
-                                         name="retrieve_patient_medical_readings",
-                                         description="""A tool for running semantic search for information about patients.
+                                         name="retrieve_medical_readings_for_patient",
+                                         description="""A tool for running semantic search for information related to a patient.
                                          Only contains patient information on a local database.
                                          Information consists of medical observations.
-                                         Specifying a patient's name is optional. (e.g. glucose readings for [patient])"""))
+                                         Necessary to specify the patient's name in the form ([information to search] for [patient name])."""))
 
     search_condition_tool = QueryEngineTool(query_engine=condition_query_engine,
                                             metadata = ToolMetadata(
-                                                name ="search_medical_condition",
+                                                name ="search_for_patients_with_medical_condition",
                                                 description="""A tool to search for patients with the specified medical condition."""
                                             ))
     
+    search_agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool],verbose=True, context="You are an expert planner that breaks queries down into easy-to-follow\
+                                         steps. Think step-by-step on how you will execute your plan.")
 
-    query_engine = SubQuestionQueryEngine.from_defaults(query_engine_tools=[retrieve_tool, search_condition_tool])
-    search_tool = QueryEngineTool(query_engine=query_engine,
-                                  metadata=ToolMetadata(
-                                      name="complex_query_search",
-                                      description="""A tool to break down queries in sub-queries and solve step-by-step. 
-                                      Has access to other query engines that contain patient information."""
-                                  ))
 
-    agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool], verbose =True)
-    query = "Which patients have hypertension? What are their blood pressure readings?"
+    query_engine_tools = [QueryEngineTool(query_engine=search_agent, metadata=ToolMetadata(
+        name="search_agent",
+        description="Agent used to search for information related to patients."
+    ))]
+    agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively.")
+
+    query = "What do blood pressure for hypertension patients look like?"
     response = agent.chat(query)
+    print(f"RESPONSE FROM RETRIEVAL/INFERENCE AGENT:\n{str(response)}")
 
-    # print(str(response))
+    synth_agent_prompt = f"""
+        You are an expert data anonymization agent. Your task is to identify and replace all Personally Identifiable Information (PII) in the given text and query.
+        Follow these rules:
+        1. The patient's name and any identifying information must be removed or replaced with placeholders (e.g., "[NAME]").
+        2. Replace specific locations (e.g, cities, countries, landmarks) with [LOCATION].
+        3. Replace specific dates with "[DATE]".
+        4. Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
+        5. Replace medical record numbers, insurance IDs, or any unique identifiers with "[NUMBER]".
+        6. Preserve the original structure and meaning of the text but remove any direct identifiers.
+        7. Replace mentions of specific medication dosages with "[DOSAGE]".
+        8. Maintain the overall meaning and structure of the text but remove any direct identifiers or sensitive information.
+        9. Summarize and round all relevant vitals with appropriate medical context.
+
+        Return the fully anonymized text, ensuring it remains coherent and grammatically correct. Use placeholders consistently.
+    """
+
+    synthesis_agent = ReActAgent.from_tools(tools=[], verbose=True, context=synth_agent_prompt)
+
+    #synth_response = synthesis_agent.chat(f"""{str(response)}""")
+    #print(f"RESPONSE FROM SYNTHESIS AGENT:\n{synth_response}")
+
