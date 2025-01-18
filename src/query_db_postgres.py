@@ -89,10 +89,6 @@ if __name__ == "__main__":
     vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, vector_store_query_mode="hybrid", sparse_top_k=10)
     keyword_retriever = KeywordTableSimpleRetriever(index=KEYWORD_INDEX)
 
-    custom_retriever = CustomRetriever(vector_retriever=vector_retriever, keyword_retriever=keyword_retriever, mode="OR")
-
-    response_synth = get_response_synthesizer()
-
     qa_prompt_template = (
         """Context information is below.
         -------
@@ -140,7 +136,9 @@ if __name__ == "__main__":
                                                 description="""A tool to search for patients with the specified medical condition."""
                                             ))
     
-    search_agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool],verbose=True, context="You are an expert planner that breaks queries down into easy-to-follow\
+    search_agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool],
+                                         verbose=True, 
+                                         context="You are an expert planner that breaks queries down into easy-to-follow\
                                          steps. Think step-by-step on how you will execute your plan.")
 
 
@@ -148,7 +146,8 @@ if __name__ == "__main__":
         name="search_agent",
         description="Agent used to search for information related to patients."
     ))]
-    agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively.")
+    agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively. You will check your answers\
+                                  and make sure that they satisfy the query at all times.")
 
     query = input("ENTER QUERY: ")
     response = agent.chat(query)
@@ -156,31 +155,38 @@ if __name__ == "__main__":
 
     synth_agent_prompt = f"""
         You are an expert data anonymization and summarization agent. Your task is to identify and replace all Personally Identifiable Information (PII) in the given text and query.
+        You do not need to make use of any tools to answer.
         Follow these rules:
-        1. The patient's name and any identifying information must be removed or replaced with placeholders (e.g., "[NAME]").
-        2. Replace specific locations (e.g, cities, countries, landmarks) with [LOCATION].
-        3. Replace specific dates with "[DATE]".
-        4. Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
-        5. Preserve the original structure and meaning of the text but remove any direct identifiers.
-        6. Replace mentions of medication dosages with "[DOSAGE]".
-        7. Maintain the overall meaning and structure of the text but remove any direct identifiers or sensitive information.
-        8. Summarize and round all vitals with appropriate medical context.
-        9. Extract the key points from the text and summarize it.
 
-        Return the fully anonymized text, ensuring it remains coherent and grammatically correct.
-        Furthermore, based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning.
+        - Anonymization:
+            - The patient's name must be removed and replaced with pseudonyms.
+            - Replace specific locations (e.g, cities, countries, landmarks) with placeholders.
+            - Unless asked in query, replace specific dates with placeholders.
+            - Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
+        - Medical Reporting:
+            - Replace mentions of medication dosages with "[DOSAGE]".
+            - Summarize and round all vitals with appropriate medical context.
+            - If there are multiple readings of the same type for a patient, summarize it into a range of values.
+            - Replace values with rounded values for lab results and vital signs. Use approximate ranges if values fluctuate.
+        - Summarization:
+            - Extract the key points from the text and summarize it.
+            - When possible, rewrite your answer such that it omits any PII only if it doesn't affect the original meaning of the answer.
+        - Query:
+            - Based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning.
 
         Output in the format:
         Generated Query: [GENERATED QUERY]
         Context: [ANONYMIZED TEXT]
+
+        Ensure your answer follows the format provided.
     """
 
-    synthesis_agent = ReActAgent.from_tools(tools=[], verbose=True, context=synth_agent_prompt)
+    synthesis_agent = ReActAgent.from_tools(verbose=True, context=synth_agent_prompt)
 
     synth_response = synthesis_agent.chat(f"""
-                                        Original Query: {query}
-                                        Text:
-                                        {str(response)}
-""")
+    Original Query: {query}
+    ------
+    TEXT:
+    {str(response)}""")
     print(f"RESPONSE FROM SYNTHESIS AGENT:\n{synth_response}")
 
