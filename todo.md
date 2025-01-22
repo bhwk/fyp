@@ -7,3 +7,4 @@
 ~~Use metadata extraction to possibly improve vector search~~
   not a great idea on second thought, can't reliably extract entities
 - [ ] Figure out a workflow for agents, create appropriate functions to carry out retrieval, synth, and response # IN PROGRESS
+    - [ ] !!! Combine the query-planning workflow + reflection workflow from llamaindex 

@@ -162,7 +162,7 @@ if __name__ == "__main__":
     #                                             description="""A tool to search for patients with the specified medical condition."""
     #                                         ))
     
-    search_agent = ReActAgent.from_tools(tools=[retrieve_tool, search_tool],
+    search_agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool],
                                          verbose=True, 
                                          context="You are an expert planner that breaks queries down into easy-to-follow\
                                          steps. Think step-by-step on how you will execute your plan.")
