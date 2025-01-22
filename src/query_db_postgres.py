@@ -20,6 +20,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
 from llama_index.vector_stores.postgres import PGVectorStore
 from llama_index.core.agent import ReActAgent
+from llama_index.core.tools import FunctionTool
 from sqlalchemy import make_url
 import json
 
@@ -28,6 +29,17 @@ import json
 
 
 def get_db():
+    Settings.llm = Ollama(
+        model="qwen2.5:32b",
+        request_timeout=3600,
+        context_window=32000,
+        base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
+        temperature=0.7,
+        additional_kwargs={"top_k": 20, "top_p": 0.8, "min_p": 0.05}
+    )
+    Settings.embed_model = HuggingFaceEmbedding(
+        model_name="./bge-base-en-v1.5",
+    )
     connection_string = os.environ.get("DATABASE_URL")
     url = make_url(connection_string)  # pyright: ignore[]
 
@@ -89,10 +101,6 @@ if __name__ == "__main__":
     vector_retriever = VectorIndexRetriever(index=VECTOR_INDEX, vector_store_query_mode="hybrid", sparse_top_k=10)
     keyword_retriever = KeywordTableSimpleRetriever(index=KEYWORD_INDEX)
 
-    custom_retriever = CustomRetriever(vector_retriever=vector_retriever, keyword_retriever=keyword_retriever, mode="OR")
-
-    response_synth = get_response_synthesizer()
-
     qa_prompt_template = (
         """Context information is below.
         -------
@@ -126,21 +134,37 @@ if __name__ == "__main__":
     readings_query_engine = RetrieverQueryEngine(retriever = vector_retriever, response_synthesizer=custom_synth)
     condition_query_engine = RetrieverQueryEngine(retriever=keyword_retriever, response_synthesizer=custom_synth)
 
-    retrieve_tool = QueryEngineTool(query_engine=readings_query_engine, 
-                               metadata= ToolMetadata(
-                                         name="retrieve_medical_readings_for_patient",
-                                         description="""A tool for running semantic search for information related to a patient.
-                                         Only contains patient information on a local database.
-                                         Information consists of medical observations.
-                                         Necessary to specify the patient's name in the form ([information to search] for [patient name])."""))
+    def retrieve_medical_readings_for_patient( query: str) -> str:
+        """Useful for running semantic search for information related to a patient.
+        Specify patient's name in the form ([information to search] for [patient name])."""
+        response = readings_query_engine.query(query)
+        return(str(response))
 
-    search_condition_tool = QueryEngineTool(query_engine=condition_query_engine,
-                                            metadata = ToolMetadata(
-                                                name ="search_for_patients_with_medical_condition",
-                                                description="""A tool to search for patients with the specified medical condition."""
-                                            ))
+    def search_for_patients_with_medical_condition( query: str) -> str:
+        """Useful for searching for patients with the specified medical condition"""
+        response =  condition_query_engine.query(query)
+        return(str(response))
+
+    retrieve_tool = FunctionTool.from_defaults(fn=retrieve_medical_readings_for_patient)
+    search_tool = FunctionTool.from_defaults(fn=search_for_patients_with_medical_condition)
+
+    # retrieve_tool = QueryEngineTool(query_engine=readings_query_engine, 
+    #                            metadata= ToolMetadata(
+    #                                      name="retrieve_medical_readings_for_patient",
+    #                                      description="""A tool for running semantic search for information related to a patient.
+    #                                      Only contains patient information on a local database.
+    #                                      Information consists of medical observations.
+    #                                      Necessary to specify the patient's name in the form ([information to search] for [patient name])."""))
+
+    # search_condition_tool = QueryEngineTool(query_engine=condition_query_engine,
+    #                                         metadata = ToolMetadata(
+    #                                             name ="search_for_patients_with_medical_condition",
+    #                                             description="""A tool to search for patients with the specified medical condition."""
+    #                                         ))
     
-    search_agent = ReActAgent.from_tools(tools=[search_condition_tool, retrieve_tool],verbose=True, context="You are an expert planner that breaks queries down into easy-to-follow\
+    search_agent = ReActAgent.from_tools(tools=[retrieve_tool, search_tool],
+                                         verbose=True, 
+                                         context="You are an expert planner that breaks queries down into easy-to-follow\
                                          steps. Think step-by-step on how you will execute your plan.")
 
 
@@ -148,7 +172,8 @@ if __name__ == "__main__":
         name="search_agent",
         description="Agent used to search for information related to patients."
     ))]
-    agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively.")
+    agent = ReActAgent.from_tools(tools=query_engine_tools, verbose=True, context="You are an expert AI that understands how to make use of your tools effectively. You will check your answers\
+                                  and make sure that they satisfy the query at all times.")
 
     query = input("ENTER QUERY: ")
     response = agent.chat(query)
@@ -156,31 +181,38 @@ if __name__ == "__main__":
 
     synth_agent_prompt = f"""
         You are an expert data anonymization and summarization agent. Your task is to identify and replace all Personally Identifiable Information (PII) in the given text and query.
+        You do not need to make use of any tools to answer.
         Follow these rules:
-        1. The patient's name and any identifying information must be removed or replaced with placeholders (e.g., "[NAME]").
-        2. Replace specific locations (e.g, cities, countries, landmarks) with [LOCATION].
-        3. Replace specific dates with "[DATE]".
-        4. Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
-        5. Preserve the original structure and meaning of the text but remove any direct identifiers.
-        6. Replace mentions of medication dosages with "[DOSAGE]".
-        7. Maintain the overall meaning and structure of the text but remove any direct identifiers or sensitive information.
-        8. Summarize and round all vitals with appropriate medical context.
-        9. Extract the key points from the text and summarize it.
 
-        Return the fully anonymized text, ensuring it remains coherent and grammatically correct.
-        Furthermore, based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning.
+        - Anonymization:
+            - The patient's name must be removed and replaced with pseudonyms.
+            - Replace specific locations (e.g, cities, countries, landmarks) with placeholders.
+            - Unless asked in query, replace specific dates with placeholders.
+            - Replace phone numbers, email addresses, and postal addresses with "[CONTACT]".
+        - Medical Reporting:
+            - Replace mentions of medication dosages with "[DOSAGE]".
+            - Summarize and round all vitals with appropriate medical context.
+            - If there are multiple readings of the same type for a patient, summarize it into a range of values.
+            - Replace values with rounded values for lab results and vital signs. Use approximate ranges if values fluctuate.
+        - Summarization:
+            - Extract the key points from the text and summarize it.
+            - When possible, rewrite your answer such that it omits any PII only if it doesn't affect the original meaning of the answer.
+        - Query:
+            - Based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning.
 
         Output in the format:
         Generated Query: [GENERATED QUERY]
         Context: [ANONYMIZED TEXT]
+
+        Ensure your answer follows the format provided.
     """
 
-    synthesis_agent = ReActAgent.from_tools(tools=[], verbose=True, context=synth_agent_prompt)
+    synthesis_agent = ReActAgent.from_tools(verbose=True, context=synth_agent_prompt)
 
     synth_response = synthesis_agent.chat(f"""
-                                        Original Query: {query}
-                                        Text:
-                                        {str(response)}
-""")
+    Original Query: {query}
+    ------
+    TEXT:
+    {str(response)}""")
     print(f"RESPONSE FROM SYNTHESIS AGENT:\n{synth_response}")
 
