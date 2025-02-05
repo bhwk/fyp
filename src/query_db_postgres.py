@@ -38,7 +38,7 @@ def get_db():
         additional_kwargs={"top_k": 20, "top_p": 0.8, "min_p": 0.05}
     )
     Settings.embed_model = HuggingFaceEmbedding(
-        model_name="./bge-base-en-v1.5",
+        model_name="BAAI/bge-base-en-v1.5",
     )
     connection_string = os.environ.get("DATABASE_URL")
     url = make_url(connection_string)  # pyright: ignore[]

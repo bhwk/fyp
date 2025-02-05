@@ -121,7 +121,7 @@ search_agent = ReActAgent(
         "Break down the search into simpler steps that you can execute."
         "Once the information is recorded and you are satisfied, you should hand off control to the ReviewAgent for reviewing."
     ),
-    can_handoff_to=["ReviewAgent"]
+    can_handoff_to=["GenerateAgent", "ReviewAgent"]
     
 )
 
@@ -163,7 +163,7 @@ async def main():
         agents= [
             generate_agent,
             search_agent,
-            #review_agent
+            review_agent
             ],
         root_agent= generate_agent.name,
         initial_state={
@@ -171,7 +171,7 @@ async def main():
             "response_content": "Not written yet.",
             "review": "Review required."
         },
-        num_concurrent_runs = 1
+        #num_concurrent_runs = 1
     )
 
     ctx = Context(workflow)
