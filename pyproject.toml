@@ -47,6 +47,9 @@ llama-index-readers-file = "^0.4.1"
 llama-index = "^0.12.10"
 aiofiles = "^24.1.0"
 
+[tool.pyright]
+venvPath ="."
+venv = ".venv"
 
 [build-system]
 requires = ["poetry-core"]
