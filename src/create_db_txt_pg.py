@@ -30,7 +30,7 @@ FILE_DIR = pathlib.Path("./temp/flat/")
 
 def create_db(callback_manager):
     embed_model = HuggingFaceEmbedding(
-        model_name="./bge-base-en-v1.5",
+        model_name="BAAI/bge-base-en-v1.5",
         embed_batch_size=100,
     )
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     # Set to local llm
 
     Settings.llm = Ollama(
-        model="qwq",
+        model="qwen2.5:32b",
         base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
         request_timeout=1000,
         context_window=8000,
