@@ -26,6 +26,18 @@ class RetrieverEvent(Event):
     nodes: list[NodeWithScore]
 
 
+class SemanticSearchEvent(Event):
+    """Event representing Semantic search"""
+
+    query: str
+
+
+class KeywordSearchEvent(Event):
+    """Event representing Semantic search"""
+
+    query: str
+
+
 class RAGWorkflow(Workflow):
     @step
     async def initialise(self, ctx: Context, ev: StartEvent) -> StopEvent | None:
@@ -46,13 +58,32 @@ class RAGWorkflow(Workflow):
         await ctx.set("keyword_index", keyword_index)
         await ctx.set("llm", llm)
 
+        return StopEvent()
+
+    @step
+    async def query(
+        self, ctx: Context, ev: StartEvent
+    ) -> SemanticSearchEvent | KeywordSearchEvent | None:
+        query = ev.get("query")
+        mode = ev.get("mode")
+
+        if mode is None:
+            print("Pass in retrieval mode")
+            return None
+
+        if mode == "semantic":
+            return SemanticSearchEvent(query=query)
+
+        if mode == "keyword":
+            return KeywordSearchEvent(query=query)
+
     @step
     async def semantic_retrieve(
         self,
         ctx: Context,
-        ev: StartEvent,
+        ev: SemanticSearchEvent,
     ) -> RetrieverEvent | None:
-        query = ev.get("query")
+        query = ev.query
 
         if not query:
             return None
@@ -78,21 +109,21 @@ class RAGWorkflow(Workflow):
     async def keyword_retrieve(
         self,
         ctx: Context,
-        ev: StartEvent,
+        ev: KeywordSearchEvent,
     ) -> RetrieverEvent | None:
-        keyword = ev.get("keyword")
+        query = ev.query
 
-        if not keyword:
+        if not query:
             return None
-        await ctx.set("keyword", keyword)
+        await ctx.set("query", query)
 
         keyword_index = await ctx.get("keyword_index")
         if not keyword_index:
             print("keyword_index not loaded")
-        print(f"Query keyword index with {keyword}")
+        print(f"Query keyword index with {query}")
 
         keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index)
-        nodes = keyword_retriever.aretrieve(keyword)
+        nodes = keyword_retriever.aretrieve(query)
         print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)

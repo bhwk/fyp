@@ -12,6 +12,7 @@ from llama_index.core import PromptTemplate
 from llama_index.core.workflow import Context
 from llama_index.core.response_synthesizers import get_response_synthesizer
 from query_db_postgres import get_db
+from rag import RAGWorkflow
 
 
 llm = Ollama(
