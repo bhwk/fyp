@@ -23,12 +23,16 @@ import psycopg2
 from sqlalchemy import make_url
 
 # Uncomment to see debug logs
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+logging.basicConfig(stream=sys.stdout.flush(), level=logging.DEBUG)
+logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout.flush()))
 
-FILE_DIR = pathlib.Path("./temp/flat/")
+file_path = os.path.dirname(os.path.abspath(__file__))
 
-def create_db(callback_manager):
+FILE_DIR = os.path.join(file_path, "temp", "flat")
+# FILE_DIR = pathlib.Path("./temp/flat/")
+
+
+async def create_db(callback_manager):
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
         embed_batch_size=100,
@@ -43,7 +47,7 @@ def create_db(callback_manager):
     conn.autocommit = True
 
     connection_string = os.environ.get("DATABASE_URL")
-    url = make_url(connection_string)
+    url = make_url(connection_string)  # type: ignore
 
     with conn.cursor() as c:
         c.execute(f"DROP DATABASE IF EXISTS {url.database}")
@@ -69,21 +73,26 @@ def create_db(callback_manager):
     storage_context = StorageContext.from_defaults(
         vector_store=vector_store,
     )
-    vector_index = VectorStoreIndex.from_documents(
+
+    vector_index = VectorStoreIndex(
         documents,
         storage_context=storage_context,
         embed_model=embed_model,
         show_progress=True,
+        use_async=True,
     )
 
-    keyword_index = KeywordTableIndex.from_documents(
-        documents, storage_context=storage_context, show_progress=True
+    keyword_index = KeywordTableIndex(
+        documents, storage_jontext=storage_context, show_progress=True, use_async=True
     )
 
     storage_context.persist("./index/")
 
 
 if __name__ == "__main__":
+    import asyncio
+    import nest_asyncio
+
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
     llama_debug = LlamaDebugHandler(print_trace_on_end=True)
@@ -92,9 +101,11 @@ if __name__ == "__main__":
 
     Settings.llm = Ollama(
         model="qwen2.5:32b",
-        base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore[]
+        base_url=os.environ.get("OLLAMA_URL"),  # type: ignore
         request_timeout=1000,
         context_window=8000,
     )
 
-    create_db(callback_manager)
+    nest_asyncio.apply()
+
+    asyncio.run(create_db(callback_manager))

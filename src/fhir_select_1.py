@@ -21,66 +21,70 @@ async def load_bundle(bundle_path: pathlib.Path):
 async def process_bundle(bundle_path: pathlib.Path):
     file_name = bundle_path.stem
 
-    if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):
-        os.makedirs(f"{FLAT_FILE_PATH}/{file_name}")
+    try:
+        if not os.path.exists(f"{FLAT_FILE_PATH}/{file_name}"):
+            os.makedirs(f"{FLAT_FILE_PATH}/{file_name}")
 
-    bundle = await load_bundle(bundle_path)
-    patient_data, observations, conditions, medications, procedures, allergies = (
-        extract_patient_data(bundle)
-    )
+        print(f"Processing {bundle_path}")
+        bundle = await load_bundle(bundle_path)
+        patient_data, observations, conditions, medications, procedures, allergies = (
+            extract_patient_data(bundle)
+        )
 
-    patient_object = dict()
-    patient_object["patient_info"] = dict()
+        patient_object = dict()
+        patient_object["patient_info"] = dict()
 
-    # add patient details
-    patient_object["patient_info"]["name"] = (
-        f"{patient_data["name"][0]["given"][0]} {patient_data["name"][0]["family"]}"
-    )
-    patient_object["patient_info"]["gender"] = patient_data["gender"]
-    patient_object["patient_info"]["birthDate"] = patient_data["birthDate"]
-    patient_object["patient_info"]["maritalStatus"] = patient_data["maritalStatus"][
-        "text"
-    ]
-    if "deceasedDateTime" in patient_data:
-        patient_object["patient_info"]["deceased"] = True
-    elif "deceasedBoolean" in patient_data:
-        patient_object["patient_info"]["deceased"] = patient_data["deceasedBoolean"]
-    else:
-        patient_object["patient_info"]["deceased"] = False
+        # add patient details
+        patient_object["patient_info"]["name"] = (
+            f"{patient_data["name"][0]["given"][0]} {patient_data["name"][0]["family"]}"
+        )
+        patient_object["patient_info"]["gender"] = patient_data["gender"]
+        patient_object["patient_info"]["birthDate"] = patient_data["birthDate"]
+        patient_object["patient_info"]["maritalStatus"] = patient_data["maritalStatus"][
+            "text"
+        ]
+        if "deceasedDateTime" in patient_data:
+            patient_object["patient_info"]["deceased"] = True
+        elif "deceasedBoolean" in patient_data:
+            patient_object["patient_info"]["deceased"] = patient_data["deceasedBoolean"]
+        else:
+            patient_object["patient_info"]["deceased"] = False
 
-    patient_object["patient_info"]["conditions"] = list(dict())
-    patient_object["patient_info"]["medications"] = list(dict())
-    patient_object["patient_info"]["allergies"] = list()
+        patient_object["patient_info"]["conditions"] = list(dict())
+        patient_object["patient_info"]["medications"] = list(dict())
+        patient_object["patient_info"]["allergies"] = list()
 
-    for observation in observations:
-        effective_date, value = extract_observation_value(observation)
-        if effective_date not in patient_object:
-            patient_object[effective_date] = dict()
-        if "observations" not in patient_object[effective_date]:
-            patient_object[effective_date]["observations"] = list()
-        patient_object[effective_date]["observations"].append(value)
+        for observation in observations:
+            effective_date, value = extract_observation_value(observation)
+            if effective_date not in patient_object:
+                patient_object[effective_date] = dict()
+            if "observations" not in patient_object[effective_date]:
+                patient_object[effective_date]["observations"] = list()
+            patient_object[effective_date]["observations"].append(value)
 
-    for condition in conditions:
-        value = extract_condition(condition)
-        patient_object["patient_info"]["conditions"].append(value)
+        for condition in conditions:
+            value = extract_condition(condition)
+            patient_object["patient_info"]["conditions"].append(value)
 
-    for medication in medications:
-        value = extract_medication_value(medication)
-        patient_object["patient_info"]["medications"].append(value)
-    for allergy in allergies:
-        name = extract_allergy_information(allergy)
-        patient_object["patient_info"]["allergies"].append(name)
+        for medication in medications:
+            value = extract_medication_value(medication)
+            patient_object["patient_info"]["medications"].append(value)
+        for allergy in allergies:
+            name = extract_allergy_information(allergy)
+            patient_object["patient_info"]["allergies"].append(name)
 
-    for procedure in procedures:
-        date, value = extract_procedure_value(procedure)
-        if not date:
-            continue
-        if date not in patient_object:
-            patient_object[date] = dict()
-        if "procedures" not in patient_object[date]:
-            patient_object[date]["procedures"] = list()
+        for procedure in procedures:
+            date, value = extract_procedure_value(procedure)
+            if not date:
+                continue
+            if date not in patient_object:
+                patient_object[date] = dict()
+            if "procedures" not in patient_object[date]:
+                patient_object[date]["procedures"] = list()
 
-        patient_object[date]["procedures"].append(value)
+            patient_object[date]["procedures"].append(value)
+    except Exception as e:
+        print(f"Error processing file: {bundle_path}. Error:{e}")
 
     # Write out the combined patient info_file
     async with aiofiles.open(
@@ -88,7 +92,11 @@ async def process_bundle(bundle_path: pathlib.Path):
     ) as out:
         patient_info = patient_object["patient_info"]
 
-        patient = f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} " + ("Alive " if patient_info["deceased"] is False else "Deceased " ) + f"MaritalStatus: {patient_info["maritalStatus"]}"
+        patient = (
+            f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} "
+            + ("Alive " if patient_info["deceased"] is False else "Deceased ")
+            + f"MaritalStatus: {patient_info["maritalStatus"]}"
+        )
 
         combined_conditions = " ".join(patient_info["conditions"])
         combined_medications = " ".join(patient_info["medications"])
@@ -252,7 +260,7 @@ async def process_batch(batch):
 
 
 async def load_and_process_bundles(dir_path: pathlib.Path, batch_size=100):
-    filenames = [file for file in dir_path.iterdir()][:10]
+    filenames = [file for file in dir_path.iterdir()]
     results = []
     start_time = time.time()
 

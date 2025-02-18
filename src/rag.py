@@ -40,32 +40,27 @@ class KeywordSearchEvent(Event):
 
 class RAGWorkflow(Workflow):
     @step
-    async def initialise(self, ctx: Context, ev: StartEvent) -> StopEvent | None:
+    async def query(
+        self, ctx: Context, ev: StartEvent
+    ) -> SemanticSearchEvent | KeywordSearchEvent | None:
         llm = ev.get("llm")
+        query = ev.get("query")
+        mode = ev.get("mode")
+        vector_index = ev.get("vector_index")
+        keyword_index = ev.get("keyword_index")
         if llm is None:
             print("Pass in LLM")
             return None
-
-        vector_index = ev.get("vector_index")
-        keyword_index = ev.get("keyword_index")
-
-        if vector_index or keyword_index is None:
-            print("Pass keyword and vector indexes to workflow")
+        if keyword_index is None:
+            print("Pass keyword index to workflow")
             return None
-
+        if vector_index is None:
+            print("Pass in vector index")
+            return None
         # Set the indexes in global context
         await ctx.set("vector_index", vector_index)
         await ctx.set("keyword_index", keyword_index)
         await ctx.set("llm", llm)
-
-        return StopEvent()
-
-    @step
-    async def query(
-        self, ctx: Context, ev: StartEvent
-    ) -> SemanticSearchEvent | KeywordSearchEvent | None:
-        query = ev.get("query")
-        mode = ev.get("mode")
 
         if mode is None:
             print("Pass in retrieval mode")
@@ -100,7 +95,7 @@ class RAGWorkflow(Workflow):
             sparse_top_k=5,
         )
 
-        nodes = vector_retriever.aretrieve(query)
+        nodes = await vector_retriever.aretrieve(query)
         print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
@@ -123,7 +118,7 @@ class RAGWorkflow(Workflow):
         print(f"Query keyword index with {query}")
 
         keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index)
-        nodes = keyword_retriever.aretrieve(query)
+        nodes = await keyword_retriever.aretrieve(query)
         print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
@@ -132,18 +127,15 @@ class RAGWorkflow(Workflow):
     async def synthesize(self, ctx: Context, ev: RetrieverEvent) -> StopEvent:
         """Return only the relevant context from retrieved nodes"""
 
-        # Custom prompt for response synthesizer
-        qa_prompt_template = (
-            "Context information is below.\n"
-            "---------------------\n"
-            "{context_str}\n"
-            "---------------------\n"
-            "Given the context information and not prior knowledge, "
-            "Retrieve only the information necessary to answer the query.\n"
-            "Your answer should only contain the necessary context information."
-            "Query: {query_str}\n"
-            "Answer: "
-        )
+        qa_prompt_template = """Context information is below.
+            -------
+            {context_str}
+            -------
+            Given the context information and not prior knowledge,
+            evaluate the context information and extract the necessary information to answer the query.
+            Ensure that your answer is concise and includes the information needed to answer the query.
+            Query: {query_str}
+            Answer: """
         qa_prompt = PromptTemplate(qa_prompt_template)
 
         refine_prompt_template = """The original query is as follows: {query_str}
@@ -152,9 +144,9 @@ class RAGWorkflow(Workflow):
             ------
             {context_msg}
             ------
-            Given the new context, refine the existing answer to include better context information that will help answer the query.
+            Given the new context, refine the existing answer to better answer the query.
             If the context is not useful, return the original answer.
-            Ensure that your answer is concise, and only contains the necessary context information.
+            Ensure that your answer is concise.
             Refined answer: """
 
         refine_prompt = PromptTemplate(refine_prompt_template)
