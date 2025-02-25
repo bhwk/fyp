@@ -23,8 +23,8 @@ import psycopg2
 from sqlalchemy import make_url
 
 # Uncomment to see debug logs
-logging.basicConfig(stream=sys.stdout.flush(), level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout.flush()))
+# logging.basicConfig(stream=sys.stdout.flush(), level=logging.DEBUG)
+# logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout.flush()))
 
 file_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -74,7 +74,7 @@ async def create_db(callback_manager):
         vector_store=vector_store,
     )
 
-    vector_index = VectorStoreIndex(
+    vector_index = VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
         embed_model=embed_model,
@@ -82,8 +82,8 @@ async def create_db(callback_manager):
         use_async=True,
     )
 
-    keyword_index = KeywordTableIndex(
-        documents, storage_jontext=storage_context, show_progress=True, use_async=True
+    keyword_index = KeywordTableIndex.from_documents(
+        documents, storage_context=storage_context, show_progress=True, use_async=True
     )
 
     storage_context.persist("./index/")
