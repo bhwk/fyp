@@ -1,6 +1,7 @@
 from llama_index.core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 import os
+import json
 import asyncio
 import aiofiles
 import pathlib
@@ -33,12 +34,13 @@ async def load_file(file: pathlib.Path):
 
 
 async def process_file(file: pathlib.Path):
-    prompt = PromptTemplate("Generate a series of 3 questions from the following text.")
+    prompt = PromptTemplate(
+        "Generate a series of 5 questions about the following text: {text}"
+    )
     # load the content of the file
     # then we pass it to the LLM to generate a series of questions,
     # finally we write to individual files
     content = await load_file(file)
-    print(content)
     # TODO: implement LLM generation
     # TODO: also implement writing contents
 
@@ -48,8 +50,11 @@ async def process_file(file: pathlib.Path):
         text=content,
     )
     json_output = response.model_dump_json()
+    output = json.loads(json_output)
 
-    return json_output
+    obj = {"file": str(file), "questions": output["questions"]}
+
+    return obj
 
 
 async def process_batch(batch):
@@ -65,7 +70,7 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
     results = []
     start_time = time.time()
 
-    file_queue = deque(filenames[:1])
+    file_queue = deque(filenames[:10])
 
     while file_queue:
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
@@ -89,8 +94,10 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
 async def main():
     results = await load_and_process_files(dir_path)
 
-    for result in results:
-        print(result)
+    obj = {"files": results}
+
+    with open("questions.json", "w") as fp:
+        json.dump(obj, fp)
 
 
 if __name__ == "__main__":
