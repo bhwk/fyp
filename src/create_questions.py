@@ -1,3 +1,5 @@
+from llama_index.core.prompts import PromptTemplate
+from pydantic import BaseModel, Field
 import os
 import asyncio
 import aiofiles
@@ -10,6 +12,19 @@ from fhir_select_1 import FLAT_FILE_PATH
 
 dir_path = pathlib.Path(FLAT_FILE_PATH)
 
+llm = Ollama(
+    model="qwen2.5:32b",
+    base_url=os.environ.get("OLLAMA_URL"),  # type: ignore
+    request_timeout=1000,
+    context_window=8000,
+)
+
+
+class Questions(BaseModel):
+    questions: list[str] = Field(
+        description="A list of questions generated from the file content"
+    )
+
 
 async def load_file(file: pathlib.Path):
     async with aiofiles.open(file, mode="r") as f:
@@ -18,12 +33,18 @@ async def load_file(file: pathlib.Path):
 
 
 async def process_file(file: pathlib.Path):
+    prompt = PromptTemplate("Generate a series of 3 questions from the following text.")
     # load the content of the file
     # then we pass it to the LLM to generate a series of questions,
     # finally we write to individual files
     content = await load_file(file)
     # TODO: implement LLM generation
     # TODO: also implement writing contents
+
+    response = llm.astructured_predict(Questions, text=content)
+    json_output = response.model_dump_json()
+
+    return json_output
 
 
 async def process_batch(batch):
@@ -57,10 +78,14 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
         )
 
         await asyncio.sleep(0.01)
+    return results
 
 
 async def main():
-    await load_and_process_files(dir_path)
+    results = await load_and_process_files(dir_path)
+
+    for result in results:
+        print(result)
 
 
 if __name__ == "__main__":
