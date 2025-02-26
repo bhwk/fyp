@@ -166,28 +166,29 @@ async def main():
         root_agent=search_agent.name,
     )
 
-    handler = workflow.run(input("Enter query: "))
+    query = input("Enter query: ")
+    handler = workflow.run(query)
 
     async for event in handler.stream_events():
         if isinstance(event, AgentInput):
             print(f"Agent {event.current_agent_name}: ")
         if isinstance(event, AgentStream):
-            print(f"{event.delta}", end="")
+            print(f"{event.delta}", end="\n")
         elif isinstance(event, ToolCallResult):
             print(f"Tool called: {event.tool_name} -> {event.tool_output}")
 
     state = await handler.ctx.get("state")  # type: ignore
 
     final_query = ""
-    if state["synth_query"]:
+    if "synth_query" in state:
         final_query = state["synth_query"]
     else:
-        final_query = input
+        final_query = query
 
     response = llm.complete(
-        f"Based on the retrieved information and the query, answer the query.\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:"
+        f"Based only on the retrieved information and the query, answer the query.\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:"
     )
-    print(response)
+    print(f"FINAL RESPONSE:\n{response}")
 
 
 if __name__ == "__main__":
