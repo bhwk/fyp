@@ -38,6 +38,7 @@ async def process_file(file: pathlib.Path):
     # then we pass it to the LLM to generate a series of questions,
     # finally we write to individual files
     content = await load_file(file)
+    print(content)
     # TODO: implement LLM generation
     # TODO: also implement writing contents
 
