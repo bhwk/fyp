@@ -77,7 +77,7 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
         batch_results = await process_batch(batch)
         results.extend(batch_results)
 
-        async with aiofiles.open(f"batch_{len(results)}.json", "w") as fp:
+        with open(f"batch_{len(results)}.json", "w") as fp:
             obj = {"files": batch_results}
             json.dump(obj, fp)
 
@@ -100,7 +100,7 @@ async def main():
 
     obj = {"files": results}
 
-    async with aiofiles.open("questions.json", "w") as fp:
+    with open("questions.json", "w") as fp:
         json.dump(obj, fp)
 
 
