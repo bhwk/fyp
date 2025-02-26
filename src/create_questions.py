@@ -41,7 +41,7 @@ async def process_file(file: pathlib.Path):
     # TODO: implement LLM generation
     # TODO: also implement writing contents
 
-    response = llm.astructured_predict(
+    response = await llm.astructured_predict(
         Questions,
         prompt=prompt,
         text=content,
