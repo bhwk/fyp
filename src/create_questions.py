@@ -41,7 +41,11 @@ async def process_file(file: pathlib.Path):
     # TODO: implement LLM generation
     # TODO: also implement writing contents
 
-    response = llm.astructured_predict(Questions, text=content)
+    response = llm.astructured_predict(
+        Questions,
+        prompt=prompt,
+        text=content,
+    )
     json_output = response.model_dump_json()
 
     return json_output
@@ -60,7 +64,7 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
     results = []
     start_time = time.time()
 
-    file_queue = deque(filenames)
+    file_queue = deque(filenames[:1])
 
     while file_queue:
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
