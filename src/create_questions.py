@@ -77,6 +77,10 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
         batch_results = await process_batch(batch)
         results.extend(batch_results)
 
+        async with aiofiles.open(f"batch_{len(results)}.json", "w") as fp:
+            obj = {"files": batch_results}
+            json.dump(obj, fp)
+
         elapsed_time = time.time() - start_time
         estimated_total_time = (elapsed_time / len(results)) * len(filenames)
         remaining_time = estimated_total_time - elapsed_time
@@ -96,7 +100,7 @@ async def main():
 
     obj = {"files": results}
 
-    with open("questions.json", "w") as fp:
+    async with aiofiles.open("questions.json", "w") as fp:
         json.dump(obj, fp)
 
 
