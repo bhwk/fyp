@@ -175,7 +175,17 @@ async def main():
             print(f"Tool called: {event.tool_name} -> {event.tool_output}")
 
     state = await handler.ctx.get("state")  # type: ignore
-    __import__("pprint").pprint(state)
+
+    final_query = ""
+    if state["synth_query"]:
+        final_query = state["synth_query"]
+    else:
+        final_query = input
+
+    response = llm.complete(
+        f"Based on the retrieved information and the query, answer the query.\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:"
+    )
+    print(response)
 
 
 if __name__ == "__main__":
