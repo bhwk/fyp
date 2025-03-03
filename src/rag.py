@@ -133,7 +133,7 @@ class RAGWorkflow(Workflow):
             -------
             Given the context information and not prior knowledge,
             evaluate the context information and extract the necessary information to answer the query.
-            Ensure that your answer is concise and includes the information needed to answer the query.
+            Ensure that your answer presents the information in a format similar to the original, and that it only contains the relevant information for the query.
             Query: {query_str}
             Answer: """
         qa_prompt = PromptTemplate(qa_prompt_template)
