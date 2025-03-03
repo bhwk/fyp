@@ -204,7 +204,8 @@ async def main():
         final_query = query
 
     response = llm.complete(
-        f"Based only on the retrieved information and the query, answer the query.\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:"
+        "Based only on the retrieved information and the query, answer the query. Assume that the information is directly related to the query."
+        + f"\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:",
     )
     print(f"FINAL RESPONSE:\n{response}")
 
