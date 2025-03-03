@@ -54,7 +54,7 @@ async def synthesize_information(ctx: Context, synthesized_information: str) -> 
     return "Content generated."
 
 
-async def synth_query(ctx: Context, synth_query: str) -> str:
+async def synthesize_query(ctx: Context, synth_query: str) -> str:
     """Useful for creating a synth query based from the original query. Your input should be a generated, synthesized version of the user's query."""
     current_state = await ctx.get("state")
     if "synth_query" not in current_state:
@@ -134,7 +134,7 @@ async def main():
             - Based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning."""
         ),
         tools=[
-            FunctionTool.from_defaults(async_fn=synth_query),
+            FunctionTool.from_defaults(async_fn=synthesize_query),
             FunctionTool.from_defaults(async_fn=synthesize_information),
         ],  # type: ignore
         can_handoff_to=["ReviewAgent", "SearchAgent"],
