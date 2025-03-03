@@ -132,6 +132,9 @@ async def main():
             - When possible, rewrite your answer such that it omits any PII only if it doesn't affect the original meaning of the answer."""
             """- Query:
             - Based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning."""
+            """- Reviewing:
+            - Once the information has been generated, you must handoff to ReviewAgent who will check your response.
+            """
         ),
         tools=[
             FunctionTool.from_defaults(async_fn=synthesize_query),
