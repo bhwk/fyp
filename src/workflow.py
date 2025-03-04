@@ -27,7 +27,7 @@ llm = Ollama(
 VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
 
-async def process_question(question, workflow, llm, results):
+async def process_question(question, workflow, llm, results, progress, total):
     handler = workflow.run(question)
     state = await handler.ctx.get("state")  # type: ignore
 
@@ -44,6 +44,8 @@ async def process_question(question, workflow, llm, results):
     state["query"] = question
     state["response"] = response
     results.append(state)
+    progress[0] += 1
+    print(f"Progress: {progress[0]}/{total} questions completed.")
 
 
 async def record_information(ctx: Context, information: str) -> str:
@@ -207,13 +209,19 @@ async def main():
         obj = json.load(f)
 
     res_obj = {"results": []}
+    questions = [q for file in obj["files"] for q in file["questions"]]
+    total_questions = len(questions)
+    progress = [0]
+
     tasks = [
-        process_question(q, workflow, llm, res_obj["results"])
+        process_question(
+            q, workflow, llm, res_obj["results"], progress, total_questions
+        )
         for file in obj["files"]
         for q in file["questions"]
     ]
-
     await asyncio.gather(*tasks)
+
     with open("results.json", "w", encoding="utf-8") as fp:
         json.dump(res_obj, fp, ensure_ascii=False, indent=4)
 
