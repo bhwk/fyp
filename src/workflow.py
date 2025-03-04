@@ -1,4 +1,10 @@
+import json
 import os
+from llama_index.core.agent.workflow import (
+    AgentInput,
+    ToolCallResult,
+    AgentStream,
+)
 from llama_index.core.tools import FunctionTool
 from llama_index.llms.ollama import Ollama
 from llama_index.core.agent.workflow import AgentWorkflow, FunctionAgent
@@ -19,6 +25,25 @@ llm = Ollama(
 )
 
 VECTOR_INDEX, KEYWORD_INDEX = get_db()
+
+
+async def process_question(question, workflow, llm, results):
+    handler = workflow.run(question)
+    state = await handler.ctx.get("state")  # type: ignore
+
+    async for event in handler.stream_events():
+        if isinstance(event, ToolCallResult):
+            print(f"Tool called: {event.tool_name} -> {event.tool_output}")
+
+    final_query = state.get("synth_query", question)
+    response = await llm.acomplete(
+        f"Based only on the retrieved information and the query, answer the query."
+        f"\nQuery: {final_query}.\nInformation: {state.get('synthesized_information', '')}\nAnswer:"
+    )
+
+    state["query"] = question
+    state["response"] = response
+    results.append(state)
 
 
 async def record_information(ctx: Context, information: str) -> str:
@@ -66,12 +91,6 @@ async def synthesize_query(ctx: Context, synth_query: str) -> str:
 
 
 async def main():
-    from llama_index.core.agent.workflow import (
-        AgentInput,
-        ToolCallResult,
-        AgentStream,
-    )
-
     rag = RAGWorkflow(verbose=True, timeout=120.0)
 
     async def retrieve_medical_readings_for_patient(
@@ -184,30 +203,19 @@ async def main():
         root_agent=search_agent.name,
     )
 
-    query = input("Enter query: ")
-    handler = workflow.run(query)
+    with open("questions.json") as f:
+        obj = json.load(f)
 
-    async for event in handler.stream_events():
-        if isinstance(event, AgentInput):
-            print(f"Agent {event.current_agent_name}: ")
-        if isinstance(event, AgentStream):
-            print(f"{event.delta}", end="\n")
-        elif isinstance(event, ToolCallResult):
-            print(f"Tool called: {event.tool_name} -> {event.tool_output}")
+    res_obj = {"results": []}
+    tasks = [
+        process_question(q, workflow, llm, res_obj["results"])
+        for file in obj["files"]
+        for q in file["questions"]
+    ]
 
-    state = await handler.ctx.get("state")  # type: ignore
-
-    final_query = ""
-    if "synth_query" in state:
-        final_query = state["synth_query"]
-    else:
-        final_query = query
-
-    response = llm.complete(
-        "Based only on the retrieved information and the query, answer the query. Assume that the information is directly related to the query."
-        + f"\nQuery:{final_query}.\nInformation: {state["synthesized_information"]}\nAnswer:",
-    )
-    print(f"FINAL RESPONSE:\n{response}")
+    await asyncio.gather(*tasks)
+    with open("results.json", "w", encoding="utf-8") as fp:
+        json.dump(res_obj, fp, ensure_ascii=False, indent=4)
 
 
 if __name__ == "__main__":
