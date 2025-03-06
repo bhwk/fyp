@@ -46,11 +46,12 @@ if not os.path.exists(CSV_FILE):
 
 async def process_question(file_path, question, workflow, llm, progress, total, writer):
     handler = workflow.run(question)
-    state = await handler.ctx.get("state")  # type: ignore
 
     async for event in handler.stream_events():
         if isinstance(event, ToolCallResult):
             print(f"Tool called: {event.tool_name} -> {event.tool_output}")
+
+    state = await handler.ctx.get("state")  # type: ignore
 
     final_query = state.get("synth_query", question)
     response = await llm.acomplete(
