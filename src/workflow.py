@@ -47,6 +47,7 @@ if not os.path.exists(CSV_FILE):
 async def process_question(file_path, question, workflow, llm, progress, total, writer):
     handler = workflow.run(question)
 
+    print(f"Starting processing: {question}")
     async for event in handler.stream_events():
         if isinstance(event, ToolCallResult):
             print(f"Tool called: {event.tool_name} -> {event.tool_output}")
@@ -71,6 +72,7 @@ async def process_question(file_path, question, workflow, llm, progress, total, 
             response,
         ]
     )
+    print(f"Completed processing: {question}")
 
 
 async def record_information(ctx: Context, information: str) -> str:
@@ -118,6 +120,7 @@ async def synthesize_query(ctx: Context, synth_query: str) -> str:
 
 
 async def main():
+    print("Starting main process...")
     rag = RAGWorkflow(verbose=True, timeout=120.0)
 
     async def retrieve_medical_readings_for_patient(
@@ -236,6 +239,7 @@ async def main():
     total_questions = sum(len(file["questions"]) for file in obj["files"])
     progress = [0]
 
+    print(f"Total questions to process: {total_questions}")
     with open(CSV_FILE, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         tasks = [
@@ -246,6 +250,7 @@ async def main():
             for q in file["questions"]
         ]
         await asyncio.gather(*tasks)
+    print("Processing complete.")
 
 
 if __name__ == "__main__":
