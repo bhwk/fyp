@@ -38,6 +38,8 @@ CSV_HEADERS = [
     "response",
 ]
 
+BATCH_SIZE = 10
+
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -242,14 +244,24 @@ async def main():
     print(f"Total questions to process: {total_questions}")
     with open(CSV_FILE, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        tasks = [
-            process_question(
-                file["file"], q, workflow, llm, progress, total_questions, writer
-            )
-            for file in obj["files"]
-            for q in file["questions"]
-        ]
-        await asyncio.gather(*tasks)
+        tasks = []
+        for file in obj["files"]:
+            for i in range(0, len(file["questions"]), BATCH_SIZE):
+                batch = file["questions"][i : i + BATCH_SIZE]
+                tasks.extend(
+                    process_question(
+                        file["file"],
+                        q,
+                        workflow,
+                        llm,
+                        progress,
+                        total_questions,
+                        writer,
+                    )
+                    for q in batch
+                )
+                await asyncio.gather(*tasks)
+                tasks.clear()
     print("Processing complete.")
 
 
