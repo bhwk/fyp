@@ -43,9 +43,9 @@ async def save_batch(batch, batch_index):
 
 
 async def process_question(
-    file_path, question, workflow, llm, progress, total, batch, batch_index
+    file_path, question, workflow, context, llm, progress, total, batch, batch_index
 ):
-    handler = workflow.run(question)
+    handler = workflow.run(question, ctx=context)
 
     print(f"Starting processing: {question}")
     async for event in handler.stream_events():
@@ -250,11 +250,6 @@ async def main():
         can_handoff_to=["SynthAgent"],
     )
 
-    workflow = AgentWorkflow(
-        agents=[synth_agent, search_agent, review_agent],
-        root_agent=search_agent.name,
-    )
-
     with open("questions.json") as f:
         obj = json.load(f)
 
@@ -266,12 +261,18 @@ async def main():
     tasks = []
     for file in obj["files"]:
         for i in range(0, len(file["questions"]), BATCH_SIZE):
+            workflow = AgentWorkflow(
+                agents=[synth_agent, search_agent, review_agent],
+                root_agent=search_agent.name,
+            )
+            context = Context(workflow)
             batch_questions = file["questions"][i : i + BATCH_SIZE]
             tasks.extend(
                 process_question(
                     file["file"],
                     q,
                     workflow,
+                    context,
                     llm,
                     progress,
                     total_questions,
