@@ -43,7 +43,15 @@ async def save_batch(batch, batch_index):
 
 
 async def process_question(
-    file_path, question, workflow, context, llm, progress, total, batch, batch_index
+    file_path,
+    question,
+    llm,
+    progress,
+    total,
+    batch,
+    batch_index,
+    workflow,
+    context,
 ):
     handler = workflow.run(question, ctx=context)
 
@@ -261,26 +269,26 @@ async def main():
     tasks = []
     for file in obj["files"]:
         for i in range(0, len(file["questions"]), BATCH_SIZE):
-            workflow = AgentWorkflow(
-                agents=[synth_agent, search_agent, review_agent],
-                root_agent=search_agent.name,
-            )
-            context = Context(workflow)
             batch_questions = file["questions"][i : i + BATCH_SIZE]
-            tasks.extend(
-                process_question(
-                    file["file"],
-                    q,
-                    workflow,
-                    context,
-                    llm,
-                    progress,
-                    total_questions,
-                    batch,
-                    batch_index,
+            for q in batch_questions:
+                workflow = AgentWorkflow(
+                    agents=[synth_agent, search_agent, review_agent],
+                    root_agent=search_agent.name,
                 )
-                for q in batch_questions
-            )
+                context = Context(workflow)
+                tasks.append(
+                    process_question(
+                        file["file"],
+                        q,
+                        llm,
+                        progress,
+                        total_questions,
+                        batch,
+                        batch_index,
+                        workflow,
+                        context,
+                    )
+                )
 
             # Process and save each batch before moving to the next batch
             await asyncio.gather(*tasks)
