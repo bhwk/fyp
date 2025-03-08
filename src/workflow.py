@@ -34,7 +34,8 @@ BATCH_SIZE = 10
 os.makedirs(JSON_DIR, exist_ok=True)
 
 
-def save_batch(batch, batch_index):
+async def save_batch(batch, batch_index):
+    """Save the current batch to a JSON file."""
     json_file = os.path.join(JSON_DIR, f"batch_{batch_index}.json")
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(batch, f, indent=4)
@@ -60,22 +61,27 @@ async def process_question(
     )
     progress[0] += 1
     print(f"Progress: {progress[0]}/{total} questions completed.")
+
+    # Append the current result to the batch
     batch.append(
         {
             "file": file_path,
             "query": question,
             "synthetic query": state.get("synth_query", ""),
             "information": state.get("information", []),
+            "nodes": state.get("nodes", []),
             "synthesized information": state.get("synthesized_information", ""),
             "review": state.get("review", ""),
             "response": response,
         }
     )
 
+    # Save the batch to JSON if the batch size is reached
     if len(batch) >= BATCH_SIZE:
-        save_batch(batch, batch_index[0])
-        batch.clear()
-        batch_index[0] += 1
+        await save_batch(batch, batch_index[0])
+        batch.clear()  # Clear the batch after saving
+        batch_index[0] += 1  # Increment the batch index
+
     print(f"Completed processing: {question}")
 
 
@@ -258,10 +264,10 @@ async def main():
     batch_index = [0]
     print(f"Total questions to process: {total_questions}")
     tasks = []
-
     for file in obj["files"]:
-        for q in file["questions"]:
-            tasks.append(
+        for i in range(0, len(file["questions"]), BATCH_SIZE):
+            batch_questions = file["questions"][i : i + BATCH_SIZE]
+            tasks.extend(
                 process_question(
                     file["file"],
                     q,
@@ -272,12 +278,15 @@ async def main():
                     batch,
                     batch_index,
                 )
+                for q in batch_questions
             )
 
-    await asyncio.gather(*tasks)
+            # Process and save each batch before moving to the next batch
+            await asyncio.gather(*tasks)
+            tasks.clear()  # Clear tasks after processing the batch
 
     if batch:
-        save_batch(batch, batch_index[0])
+        await save_batch(batch, batch_index[0])
     print("Processing complete.")
 
 
