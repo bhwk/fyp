@@ -65,14 +65,14 @@ async def process_question(
     # Append the current result to the batch
     batch.append(
         {
-            "file": file_path,
-            "query": question,
+            "file": str(file_path),
+            "query": str(question),
             "synthetic query": state.get("synth_query", ""),
             "information": state.get("information", []),
             "nodes": state.get("nodes", []),
             "synthesized information": state.get("synthesized_information", ""),
             "review": state.get("review", ""),
-            "response": response,
+            "response": str(response),
         }
     )
 
