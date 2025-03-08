@@ -165,4 +165,6 @@ class RAGWorkflow(Workflow):
 
         response = await synthesizer.asynthesize(query, ev.nodes)
 
-        return StopEvent(result=response)
+        result = {"information": response, "nodes": ev.nodes}
+
+        return StopEvent(result=result)

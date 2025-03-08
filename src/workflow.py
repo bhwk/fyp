@@ -6,6 +6,7 @@ from llama_index.core.agent.workflow import (
     ToolCallResult,
     AgentStream,
 )
+from llama_index.core.schema import NodeWithScore
 from llama_index.core.tools import FunctionTool
 from llama_index.llms.ollama import Ollama
 from llama_index.core.agent.workflow import AgentWorkflow, FunctionAgent
@@ -27,26 +28,22 @@ llm = Ollama(
 
 VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
-CSV_FILE = "results.csv"
-CSV_HEADERS = [
-    "file",
-    "query",
-    "synthetic query",
-    "information",
-    "synthesized information",
-    "review",
-    "response",
-]
-
+JSON_DIR = "results"
 BATCH_SIZE = 10
 
-if not os.path.exists(CSV_FILE):
-    with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(CSV_HEADERS)
+os.makedirs(JSON_DIR, exist_ok=True)
 
 
-async def process_question(file_path, question, workflow, llm, progress, total, writer):
+def save_batch(batch, batch_index):
+    json_file = os.path.join(JSON_DIR, f"batch_{batch_index}.json")
+    with open(json_file, "w", encoding="utf-8") as f:
+        json.dump(batch, f, indent=4)
+    print(f"Saved batch {batch_index} to {json_file}")
+
+
+async def process_question(
+    file_path, question, workflow, llm, progress, total, batch, batch_index
+):
     handler = workflow.run(question)
 
     print(f"Starting processing: {question}")
@@ -63,17 +60,22 @@ async def process_question(file_path, question, workflow, llm, progress, total, 
     )
     progress[0] += 1
     print(f"Progress: {progress[0]}/{total} questions completed.")
-    writer.writerow(
-        [
-            file_path,
-            question,
-            state.get("synth_query", ""),
-            json.dumps(state.get("information", [])),
-            state.get("synthesized_information", ""),
-            state.get("review", ""),
-            response,
-        ]
+    batch.append(
+        {
+            "file": file_path,
+            "query": question,
+            "synthetic query": state.get("synth_query", ""),
+            "information": state.get("information", []),
+            "synthesized information": state.get("synthesized_information", ""),
+            "review": state.get("review", ""),
+            "response": response,
+        }
     )
+
+    if len(batch) >= BATCH_SIZE:
+        save_batch(batch, batch_index[0])
+        batch.clear()
+        batch_index[0] += 1
     print(f"Completed processing: {question}")
 
 
@@ -108,6 +110,17 @@ async def synthesize_information(ctx: Context, synthesized_information: str) -> 
 
     await ctx.set("state", current_state)
     return "Content generated."
+
+
+async def record_nodes(ctx: Context, nodes: list[NodeWithScore]) -> str:
+    """Useful for recording the nodes retrieved from a search. Your input should be the list of nodes retrieved"""
+    current_state = await ctx.get("state")
+    if "nodes" not in current_state:
+        current_state["nodes"] = []
+    current_state["nodes"].extend(nodes)
+
+    await ctx.set("state", current_state)
+    return "Nodes recorded"
 
 
 async def synthesize_query(ctx: Context, synth_query: str) -> str:
@@ -208,6 +221,7 @@ async def main():
         ),
         tools=[
             record_information,
+            record_nodes,
             retrieve_medical_readings_for_patient,
             search_for_patients_with_medical_condition,
         ],  # type: ignore
@@ -240,28 +254,30 @@ async def main():
 
     total_questions = sum(len(file["questions"]) for file in obj["files"])
     progress = [0]
-
+    batch = []
+    batch_index = [0]
     print(f"Total questions to process: {total_questions}")
-    with open(CSV_FILE, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        tasks = []
-        for file in obj["files"]:
-            for i in range(0, len(file["questions"]), BATCH_SIZE):
-                batch = file["questions"][i : i + BATCH_SIZE]
-                tasks.extend(
-                    process_question(
-                        file["file"],
-                        q,
-                        workflow,
-                        llm,
-                        progress,
-                        total_questions,
-                        writer,
-                    )
-                    for q in batch
+    tasks = []
+
+    for file in obj["files"]:
+        for q in file["questions"]:
+            tasks.append(
+                process_question(
+                    file["file"],
+                    q,
+                    workflow,
+                    llm,
+                    progress,
+                    total_questions,
+                    batch,
+                    batch_index,
                 )
-                await asyncio.gather(*tasks)
-                tasks.clear()
+            )
+
+    await asyncio.gather(*tasks)
+
+    if batch:
+        save_batch(batch, batch_index[0])
     print("Processing complete.")
 
 
