@@ -166,7 +166,7 @@ class RAGWorkflow(Workflow):
         response = await synthesizer.asynthesize(query, ev.nodes)
 
         result = {
-            "information": response,
+            "information": str(response),
             "nodes": [node.metadata["file_name"] for node in ev.nodes],
         }
 
