@@ -230,6 +230,7 @@ async def main():
             "Identify and carry out the necessary steps to retrieve the right information needed."
             "You must make use of the tools assigned to you."
             "Record the information you receive using the record_information_tool."
+            "Record the nodes retrieved from the searches you perform."
             "Retrieve all the necessary information before handing off to the SynthAgent."
             "You must hand off to the SynthAgent."
         ),
