@@ -1,0 +1,187 @@
+[
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_16-01-2018.txt",
+        "query": "How many procedures were completed for Leo278 Franecki195 during the visit on January 16, 2018, and what were they?",
+        "synthetic query": "How many procedures were completed during the visit on January 16, 2018, and what were they?",
+        "information": [
+            "For Leo278 Franecki195 during the visit on January 16, 2018, two procedures were completed: \n- Medication reconciliation (procedure) \n- Patient referral for dental care (procedure)."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_16-01-2018.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-05-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_17-01-2017.txt"
+        ],
+        "synthesized information": "During a visit on January 16, 2018, two procedures were completed which included Medication reconciliation and Patient referral for dental care.",
+        "review": "The synthesized information and query need specific dates instead of placeholders like [DATE]. Also, the response should summarize that two procedures were completed: Medication reconciliation and Patient referral for dental care during the visit on January 16, 2018.",
+        "response": "During the visit on January 16, 2018, two procedures were completed. They were medication reconciliation and patient referral for dental care."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+        "query": "Based on the information provided for Leo278 Franecki195, what was his body mass index (BMI) and how did it compare to others of his age and sex as indicated by the percentile given?",
+        "synthetic query": "What is the range of BMI and how does it compare with others of similar age and sex as indicated by the percentile given?",
+        "information": [
+            "Code is Body mass index (BMI) [Ratio]. Value is 24.31 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 98.68 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 23.98 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 98.12 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 26.92 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 98.17 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 23.85 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 89.78 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 24.00 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 98.88 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 23.17 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 90.53 %. \n\nCode is Body mass index (BMI) [Ratio]. Value is 26.70 kg/m2. Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 93.33 %."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_22-01-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_20-02-2024.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt"
+        ],
+        "synthesized information": "The patient's Body Mass Index (BMI) ranged from approximately 23.17 to 26.92 kg/m\u00b2 across different assessments. The percentile for BMI per age and sex was consistently high, ranging from around the 89th to the 99th percentile.",
+        "review": "",
+        "response": "The patient's Body Mass Index (BMI) varied between approximately 23.17 to 26.92 kg/m\u00b2 across different assessments. This range is considered within the normal to slightly overweight category according to standard BMI classifications, where a BMI from about 18.5 to 24.9 is typically classified as \"normal,\" and 25 or higher is considered \"overweight.\" Despite falling in this generally acceptable range, the patient's BMI percentile per age and sex was notably high, ranging from around the 89th to the 99th percentile. This suggests that compared to others of similar age and sex, the patient has a significantly higher BMI, placing them well above average for their demographic group."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+        "query": "On the encounter date of January 28, 2020, what were the recorded values for Leo's systolic blood pressure and heart rate?",
+        "synthetic query": "What were the recorded values for systolic blood pressure and heart rate on the closest available dates near January 28, 2020?",
+        "information": [
+            "Based on the provided context information, there is no record of an encounter or measurements taken for Leo278 Franecki195 on January 28, 2020. The closest dates available are:\n\n- Encounter Date: 05-01-2016\n    - Systolic Blood Pressure: 131.00 mm[Hg]\n    - Heart rate: 85.00 /min\n\n- Encounter Date: 05-07-2016\n    - Systolic Blood Pressure: 128.00 mm[Hg] \n    - Heart rate: 61.00 /min\n\nThere are no records for the specified date of January 28, 2020."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_28-08-2019.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_28-06-2023.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_28-06-2017.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_28-09-2016.txt"
+        ],
+        "synthesized information": "There are no recorded values for systolic blood pressure and heart rate on the specified date (January 28, 2020). The closest dates available with measurements are May 1, 2016, where the systolic blood pressure was approximately 131 mm[Hg] and the heart rate was around 85 bpm. On another close encounter date of May 7, 2016, the systolic blood pressure reading was roughly 128 mm[Hg], with a heart rate of about 61 bpm.",
+        "review": "",
+        "response": "The recorded values for systolic blood pressure and heart rate on the closest available dates near January 28, 2020, are from May 1, 2016, where the systolic blood pressure was approximately 131 mm[Hg] and the heart rate was around 85 bpm. On another nearby date of May 7, 2016, the systolic blood pressure reading was roughly 128 mm[Hg], with a heart rate of about 61 bpm. Please note that these dates are from late 2016 and not close to January 28, 2020. There were no recorded values for the specified date or nearby dates in early 2020 based on the provided information."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+        "query": "What procedures were completed during the medical encounter with Leo on January 28, 2020, and which questionnaire was used to screen for depression?",
+        "synthetic query": "What procedures were completed during the medical encounter, and which questionnaire was used to screen for depression?",
+        "information": [
+            "Procedures:  \n- completed Depression screening (procedure)  \n- completed Depression screening using Patient Health Questionnaire Nine Item score (procedure)  \n- completed Assessment of substance use (procedure)  \n- completed Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test (procedure)  \n- completed Anticipatory guidance (procedure)\n\nDepression screening questionnaire:  \n- Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]. Value is 2.00 {score}."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_28-03-2021.txt",
+            "Lon587_Kuhic920_6c602779-9775-f512-2724-fa4e0d0788f5_01-02-2016.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_15-01-2020.txt"
+        ],
+        "synthesized information": "During a recent medical visit, the patient underwent several procedures including depression screening using the Patient Health Questionnaire-9 (PHQ-9) for Teens. The PHQ-9 score was recorded as 2.",
+        "review": "The response accurately summarizes that during a medical encounter, procedures including depression screening using the Patient Health Questionnaire-9 (PHQ-9) for Teens were completed. The PHQ-9 score was 2. It also mentions that the information is synthesized from multiple sources and anonymizes names as required.",
+        "response": "During the medical encounter, procedures included conducting a depression screening on the patient. The questionnaire used for this screening was the Patient Health Questionnaire-9 (PHQ-9) for Teens, and the resulting PHQ-9 score was recorded as 2."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+        "query": "Given Leo278 Franecki195's reported never having smoked tobacco and his BMI value, how might these factors influence the healthcare provider's anticipatory guidance?",
+        "synthetic query": "How might a patient's never having smoked tobacco and their BMI range of 23 to 27 kg/m\u00b2 influence the healthcare provider's anticipatory guidance?",
+        "information": [
+            "Name: Leo278 Franecki195  \nGender: male  \nBorn: 2008-01-08  \nMaritalStatus: Never Married  \nDeceased: False  \n\nTobacco smoking status: Never smoked tobacco (finding).  \n\nBody mass index (BMI) [Ratio] values:\n- Encounter Date: 05-07-2016, Value is 24.31 kg/m2.\n- Encounter Date: 05-01-2016, Value is 24.00 kg/m2.\n- Encounter Date: 22-01-2019, Value is 26.92 kg/m2.\n- Encounter Date: 14-02-2023, Value is 25.24 kg/m2.\n- Encounter Date: 02-02-2021, Value is 23.17 kg/m2.\n- Encounter Date: 08-02-2022, Value is 23.85 kg/m2.\n- Encounter Date: 18-04-2023, Value is 25.46 kg/m2."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_22-01-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt"
+        ],
+        "synthesized information": "The patient has a consistent history of not smoking tobacco. Their Body Mass Index (BMI) values range from 23 to 27 kg/m\u00b2, which falls within the healthy weight category and slightly into the overweight category.",
+        "review": "",
+        "response": "A patient\u2019s never having smoked tobacco and their BMI in the range of 23 to 27 kg/m\u00b2 can positively influence healthcare provider's anticipatory guidance. Given that smoking is a major risk factor for numerous health issues, including cardiovascular disease and cancer, the fact that this patient has not smoked tobacco reduces their risk profile significantly compared to those who do smoke.\n\nFor BMI values between 23 and 27 kg/m\u00b2, which are within the healthy weight category and slightly into the overweight range, healthcare providers may focus on maintaining a balanced diet and encouraging regular physical activity. The guidance might emphasize the importance of these lifestyle factors in preventing progression into obesity, which could increase the risk for conditions such as type 2 diabetes, cardiovascular diseases, and certain cancers.\n\nThe provider would likely highlight the benefits of this weight category and stress the need to avoid behaviors that lead to weight gain or smoking initiation. Anticipatory guidance might also include discussing the patient's current lifestyle habits and setting goals aimed at maintaining a healthy BMI through diet and exercise, while continuing to abstain from tobacco use."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+        "query": "What is the Body Mass Index (BMI) percentile of Leo278 Franecki195 compared to other males his age, and how does this relate to his health status?",
+        "synthetic query": "How does the patient's Body Mass Index (BMI) percentile compare to other males his age, and what are the potential health implications?",
+        "information": [
+            "Here is the extracted Body Mass Index (BMI) information for Leo278 Franecki195:\n\n- **Encounter Date:** 05-07-2016  \n  - **Body mass index (BMI) [Ratio]:** 24.31 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 98.68 %\n\n- **Encounter Date:** 10-01-2017  \n  - **Body mass index (BMI) [Ratio]:** 23.98 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 98.12 %\n\n- **Encounter Date:** 22-01-2019  \n  - **Body mass index (BMI) [Ratio]:** 26.92 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 98.17 %\n\n- **Encounter Date:** 08-02-2022  \n  - **Body mass index (BMI) [Ratio]:** 23.85 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 89.78 %\n\n- **Encounter Date:** 05-01-2016  \n  - **Body mass index (BMI) [Ratio]:** 24.00 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 98.88 %\n\n- **Encounter Date:** 02-02-2021  \n  - **Body mass index (BMI) [Ratio]:** 23.17 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 90.53 %\n\n- **Encounter Date:** 20-02-2024  \n  - **Body mass index (BMI) [Ratio]:** 26.70 kg/m2\n  - **Body mass index (BMI) [Percentile] Per age and sex:** 93.33 %"
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_22-01-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_20-02-2024.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt"
+        ],
+        "synthesized information": "The patient's Body Mass Index (BMI) ratios ranged from approximately 23.17 kg/m\u00b2 to 26.92 kg/m\u00b2 over multiple encounters. The BMI percentiles for the patient compared to other males his age varied, with a range of around 89.78% to 98.88%. These high percentile values indicate that the patient's BMI is higher than most males his age, which could suggest potential health risks associated with being overweight or obese.",
+        "review": "The response is well-summarized and presents the information in an easily readable format. The potential health implications are clearly stated based on the BMI percentile data.",
+        "response": "The patient's Body Mass Index (BMI) percentile ranges from approximately 89.78% to 98.88%, indicating that their BMI is significantly higher compared to other males of the same age group. Such high percentiles suggest the patient falls within an overweight or possibly obese category, depending on the specific values when considering standard BMI classifications.\n\nPotential health implications associated with a high BMI in this context can include increased risks for cardiovascular diseases, type 2 diabetes, certain types of cancer (such as colorectal and prostate cancers), hypertension, sleep apnea, and other obesity-related conditions. It is important that the patient takes steps to manage their weight through dietary changes and physical activity, as recommended by a healthcare provider, to mitigate these health risks."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+        "query": "Considering the procedures that were completed during the encounter on April 18th, 2023, what specific mental health concerns might have prompted the completion of a Depression screening using Patient Health Questionnaire Nine Item score procedure?",
+        "synthetic query": "What mental health concerns might have prompted the completion of a Depression screening using Patient Health Questionnaire Nine Item score procedure based on the available records?",
+        "information": [
+            "There is no specific record for a depression screening using the Patient Health Questionnaire Nine Item score (PHQ-9) procedure conducted for any patient on April 18th, 2023. The provided data includes PHQ-9 scores from different dates but does not match the specified date."
+        ],
+        "nodes": [
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_08-06-2021.txt",
+            "Domenica436_Rau926_3648fb36-1cd1-3641-0b1c-1f00d1e7e7de_02-08-2020.txt",
+            "Jeana169_Weimann465_2bd4d47d-5e00-3b67-cdd7-03f4b811b711_13-08-2018.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_25-10-2023.txt",
+            "Leonor133_Silvia880_Colunga237_b0f6cc39-6dfd-4ac2-84c7-e7478723d563_25-07-2024.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_20-06-2018.txt",
+            "Leonor133_Silvia880_Colunga237_b0f6cc39-6dfd-4ac2-84c7-e7478723d563_20-07-2017.txt"
+        ],
+        "synthesized information": "There was no record of a depression screening using PHQ-9 on [DATE]. However, there are entries for other dates which include various PHQ-9 scores.",
+        "review": "",
+        "response": "Based on the provided information, there is no specific record of a Depression screening using the Patient Health Questionnaire Nine Item (PHQ-9) score procedure on the particular date mentioned. Nevertheless, since there are entries with various PHQ-9 scores for other dates, it suggests that the individual may have experienced or exhibited symptoms related to depression at different times. Common mental health concerns that might prompt such screenings include persistent feelings of sadness, loss of interest in activities once enjoyed (anhedonia), changes in appetite or weight, sleep disturbances, fatigue, difficulty concentrating, feelings of worthlessness or excessive guilt, and recurrent thoughts of death or suicide. These symptoms are typically assessed by the PHQ-9 to determine the severity of depression."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt",
+        "query": "How old would Leo278 Franecki195 be if he was born on January 8, 2008?",
+        "synthetic query": "",
+        "information": [],
+        "nodes": [],
+        "synthesized information": "",
+        "review": "",
+        "response": "If Leo278 Franecki195 was born on January 8, 2008, their age would depend on the current date. As of today (September 26, 2023), they would be 15 years old. However, if the current year is different, you can calculate their age by subtracting 2008 from the current year."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt",
+        "query": "Is there any information provided about the procedures conducted for Leo278 Franecki195 during his encounter on February 13, 2021?",
+        "synthetic query": "Is there any information provided about the procedures conducted during the patient's encounter on a specific date?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt\n\nName: Leo278 Franecki195 Gender: male Born: 2008-01-08 MaritalStatus: Never Married Deceased: False\nEncounter Date: 13-02-2021\nProcedures:"
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-05-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt"
+        ],
+        "synthesized information": "The medical records indicate that no specific procedures were documented for [PATIENT] on [DATE_PLACEHOLDER]. The absence of procedure documentation could mean either no procedures were conducted or the information might not be available in the current records.",
+        "review": "The response lacks detail about whether any procedures were actually conducted. It should specify if there were no procedures or if the information is unavailable.",
+        "response": "Based on the provided information, there is no record of any specific procedures being conducted during the patient's encounter on the specified date. This could indicate that no procedures were carried out, or it may simply mean that such details are either missing or not documented within the available medical records."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt",
+        "query": "What was the body temperature recorded for Leo278 Franecki195 on February 13, 2021?",
+        "synthetic query": "What was the body temperature recorded on February 13, 2021?",
+        "information": [
+            "The body temperature recorded for Leo278 Franecki195 on February 13, 2021 was 37.67 Cel."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_13-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_23-09-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-06-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt"
+        ],
+        "synthesized information": "The body temperature recorded on February 13, 2021 was 38 Cel.",
+        "review": "The synthesized information and query are accurate and correctly reflect the body temperature of 38 Cel recorded on February 13, 2021.",
+        "response": "The body temperature recorded on February 13, 2021 was 38 degrees Celsius."
+    }
+]

@@ -1,0 +1,191 @@
+[
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_12-02-2023.txt",
+        "query": "What was the body temperature of Britteny287 Carter549 when it was recorded on December 2, 2023?",
+        "synthetic query": "What was the approximate body temperature of the patient when it was recorded on [DATE]?",
+        "information": [
+            "The body temperature of Britteny287 Carter549 on December 2, 2023 was recorded as 38.87 Celsius."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_12-02-2023.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-06-2020.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-04-2021.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_09-04-2019.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_02-05-2023.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_07-05-2024.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt"
+        ],
+        "synthesized information": "The body temperature of a patient on [DATE] was recorded as approximately 39.0 Celsius.",
+        "review": "",
+        "response": "The approximate body temperature of the patient when it was recorded on [DATE] was 39.0 Celsius."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_12-02-2023.txt",
+        "query": "Was a throat culture procedure performed on Britteny287 Carter549 during her encounter on December 2, 2023?",
+        "synthetic query": "Was a throat culture procedure performed during the recent encounter?",
+        "information": [
+            "A throat culture procedure was completed for Britteny287 Carter549 during her encounter on December 2, 2023."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_12-02-2023.txt",
+            "Kieth891_McKenzie376_081abe99-9641-1098-8903-61de9e66d9fa_29-12-2020.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-04-2021.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_09-04-2019.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt"
+        ],
+        "synthesized information": "A throat culture procedure was completed during a recent encounter.",
+        "review": "",
+        "response": "Yes, a throat culture procedure was performed during the recent encounter."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-12-2016.txt",
+        "query": "Given that Britteny287 Carter549 was born in 1975 and the encounter date is set as December 20, 2016, how old would she have been at the time of her medical evaluation?",
+        "synthetic query": "Given that the patient was born in [BIRTH_YEAR] and the encounter date is set as [ENCOUNTER_DATE], how old would she have been at the time of her medical evaluation?",
+        "information": [],
+        "nodes": [],
+        "synthesized information": "The patient was born in 1975. The encounter date for the medical evaluation is December 20, 2016.",
+        "review": "",
+        "response": "To calculate the age of the patient at the time of her medical evaluation, we subtract the birth year from the year of the encounter:\n\n- Birth Year: 1975\n- Encounter Date: December 20, 2016\n\nFirstly, let's consider the full years:\n\\[ 2016 - 1975 = 41 \\]\n\nSince the encounter date is in December (the last month of the year), and assuming she had already celebrated her birthday by that time, we can conclude that the patient was 41 years old at the time of her medical evaluation on December 20, 2016."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-12-2016.txt",
+        "query": "Can you describe the outcomes or results from the uterine fundal height evaluation and fetal heart auscultation that were performed during Britteny287 Carter549's visit on December 20, 2016?",
+        "synthetic query": "Can you describe the outcomes or results from the uterine fundal height evaluation and fetal heart auscultation that were performed during a patient's visit on [DATE]?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-12-2016.txt\n\nName: Britteny287 Carter549 Gender: female Born: 1975-12-16 MaritalStatus: Married Deceased: False\nEncounter Date: 20-12-2016\nObservations: \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nNote: The provided information does not include specific outcomes for the procedures conducted."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_06-12-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-08-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-12-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_24-05-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_19-07-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-02-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_29-03-2022.txt"
+        ],
+        "synthesized information": "During a visit on [DATE], an evaluation of uterine fundal height and auscultation of the fetal heart were performed. The provided information does not include specific outcomes for these procedures.",
+        "review": "",
+        "response": "Based on the given information, there are no specific outcomes or results detailed from the uterine fundal height evaluation and fetal heart auscultation that were conducted during the patient's visit on [DATE]. To provide a comprehensive answer regarding the outcomes of those medical evaluations, additional details would be required."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-12-2016.txt",
+        "query": "What was the primary reason for Britteny287 Carter549's medical encounter on December 20, 2016?",
+        "synthetic query": "What was the primary reason for [PATIENT]'s medical encounter on [DATE]?",
+        "information": [
+            "There is no specific mention of a medical encounter for Britteny287 Carter549 on December 20, 2016. The closest date available in the records is October 11, 2016."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-02-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_11-10-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_20-04-2021.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_07-05-2024.txt"
+        ],
+        "synthesized information": "There is no specific mention of a medical encounter for [PATIENT] on [DATE]. The closest date available in the records is [PLACEHOLDER_DATE], where several procedures were completed including a hemogram, vaccine administration, urine screening for glucose, evaluation of uterine fundal height, and auscultation of the fetal heart. However, there's no primary reason for the medical encounter explicitly stated.",
+        "review": "The response indicates that there's no specific mention of a medical encounter for [PATIENT] on December 20, 2016. It mentions procedures from October 11, 2016, but lacks the primary reason for the encounter. The information is clear and relevant to the query.",
+        "response": "Based on the information provided, there is no specific mention of a medical encounter for [PATIENT] on the exact date you queried ([DATE]). The closest available record is from [PLACEHOLDER_DATE], which lists several procedures but does not specify a primary reason for the visit. The procedures conducted included a hemogram (blood test), vaccine administration, urine screening for glucose, an evaluation of uterine fundal height, and auscultation of the fetal heart, suggesting it was likely related to prenatal care. However, without more specific information, we cannot definitively state the primary reason for [PATIENT]'s medical encounter on that date."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-01-2017.txt",
+        "query": "What additional information might have been recorded during Britteny287 Carter549's visit besides the evaluation of uterine fundal height and auscultation of the fetal heart?",
+        "synthetic query": "What additional medical information was recorded during the patient's visit besides the evaluation of uterine fundal height and auscultation of the fetal heart?",
+        "information": [
+            "Here is the additional medical information extracted for Britteny287 Carter549:\n\nConditions:\n- Educated to high school level (finding)\n- Stress (finding)\n- Chronic pain (finding)\n- Chronic low back pain (finding)\n- Chronic neck pain (finding)\n- Concussion injury of brain (disorder)\n- Concussion with no loss of consciousness (disorder)\n- Viral sinusitis (disorder)\n- Normal pregnancy (finding)\n- Reports of violence in the environment (finding)\n- Body mass index 30+ - obesity (finding)\n- Gingivitis (disorder)\n- Streptococcal sore throat (disorder)\n- Otitis media (disorder)\n\nMedications:\n- Acetaminophen 325 MG Oral Tablet [Tylenol] stopped\n- Trinessa 28 Day Pack stopped\n- Jolivette 28 Day Pack stopped\n- Penicillin V Potassium 500 MG Oral Tablet stopped\n- Amoxicillin 250 MG Oral Capsule stopped\n- Ibuprofen 200 MG Oral Tablet active\n\nObservations from Encounter Dates:\n1. 26-04-2022:\n   - Body Height: 152.00 cm\n   - Pain severity (verbal numeric rating): 2.00 {score}\n   - Body Weight: 70.10 kg\n   - BMI: 30.34 kg/m\u00b2\n   - Blood Pressure: Systolic 122.00 mm[Hg], Diastolic 76.00 mm[Hg]\n   - Heart rate: 90.00 /min\n   - Respiratory rate: 12.00 /min\n   - Cholesterol (Serum or Plasma): 175.96 mg/dL\n   - Triglycerides: 111.63 mg/dL\n   - Low Density Lipoprotein Cholesterol: 101.32 mg/dL\n   - HDL Cholesterol (Serum or Plasma): 52.31 mg/dL\n   - Tobacco smoking status: Never smoked tobacco (finding)\n   - PRAPARE Assessment:\n     - Stress level: A little bit\n     - Social interaction frequency: 5 or more times a week\n     - Transportation issues: No\n     - Income before taxes: $16,969.00 /a\n     - Insurance: Medicaid\n     - Employment status: Full-time work\n     - Education Level: High school diploma or GED\n     - Housing Status: I have housing\n     - Number of people living at address: 4\n     - Preferred language: English\n     - Refugee status: No\n     - Armed Forces discharge: No\n     - Seasonal/migrant farmwork income source: No\n   - Generalized anxiety disorder (GAD-7) total score [Reported.PHQ]: 2.00 {score}\n\n2. 09-04-2019:\n   - Body Height: 152.00 cm\n   - Pain severity (verbal numeric rating): 1.00 {score}\n   - Body Weight: 68.80 kg\n   - BMI: 29.78 kg/m\u00b2\n   - Blood Pressure: Systolic 129.00 mm[Hg], Diastolic 65.00 mm[Hg]\n   - Heart rate: 68.00 /min\n   - Respiratory rate: 14.00 /min\n   - Cholesterol (Serum or Plasma): 192.06 mg/dL\n   - Triglycerides: 143.96 mg/dL\n   - Low Density Lipoprotein Cholesterol: 107.21 mg/dL\n   - HDL Cholesterol (Serum or Plasma): 56.06 mg/dL\n   - Tobacco smoking status: Never smoked tobacco (finding)\n   - PRAPARE Assessment:\n     - Stress level: Quite a bit\n     - Social interaction frequency: 3 to 5 times a week\n     - Transportation issues: No\n     - Income before taxes: $16,969.00 /a\n     - Insurance: Medicaid\n     - Employment status: Full-time work\n     - Education Level: High school diploma or GED\n     - Housing Status: I have housing\n     - Number of people living at address: 4\n     - Preferred language: English\n     - Refugee status: No\n     - Armed Forces discharge: No\n     - Seasonal/migrant farmwork income source: No\n   - Generalized anxiety disorder (GAD-7) total score [Reported.PHQ]: 14.00 {score}\n   - Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]: 1.00 {score}\n\nProcedures:\n- Hemogram, automated with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count, and manual white blood cell differential\n- Administration of vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens\n- Urine screening for glucose\n- Evaluation of uterine fundal height\n- Auscultation of the fetal heart\n- Medication reconciliation\n- Assessment of health and social care needs\n- Assessment of anxiety\n- Depression screening\n- Assessment of substance use\n- Screening for drug abuse\n- Patient referral for dental care"
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-06-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_11-10-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_patient_info.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_09-04-2019.txt"
+        ],
+        "synthesized information": "The patient had several medical conditions documented during their visits, including chronic pain, stress, viral sinusitis, and gingivitis. They were also noted to have a body mass index over 30, indicating obesity. Medications included Ibuprofen that was active at the time of the last visit. The patient has never smoked tobacco.\n\nDuring encounters in April 2022 and April 2019, several vital signs were recorded, such as heart rate ranging from 68 to 90 bpm, respiratory rate around 12-14 breaths per minute, blood pressure with systolic values between 122-129 mm[Hg] and diastolic between 65-76 mm[Hg], BMI of approximately 30 kg/m\u00b2. Cholesterol levels were noted to be within the normal range, and they have been assessed for anxiety and depression.\n\nThe procedures performed included a hemogram, vaccination against Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae, as well as urine screening for glucose. Additionally, there were assessments of health and social care needs, substance use screenings, and a referral to dental care.",
+        "review": "",
+        "response": "Besides the evaluation of uterine fundal height and auscultation of the fetal heart, additional medical information recorded during the patient's visit included several key points:\n\n- Documentation of various medical conditions such as chronic pain, stress, viral sinusitis, gingivitis, and obesity (indicated by a BMI over 30).\n- Medications being taken, specifically Ibuprofen.\n- Vital signs like heart rate, respiratory rate, blood pressure, and BMI were recorded during encounters in April 2022 and April 2019.\n- Cholesterol levels within the normal range.\n- Assessments for anxiety and depression.\n- Procedures such as a hemogram, vaccinations against Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae, urine screening for glucose, health and social care needs assessments, substance use screenings, and a referral to dental care.\n\nThis information provides a comprehensive overview of the patient's medical status beyond just maternal-fetal conditions."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-01-2017.txt",
+        "query": "Can we infer from the procedures listed that Britteny287 Carter549 was pregnant at the time of her medical encounter on March 1, 2017?",
+        "synthetic query": "Can we infer from the procedures listed that [PATIENT] was pregnant at the time of her medical encounter on [DATE]?",
+        "information": [
+            "The provided context does not contain any medical readings or observations for Britteny287 Carter549 specifically dated March 1, 2017. The closest encounter date in the records is March 28, 2017, which includes body height, pain severity score, body weight, BMI, blood pressure panel details (diastolic and systolic blood pressure), heart rate, and respiratory rate. There is no specific record for March 1, 2017, in the provided context information."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-06-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_11-10-2016.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_patient_info.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_patient_info.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt"
+        ],
+        "synthesized information": "The available records do not show any specific information about a medical encounter for [PATIENT] on [DATE]. The closest date in the record is [LATER_DATE], which lists several vitals but does not mention pregnancy status. There are no direct indicators of pregnancy from this data.",
+        "review": "The response indicates that there are no records available specifically for March 1, 2017. The closest encounter date is March 28, 2017, which includes various vitals but does not mention pregnancy status or any procedures indicative of pregnancy. It concludes that there's insufficient information to infer whether the patient was pregnant at her medical encounter on March 1, 2017.",
+        "response": "Based on the provided information, we cannot infer that [PATIENT] was pregnant at the time of her medical encounter on [DATE]. The records do not contain specific details about a visit on [DATE], and the closest entry on [LATER_DATE] does not provide any indicators of pregnancy status. Without more explicit information, no conclusion regarding pregnancy can be drawn from these procedures or vitals listed in the available records."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-01-2017.txt",
+        "query": "What was the primary reason for Britteny287 Carter549's medical encounter on March 1, 2017?",
+        "synthetic query": "What was the primary reason for the patient's medical encounter on March 1, 2017?",
+        "information": [
+            "Based on the provided context information, there is no specific mention of a 'primary reason for medical encounter' on March 1, 2017. The earliest available record in the context is from March 28, 2017, and it does not specify a primary reason for the medical encounter either; instead, it lists several procedures that were completed during this visit.\n\nTherefore, with the given information, we cannot determine the specific primary reason for a medical encounter on March 1, 2017."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-02-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-06-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_02-05-2023.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_07-05-2024.txt"
+        ],
+        "synthesized information": "Based on the provided context, there is no specific mention of a primary reason for a medical encounter on March 1, 2017. The earliest available record in the context is from [DATE], and it does not specify a primary reason for the medical encounter either; instead, it lists several procedures that were completed during this visit.\n\nTherefore, with the given information, we cannot determine the specific primary reason for a medical encounter on March 1, 2017.",
+        "review": "",
+        "response": "The provided information does not contain any details about a medical encounter on March 1, 2017. Therefore, it's not possible to specify the primary reason for that visit based on the given data."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-08-2022.txt",
+        "query": "What was the primary reason for Britteny287 Carter549's medical encounter on August 23, 2022?",
+        "synthetic query": "What was the primary reason for the patient's medical encounter on [DATE]? The available records are from [EARLIER_DATE] and [LATER_DATE].",
+        "information": [
+            "There is no record of a medical encounter for Britteny287 Carter549 on August 23, 2022. The closest dates available are February 23, 2018 and November 1, 2022."
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-02-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-11-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-04-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-03-2017.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_09-04-2019.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_02-05-2023.txt"
+        ],
+        "synthesized information": "There was no medical encounter on [DATE] for a patient. Available records are from [EARLIER_DATE] and [LATER_DATE].",
+        "review": "",
+        "response": "The patient did not have a medical encounter on the specified date, [DATE]. The available medical records are only from [EARLIER_DATE] and [LATER_DATE], hence there is no information regarding a primary reason for a medical visit on [DATE]."
+    },
+    {
+        "file": "temp/flat/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028/Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-08-2022.txt",
+        "query": "How did the auscultation of the fetal heart and evaluation of uterine fundal height contribute to assessing Britteny287 Carter549's pregnancy status?",
+        "synthetic query": "How did the auscultation of the fetal heart and evaluation of uterine fundal height contribute to assessing pregnancy status during multiple encounters?",
+        "information": [
+            "Name: Britteny287 Carter549 Gender: female Born: 1975-12-16 MaritalStatus: Married Deceased: False\n\nEncounter Date: 06-12-2016  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 23-08-2022  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 24-05-2016  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 29-03-2022  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 19-07-2016  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 01-02-2022  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)\n\nEncounter Date: 03-01-2017  \nProcedures: completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)"
+        ],
+        "nodes": [
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_06-12-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_23-08-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_24-05-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_29-03-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_19-07-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-02-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_03-01-2017.txt"
+        ],
+        "synthesized information": "The auscultation of the fetal heart and evaluation of uterine fundal height were performed during multiple encounters throughout different years to assess pregnancy status. These procedures provide important information about the well-being of both mother and fetus.",
+        "review": "",
+        "response": "The auscultation of the fetal heart and evaluation of uterine fundal height are critical components in assessing the pregnancy status across multiple encounters. The auscultation allows healthcare providers to listen for the heartbeat of the fetus, which confirms that the fetus is alive and provides an indication of its health. Any changes in the rate or rhythm of the heartbeat can alert the provider to potential issues.\n\nThe evaluation of uterine fundal height, on the other hand, helps to estimate the size of the uterus and track fetal growth over time. This measurement should correspond with gestational age, and deviations from expected measurements may indicate problems such as intrauterine growth restriction or an inaccurate estimation of due date.\n\nBy performing these assessments during multiple encounters throughout different stages of pregnancy, healthcare providers can monitor the progress and health of both mother and fetus effectively, ensuring timely interventions if any issues arise."
+    }
+]

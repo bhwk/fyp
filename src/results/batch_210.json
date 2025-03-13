@@ -1,0 +1,182 @@
+[
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+        "query": "What was Delilah659 Sanford861's pain severity score on the verbal numeric rating scale during her encounter on May 21, 2019?",
+        "synthetic query": "",
+        "information": [
+            "Code is Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_16-02-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-08-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_13-03-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_15-02-2022.txt"
+        ],
+        "synthesized information": "The patient reported a pain severity score of 3 on a verbal numeric rating scale during their encounter.",
+        "review": "The response should be summarized clearly. The patient's pain severity score of 3 on a verbal numeric rating scale during their encounter on May 21, 2019 should be highlighted.",
+        "response": "Delilah659 Sanford861's pain severity score on the verbal numeric rating scale during her encounter on May 21, 2019 was 3."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+        "query": "What were Delilah659 Sanford861's systolic and diastolic blood pressure readings during her medical examination on May 21, 2019?",
+        "synthetic query": "What were the patient's systolic and diastolic blood pressure readings during their medical examination on [DATE]?",
+        "information": [
+            "Delilah659 Sanford861's systolic blood pressure reading on May 21, 2019 was 125.00 mm[Hg] and her diastolic blood pressure reading was 86.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-08-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_05-03-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_13-03-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_27-02-2024.txt"
+        ],
+        "synthesized information": "The patient's systolic blood pressure reading on [DATE] was approximately 125 mm[Hg], and their diastolic blood pressure reading was around 86 mm[Hg].",
+        "review": "",
+        "response": "The patient's systolic blood pressure reading during the medical examination on [DATE] was approximately 125 mm[Hg], and the diastolic blood pressure reading was around 86 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+        "query": "Can you calculate and provide Delilah659 Sanford861\u2019s Body Mass Index (BMI) based on the height and weight recorded on the Encounter Date of 21-05-2019?",
+        "synthetic query": "Can you calculate the patient's Body Mass Index (BMI) based on the height and weight recorded?",
+        "information": [
+            "Name: Delilah659 Sanford861  \nEncounter Date: 21-05-2019  \nObservations:  \nCode is Body Height. Value is 81.90 cm.  \nCode is Body Weight. Value is 11.50 kg."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_16-02-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_15-02-2022.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-05-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_20-08-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_05-03-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_19-02-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-08-2018.txt"
+        ],
+        "synthesized information": "On [DATE], a patient had their Body Height measured at approximately 82 cm and their Body Weight was around 11.5 kg.",
+        "review": "The response provided contains a generic statement about height and weight without specifying the patient's name or the exact date. Additionally, it lacks the BMI calculation based on the retrieved data. The synthesized query is correctly formulated but does not provide the final answer to the initial question.",
+        "response": "To calculate the Body Mass Index (BMI), we typically use the formula:\n\n\\[ \\text{BMI} = \\frac{\\text{Weight in kilograms (kg)}}{\\left(\\text{Height in meters (m)}\\right)^2} \\]\n\nGiven:\n- Height = 82 cm, which is equivalent to 0.82 m\n- Weight = 11.5 kg\n\nPlugging these values into the formula:\n\n\\[ \\text{BMI} = \\frac{11.5}{(0.82)^2} \\approx \\frac{11.5}{0.6724} \\approx 17.1 \\]\n\nTherefore, based on the given height and weight, the patient's Body Mass Index (BMI) is approximately 17.1 kg/m\u00b2."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt",
+        "query": "Based on the given observations, what can you infer about Delilah659 Sanford861's general health condition as of the Encounter Date?",
+        "synthetic query": "",
+        "information": [
+            "Here is the extracted medical reading information for Delilah659 Sanford861:\n\n- **Encounter Date: 20-08-2019**\n    - Body Height: 85.30 cm\n    - Pain severity (0-10 verbal numeric rating): 1.00 {score}\n    - Body Weight: 12.20 kg\n    - Weight-for-length Percentile: 66.46 %\n    - Head Occipital-frontal circumference: 49.42 cm\n    - Head Occipital-frontal circumference Percentile: 98.84 %\n    - Diastolic Blood Pressure: 88.00 mm[Hg]\n    - Systolic Blood Pressure: 132.00 mm[Hg]\n    - Heart rate: 91.00 /min\n    - Respiratory rate: 13.00 /min\n    - Tobacco smoking status: Never smoked tobacco (finding)\n\n- **Encounter Date: 18-02-2020**\n    - Body Height: 91.40 cm\n    - Pain severity (0-10 verbal numeric rating): 1.00 {score}\n    - Body Weight: 13.50 kg\n    - Weight-for-length Percentile: 63.10 %\n    - Head Occipital-frontal circumference: 50.50 cm\n    - Head Occipital-frontal circumference Percentile: 98.84 %\n    - Diastolic Blood Pressure: 95.00 mm[Hg]\n    - Systolic Blood Pressure: 125.00 mm[Hg]\n    - Heart rate: 61.00 /min\n    - Respiratory rate: 15.00 /min\n    - Tobacco smoking status: Never smoked tobacco (finding)\n\n- **Encounter Date: 17-08-2021**\n    - Body Height: 104.50 cm\n    - Pain severity (0-10 verbal numeric rating): 3.00 {score}\n    - Body Weight: 16.70 kg\n    - Weight-for-length Percentile: 57.81 %\n    - Head Occipital-frontal circumference: 52.00 cm\n    - Head Occipital-frontal circumference Percentile: 98.84 %\n    - Body mass index (BMI) [Ratio]: 15.35 kg/m2\n    - Body mass index (BMI) [Percentile] Per age and sex: 44.87 %\n    - Diastolic Blood Pressure: 89.00 mm[Hg]\n    - Systolic Blood Pressure: 128.00 mm[Hg]\n    - Heart rate: 98.00 /min\n    - Respiratory rate: 14.00 /min\n    - Tobacco smoking status: Never smoked tobacco (finding)\n\n- **Encounter Date: 13-03-2018**\n    - Body Height: 56.30 cm\n    - Pain severity (0-10 verbal numeric rating): 2.00 {score}\n    - Body Weight: 4.40 kg\n    - Weight-for-length Percentile: 8.81 %\n    - Head Occipital-frontal circumference: 38.93 cm\n    - Head Occipital-frontal circumference Percentile: 98.84 %\n    - Diastolic Blood Pressure: 91.00 mm[Hg]\n    - Systolic Blood Pressure: 137.00 mm[Hg]\n    - Heart rate: 63.00 /min\n    - Respiratory rate: 13.00 /min\n    - Leukocytes [#/volume] in Blood by Automated count: 4.30 10*3/uL\n    - Erythrocytes [#/volume] in Blood by Automated count: 3.99 10*6/uL\n    - Hemoglobin [Mass/volume] in Blood: 15.60 g/dL\n    - Hematocrit [Volume Fraction] of Blood by Automated count: 38.59 %\n    - MCV [Entitic volume] by Automated count: 84.20 fL\n    - MCH [Entitic mass] by Automated count: 29.71 pg\n    - MCHC [Mass/volume] by Automated count: 35.43 g/dL\n    - Erythrocyte distribution width [Entitic volume] by Automated count: 43.28 fL\n    - Platelets [#/volume] in Blood by Automated count: 295.31 10*3/uL\n    - Platelet distribution width [Entitic volume] in Blood by Automated count: 261.72 fL\n    - Platelet mean volume [Entitic volume] in Blood by Automated count: 10.36 fL\n    - Tobacco smoking status: Never smoked tobacco (finding)\n\n- **Encounter Date: 17-04-2018**\n    - Body Height: 59.70 cm\n    - Pain severity (0-10 verbal numeric rating): 3.00 {score}\n    - Body Weight: 5.20 kg\n    - Weight-for-length Percentile: 4.95 %\n    - Head Occipital-frontal circumference: 41.67 cm\n    - Head Occipital-frontal circumference Percentile: 98.84 %\n    - Diastolic Blood Pressure: 90.00 mm[Hg]\n    - Systolic Blood Pressure: 141.00 mm[Hg]\n    - Heart rate: 60.00 /min\n    - Respiratory rate: 13.00 /min\n    - Tobacco smoking status: Never smoked tobacco (finding)"
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_20-08-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_18-02-2020.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_patient_info.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_13-03-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-04-2018.txt"
+        ],
+        "synthesized information": "",
+        "review": "",
+        "response": "To provide an accurate inference regarding Delilah659 Sanford861's general health condition as of the Encounter Date, specific observations or medical data from that date would be necessary. Since no particular details or observations are provided in your request, it is not possible to make any concrete inferences about her health condition.\n\nIf you can provide more detailed information such as vital signs, symptoms, test results, and any other relevant clinical findings observed during the encounter, I could assist further in inferring her general health status."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt",
+        "query": "How does Delilah659 Sanford861's Body Mass Index (BMI) compare to her peers of the same age and gender, and what might this indicate about her nutritional status?",
+        "synthetic query": "How does the patient's Body Mass Index (BMI) compare to their peers of the same age and gender, and what might this indicate about their nutritional status?",
+        "information": [
+            "Here is the extracted Body Mass Index (BMI) information for Delilah659 Sanford861:\n\n- Encounter Date: 16-02-2021, BMI Value: 15.55 kg/m\u00b2, BMI Percentile: 43.56%\n- Encounter Date: 17-08-2021, BMI Value: 15.35 kg/m\u00b2, BMI Percentile: 44.87%\n- Encounter Date: 15-02-2022, BMI Value: 15.23 kg/m\u00b2, BMI Percentile: 47.08%\n- Encounter Date: 27-02-2024, BMI Value: 15.31 kg/m\u00b2, BMI Percentile: 52.87%"
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_16-02-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_27-02-2024.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_15-02-2022.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_18-08-2020.txt"
+        ],
+        "synthesized information": "The patient's Body Mass Index (BMI) values have ranged from 15.23 kg/m\u00b2 to 15.55 kg/m\u00b2 over several encounters, indicating a consistent low-normal BMI percentile ranging from approximately the 44th to the 53rd percentile among peers of similar age and gender.",
+        "review": "The response should summarize Delilah659 Sanford861's Body Mass Index (BMI) values and compare them to peers of similar age and gender. It must also provide insights into her nutritional status based on the BMI percentile.",
+        "response": "The patient's Body Mass Index (BMI) values fall within the range of 15.23 kg/m\u00b2 to 15.55 kg/m\u00b2, which places them at approximately the 44th to the 53rd percentile among peers of similar age and gender. This indicates that their BMI is on the lower end but still within the normal weight category. The consistent low-normal BMI suggests that while they are not underweight by a significant margin, there might be cause for monitoring nutritional intake to ensure adequate nutrition and prevent potential deficiencies or health issues associated with being at the lower end of the normal range.\n\nThis could indicate a generally healthy nutritional status if their diet is balanced and sufficient in essential nutrients. However, it would also be important to consider other factors such as overall dietary habits, physical activity levels, and any symptoms that might suggest inadequate nutrition. Regular monitoring and possibly consulting with a dietician or healthcare provider can help ensure the patient's nutritional needs are met appropriately."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt",
+        "query": "What is the significance of Delilah659 Sanford861's reported pain severity level on a 0-10 verbal numeric rating scale in relation to her overall health assessment?",
+        "synthetic query": "What is the significance of the patient's reported pain severity level on a 0-10 verbal numeric rating scale in relation to her overall health assessment?",
+        "information": [
+            "The reported pain severity levels for Delilah659 Sanford861 are as follows:\n\n- Encounter Date: 17-08-2021, Pain Severity: 3.00 {score}\n- Encounter Date: 18-08-2020, Pain Severity: 2.00 {score}\n- Encounter Date: 15-02-2022, Pain Severity: 0.00 {score}\n- Encounter Date: 16-02-2021, Pain Severity: 3.00 {score}\n- Encounter Date: 13-03-2018, Pain Severity: 2.00 {score}\n- Encounter Date: 05-03-2019, Pain Severity: 0.00 {score}\n- Encounter Date: 17-04-2018, Pain Severity: 3.00 {score}"
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_18-08-2020.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_15-02-2022.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_16-02-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_13-03-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_05-03-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-04-2018.txt"
+        ],
+        "synthesized information": "The patient's reported pain severity levels ranged from 0 to 3 on a 0-10 verbal numeric rating scale over multiple encounters, indicating generally low-level discomfort. This suggests that the patient experiences mild pain or none at all most of the time, which can be an important indicator in assessing her overall health status and quality of life.",
+        "review": "The response needs to be summarized and should provide a clear explanation of how pain severity levels impact overall health assessment. The information provided is relevant but lacks context on the significance in terms of her overall health.",
+        "response": "The significance of the patient's reported pain severity levels ranging from 0 to 3 on a 0-10 verbal numeric rating scale is that they indicate generally low-level discomfort or mild pain. This information is crucial for her overall health assessment because it suggests that pain is not a significant factor affecting her quality of life and general well-being at the moment. Low pain scores can help healthcare providers understand that other aspects of her health might need to be more closely monitored or addressed, rather than focusing predominantly on pain management strategies. This insight contributes to a comprehensive evaluation of her overall health status by highlighting areas where she may not be experiencing distress from pain and potentially directing attention towards other symptoms or conditions that could impact her quality of life."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+        "query": "Based on the observations from August 17, 2021, how would you describe Delilah659 Sanford861\u2019s pain severity and her body mass index (BMI) percentile for age and sex?",
+        "synthetic query": "How would you describe the patient's pain severity and their body mass index (BMI) percentile for age and sex on a given date?",
+        "information": [
+            "Based on the observations from August 17, 2021:\n\nDelilah659 Sanford861's pain severity was rated at a score of 3.00 out of 10.\nHer body mass index (BMI) percentile for age and sex was 44.87%."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_16-02-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_15-02-2022.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_18-08-2020.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_21-02-2023.txt"
+        ],
+        "synthesized information": "On a particular date, the patient reported a pain severity of 3 out of 10. Additionally, their Body Mass Index (BMI) percentile for age and sex was approximately 45%.",
+        "review": "",
+        "response": "On the given date, the patient reported a pain severity of 3 out of 10, indicating mild pain. Their Body Mass Index (BMI) percentile for age and sex was at approximately 45%, suggesting their BMI falls within the normal weight range relative to others of the same age and sex."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+        "query": "On the encounter date of August 17, 2021, what specific procedures were completed for Delilah659 Sanford861 according to the given text?",
+        "synthetic query": "What specific procedures were completed on [DATE] according to the given text?",
+        "information": [
+            "On the encounter date of August 17, 2021, for Delilah659 Sanford861, the specific procedure completed was Medication reconciliation (procedure)."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_25-08-2020.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_08-02-2019.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-04-2018.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_13-03-2018.txt"
+        ],
+        "synthesized information": "On [DATE], for a patient, the specific procedure completed was Medication reconciliation.",
+        "review": "",
+        "response": "On [DATE], the specific procedure completed was medication reconciliation."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt",
+        "query": "What was Delilah659 Sanford861's blood pressure reading on the encounter date of August 17, 2021?",
+        "synthetic query": "What was the patient's blood pressure reading on a recent visit?",
+        "information": [
+            "Blood pressure reading for Delilah659 Sanford861 on August 17, 2021: Diastolic Blood Pressure is 89.00 mm[Hg], Systolic Blood Pressure is 128.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_17-08-2021.txt"
+        ],
+        "synthesized information": "On a recent visit, the patient's blood pressure was recorded as follows: Diastolic Blood Pressure was 89 mm[Hg], and Systolic Blood Pressure was 128 mm[Hg].",
+        "review": "The response accurately summarizes the blood pressure readings of 89 mm[Hg] (Diastolic) and 128 mm[Hg] (Systolic). However, it should be anonymized. The query was correctly synthesized to avoid mentioning any specific names or dates.",
+        "response": "The patient's blood pressure reading on a recent visit was 128/89 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d/Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_19-02-2019.txt",
+        "query": "What was Delilah659 Sanford861's blood pressure reading on the encounter date of February 19, 2019?",
+        "synthetic query": "What was the patient's blood pressure reading on [DATE]?",
+        "information": [
+            "Delilah659 Sanford861's blood pressure reading on February 19, 2019 was: Systolic Blood Pressure - 128.00 mm[Hg], Diastolic Blood Pressure - 88.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_19-02-2019.txt"
+        ],
+        "synthesized information": "The patient's blood pressure reading on [DATE] was: Systolic Blood Pressure - 130 mm[Hg], Diastolic Blood Pressure - 90 mm[Hg].",
+        "review": "",
+        "response": "The patient's blood pressure reading on the specified date was a systolic blood pressure of 130 mm[Hg] and a diastolic blood pressure of 90 mm[Hg]."
+    }
+]

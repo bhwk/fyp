@@ -1,0 +1,183 @@
+[
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+        "query": "What is the Body Mass Index (BMI) percentile of Aleisha941 Treutel973 compared to her age and gender group, as observed on March 16, 2020?",
+        "synthetic query": "What is the Body Mass Index (BMI) percentile of a patient compared to their age and gender group, as observed on [DATE]?",
+        "information": [
+            "Aleisha941 Treutel973's Body Mass Index (BMI) percentile compared to her age and gender group as observed on March 16, 2020 is 30.08 %."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_11-03-2019.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-02-2015.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_27-02-2017.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_08-04-2024.txt"
+        ],
+        "synthesized information": "The patient's Body Mass Index (BMI) percentile compared to their age and gender group as observed on [DATE] is 30.1 %.",
+        "review": "",
+        "response": "The patient's Body Mass Index (BMI) percentile compared to their age and gender group, as observed on the specified date, is 30.1%."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+        "query": "Which procedures were completed during the encounter with Aleisha941 Treutel973 on March 16, 2020?",
+        "synthetic query": "Which procedures were completed during the encounter on [DATE]?",
+        "information": [
+            "The procedures completed during the encounter with Aleisha941 Treutel973 on March 16, 2020 were:\n\n- Assessment of anxiety (procedure)\n- Assessment of substance use (procedure)\n- Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test (procedure)\n- Anticipatory guidance (procedure)\n- Patient referral for dental care (procedure)"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_17-04-2023.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_26-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-04-2021.txt"
+        ],
+        "synthesized information": "The procedures completed during a patient encounter on [DATE] were:\n\n- Assessment of anxiety (procedure)\n- Assessment of substance use (procedure)\n- Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test (procedure)\n- Anticipatory guidance (procedure)\n- Patient referral for dental care (procedure)",
+        "review": "",
+        "response": "The procedures completed during the encounter on [DATE] were:\n\n1. Assessment of anxiety\n2. Assessment of substance use\n3. Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test\n4. Anticipatory guidance\n5. Patient referral for dental care"
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+        "query": "Based on the observations from March 16, 2020, what was Aleisha941 Treutel973's self-reported pain severity level on a verbal numeric rating scale of 0-10?",
+        "synthetic query": "Based on the observations from March 16, 2020, what was the patient's self-reported pain severity level on a verbal numeric rating scale of 0-10?",
+        "information": [
+            "On March 16, 2020, Aleisha941 Treutel973 self-reported a pain severity level of 1.0 on a verbal numeric rating scale of 0-10."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_08-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-06-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-03-2020.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-02-2015.txt"
+        ],
+        "synthesized information": "On March 16, 2020, a patient self-reported a pain severity level of 1 on a verbal numeric rating scale of 0-10.",
+        "review": "The response is accurate but requires replacing '[DATE]' with 'March 16, 2020' in both the synthesized information and synthetic query.",
+        "response": "Based on the observations from March 16, 2020, the patient's self-reported pain severity level on a verbal numeric rating scale of 0-10 was 1."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_27-04-2024.txt",
+        "query": "Considering Aleisha941 Treutel973's date of birth is February 13, 2006, what age was she during her encounter on April 27, 2024?",
+        "synthetic query": "What age was the patient during their encounter on [DATE]?",
+        "information": [],
+        "nodes": [],
+        "synthesized information": "The patient was 18 years old during their medical encounter.",
+        "review": "",
+        "response": "The patient was 18 years old during their medical encounter. Since the specific date ([DATE]) was not provided and is not necessary to answer based on the given information, the age at the time of the encounter remains 18 years old."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_27-04-2024.txt",
+        "query": "Given that Aleisha941 Treutel973 reported a pain severity score of 4.99, how effective was the movement therapy in reducing her pain level?",
+        "synthetic query": "Given that Patient X reported a pain severity score of 5, how effective was the movement therapy in reducing their pain level?",
+        "information": [
+            "Name: Aleisha941 Treutel973 Gender: female Born: 2006-02-13 MaritalStatus: Never Married Deceased: False\n\nEncounter Date: 30-04-2024  \nObservations: Code is Pain severity - Reported. Value is 3.63 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 24-04-2024  \nObservations: Code is Pain severity - Reported. Value is 1.42 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 18-04-2024  \nObservations: Code is Pain severity - Reported. Value is 9.67 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 03-05-2024  \nObservations: Code is Pain severity - Reported. Value is 7.55 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 15-04-2024  \nObservations: Code is Pain severity - Reported. Value is 6.53 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 21-04-2024  \nObservations: Code is Pain severity - Reported. Value is 1.43 {score}.  \nProcedures: completed Movement therapy (regime/therapy)  \n\nEncounter Date: 23-03-2024  \nObservations: Code is Pain severity - Reported. Value is 6.25 {score}.  \nProcedures: completed Movement therapy (regime/therapy)"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_30-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_24-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_18-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_15-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_21-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_23-03-2024.txt"
+        ],
+        "synthesized information": "The patient reported varying levels of pain severity before undergoing movement therapy. The scores ranged from 1 to nearly 10, indicating fluctuating levels of pain. After each session of movement therapy, the recorded pain severity showed a noticeable reduction.",
+        "review": "",
+        "response": "Based on the provided information, it is noted that after each session of movement therapy, there was a noticeable reduction in the patient's reported pain severity. However, without specific details on how much the pain level decreased from the initial score of 5, we cannot quantify exactly how effective the movement therapy was for Patient X. We can infer that since reductions were \"noticeable,\" the therapy likely had some beneficial effect on lowering their pain levels."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_27-04-2024.txt",
+        "query": "What specific type of movement therapy was performed on Aleisha941 Treutel973 during her encounter on April 27, 2024?",
+        "synthetic query": "What type of movement therapy was performed on the patient during their encounter?",
+        "information": [
+            "Name: Aleisha941 Treutel973\nEncounter Date: 27-04-2024\nObservations: Code is Pain severity - Reported. Value is 4.99 {score}.\nProcedures: completed Movement therapy (regime/therapy)"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_30-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_27-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_21-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_15-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_18-04-2024.txt"
+        ],
+        "synthesized information": "A patient received Movement therapy (regime/therapy) during an encounter. The pain severity reported was approximately 5 on a scoring scale.",
+        "review": "",
+        "response": "The provided information specifies that the patient received \"Movement therapy\" during their encounter, but it does not specify the type of movement therapy performed. Therefore, based solely on the given details, we can only confirm that some form of movement therapy was administered to the patient, without being able to identify a specific type such as dance therapy, yoga, or physiotherapy."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+        "query": "Based on the PEG scale observations, how has Aleisha941 Treutel973's pain interfered with her general activity during the past week?",
+        "synthetic query": "Based on the PEG scale observations, how has pain interfered with [PATIENT]'s general activity during the past week?",
+        "information": [
+            "Based on the PEG scale observations, Aleisha941 Treutel973's pain has interfered with her general activity during the past week with a score of 5.28."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_16-02-2015.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_11-03-2019.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-06-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-03-2018.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt"
+        ],
+        "synthesized information": "Based on the PEG scale observations, pain has interfered with [PATIENT]'s general activity during the past week with a score of 5.",
+        "review": "",
+        "response": "Based on the PEG scale observations, pain has interfered moderately with [PATIENT]'s general activity during the past week, given that a score of 5 indicates a moderate level of interference."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+        "query": "According to the PEG scale, what was the impact of Aleisha941 Treutel973's pain on her enjoyment of life over the last week?",
+        "synthetic query": "What was the impact of the patient's pain on their enjoyment of life according to the PEG scale over the last week?",
+        "information": [
+            "According to the PEG scale, Aleisha941 Treutel973's pain has had an impact of 4.07 on her enjoyment of life over the last week."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_11-12-2014.txt",
+            "Domenica436_Rau926_3648fb36-1cd1-3641-0b1c-1f00d1e7e7de_19-09-2024.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_09-02-2015.txt",
+            "Domenica436_Rau926_3648fb36-1cd1-3641-0b1c-1f00d1e7e7de_06-08-2024.txt"
+        ],
+        "synthesized information": "According to the PEG scale, the patient's pain had an impact of 4 on her enjoyment of life over the last week.",
+        "review": "",
+        "response": "Based on the PEG scale, the patient's pain had an impact of 4 on her enjoyment of life over the last week. This suggests that the patient experienced a notable level of discomfort or distress due to pain, which affected their quality of life significantly during that period. The exact interpretation of the score (e.g., mild, moderate, severe) would depend on the specific scoring criteria used in the PEG scale being applied."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+        "query": "What score did Aleisha941 Treutel973 report for the severity of her pain in the past week using a 0-10 numeric rating scale?",
+        "synthetic query": "What is the range of pain severity scores reported by the patient on a 0-10 numeric rating scale over multiple encounters, and what was the most recent score in the past week?",
+        "information": [
+            "The pain severity scores for Aleisha941 Treutel973 from the provided records are as follows:\n\n- Encounter Date: 05-03-2018, Pain severity score is 1.00 {score}.\n- Encounter Date: 22-03-2021, Pain severity score is 1.00 {score}.\n- Encounter Date: 28-03-2022, Pain severity score is 3.00 {score}.\n- Encounter Date: 03-04-2023, Pain severity score is 3.00 {score}.\n- Encounter Date: 20-03-2024, Pain severity in the past week - 0-10 numeric rating [Reported] is 4.30 {score}."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_22-03-2021.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-03-2018.txt"
+        ],
+        "synthesized information": "The reported pain severity scores range from 1 to 4 on a 0-10 numeric rating scale over multiple encounters, with the most recent score in the past week being approximately 4 out of 10.",
+        "review": "",
+        "response": "The range of pain severity scores reported by the patient on a 0-10 numeric rating scale over multiple encounters is from 1 to 4. The most recent score in the past week was approximately 4 out of 10."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_18-04-2024.txt",
+        "query": "What could be the possible reasons for Aleisha941 Treutel973 reporting a pain severity score of 9.67 on April 18, 2024?",
+        "synthetic query": "What could be the possible reasons for a patient reporting a pain severity score of 9.5-10 on [DATE] after undergoing movement therapy?",
+        "information": [
+            "Aleisha941 Treutel973 reported a pain severity score of 9.67 on April 18, 2024."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-03-2018.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_18-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_22-03-2021.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt"
+        ],
+        "synthesized information": "A patient reported a high pain severity score of approximately 9.5-10 on [DATE]. This occurred after undergoing movement therapy.",
+        "review": "",
+        "response": "The retrieved information does not provide specific details about the type or nature of the movement therapy, nor does it specify any underlying conditions or injuries that the patient might have had prior to the treatment. However, based on general medical knowledge and the given context, several possible reasons for a high pain severity score (9.5-10) after undergoing movement therapy could include:\n\n1. **Overexertion**: The patient may have pushed themselves too hard during the movement therapy session, leading to muscle strain or other physical injuries.\n2. **Improper Technique**: If the exercises were not performed correctly, it might have caused undue stress on certain parts of the body, resulting in pain.\n3. **Pre-existing Conditions**: There could be pre-existing conditions such as arthritis, fractures, or nerve issues that are exacerbated by movement therapy, especially if the therapy was not tailored to accommodate these conditions.\n4. **Inflammatory Response**: The physical activity might have triggered an inflammatory response in certain areas of the body, causing significant pain post-therapy.\n5. **Muscle Soreness (Delayed Onset Muscle Soreness - DOMS)**: Intense or unfamiliar exercises can sometimes cause muscle soreness that peaks a day or two after exercise, though typically this is less severe than a score of 9.5-10 suggests without other contributing factors.\n\nFor an accurate diagnosis and understanding of the specific causes for the patient's high pain severity score, it would be necessary to have more detailed information about their medical history, the nature of the movement therapy they underwent, and possibly additional diagnostic evaluations."
+    }
+]

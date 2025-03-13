@@ -1,0 +1,195 @@
+[
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_27-05-2015.txt",
+        "query": "Could you provide details about the professional or ancillary services care that Dudley365 Blick895 received on May 27, 2015?",
+        "synthetic query": "Could you provide details about the professional or ancillary services care that a male patient received on [DATE]?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_27-05-2015.txt\n\nName: Dudley365 Blick895 Gender: male Born: 1950-04-28 MaritalStatus: Married Deceased: False\nEncounter Date: 27-05-2015\nProcedures: completed Professional / ancillary services care (regime/therapy)"
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_09-05-2015.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_27-05-2015.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-06-2015.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_13-05-2015.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_10-05-2015.txt"
+        ],
+        "synthesized information": "A male patient received Professional / ancillary services care (regime/therapy) on [DATE].",
+        "review": "The response should include a summary of the professional or ancillary services care that the patient received on May 27, 2015. The name 'Dudley365 Blick895' needs to be anonymized and the date '[DATE]' should be replaced with 'May 27, 2015'.",
+        "response": "Based on the provided information, the male patient received professional or ancillary services care, which could include various medical treatments, therapies, or support services as part of a regime or therapy plan, on the specified date. However, the specific details about the type of treatment or service are not given in the retrieved information."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-07-2017.txt",
+        "query": "Given that Dudley365 Blick895 underwent renal dialysis, can you infer why someone might require this procedure based on common medical knowledge?",
+        "synthetic query": "Can you infer the reasons someone might require renal dialysis based on common medical knowledge and the provided encounters?",
+        "information": [
+            "Name: Dudley365 Blick895 Gender: male Born: 1950-04-28 MaritalStatus: Married Deceased: False\n\nEncounter Dates and Observations:\n- Encounter Date: 01-08-2022\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 2.53 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 4.00 {score}.\n  \n- Encounter Date: 06-07-2020\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 3.80 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 5.00 {score}.\n  \n- Encounter Date: 08-04-2019\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 4.07 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 5.00 {score}.\n  \n- Encounter Date: 08-03-2019\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 4.99 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 2.00 {score}.\n  \n- Encounter Date: 01-01-2020\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 2.80 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 4.00 {score}.\n  \n- Encounter Date: 01-01-2021\n  - Weight difference [Mass difference] --pre dialysis - post dialysis: 1.68 kg.\n  - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 3.00 {score}."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-08-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2021.txt"
+        ],
+        "synthesized information": "A patient underwent multiple encounters for renal dialysis. During these encounters, weight differences post-dialysis ranged from approximately 1.7 kg to 5 kg, and pain severity varied between scores of 2 to 5 on a verbal numeric rating scale.",
+        "review": "",
+        "response": "Renal dialysis is often required when a person's kidneys are no longer able to effectively filter waste products and excess fluids from the blood\u2014a condition known as kidney failure or end-stage renal disease (ESRD). Based on common medical knowledge, here are some reasons someone might require renal dialysis:\n\n1. **Chronic Kidney Disease**: This is one of the most common reasons for needing dialysis. Chronic conditions like diabetes and hypertension can damage the kidneys over time, leading to a gradual loss of kidney function.\n\n2. **Acute Kidney Injury (AKI)**: Sometimes acute injuries or sudden events such as severe dehydration, blood loss, or certain medications can cause temporary but significant kidney failure that may necessitate dialysis until the kidneys recover.\n\n3. **Polycystic Kidney Disease**: This is a genetic disorder characterized by the growth of numerous cysts in the kidneys which can interfere with their function over time.\n\n4. **Autoimmune Diseases**: Conditions such as lupus or vasculitis can affect kidney function and lead to the need for dialysis if the damage is severe enough.\n\n5. **Blockages or Obstructions**: Physical blockages, like kidney stones or tumors, can impede urine flow out of the kidneys, causing backup that may require dialysis until the obstruction is cleared.\n\nThe weight differences observed post-dialysis (ranging from 1.7 kg to 5 kg) suggest fluid removal during the treatment process, which is typical in patients undergoing renal dialysis as their kidneys are unable to effectively manage fluid balance. The pain severity scores of 2 to 5 on a verbal numeric rating scale might indicate discomfort or complications associated with the dialysis procedure itself or underlying kidney disease symptoms.\n\nIt's important to note that without more specific medical history and diagnostic details, these inferences are based on general scenarios where renal dialysis is commonly required."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-07-2017.txt",
+        "query": "What was Dudley365 Blick895's weight difference before and after his dialysis session on July 22, 2017?",
+        "synthetic query": "What was the patient's weight difference before and after his dialysis session on [DATE]?",
+        "information": [
+            "Based on the provided context information, there is no specific entry for Dudley365 Blick895's weight reading on July 22, 2017. The available records contain weight difference readings after renal dialysis sessions and other observations but do not specify an exact weight measurement for that date."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_11-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-03-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-03-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-01-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-02-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-04-2018.txt"
+        ],
+        "synthesized information": "The medical records do not provide a specific weight measurement or difference before and after the patient's dialysis session on [DATE].",
+        "review": "",
+        "response": "Based on the provided information, there is no recorded data to determine the patient's weight difference before and after their dialysis session on the specified date."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_22-07-2017.txt",
+        "query": "On a scale of 0 to 10, what pain level did Dudley365 Blick895 report during his dialysis procedure on the encounter date mentioned?",
+        "synthetic query": "On the most recent encounter date, what was the reported pain level on a scale of 0 to 10 for the patient during his dialysis procedure?",
+        "information": [
+            "The pain levels reported for Dudley365 Blick895 across different encounter dates are as follows:\n\n- Encounter Date: 24-11-2021, Pain severity score: 2.00\n- Encounter Date: 21-05-2021, Pain severity score: 2.00\n- Encounter Date: 06-10-2023, Pain severity score: 4.00\n- Encounter Date: 11-10-2024, Pain severity score: 3.00\n- Encounter Date: 30-09-2022, Pain severity score: 2.00\n- Encounter Date: 01-01-2020, Pain severity score: 4.00\n- Encounter Date: 08-03-2019, Pain severity score: 2.00"
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_21-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-10-2023.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_11-10-2024.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_30-09-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt"
+        ],
+        "synthesized information": "The most recent encounter date for the patient's dialysis procedure is [RECENT_DATE]. On this date, the reported pain level on a scale of 0 to 10 was 3.",
+        "review": "The response needs to be more specific. It should include the pain level on a particular encounter date as requested by the user.",
+        "response": "On the most recent encounter date, the reported pain level on a scale of 0 to 10 for the patient during his dialysis procedure was 3."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2020.txt",
+        "query": "What was Dudley365 Blick895's weight difference before and after his renal dialysis session on the encounter date of 04-05-2020?",
+        "synthetic query": "",
+        "information": [
+            "The weight difference for Dudley365 Blick895 before and after his renal dialysis session on 04-05-2020 was 1.79 kg."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_05-05-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_07-04-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-02-2020.txt"
+        ],
+        "synthesized information": "The weight difference before and after a renal dialysis session on [DATE] was approximately 1.8 kg.",
+        "review": "",
+        "response": "The weight difference before and after Dudley365 Blick895's renal dialysis session on the encounter date of 04-05-2020 was approximately 1.8 kg."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2020.txt",
+        "query": "Given that Dudley365 Blick895 was born on April 28, 1950, how old was he during the renal dialysis session recorded on April 5, 2020?",
+        "synthetic query": "How old was the patient during the renal dialysis session on [DATE]?",
+        "information": [
+            "Based on the provided context information, here are the details of the renal dialysis sessions for Dudley365 Blick895:\n\n- **Encounter Date:** 11-11-2021  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 1.87 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 4.00 {score}\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 24-11-2021  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 2.87 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 2.00 {score}\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 06-07-2020  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 3.80 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 5.00 {score}\n    - Various blood and urine tests (omitted for brevity)\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 08-04-2019  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 4.07 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 5.00 {score}\n    - Various blood and urine tests (omitted for brevity)\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 08-03-2019  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 4.99 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 2.00 {score}\n    - Various blood and urine tests (omitted for brevity)\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 01-01-2020  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 2.80 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 4.00 {score}\n  - Procedures: completed Renal dialysis (procedure)\n\n- **Encounter Date:** 01-01-2021  \n  - Observations:\n    - Weight difference [Mass difference] --pre dialysis - post dialysis: 1.68 kg\n    - Pain severity - 0-10 verbal numeric rating [Score] - Reported: 3.00 {score}\n  - Procedures: completed Renal dialysis (procedure)"
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_11-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2021.txt"
+        ],
+        "synthesized information": "A patient underwent a renal dialysis session on [DATE]. The recorded observations include weight difference --pre dialysis - post dialysis ranging from approximately 1.7 to 5 kg and pain severity scores from 2-5 on the verbal numeric rating scale. This patient had multiple sessions with similar procedures throughout various dates, indicating a chronic condition necessitating regular treatment.",
+        "review": "",
+        "response": "The provided information does not include the specific age of the patient during the renal dialysis session on [DATE]. Therefore, based solely on the retrieved information, it is not possible to determine how old the patient was."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2020.txt",
+        "query": "How did Dudley365 Blick895 rate his pain severity on a verbal numeric scale from 0 to 10 following his dialysis procedure on 04-05-2020?",
+        "synthetic query": "What was the patient's pain severity rating on a verbal numeric scale from 0 to 10 following his dialysis procedure?",
+        "information": [
+            "Dudley365 Blick895 rated his pain severity as 3.00 on a verbal numeric scale from 0 to 10 following his dialysis procedure on 04-05-2020."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_21-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_15-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-02-2020.txt"
+        ],
+        "synthesized information": "The patient rated his pain severity as 3 on a verbal numeric scale from 0 to 10 following his dialysis procedure.",
+        "review": "The patient rated his pain severity as 3 on a verbal numeric scale from 0 to 10 following his dialysis procedure. This response accurately summarizes the information retrieved without any unnecessary details. The synthetic query is also appropriate and clear. No changes are needed.",
+        "response": "The patient rated his pain severity as 3 on a verbal numeric scale from 0 to 10 following his dialysis procedure."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2018.txt",
+        "query": "How severe was the pain reported by Dudley365 Blick895 on a verbal numeric rating scale of 0-10 during his encounter on July 31, 2018?",
+        "synthetic query": "What was the pain severity reported by the patient on a verbal numeric rating scale of 0-10 during their encounter on [DATE]?",
+        "information": [
+            "On July 31, 2018, Dudley365 Blick895 reported a pain severity of 1.00 on a verbal numeric rating scale of 0-10."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2018.txt"
+        ],
+        "synthesized information": "On [DATE], the patient reported a pain severity of 1 on a verbal numeric rating scale of 0-10.",
+        "review": "",
+        "response": "The patient reported a pain severity of 1 on a verbal numeric rating scale of 0-10 during their encounter on [DATE]."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2018.txt",
+        "query": "What was Dudley365 Blick895's weight difference before and after his dialysis session on July 31, 2018?",
+        "synthetic query": "What is the closest recorded weight for the patient prior to July 31, 2018?",
+        "information": [
+            "Based on the provided context information, there is no specific weight reading recorded for Dudley365 Blick895 on July 31, 2018. The closest available data points are from other dates. For example, a weight of 82.20 kg was recorded on 31-07-2015, but no specific entry exists for the requested date in July 2018."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_18-05-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-05-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-01-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-03-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2015.txt"
+        ],
+        "synthesized information": "There is no specific weight reading for the patient on July 31, 2018. However, a recorded weight of approximately 82 kg was noted on an earlier date, specifically in 2015.",
+        "review": "",
+        "response": "Based on the provided information, the closest recorded weight for the patient prior to July 31, 2018 is approximately 82 kg, which was noted in 2015."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2018.txt",
+        "query": "What procedure was completed for Dudley365 Blick895 during his medical encounter on July 31, 2018?",
+        "synthetic query": "What procedure was completed during the medical encounter on [DATE]?",
+        "information": [
+            "The procedure completed for Dudley365 Blick895 during his medical encounter on July 31, 2018 was Renal dialysis."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_25-10-2024.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-03-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-01-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-05-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_31-07-2018.txt"
+        ],
+        "synthesized information": "The procedure completed during a medical encounter on [DATE] was Renal dialysis.",
+        "review": "",
+        "response": "The procedure completed during the medical encounter on the specified date was renal dialysis."
+    }
+]

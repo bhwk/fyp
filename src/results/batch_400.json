@@ -1,0 +1,186 @@
+[
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_31-08-2023.txt",
+        "query": "What were the recorded values for Hershel911 Labadie908's blood pressure components (systolic and diastolic) during the encounter on 31-08-2023?",
+        "synthetic query": "What were the recorded values for the patient's blood pressure components (systolic and diastolic) during their recent encounter?",
+        "information": [
+            "Code is Blood pressure panel with all children optional. Component is Diastolic Blood Pressure. Value is 76.00 mm[Hg] Component is Systolic Blood Pressure. Value is 114.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_25-02-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_19-08-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_31-08-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_02-08-2018.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-08-2019.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_13-08-2020.txt"
+        ],
+        "synthesized information": "The patient had a diastolic blood pressure reading of approximately 76 mm[Hg] and a systolic blood pressure reading of around 114 mm[Hg] during their recent encounter.",
+        "review": "",
+        "response": "The recorded values for the patient's blood pressure components during their recent encounter were a systolic blood pressure of around 114 mm[Hg] and a diastolic blood pressure of approximately 76 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_31-08-2023.txt",
+        "query": "How many different procedures were completed for Hershel911 Labadie908, and which procedure involved a depression screening using a specific questionnaire?",
+        "synthetic query": "How many different types of procedures were completed for the patient, and which procedure involved a depression screening using a specific questionnaire?",
+        "information": [
+            "Procedures for Hershel911 Labadie908:\n\n- completed Medication reconciliation (procedure)\n- completed Depression screening (procedure)\n- completed Depression screening using Patient Health Questionnaire Nine Item score (procedure)\n- completed Assessment of substance use (procedure)\n- completed Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test (procedure)\n- completed Anticipatory guidance (procedure)\n- completed Patient referral for dental care (procedure)\n- completed Dental consultation and report (procedure)\n- completed Dental care (regime/therapy)\n- completed Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure)\n- completed Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure)\n- completed Examination of gingivae (procedure)\n- completed Dental surgical procedure (procedure)\n- completed Dental application of desensitizing medicament (procedure)\n- completed Gingivectomy or gingivoplasty, per tooth (procedure)\n- completed Postoperative care for dental procedure (regime/therapy)\n- completed Oral health education (procedure)\n- completed Dental plain X-ray bitewing (procedure)\n- completed Restoration of tooth with coverage of all cusps using dental filling material (procedure)\n- completed Health risks education (procedure)"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_05-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_19-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_04-03-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_25-08-2022.txt"
+        ],
+        "synthesized information": "The patient had 20 different types of procedures completed. Among these, one procedure specifically involved a depression screening using the Patient Health Questionnaire Nine Item score.",
+        "review": "",
+        "response": "The patient had 20 different types of procedures completed. One of these procedures involved a depression screening using the Patient Health Questionnaire Nine Item score."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_20-08-2024.txt",
+        "query": "What is the purpose of the subcutaneous immunotherapy procedure that Hershel911 Labadie908 underwent on August 20, 2024?",
+        "synthetic query": "What is the purpose of a subcutaneous immunotherapy procedure?",
+        "information": [
+            "Name: Hershel911 Labadie908\nGender: male\nBorn: 2010-08-05\nMaritalStatus: Never Married\nDeceased: False\n\nSubcutaneous immunotherapy (procedure) completed dates:\n- Encounter Date: 30-10-2024\n- Encounter Date: 07-10-2024\n- Encounter Date: 31-08-2023\n- Encounter Date: 01-01-2024\n- Encounter Date: 01-04-2024\n- Encounter Date: 05-12-2023\n- Encounter Date: 06-07-2024"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_30-10-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_07-10-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_31-08-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_01-01-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_01-04-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_05-12-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_06-07-2024.txt"
+        ],
+        "synthesized information": "The patient underwent a subcutaneous immunotherapy procedure. This type of therapy is typically used to treat allergies by gradually increasing exposure to allergens over time through injections under the skin.",
+        "review": "",
+        "response": "The purpose of a subcutaneous immunotherapy procedure is to treat allergies by gradually increasing exposure to allergens over time through injections under the skin. This process helps the patient's immune system become less sensitive to the allergens, thereby reducing allergy symptoms."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_20-08-2024.txt",
+        "query": "Given that Hershel911 Labadie908 has never been married as of the encounter date, what might be some implications for his decision-making regarding medical procedures like subcutaneous immunotherapy?",
+        "synthetic query": "Given that the patient has never been married and has a history of allergies and related conditions, how might this influence their decision-making regarding subcutaneous immunotherapy?",
+        "information": [
+            "Conditions:\n- Atopic dermatitis (disorder) recorded 2010/08/25 \n- Streptococcal sore throat (disorder) recorded 2015/01/24, 2016/10/24 \n- Perennial allergic rhinitis (disorder) recorded 2015/09/26 \n- Otitis media (disorder) recorded 2016/02/26, 2016/05/10 \n- Viral sinusitis (disorder) recorded 2016/03/24, 2021/05/06 \n- Acute bronchitis (disorder) recorded 2021/02/09, 2024/03/10 \n- Gingivitis (disorder) recorded 2020/08/13, 2021/02/25, 2023/06/08, 2023/08/31, 2024/09/05 \n- Primary dental caries (disorder) recorded 2021/03/04 \n- Acute viral pharyngitis (disorder) recorded 2023/06/01\n- Gingival disease (disorder) recorded 2024/09/19\n\nMedications:\n- active cetirizine hydrochloride 5 MG Oral Tablet \n- active NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector\n- stopped Penicillin V Potassium 250 MG Oral Tablet \n- stopped Amoxicillin 500 MG Oral Tablet \n- stopped Ibuprofen 100 MG Oral Tablet \n- stopped Acetaminophen 160 MG Chewable Tablet \n- stopped Hydrocortisone 10 MG/ML Topical Cream\n\nAllergies:\n- Latex (substance)\n- Mold (organism)\n- House dust mite (organism) \n- Animal dander (substance) \n- Grass pollen (substance)\n- Tree pollen (substance)\n- cefdinir\n- Wheat (substance)\n- Shellfish (substance)\n- Peanut (substance)\n\nProcedures:\n- Completed multiple encounters including Dental consultation, Dental care, Removal of supragingival and subgingival plaque and calculus from all teeth using dental instrument, Examination of gingivae, Gingivectomy or gingivoplasty per tooth, Postoperative care for dental procedure, Oral health education, Medication reconciliation, Depression screening, Subcutaneous immunotherapy, Patient referral for dental care, Assessment of anxiety, Assessment of substance use, Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test, Anticipatory guidance."
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_19-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_31-08-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_02-08-2018.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_05-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_21-03-2024.txt"
+        ],
+        "synthesized information": "The patient has a history of atopic dermatitis, recurrent streptococcal sore throat, perennial allergic rhinitis, otitis media, viral sinusitis, acute bronchitis, gingivitis, primary dental caries, and acute viral pharyngitis. They have been prescribed cetirizine hydrochloride and an epinephrine auto-injector, suggesting they may be at risk for severe allergic reactions. The patient has multiple allergies including mold, dust mites, animal dander, grass pollen, tree pollen, cefdinir, wheat, shellfish, and peanuts. They have had several medical procedures performed and have undergone depression screening and anxiety assessment.\n\nGiven the patient's history of allergies and related conditions, they may be more likely to consider subcutaneous immunotherapy as a treatment option due to its efficacy in managing allergic symptoms. However, their decision-making could be influenced by factors such as financial concerns, lack of social support, or personal beliefs about medical interventions.",
+        "review": "",
+        "response": "The patient's history of multiple allergies and related conditions, including atopic dermatitis, perennial allergic rhinitis, and a sensitivity to a wide range of allergens like mold, dust mites, animal dander, grass pollen, tree pollen, wheat, shellfish, and peanuts, indicates that they may have significant interest in seeking long-term solutions for their allergies. Subcutaneous immunotherapy (SCIT) could be an attractive option given its potential to modify the course of allergic disease and reduce symptoms over time.\n\nHowever, several factors might influence this patient's decision-making regarding SCIT:\n\n1. **Severity and Frequency of Symptoms:** Since the patient has a history of severe allergic reactions necessitating the use of an epinephrine auto-injector, they may be more inclined towards seeking definitive treatment options like SCIT that can potentially reduce their dependency on emergency medications.\n\n2. **Financial Considerations:** The cost of long-term therapy and whether it is covered by insurance could be a significant factor. Given no mention of marital status affecting financial resources directly, the patient's decision might depend on personal financial capability or insurance coverage specifics.\n\n3. **Social Support:** Despite being unmarried, if they have strong social support from friends, family, or community members, this could positively influence their willingness to undergo a treatment that requires regular visits and ongoing commitment.\n\n4. **Personal Beliefs and Preferences:** The patient\u2019s beliefs about medical interventions might also play a role. Given the presence of depression screening and anxiety assessment in their history, they may be more cautious or skeptical towards any form of long-term therapy. However, if informed properly about the benefits and risks, their personal preference for managing allergies effectively could lead them to choose SCIT.\n\n5. **Time Commitment:** SCIT requires a substantial time commitment with regular injections over several years. The patient\u2019s willingness to adhere to this regimen will be crucial in deciding whether to proceed with SCIT.\n\nIn summary, while the unmarried status might not directly impact their decision-making regarding SCIT, it is their comprehensive health history and personal circumstances that would likely guide their choice towards considering SCIT as a viable option for managing their allergies."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_20-08-2024.txt",
+        "query": "How old was Hershel911 Labadie908 when he had his encounter and procedure on August 20, 2024?",
+        "synthetic query": "How old was the patient when they had their encounter and procedure on a specific date in 2024?",
+        "information": [
+            "Hershel911 Labadie908 was born on 2010-08-05. The encounter and procedure date in question is August 20, 2024. Therefore, Hershel911 Labadie908 would have been approximately 14 years old during that encounter."
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt"
+        ],
+        "synthesized information": "The patient was approximately 14 years old during their encounter and procedure.",
+        "review": "",
+        "response": "The patient was approximately 14 years old during their encounter and procedure in 2024."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+        "query": "Which medications is Hershel911 Labadie908 currently taking, and which ones have been stopped according to the provided information?",
+        "synthetic query": "Which medications is the patient currently taking, and which ones have been stopped according to the provided information?",
+        "information": [
+            "Current Medications:\n- cetirizine hydrochloride 5 MG Oral Tablet\n- NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector\n- Hydrocortisone 10 MG/ML Topical Cream\n\nDiscontinued Medications:\n- Penicillin V Potassium 250 MG Oral Tablet\n- Amoxicillin 500 MG Oral Tablet\n- Ibuprofen 100 MG Oral Tablet\n- Acetaminophen 160 MG Chewable Tablet\n- Acetaminophen 325 MG Oral Tablet\n- Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_21-03-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_02-08-2018.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_05-09-2024.txt"
+        ],
+        "synthesized information": "Current Medications:\n- cetirizine hydrochloride 5 MG Oral Tablet\n- NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector\n- Hydrocortisone 10 MG/ML Topical Cream\n\nDiscontinued Medications:\n- Penicillin V Potassium 250 MG Oral Tablet\n- Amoxicillin 500 MG Oral Tablet\n- Ibuprofen 100 MG Oral Tablet\n- Acetaminophen 160 MG Chewable Tablet\n- Acetaminophen 325 MG Oral Tablet\n- Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution",
+        "review": "The response contains accurate and anonymized information about the patient's current and discontinued medications. The synthetic query is appropriate, concise, and free of PII. No changes are required.",
+        "response": "The patient is currently taking the following medications:\n- cetirizine hydrochloride 5 MG Oral Tablet,\n- NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector, and\n- Hydrocortisone 10 MG/ML Topical Cream.\n\nThe medications that have been discontinued include:\n- Penicillin V Potassium 250 MG Oral Tablet,\n- Amoxicillin 500 MG Oral Tablet,\n- Ibuprofen 100 MG Oral Tablet,\n- Acetaminophen 160 MG Chewable Tablet,\n- Acetaminophen 325 MG Oral Tablet, and\n- Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+        "query": "What are the first and last medical conditions recorded for Hershel911 Labadie908, and when were they recorded?",
+        "synthetic query": "What are the first and last medical conditions recorded for the patient, and when were they recorded?",
+        "information": [
+            "First Medical Condition:\nAtopic dermatitis (disorder) recorded 2010/08/25\n\nLast Medical Condition:\nGingival disease (disorder) recorded 2024/09/19"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_08-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_02-08-2018.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_05-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_21-03-2024.txt"
+        ],
+        "synthesized information": "First Medical Condition:\nSkin disorder recorded [DATE]\n\nLast Medical Condition:\nGum disease recorded [DATE]",
+        "review": "The response contains the first medical condition as 'Skin disorder' without a specific date and the last medical condition as 'Gum disease', also missing the specific dates. The names have been anonymized, but the dates need to be included in the synthesized information.",
+        "response": "The first medical condition recorded for the patient is a skin disorder, but the specific date of this record is not provided. The last medical condition noted is gum disease, and similarly, the exact date of this recording is also not specified in the given information."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+        "query": "List at least three environmental or food allergies that Hershel911 Labadie908 has based on the given text.",
+        "synthetic query": "List at least three environmental or food allergies that the patient has based on the given text.",
+        "information": [
+            "Allergies for Hershel911 Labadie908: \n- Latex (substance) \n- Mold (organism) \n- House dust mite (organism) \n- Animal dander (substance) \n- Grass pollen (substance) \n- Tree pollen (substance) \n- cefdinir \n- Wheat (substance) \n- Shellfish (substance) \n- Peanut (substance)"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_25-08-2022.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_10-08-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_01-06-2023.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_01-01-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_01-04-2024.txt"
+        ],
+        "synthesized information": "The patient has multiple environmental and food allergies which include: Latex, Mold, House dust mite, Animal dander, Grass pollen, Tree pollen, Wheat, Shellfish, and Peanut.",
+        "review": "The response provides a list of environmental and food allergies without revealing any sensitive patient information. The synthetic query accurately reflects the task of listing at least three allergies from the given text.",
+        "response": "Based on the provided information, three environmental or food allergies that the patient has are:\n\n1. **Latex** (environmental)\n2. **Mold** (environmental)\n3. **Wheat** (food) \n\nThese examples cover both categories of allergies mentioned in the query\u2014environmental and food."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_04-03-2021.txt",
+        "query": "Was a dental X-ray taken as part of Hershel911 Labadie908's treatment plan during the visit on April 3, 2021?",
+        "synthetic query": "Was a dental plain X-ray bitewing taken as part of the patient's treatment plan during their visit?",
+        "information": [
+            "A dental plain X-ray bitewing was completed as part of Hershel911 Labadie908's treatment plan during the visit on April 3, 2021."
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_04-03-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_29-04-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_09-08-2018.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_08-03-2023.txt",
+            "Lon587_Kuhic920_6c602779-9775-f512-2724-fa4e0d0788f5_04-06-2018.txt"
+        ],
+        "synthesized information": "A dental plain X-ray bitewing was completed as part of Patient A's treatment plan during a visit on [DATE].",
+        "review": "",
+        "response": "Yes, a dental plain X-ray bitewing was taken as part of the patient's treatment plan during their visit."
+    },
+    {
+        "file": "temp/flat/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e/Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_04-03-2021.txt",
+        "query": "What specific procedures were performed during Hershel911 Labadie908's dental visit on April 3, 2021?",
+        "synthetic query": "What specific procedures were performed during the patient's dental visit on [DATE]?",
+        "information": [
+            "During Hershel911 Labadie908's dental visit on April 3, 2021, the following procedures were performed:\n- Dental consultation and report\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using a dental instrument\n- Removal of subgingival plaque and calculus from all teeth using a dental instrument\n- Dental plain X-ray bitewing\n- Examination of gingivae\n- Restoration of tooth with coverage of all cusps using dental filling material\n- Oral health education"
+        ],
+        "nodes": [
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_19-09-2024.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_04-03-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_29-04-2021.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_10-11-2016.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_03-08-2017.txt"
+        ],
+        "synthesized information": "During a patient's dental visit on [DATE], the following procedures were performed:\n- Dental consultation and report\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using a dental instrument\n- Removal of subgingival plaque and calculus from all teeth using a dental instrument\n- Dental plain X-ray bitewing\n- Examination of gingivae\n- Restoration of tooth with coverage of all cusps using dental filling material\n- Oral health education",
+        "review": "",
+        "response": "During the patient's dental visit on [DATE], the following specific procedures were performed:\n- A dental consultation and report was conducted.\n- Dental care regime or therapy was provided.\n- Supragingival plaque and calculus were removed from all teeth using a dental instrument.\n- Subgingival plaque and calculus were also removed from all teeth using a dental instrument.\n- A dental plain X-ray bitewing was taken.\n- An examination of the gingivae was performed.\n- Restoration of a tooth with coverage of all cusps was done using dental filling material.\n- Oral health education was provided to the patient."
+    }
+]

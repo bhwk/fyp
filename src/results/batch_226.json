@@ -1,0 +1,174 @@
+[
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_08-04-2018.txt",
+        "query": "Can you provide more details about the results or outcomes from the evaluation of uterine fundal height and auscultation of the fetal heart that were performed during Signe792 Waters156's visit on April 8, 2018?",
+        "synthetic query": "Can you provide more details about the results or outcomes from the evaluation of uterine fundal height and auscultation of the fetal heart that were performed during [PATIENT]'s visit in early January 2018 and late July 2018?",
+        "information": [
+            "There is no record for an encounter with Signe792 Waters156 on April 8, 2018. The closest dates to this query are January 14, 2018 and July 29, 2018, both of which include the procedures 'Evaluation of uterine fundal height' and 'Auscultation of the fetal heart,' but not on the exact date requested."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_29-07-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_28-04-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-01-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_26-11-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_11-03-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-10-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_06-05-2018.txt"
+        ],
+        "synthesized information": "There is no record of an encounter for [PATIENT] on [DATE]. However, there are records from other visits where 'Evaluation of uterine fundal height' and 'Auscultation of the fetal heart' were performed. For instance, these procedures were conducted during a visit in early January 2018 and another one in late July 2018.",
+        "review": "",
+        "response": "Based on the provided information, there are no specific details given about the results or outcomes from the evaluation of uterine fundal height and auscultation of the fetal heart performed during [PATIENT]'s visits in early January 2018 and late July 2018. The available records confirm that these procedures were conducted on those dates but do not include the specific findings or results from these evaluations. To provide more precise details, additional medical records would be needed."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_08-04-2018.txt",
+        "query": "Given that Signe792 Waters156 is married and was observed to have a fetal heart auscultation procedure completed, can we infer that she was pregnant at the time of her encounter on August 4, 2018?",
+        "synthetic query": "A patient had a procedure for auscultation of the fetal heart completed. This procedure was observed to be performed on an encounter date [DATE]. Given this information, can we infer that the patient was pregnant at the time of the encounter?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_21-01-2024.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 21-01-2024\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_28-04-2024.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 28-04-2024\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-01-2018.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 14-01-2018\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_26-11-2023.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 26-11-2023\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_11-03-2018.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 11-03-2018\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-10-2023.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 01-10-2023\nProcedures: completed Auscultation of the fetal heart (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_06-05-2018.txt\n\nName: Signe792 Waters156 Gender: female Born: 1980-04-27 MaritalStatus: Married Deceased: False\nEncounter Date: 06-05-2018\nProcedures: completed Auscultation of the fetal heart (procedure)"
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_21-01-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_28-04-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-01-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_26-11-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_11-03-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-10-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_06-05-2018.txt"
+        ],
+        "synthesized information": "A patient had a procedure for auscultation of the fetal heart completed. This procedure was observed to be performed on an encounter date [DATE]. Given this information, can we infer that the patient was pregnant at the time of the encounter?",
+        "review": "The response should provide a clear inference about whether the patient was pregnant at the time of her encounter on August 4, 2018 based on the auscultation procedure. The information retrieved indicates that the patient had multiple encounters with fetal heart auscultation procedures but does not specify if any were on August 4, 2018. It is important to clarify whether this specific date was among those encounters.",
+        "response": "Based on the provided information, yes, we can infer that the patient was likely pregnant at the time of the encounter since auscultation of the fetal heart is a procedure typically performed to listen to the heartbeat of an unborn baby. This procedure would only be relevant if there were a fetus present, indicating pregnancy."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_12-08-2018.txt",
+        "query": "What was Signe792 Waters156's age at the time of her medical encounter on December 8, 2018?",
+        "synthetic query": "What was the patient's age at the time of her medical encounter?",
+        "information": [
+            "Signe792 Waters156 was 38 years old at the time of her medical encounter on December 8, 2018."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-10-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_03-06-2018.txt"
+        ],
+        "synthesized information": "Patient was 38 years old at the time of her medical encounter on [DATE].",
+        "review": "",
+        "response": "The patient was 38 years old at the time of her medical encounter."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_12-08-2018.txt",
+        "query": "Based on the provided information, what two specific medical procedures were completed during Signe792 Waters156's visit on December 8, 2018?",
+        "synthetic query": "What are the nearest dates with medical procedure records available if there were no procedures on [DATE]?",
+        "information": [
+            "There is no record of any medical procedures for Signe792 Waters156 specifically dated December 8, 2018. The closest dates available are January 14, 2018 and October 1, 2023."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-01-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-10-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_08-05-2022.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_16-07-2017.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_12-05-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_03-12-2023.txt"
+        ],
+        "synthesized information": "There are no medical procedures documented for Patient X on [DATE]. The nearest records are from [DATE1] and [DATE2], but they do not contain any specific procedures for the requested date.",
+        "review": "",
+        "response": "The nearest dates with medical procedure records available, given that there were no procedures on [DATE], are [DATE1] and [DATE2]. However, please note that these dates do not have specific procedures recorded for the exact date you inquired about."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_12-08-2018.txt",
+        "query": "Is there any indication in the given text about whether Signe792 Waters156 was pregnant at the time of her encounter on December 8, 2018?",
+        "synthetic query": "Is there any indication from the records if the patient was pregnant during her visit around December 8, 2018?",
+        "information": [
+            "Based on the provided context information, there is no explicit mention of whether Signe792 Waters156 was pregnant during her visit on December 8, 2018. The records from the dates closest to this date include procedures related to prenatal care (such as evaluation of uterine fundal height and auscultation of fetal heart) in February 2018, but there are no specific details for December 8, 2018 that confirm or deny her pregnancy status."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_11-02-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_11-03-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_08-05-2022.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_12-05-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_03-05-2020.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_03-12-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_16-07-2017.txt"
+        ],
+        "synthesized information": "Based on the available records, there are no explicit details confirming or denying whether the patient was pregnant during her visit around December 8, 2018. The closest dates in the medical history involve prenatal care procedures performed in February 2018.",
+        "review": "The synthesized information clearly states that there were no explicit records regarding the patient\u2019s pregnancy status for December 8, 2018. However, it mentions prenatal care procedures from February 2018. The query was accurately formulated to reflect this need. No further changes are required.",
+        "response": "The available records do not provide any explicit confirmation or denial regarding the patient's pregnancy status during her visit around December 8, 2018. The information given only mentions prenatal care procedures that were conducted in February 2018."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-12-2023.txt",
+        "query": "How old was Signe792 Waters156 at the time of her encounter on December 17, 2023?",
+        "synthetic query": "How old was Patient A at the time of her encounter on [ENCOUNTER_DATE]?",
+        "information": [
+            "Signe792 Waters156 was born on 1980-04-27."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_patient_info.txt"
+        ],
+        "synthesized information": "The patient, referred to as Patient A, was born on [BIRTHDATE]. At the time of her encounter on [ENCOUNTER_DATE], she would have been approximately 43 years old.",
+        "review": "",
+        "response": "Patient A was approximately 43 years old at the time of her encounter on [ENCOUNTER_DATE]."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-12-2023.txt",
+        "query": "What specific dental procedures were performed during Signe792 Waters156's visit on December 17, 2023?",
+        "synthetic query": "What dental procedures were performed during the patient's recent visit?",
+        "information": [
+            "The dental procedures performed during Signe792 Waters156's visit on December 17, 2023 include: \n- Dental consultation and report\n- Dental care\n- Removal of supragingival plaque and calculus from all teeth using dental instrument\n- Removal of subgingival plaque and calculus from all teeth using dental instrument\n- Dental plain X-ray bitewing\n- Dental surgical procedure\n- Dental application of desensitizing medicament\n- Simple extraction of tooth\n- Postoperative care for dental procedure\n- Examination of gingivae\n- Oral health education"
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-05-2020.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_22-05-2022.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-12-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_06-08-2017.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_26-05-2024.txt"
+        ],
+        "synthesized information": "The patient underwent several dental procedures on a recent visit. These included a dental consultation and report, general dental care, cleaning of plaque and calculus from above and below the gumline, a bitewing X-ray, a surgical procedure, application of a desensitizing medicament, extraction of a tooth, postoperative care, examination of the gums, and oral health education.",
+        "review": "The response provides a clear summary of the dental procedures performed during the patient's visit on December 17, 2023. The information is presented in an easily readable format and includes all relevant details from the retrieved records.",
+        "response": "During the patient's recent visit, the following dental procedures were performed:\n\n1. Dental consultation and report\n2. General dental care\n3. Cleaning of plaque and calculus from above and below the gumline (a deep cleaning or scaling)\n4. Bitewing X-ray\n5. Surgical procedure (the specific nature is not detailed here)\n6. Application of a desensitizing medicament\n7. Extraction of a tooth\n8. Postoperative care following any surgical intervention\n9. Examination of the gums\n10. Oral health education\n\nThese procedures covered a range from diagnostic to therapeutic interventions aimed at maintaining or improving oral health."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-12-2023.txt",
+        "query": "Was a dental X-ray part of the procedures completed for Signe792 Waters156 during her visit?",
+        "synthetic query": "Was a dental X-ray part of the procedures completed during the patient's visits?",
+        "information": [
+            "Dental plain X-ray bitewing procedure was completed during Signe792 Waters156's visits on 17-05-2020, 22-05-2022 and 17-12-2023."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-05-2020.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-12-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_22-05-2022.txt"
+        ],
+        "synthesized information": "A dental plain X-ray bitewing procedure was completed during the patient's visits on three occasions, specifically [DATE], [DATE], and [DATE].",
+        "review": "The response needs to be more specific about the dates when the dental X-ray was completed. It should also summarize the information clearly.",
+        "response": "Yes, a dental X-ray was indeed part of the procedures completed during the patient's visits. Specifically, a dental plain X-ray bitewing procedure was carried out on three different occasions."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_05-05-2024.txt",
+        "query": "How old will Signe792 Waters156 be on her next birthday given that she was born on 1980-04-27?",
+        "synthetic query": "How old will the patient be on her next birthday given that she was born on [DATE]?",
+        "information": [],
+        "nodes": [],
+        "synthesized information": "The patient will be 43 years old on her next birthday.",
+        "review": "",
+        "response": "The patient will be 43 years old on her next birthday. Since the specific birth date is not provided in the query, we can only confirm based on the given information that she will turn 43."
+    },
+    {
+        "file": "temp/flat/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246/Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_05-05-2024.txt",
+        "query": "Considering Signe792 Waters156's marital status is listed as married and she has recently completed a childbirth procedure, can we infer anything about the family structure?",
+        "synthetic query": "Based on the recent childbirth procedure of a married patient, what can we infer about their family structure?",
+        "information": [
+            "Signe792 Waters156, who was born on 1980-04-27 and is married, has recently completed a childbirth procedure."
+        ],
+        "nodes": [
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_26-11-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-07-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_05-05-2024.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_02-09-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_14-01-2018.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_01-10-2023.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_17-05-2020.txt"
+        ],
+        "synthesized information": "A patient, who is married and has just completed a childbirth procedure, indicates that there is at least one child in the family. The family structure likely includes two parents (the patient and her spouse) and now a newborn.",
+        "review": "",
+        "response": "Based on the recent childbirth procedure of a married patient, we can infer that their family structure includes at least two adults\u2014the patient and her spouse\u2014and has now been expanded to include a newborn child. This suggests a nuclear family setup with one or more children, given that this is not necessarily the couple's first birth. If this was their first childbirth, then the family structure would consist of exactly two parents and one child post-procedure."
+    }
+]

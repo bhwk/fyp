@@ -1,0 +1,185 @@
+[
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+        "query": "What procedure was completed during Yun266 Ernser583's medical examination on May 14, 2018?",
+        "synthetic query": "What procedure was completed during the patient's medical examination on [DATE]?",
+        "information": [
+            "Procedure completed during Yun266 Ernser583's medical examination on May 14, 2018 was Medication reconciliation."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_22-03-2021.txt"
+        ],
+        "synthesized information": "A medical examination took place where a procedure named Medication reconciliation was completed.",
+        "review": "",
+        "response": "The procedure that was completed during the patient's medical examination was medication reconciliation. The specific date wasn't provided in the given information."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+        "query": "What was Yun266 Ernser583's weight-for-length percentile based on her age and sex as of the encounter date, May 14, 2018?",
+        "synthetic query": "What was the patient's weight-for-length percentile as of [DATE]?",
+        "information": [
+            "Weight-for-length Percentile for Yun266 Ernser583 as of 14-05-2018 is 15.94 %."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt"
+        ],
+        "synthesized information": "The patient's weight-for-length percentile as of [ENCOUNTER_DATE] was approximately 16%. This information is based on age and sex.",
+        "review": "",
+        "response": "The patient's weight-for-length percentile as of [ENCOUNTER_DATE] was approximately 16%. This information is based on age and sex. \n\nPlease note that the date in brackets ([DATE]) from your query doesn't match with the provided information where the date is referred to as [ENCOUNTER_DATE]. I've used the date given within the provided information, which is [ENCOUNTER_DATE]. If you need information for a different specific date, please provide the corresponding details."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+        "query": "Based on the provided information, what was Yun266 Ernser583's body mass index (BMI) percentile according to age and sex on the encounter date of September 14, 2020?",
+        "synthetic query": "What was the body mass index (BMI) percentile for a patient according to age and sex on [DATE]?",
+        "information": [
+            "The body mass index (BMI) percentile for Yun266 Ernser583 on September 14, 2020 according to age and sex is 71.29%."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt"
+        ],
+        "synthesized information": "The body mass index (BMI) percentile for a patient on [DATE] according to age and sex is approximately 71%.",
+        "review": "",
+        "response": "The body mass index (BMI) percentile for the patient on the specified date, according to their age and sex, was approximately 71%."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+        "query": "What were the diastolic and systolic blood pressure values recorded for Yun266 Ernser583 during her medical assessment on September 14, 2020?",
+        "synthetic query": "What were the diastolic and systolic blood pressure values recorded for a patient during their medical assessment near September 14, 2020?",
+        "information": [
+            "Here are the diastolic and systolic blood pressure values for Yun266 Ernser583 from the available encounter dates:\n\n- Encounter Date: 16-03-2020  \n    - Diastolic Blood Pressure: 77.00 mm[Hg]\n    - Systolic Blood Pressure: 100.00 mm[Hg]\n\n- Encounter Date: 16-09-2019\n    - Diastolic Blood Pressure: 77.00 mm[Hg]\n    - Systolic Blood Pressure: 95.00 mm[Hg]\n\n- Encounter Date: 09-04-2018\n    - Diastolic Blood Pressure: 77.00 mm[Hg]\n    - Systolic Blood Pressure: 102.00 mm[Hg]\n\n- Encounter Date: 25-03-2024\n    - Diastolic Blood Pressure: 76.00 mm[Hg]\n    - Systolic Blood Pressure: 97.00 mm[Hg]\n\n- Encounter Date: 13-09-2021\n    - Diastolic Blood Pressure: 76.00 mm[Hg]\n    - Systolic Blood Pressure: 95.00 mm[Hg]\n\n- Encounter Date: 14-03-2022\n    - Diastolic Blood Pressure: 64.00 mm[Hg]\n    - Systolic Blood Pressure: 90.00 mm[Hg]\n\n- Encounter Date: 11-05-2020\n    - Diastolic Blood Pressure: 74.00 mm[Hg]\n    - Systolic Blood Pressure: 101.00 mm[Hg]"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-09-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt"
+        ],
+        "synthesized information": "The patient had a diastolic blood pressure of around 64 mm[Hg] and systolic blood pressure of about 90 mm[Hg] during their medical assessment near the given date. Please note that these values were rounded for summary purposes.",
+        "review": "The synthetic query and information are not aligned. The synthesized query should reflect the exact date of September 14, 2020, rather than a general period near that date. Additionally, there was no data provided for exactly September 14, 2020; therefore, the response should indicate this lack of specific data and perhaps suggest the nearest available dates if needed.",
+        "response": "The patient's diastolic blood pressure was approximately 64 mm[Hg], and the systolic blood pressure was around 90 mm[Hg] during their medical assessment near September 14, 2020. These values have been rounded for summary purposes."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+        "query": "According to the observations made on September 14, 2020, what was Yun266 Ernser583's reported pain severity score on a verbal numeric rating scale from 0-10?",
+        "synthetic query": "What was the patient's reported pain severity score on [DATE] on a verbal numeric rating scale from 0-10?",
+        "information": [
+            "Code is Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt"
+        ],
+        "synthesized information": "On [DATE], the patient reported a pain severity score of 3 on a verbal numeric rating scale from 0-10.",
+        "review": "",
+        "response": "The patient's reported pain severity score on [DATE] on a verbal numeric rating scale from 0-10 was 3."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+        "query": "Can you determine from the provided information if this was Yun266 Ernser583's first dental examination since her birth in 2018?",
+        "synthetic query": "Was this [PATIENT]'s first dental examination since their birth in 2018?",
+        "information": [
+            "The first dental examination for Yun266 Ernser583 occurred on 21-09-2020."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_22-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt"
+        ],
+        "synthesized information": "The first dental examination for [PATIENT] occurred on [DATE]. The procedures completed during this encounter include:\n\n- Dental consultation and report (procedure)\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure)\n- Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure)\n- Examination of gingivae (procedure)\n- Restoration of tooth with coverage of all cusps using dental filling material (procedure)\n- Dental fluoride treatment (procedure)\n- Oral health education (procedure)",
+        "review": "",
+        "response": "The provided information does not specify the birth year of [PATIENT], but it mentions that their first dental examination occurred on [DATE]. Without knowing exactly when [PATIENT] was born, we cannot definitively say if this was their first dental examination since 2018. The information given is insufficient to answer whether 2018 marks the patient's birth year or not."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+        "query": "Based on the observations and procedures listed, what can be inferred about Yun266 Ernser583\u2019s oral health condition prior to her encounter date of September 21, 2020?",
+        "synthetic query": "Based on the synthesized information, what can be inferred about the patient's oral health condition prior to their specific encounter date?",
+        "information": [
+            "Based on the provided context information, there are no specific records of oral health conditions explicitly noted for Yun266 Ernser583 prior to September 21, 2020. However, a primary dental caries (disorder) was recorded on 2020/09/21 which is the first record of an oral health condition mentioned in the context. Thus, before that date, there's no specific mention of any oral health conditions for this individual within the provided files."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_22-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_21-04-2018.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_21-04-2021.txt"
+        ],
+        "synthesized information": "Prior to a specific encounter date, there were no explicit records of oral health conditions for the patient. The first noted condition was a primary dental caries recorded on the encounter date.",
+        "review": "The response has anonymized patient details, summarized that there were no explicit records of oral health conditions before a specific encounter date and noted that the first condition was a primary dental caries recorded on the encounter date. The information is presented clearly and concisely.",
+        "response": "Based on the synthesized information provided, it can be inferred that prior to the specific encounter date, there were no documented records indicating any oral health conditions for the patient. The presence of a primary dental caries was only noted and recorded during the encounter on the specified date, suggesting that this may have been either newly developed or previously unnoticed/unreported condition up until that point."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+        "query": "What specific procedures were carried out during Yun266 Ernser583's dental visit on September 21, 2020?",
+        "synthetic query": "What specific procedures were carried out during the patient's dental visit?",
+        "information": [
+            "Name: Yun266 Ernser583 Gender: female Born: 2018-04-09 MaritalStatus: Never Married Deceased: False\nEncounter Date: 21-09-2020\nProcedures: \n- completed Dental consultation and report (procedure) \n- completed Dental care (regime/therapy) \n- completed Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure) \n- completed Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure) \n- completed Examination of gingivae (procedure) \n- completed Restoration of tooth with coverage of all cusps using dental filling material (procedure) \n- completed Dental fluoride treatment (procedure) \n- completed Oral health education (procedure)"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_22-03-2021.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_21-03-2015.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt"
+        ],
+        "synthesized information": "During a dental visit, several procedures were carried out on [PATIENT]. These included a dental consultation and report, dental care therapy, removal of supragingival and subgingival plaque and calculus from all teeth using dental instruments, examination of the gingivae, restoration of tooth with coverage of all cusps using dental filling material, application of dental fluoride treatment, and oral health education.",
+        "review": "The response should be reviewed for accuracy, readability at a glance, and summarization. Ensure all procedures are listed without patient names.",
+        "response": "During the patient's dental visit, the following specific procedures were carried out:\n\n1. A dental consultation and report was conducted to assess the patient\u2019s oral health status and discuss any concerns or symptoms they might have had.\n2. Dental care therapy was provided which likely included preventive treatments based on the individual needs of the patient.\n3. The dentist performed a scaling procedure, removing supragingival (above the gum line) and subgingival (below the gum line) plaque and calculus from all teeth using dental instruments to prevent periodontal disease.\n4. An examination of the gingivae was carried out to check for signs of inflammation or other issues such as bleeding gums, redness, swelling, or receding gums.\n5. A restoration procedure was performed on one of the patient\u2019s teeth where a filling material was used to cover all cusps (the raised points on the chewing surface) of a tooth that had decay or damage.\n6. Dental fluoride treatment was applied to help strengthen the enamel and prevent cavities.\n7. Oral health education was provided, which could include instructions on proper brushing techniques, flossing methods, dietary advice to promote dental health, and recommendations for regular check-ups."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+        "query": "What was the outcome of Yolanda648 Baca589's standard pregnancy test conducted on April 5, 2015?",
+        "synthetic query": "",
+        "information": [
+            "The provided context confirms that a standard pregnancy test was completed for Yolanda648 Baca589 on April 5, 2015, but it does not specify the result of this test."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt"
+        ],
+        "synthesized information": "A standard pregnancy test was completed on [DATE], but the result of this test is not specified in the provided context.",
+        "review": "",
+        "response": "The information given does not specify the outcome of Yolanda648 Baca589's standard pregnancy test conducted on April 5, 2015. Therefore, I cannot provide the result of that specific test based on the available data."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+        "query": "Did the ultrasound scan performed as part of Yolanda648 Baca589's procedures indicate fetal viability?",
+        "synthetic query": "Does the medical record indicate any results for an ultrasound scan conducted for fetal viability?",
+        "information": [
+            "Based on the provided context information, there are no specific results mentioned for any of the Ultrasound scans performed for Yolanda648 Baca589. The records only indicate that an \"Ultrasound scan for fetal viability\" was completed during encounters on the following dates:\n\n- Encounter Date: 13-09-2021\n- Encounter Date: 04-09-2017\n- Encounter Date: 04-05-2015\n\nHowever, no detailed results of these ultrasound scans are provided in the given context."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_11-10-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-10-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Carlyn477_Florencia449_Williamson769_37c177ea-4398-fb7a-29fa-70eb3d673876_23-08-2018.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-02-2022.txt"
+        ],
+        "synthesized information": "The medical records indicate an ultrasound scan for fetal viability was conducted during multiple encounters. However, no specific results of these scans are provided in the given context.",
+        "review": "",
+        "response": "The medical records show that an ultrasound scan for assessing fetal viability was indeed conducted on several occasions; however, the specific results from these scans are not detailed within the provided information."
+    }
+]

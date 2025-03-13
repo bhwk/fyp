@@ -1,0 +1,179 @@
+[
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt",
+        "query": "What does the presence of bacteria identified as Escherichia coli in the urine culture indicate about Aleisha941 Treutel973's condition?",
+        "synthetic query": "What does the presence of high levels of Escherichia coli in a patient's urine culture indicate about their condition?",
+        "information": [
+            "The presence of Escherichia coli in the urine culture at levels greater than 100,000 colony forming units per mL indicates a urinary tract infection (UTI) for Aleisha941 Treutel973. This finding is consistent across two encounters on 31-03-2024 and 01-04-2024."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt"
+        ],
+        "synthesized information": "The patient has a urinary tract infection (UTI) indicated by high levels of Escherichia coli in their urine culture, greater than 100,000 colony forming units per mL. This finding is consistent across two encounters.",
+        "review": "",
+        "response": "The presence of high levels of Escherichia coli in a patient's urine culture indicates that the patient likely has a urinary tract infection (UTI). The threshold of greater than 100,000 colony-forming units per mL suggests significant bacterial growth, which is consistent with an active infection. This finding being consistent across two encounters further supports the diagnosis of an ongoing UTI caused by E. coli."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_23-03-2024.txt",
+        "query": "How did Aleisha941 Treutel973 rate her pain severity during the encounter on a scale from 1 to 10?",
+        "synthetic query": "What was the range of pain severity ratings reported by the patient during their encounters?",
+        "information": [
+            "The pain severity ratings for Aleisha941 Treutel973 across different encounter dates are as follows:\n\n- Encounter Date: 20-03-2024, Pain Severity Rating: 4.30 {score}\n- Encounter Date: 03-04-2023, Pain Severity Rating: 3.00 {score}\n- Encounter Date: 08-04-2024, Pain Severity Rating: 2.00 {score}\n- Encounter Date: 03-06-2024, Pain Severity Rating: 3.00 {score}\n- Encounter Date: 05-03-2018, Pain Severity Rating: 1.00 {score}"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_20-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_08-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-06-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-03-2018.txt"
+        ],
+        "synthesized information": "The patient reported a range of pain severity ratings from 1 to 4.3 on different encounters.",
+        "review": "",
+        "response": "The patient reported a range of pain severity ratings from 1 to 4.3 across their different encounters."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_23-03-2024.txt",
+        "query": "What was the reason for Aleisha941 Treutel973's encounter on March 23, 2024?",
+        "synthetic query": "What was the reason for the patient's encounter on [DATE]?",
+        "information": [
+            "The reason for Aleisha941 Treutel973's encounter on March 23, 2024 was due to a reported pain severity score of 6.25. The patient underwent Movement therapy."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_26-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-01-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_23-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-06-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_05-03-2018.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-04-2023.txt"
+        ],
+        "synthesized information": "The patient presented with a reported pain severity score of 6 out of 10. The patient then underwent Movement therapy on [DATE].",
+        "review": "",
+        "response": "The patient's encounter on [DATE] was due to experiencing significant pain, as indicated by a reported pain severity score of 6 out of 10. Following the assessment of their condition, they underwent Movement therapy as part of their treatment plan."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_23-03-2024.txt",
+        "query": "What type of therapy was completed for Aleisha941 Treutel973 during the visit?",
+        "synthetic query": "What type of therapy was completed for the patient during the visit?",
+        "information": [
+            "Name: Aleisha941 Treutel977 Gender: female Born: 2006-02-13 MaritalStatus: Never Married Deceased: False\n\nEncounter Date: 24-04-2024  \nProcedures: completed Movement therapy (regime/therapy)\n\nEncounter Date: 29-03-2024  \nProcedures: completed Movement therapy (regime/therapy)\n\nEncounter Date: 21-04-2024  \nProcedures: completed Movement therapy (regime/therapy)\n\nEncounter Date: 03-05-2024  \nProcedures: completed Movement therapy (regime/therapy)\n\nEncounter Date: 15-04-2024  \nProcedures: completed Movement therapy (regime/therapy)\n\nEncounter Date: 18-04-2024  \nProcedures: completed Movement therapy (regime/therapy)"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_24-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_29-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_21-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_03-05-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_15-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_18-04-2024.txt"
+        ],
+        "synthesized information": "The patient completed Movement therapy (regime/therapy) during multiple visits on 24-04-2024, 29-03-2024, 21-04-2024, 03-05-2024, 15-04-2024, and 18-04-2024.",
+        "review": "The response has been appropriately synthesized with all relevant details, including the type of therapy completed during multiple visits on specified dates. The patient's name is not mentioned to maintain privacy.",
+        "response": "The patient completed Movement therapy during the visits."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+        "query": "Based on Aleisha941 Treutel973's urinalysis results, which specific findings suggest an ongoing bacterial infection in the urinary tract?",
+        "synthetic query": "Which specific findings in the patient's urinalysis results suggest an ongoing bacterial infection in the urinary tract?",
+        "information": [
+            "Name: Aleisha941 Treutel973\n\nEncounter Date: 01-04-2024 \nObservations:\n- Nitrite detected in urine (finding)\n- Urine leukocyte test one plus (finding)\n- WBCs: 18.41 /[HPF]\n- Finding of presence of bacteria (finding)\n- Bacteria identified in Urine by Culture: Greater than 100,000 colony forming units per mL Escherichia coli\n\nEncounter Date: 31-03-2024 \nObservations:\n- Nitrite detected in urine (finding)\n- Urine leukocyte test one plus (finding)\n- WBCs: 34.21 /[HPF]\n- Finding of presence of bacteria (finding)\n- Bacteria identified in Urine by Culture: Greater than 100,000 colony forming units per mL Escherichia coli"
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt"
+        ],
+        "synthesized information": "The patient has multiple urinalysis results indicating an ongoing bacterial infection in the urinary tract. Key findings include:\n- Presence of nitrite, which suggests bacterial metabolism.\n- Elevated leukocyte esterase levels, indicative of white blood cells in the urine.\n- White Blood Cell count is high at 18 to 34 per HPF (high power field), indicating an inflammatory response.\n- Bacteria presence with culture results showing greater than 100,000 colony-forming units/mL Escherichia coli.",
+        "review": "",
+        "response": "The specific findings in the patient's urinalysis results that suggest an ongoing bacterial infection in the urinary tract are:\n- The presence of nitrite, which indicates that bacteria have metabolized nitrates to nitrites, a common feature with certain bacteria like E. coli.\n- Elevated levels of leukocyte esterase, pointing towards the presence of white blood cells (leukocytes) in the urine as part of an immune response to infection.\n- A high White Blood Cell count ranging from 18 to 34 per HPF, which is indicative of an inflammatory response to the infection.\n- The culture results showing greater than 100,000 colony-forming units/mL of Escherichia coli, confirming bacterial presence and suggesting that E. coli is responsible for the urinary tract infection."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+        "query": "What is the significance of detecting Escherichia coli in the urine culture with a colony count greater than 100,000 CFU/mL for Aleisha941 Treutel973's medical treatment?",
+        "synthetic query": "What does a colony count greater than 100,000 CFU/mL of Escherichia coli in the urine culture indicate for a patient's medical treatment?",
+        "information": [
+            "The patient Aleisha941 Treutel977 has a recorded observation of Escherichia coli in urine culture with colony count greater than 100,000 CFU/mL on both 31-03-2024 and 01-04-2024. This indicates a urinary tract infection (UTI) that needs to be treated."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt"
+        ],
+        "synthesized information": "A patient has been observed to have a urinary tract infection (UTI) caused by Escherichia coli, indicated by a colony count greater than 100,000 CFU/mL in urine culture on consecutive days. This finding is significant as it confirms the presence of a UTI which typically requires antibiotic treatment.",
+        "review": "",
+        "response": "A colony count greater than 100,000 CFU/mL of Escherichia coli in the urine culture indicates that the patient has a confirmed urinary tract infection (UTI) caused by this bacterium. This finding typically necessitates medical intervention with antibiotics to treat the infection effectively."
+    },
+    {
+        "file": "temp/flat/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251/Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+        "query": "Given the observations from March 31, 2024, what does the presence of nitrite and leukocyte esterase in her urine indicate about Aleisha941 Treutel973\u2019s health condition?",
+        "synthetic query": "Given the observations from [DATE], what does the presence of nitrite and leukocyte esterase in her urine indicate about [PATIENT]'s health condition?",
+        "information": [
+            "Name: Aleisha941 Treutel973 Gender: female Born: 2006-02-13 MaritalStatus: Never Married Deceased: False\n\nEncounter Date: 31-03-2024 \nObservations: \nCode is Nitrite [Presence] in Urine by Test strip. Value is Nitrite detected in urine (finding). \nCode is Leukocyte esterase [Presence] in Urine by Test strip. Value is Urine leukocyte test one plus (finding).\n\nEncounter Date: 01-04-2024 \nObservations: \nCode is Nitrite [Presence] in Urine by Test strip. Value is Nitrite detected in urine (finding). \nCode is Leukocyte esterase [Presence] in Urine by Test strip. Value is Urine leukocyte test one plus (finding)."
+        ],
+        "nodes": [
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_01-04-2024.txt"
+        ],
+        "synthesized information": "On [DATE], the presence of nitrite and leukocyte esterase in [PATIENT]'s urine was detected, indicating a possible urinary tract infection (UTI). The findings were consistent over two consecutive days.",
+        "review": "",
+        "response": "Based on the observations from [DATE], the presence of nitrite and leukocyte esterase in [PATIENT]'s urine indicates a possible urinary tract infection (UTI). These biomarkers are commonly associated with UTIs; nitrites can form when bacteria, such as E. coli, convert nitrates to nitrites, while leukocyte esterase signifies the presence of white blood cells (leukocytes) which the body typically sends to fight off an infection. The consistency of these findings over two consecutive days further supports the likelihood of a UTI in [PATIENT]."
+    },
+    {
+        "file": "temp/flat/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_17-10-2021.txt",
+        "query": "What specific nursing care or supplementary surveillance was Jolyn Ortiz provided with on the encounter date of October 17, 2021?",
+        "synthetic query": "What specific nursing care or supplementary surveillance was provided on [DATE]?",
+        "information": [
+            "Based on the provided context information, there is no record of nursing care or supplementary surveillance procedures performed for Jolyn4 Ortiz186 on October 17, 2021. The records only show encounters and procedures on September 7, 2020; November 7, 2020; and January 25, 2022, but not on the date specified in the query."
+        ],
+        "nodes": [
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_09-07-2020.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_11-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_17-05-2015.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_25-01-2022.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_17-04-2023.txt",
+            "Diamond340_Keebler762_d6cc7569-5f31-9648-ec6a-e1162b32b183_17-06-2017.txt"
+        ],
+        "synthesized information": "The medical records do not show any nursing care or supplementary surveillance provided on [DATE]. There are entries for other dates like September 7, 2020; November 7, 2020; and January 25, 2022.",
+        "review": "",
+        "response": "Based on the information provided, there were no specific nursing care or supplementary surveillance activities recorded on [DATE]. The medical records only contain entries for other dates such as September 7, 2020; November 7, 2020; and January 25, 2022."
+    },
+    {
+        "file": "temp/flat/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_17-10-2021.txt",
+        "query": "Can you describe the physical therapy procedures that were completed for Jolyn Ortiz during her visit on October 17, 2021?",
+        "synthetic query": "Describe the physical therapy procedures that were completed during the visit on [DATE].",
+        "information": [
+            "The physical therapy procedures completed for Jolyn Ortiz on October 17, 2021 are described as a Physical therapy procedure (regime/therapy)."
+        ],
+        "nodes": [
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_06-07-2020.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_17-10-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-05-2015.txt",
+            "Domenica436_Rau926_3648fb36-1cd1-3641-0b1c-1f00d1e7e7de_25-04-2023.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_23-01-2017.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_31-03-2024.txt"
+        ],
+        "synthesized information": "A physical therapy procedure (regime/therapy) was completed for a patient on [DATE].",
+        "review": "",
+        "response": "The provided information does not specify the exact details of the physical therapy procedures completed during the visit on [DATE]. To give a precise description, specific details such as the types of exercises performed, any modalities used, or therapeutic techniques applied would be necessary. Without additional context, it can only be stated that some form of physical therapy was indeed carried out for the patient on that date."
+    },
+    {
+        "file": "temp/flat/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0/Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_17-10-2021.txt",
+        "query": "Given that Jolyn Ortiz is marked as not deceased and was last recorded to have had medical encounters in 2021, what might be some potential health concerns or conditions that necessitated nursing care and physical therapy for someone born in 1914?",
+        "synthetic query": "What are the potential health concerns or conditions that necessitate nursing care and physical therapy for a patient born in 1914?",
+        "information": [
+            "Jolyn Ortiz has the following medical conditions that might necessitate nursing care and physical therapy:\n\n- Recurrent urinary tract infection (disorder)\n- Chronic sinusitis (disorder)\n- Ischemic heart disease (disorder)\n- Abnormal findings diagnostic imaging heart+coronary circulat (finding)\n- Acute ST segment elevation myocardial infarction (disorder)\n- History of myocardial infarction (situation)\n- Mitral valve regurgitation (disorder)\n- Osteoporosis (disorder)\n- Chronic pain (finding)\n- Chronic low back pain (finding)\n- Chronic neck pain (finding)\n- Fracture of bone (disorder)\n- Fracture of forearm (disorder)\n- Osteoporotic fracture of bone (disorder)\n\nShe has also had the following procedures and therapies:\n\n- Nursing care/supplementary surveillance on 06-07-2020\n- Occupational therapy on 06-07-2020"
+        ],
+        "nodes": [
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_06-07-2020.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_25-01-2022.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_16-04-2024.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Signe792_Salley758_Waters156_778f10bc-09e5-8e86-64e8-bffa36d47246_16-07-2017.txt"
+        ],
+        "synthesized information": "A patient, born in 1914, may have several potential health concerns or conditions that necessitate nursing care and physical therapy. These include:\n\n- Recurrent urinary tract infections (UTIs)\n- Chronic sinusitis\n- Ischemic heart disease with a history of myocardial infarction (heart attack) and mitral valve regurgitation\n- Osteoporosis leading to fractures, including osteoporotic fractures and a fracture of the forearm\n- Chronic pain conditions such as chronic low back pain and chronic neck pain\n\nThese medical issues require ongoing care and interventions like nursing care for surveillance and occupational therapy.",
+        "review": "",
+        "response": "The potential health concerns or conditions that might necessitate nursing care and physical therapy for a patient born in 1914 include:\n\n- Recurrent urinary tract infections (UTIs), which can lead to complications if not properly managed, requiring regular monitoring and appropriate treatment.\n- Chronic sinusitis, which may cause persistent discomfort and affect overall respiratory health, needing specialized care to manage symptoms effectively.\n- Ischemic heart disease with a history of myocardial infarction (heart attack) and mitral valve regurgitation, conditions that require careful management to prevent further cardiac events and monitor heart function.\n- Osteoporosis leading to fractures, including osteoporotic fractures and a fracture of the forearm. This condition necessitates care aimed at pain relief, mobility enhancement, and prevention of future fractures through physical therapy and nursing support.\n- Chronic pain conditions such as chronic low back pain and chronic neck pain, which often require long-term management strategies including both nursing care for surveillance and occupational therapy to improve quality of life.\n\nThese medical issues emphasize the need for comprehensive healthcare services tailored to address the specific needs of elderly patients."
+    }
+]

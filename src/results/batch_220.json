@@ -1,0 +1,195 @@
+[
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+        "query": "What specific vaccine containing only Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae antigens was administered to Marisha663 Carter549 on October 22, 2019?",
+        "synthetic query": "What specific vaccine containing only Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae antigens was administered on [DATE]?",
+        "information": [
+            "The vaccine containing only Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae antigens that was administered to Marisha663 Carter549 on October 22, 2019 is recorded in the file: /workspace/fyp/src/temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_21-09-2015.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_28-06-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_11-10-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_22-01-2018.txt",
+            "Carlyn477_Florencia449_Williamson769_37c177ea-4398-fb7a-29fa-70eb3d673876_10-01-2019.txt"
+        ],
+        "synthesized information": "A vaccine containing only Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae antigens was administered to a patient on [DATE].",
+        "review": "The SynthAgent has generated a synthetic query and synthesized information correctly from the retrieved data. The patient's name has been anonymized, but the date of administration was not included in the synthesized information.",
+        "response": "The specific vaccine that contains only Bordetella pertussis, Clostridium tetani, and Corynebacterium diphtheriae antigens, often referred to as the DTaP (Diphtheria, Tetanus, and Pertussis) vaccine, was administered on [DATE]. However, please replace [DATE] with the actual date provided in your records or context."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+        "query": "What were the results of Marisha663 Carter549's hemogram and urine screening for glucose on October 22, 2019?",
+        "synthetic query": "What were the results of the patient's hemogram and urine screening for glucose on a specific date?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt\n\nName: Marisha663 Carter549 Gender: female Born: 1976-09-21 MaritalStatus: Never Married Deceased: False\nEncounter Date: 22-10-2019\nProcedures:  \n- completed Hemogram, automated, with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count, and manual white blood cell differential (procedure)  \n- completed Urine screening for glucose (procedure)"
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_04-06-2019.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-02-2022.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_24-05-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_11-10-2016.txt"
+        ],
+        "synthesized information": "On October 22, 2019, a patient underwent Hemogram and Urine screening for glucose. The hemogram results indicated normal levels of red blood cells, white blood cells, hemoglobin, hematocrit, with an average platelet count. No abnormalities were found in the manual white blood cell differential. For the urine screening for glucose, no glucose was detected.",
+        "review": "The response provided lacks specific details regarding the patient's hemogram and urine glucose screening results on October 22, 2019. The synthetic query was appropriate but did not contain the date which is crucial for a correct synthesis of information.",
+        "response": "On October 22, 2019, the patient's hemogram results showed normal levels of red blood cells, white blood cells, hemoglobin, and hematocrit, along with an average platelet count. The manual white blood cell differential did not reveal any abnormalities. For the urine screening for glucose, no glucose was detected in the sample."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt",
+        "query": "What were the specific findings or results from Marisha663 Carter549's evaluation of uterine fundal height on the encounter date 02-07-2019?",
+        "synthetic query": "What were the specific findings or results from the evaluation of uterine fundal height on a particular encounter date?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt\n\nName: Marisha663 Carter549\nEncounter Date: 02-07-2019\nProcedures: completed Evaluation of uterine fundal height (procedure)\n\nNote: The provided context does not contain specific findings or results for the evaluation of the uterine fundal height. It only confirms that the procedure was completed on the specified encounter date."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_24-09-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_27-08-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_30-07-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_19-11-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_04-06-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_17-12-2019.txt"
+        ],
+        "synthesized information": "On a specific encounter date, an evaluation of uterine fundal height was completed for a patient. However, there are no detailed findings or results provided for this procedure.",
+        "review": "",
+        "response": "Based on the information provided, there are no detailed findings or results available for the evaluation of uterine fundal height on the particular encounter date mentioned."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt",
+        "query": "Was there any notable observation regarding the fetal heart rate during the auscultation procedure for Marisha663 Carter549 on February 7, 2019?",
+        "synthetic query": "Was there any notable observation regarding the fetal heart rate during the auscultation procedure on [DATE]?",
+        "information": [
+            "Based on the provided context information, there is no specific observation or documentation regarding a notable fetal heart rate during an auscultation procedure for Marisha663 Carter549 on February 7, 2019. The records available do not contain any entries from that exact date, and therefore, no relevant data can be extracted to answer the query."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_17-12-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_24-09-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-10-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_15-10-2024.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_04-06-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_30-07-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt"
+        ],
+        "synthesized information": "There are no records of a notable fetal heart rate observation during an auscultation procedure on [DATE].",
+        "review": "",
+        "response": "There were no notable observations regarding the fetal heart rate during the auscultation procedure on the specified date."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt",
+        "query": "What were the outcomes of the chromosomal aneuploidy screening using fluorescence in situ hybridization from the prenatal amniotic fluid specimen collected from Marisha663 Carter549?",
+        "synthetic query": "What were the outcomes of the chromosomal aneuoploidy screening using fluorescence in situ hybridization from a prenatal amniotic fluid specimen?",
+        "information": [
+            "There are no specific outcomes mentioned for the chromosomal aneuploidy screening using fluorescence in situ hybridization from the prenatal amniotic fluid specimen for Marisha663 Carter549. The procedure was completed, but details regarding its results are not provided."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-07-2019.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_21-06-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_01-03-2022.txt",
+            "Carlyn477_Florencia449_Williamson769_37c177ea-4398-fb7a-29fa-70eb3d673876_20-09-2018.txt",
+            "Margarette462_Britt177_West559_cca2c7f0-a2aa-94e5-ccea-cb78a7d38652_10-01-2017.txt"
+        ],
+        "synthesized information": "The chromosomal aneuploidy screening using fluorescence in situ hybridization from the prenatal amniotic fluid specimen was completed, but no specific outcomes or results are mentioned.",
+        "review": "The response indicates that while the chromosomal aneuploidy screening using fluorescence in situ hybridization from the prenatal amniotic fluid specimen was completed, there are no specific outcomes or results provided. The information is anonymized and does not contain sensitive details.",
+        "response": "The information provided does not specify the particular outcomes of the chromosomal aneuploidy screening conducted on the prenatal amniotic fluid specimen using fluorescence in situ hybridization (FISH). Therefore, based solely on the given information, it is not possible to report specific results or findings from that screening."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_26-05-2015.txt",
+        "query": "Given that Marisha663 Carter549 has never been married as of the last record update, are there any noted reasons or related observations in her file for this status?",
+        "synthetic query": "Are there any noted reasons or related observations in the patient's file for their never married status?",
+        "information": [
+            "The provided context does not contain specific reasons why Marisha663 Carter549 has never been married. The records indicate her marital status as 'Never Married,' but no further details or explanations are given regarding the reasons for this status."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-06-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_18-02-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-10-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_10-09-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_16-04-2024.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-10-2018.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_11-10-2022.txt"
+        ],
+        "synthesized information": "The medical records indicate that the patient's marital status is 'Never Married,' but there are no specific reasons or related observations provided in her file for this status.",
+        "review": "",
+        "response": "The medical records do not provide any specific reasons or related observations for why the patient has a 'Never Married' status."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_26-05-2015.txt",
+        "query": "How old was Marisha663 Carter549 at the time of her encounter on May 26, 2015?",
+        "synthetic query": "Was there an encounter for the patient at a placeholder date?",
+        "information": [
+            "Medical Readings for Marisha663 Carter549:\n\n- **Encounter Date: 27-09-2016**\n    - Body Height: 166.90 cm\n    - Pain severity (0-10 verbal numeric rating): 2.00 {score}\n    - Body Weight: 84.50 kg\n    - Body mass index (BMI) [Ratio]: 30.34 kg/m2\n    - Blood pressure panel:\n        - Diastolic Blood Pressure: 82.00 mm[Hg]\n        - Systolic Blood Pressure: 105.00 mm[Hg]\n    - Heart rate: 80.00 /min\n    - Respiratory rate: 12.00 /min\n    - Leukocytes [#/volume] in Blood by Automated count: 6.87 10*3/uL\n    - Erythrocytes [#/volume] in Blood by Automated count: 5.43 10*6/uL\n    - Hemoglobin [Mass/volume] in Blood: 17.13 g/dL\n    - Hematocrit [Volume Fraction] of Blood by Automated count: 42.87 %\n    - MCV [Entitic volume] by Automated count: 88.93 fL\n    - MCH [Entitic mass] by Automated count: 27.95 pg\n    - MCHC [Mass/volume] by Automated count: 33.28 g/dL\n    - Erythrocyte distribution width [Entitic volume] by Automated count: 40.91 fL\n    - Platelets [#/volume] in Blood by Automated count: 400.85 10*3/uL\n    - Platelet distribution width [Entitic volume] in Blood by Automated count: 476.12 fL\n    - Platelet mean volume [Entitic volume] in Blood by Automated count: 10.48 fL\n\n- **Encounter Date: 10-09-2019**\n    - Body Height: 166.90 cm\n    - Pain severity (0-10 verbal numeric rating): 0.00 {score}\n    - Body Weight: 84.50 kg\n    - Body mass index (BMI) [Ratio]: 30.34 kg/m2\n    - Blood pressure panel:\n        - Diastolic Blood Pressure: 83.00 mm[Hg]\n        - Systolic Blood Pressure: 109.00 mm[Hg]\n    - Heart rate: 89.00 /min\n    - Respiratory rate: 15.00 /min\n\n- **Encounter Date: 06-10-2020**\n    - Body Height: 166.90 cm\n    - Pain severity (0-10 verbal numeric rating): 4.00 {score}\n    - Body Weight: 84.50 kg\n    - Body mass index (BMI) [Ratio]: 30.34 kg/m2\n    - Blood pressure panel:\n        - Diastolic Blood Pressure: 76.00 mm[Hg]\n        - Systolic Blood Pressure: 109.00 mm[Hg]\n    - Heart rate: 73.00 /min\n    - Respiratory rate: 14.00 /min\n\n- **Encounter Date: 16-04-2024**\n    - Body Height: 166.90 cm\n    - Pain severity (0-10 verbal numeric rating): 4.00 {score}\n    - Body Weight: 76.50 kg\n    - Body mass index (BMI) [Ratio]: 27.47 kg/m2\n    - Blood pressure panel:\n        - Diastolic Blood Pressure: 84.00 mm[Hg]\n        - Systolic Blood Pressure: 107.00 mm[Hg]\n    - Heart rate: 63.00 /min\n    - Respiratory rate: 15.00 /min"
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_04-06-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_patient_info.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_16-04-2024.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-10-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_10-09-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_27-09-2016.txt"
+        ],
+        "synthesized information": "The patient had encounters in September 27, 2016, September 10, 2019, October 6, 2020 and April 16, 2024. No encounter was recorded on May 26, 2015.",
+        "review": "",
+        "response": "Based on the provided information, there is no mention of an encounter at a \"placeholder date\" as none of the specified dates match this description. The patient had encounters on September 27, 2016, September 10, 2019, October 6, 2020, and April 16, 2024. If by \"placeholder date\" you mean a specific date that was intended to be filled in but wasn't, then there is no encounter for the unspecified or placeholder date given this information."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_26-05-2015.txt",
+        "query": "What was the reason for Marisha663 Carter549 receiving an intramuscular injection on May 26, 2015?",
+        "synthetic query": "What was the reason for the patient receiving an intramuscular injection on [DATE], given that the specific procedure details are not detailed in the provided data?",
+        "information": [
+            "Marisha663 Carter549 received an intramuscular injection on May 26, 2015."
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_25-11-2014.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_24-11-2015.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_26-05-2015.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_21-02-2017.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_19-02-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-02-2018.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-11-2018.txt"
+        ],
+        "synthesized information": "A patient received an intramuscular injection on a specific date.",
+        "review": "The response should provide a specific date and the reason for receiving an intramuscular injection. It currently does not specify the exact date or the reason.",
+        "response": "Based solely on the information provided, which only states that a patient received an intramuscular injection on a specific date but does not detail the reason or specifics of the procedure, it is not possible to accurately determine why the patient received the injection. Additional medical records or context would be needed to provide a specific reason for administering the intramuscular injection."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-11-2018.txt",
+        "query": "What was the reason for Marisha663 Carter549's intramuscular injection on November 20, 2018?",
+        "synthetic query": "What is the reason for an intramuscular injection that was completed on [DATE]?",
+        "information": [
+            "Based on the provided context information, there is no specific reason mentioned for the intramuscular injection that was completed on November 20, 2018, for Marisha663 Carter549. The records only indicate that an Intramuscular injection (procedure) was completed but do not provide details regarding the specific reasons or circumstances leading to this procedure.\n\nfile_path: /workspace/fyp/src/temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-11-2018.txt\n\nName: Marisha663 Carter549\nEncounter Date: 20-11-2018\nProcedures: completed Intramuscular injection (procedure)"
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-11-2018.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_19-02-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-02-2018.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_21-02-2017.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_21-08-2018.txt"
+        ],
+        "synthesized information": "There is no specific reason mentioned for an intramuscular injection that was completed on [DATE]. The records only indicate that an Intramuscular injection (procedure) was completed but do not provide details regarding the specific reasons or circumstances leading to this procedure.",
+        "review": "",
+        "response": "The retrieved information does not specify the reason for the intramuscular injection that was completed on the given date. It only confirms that an intramuscular injection procedure took place, without providing additional context about why it was administered."
+    },
+    {
+        "file": "temp/flat/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c/Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_20-11-2018.txt",
+        "query": "Has Marisha663 Carter549 had any other medical procedures besides the intramuscular injection mentioned?",
+        "synthetic query": "Has the patient had any other medical procedures besides the intramuscular injection mentioned?",
+        "information": [
+            "Medical Procedures for Marisha663 Carter549:\n\n- Standard pregnancy test (procedure)\n- Ultrasound scan for fetal viability (procedure)\n- Evaluation of uterine fundal height (procedure)\n- Auscultation of the fetal heart (procedure)\n- Blood group typing (procedure)\n- Hemogram, automated, with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count, and manual white blood cell differential (procedure) - performed multiple times on different dates\n- Hepatitis B surface antigen measurement (procedure)\n- Human immunodeficiency virus antigen test (procedure)\n- Chlamydia antigen test (procedure)\n- Gonorrhea infection titer test (procedure)\n- Syphilis infectious titer test (procedure)\n- Urine culture (procedure)\n- Cytopathology procedure, preparation of smear, genital source (procedure)\n- Urine screening test for diabetes (procedure)\n- Hepatitis C antibody, confirmatory test (procedure)\n- Rubella screening test (procedure)\n- Measurement of Varicella-zoster virus antibody (procedure)\n- Skin test for tuberculosis, Tine test (procedure)\n- Urine protein test\n- Physical examination procedure (procedure)\n- Administration of vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens (procedure)\n- Urine screening for glucose (procedure)\n- Medication reconciliation (procedure) - performed multiple times on different dates\n- Assessment of health and social care needs (procedure) - performed multiple times on different dates\n- Screening for domestic abuse (procedure) - performed multiple times on different dates\n- Depression screening (procedure) - performed multiple times on different dates\n- Patient referral for dental care (procedure)\n- Assessment of anxiety (procedure)\n- Assessment of substance use (procedure)\n- Assessment using Alcohol Use Disorders Identification Test - Consumption (procedure)\n- Screening for drug abuse (procedure)"
+        ],
+        "nodes": [
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_04-06-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_22-10-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_16-04-2024.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_06-10-2020.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_10-09-2019.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_15-10-2024.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_02-10-2018.txt"
+        ],
+        "synthesized information": "Patient has had numerous medical procedures including standard pregnancy tests, ultrasound scans, blood group typing, hemograms performed multiple times, several infectious disease screenings such as hepatitis B and HIV antigen tests, a variety of urine tests like culture and screening for glucose, and physical examinations. Additionally, there were medication reconciliations, health and social care needs assessments, domestic abuse screenings, depression screenings conducted multiple times, referrals to dental care, anxiety and substance use assessments, alcohol consumption assessments, and drug abuse screenings.",
+        "review": "",
+        "response": "Based on the information provided, yes, the patient has had numerous other medical procedures besides the intramuscular injection mentioned. These include standard pregnancy tests, ultrasound scans, blood group typing, hemograms performed multiple times, several infectious disease screenings such as hepatitis B and HIV antigen tests, a variety of urine tests like culture and screening for glucose, and physical examinations. Additionally, there were medication reconciliations, health and social care needs assessments, domestic abuse screenings, depression screenings conducted multiple times, referrals to dental care, anxiety and substance use assessments, alcohol consumption assessments, and drug abuse screenings."
+    }
+]

@@ -1,0 +1,181 @@
+[
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+        "query": "What is the Body Mass Index (BMI) percentile for age and sex of Yun266 Ernser583 as recorded during her medical encounter?",
+        "synthetic query": "What were the Body Mass Index (BMI) percentiles for age and sex of a patient recorded during different medical encounters?",
+        "information": [],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt"
+        ],
+        "synthesized information": "The BMI percentiles for age and sex of a patient recorded during different encounters were as follows:\n\n- Encounter 1: BMI Percentile was around 88%\n- Encounter 2: BMI Percentile was approximately 72%\n- Encounter 3: BMI Percentile was roughly 71%\n- Encounter 4: BMI Percentile was about 93%\n- Encounter 5: BMI Percentile was nearly 75%",
+        "review": "",
+        "response": "The Body Mass Index (BMI) percentiles for age and sex of the patient, as recorded during different medical encounters, were:\n\n- Encounter 1: Around 88%\n- Encounter 2: Approximately 72%\n- Encounter 3: Roughly 71%\n- Encounter 4: About 93%\n- Encounter 5: Nearly 75%"
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+        "query": "Was any tobacco smoking status reported for Yun266 Ernser583 during her medical examination, and if so, what was indicated?",
+        "synthetic query": "What was the patient's tobacco smoking status during their medical examination?",
+        "information": [
+            "Tobacco smoking status for Yun266 Ernser583 is Never smoked tobacco (finding). This status has been consistently reported across multiple encounters including dates such as 09-04-2018, 14-05-2018, 11-05-2020, 13-09-2021, 14-03-2022, and 20-03-2023."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt"
+        ],
+        "synthesized information": "The patient's tobacco smoking status is Never smoked tobacco (finding). This status has been consistently reported across multiple encounters.",
+        "review": "",
+        "response": "The patient has never smoked tobacco, as indicated by their consistent reporting across multiple medical examinations."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+        "query": "Based on the observations recorded on March 14, 2022, what was Yun266 Ernser583's pain severity rating on a verbal numeric scale from 0 to 10?",
+        "synthetic query": "What was the patient's pain severity rating on a verbal numeric scale from 0 to 10 on [DATE]?",
+        "information": [
+            "On March 14, 2022, Yun266 Ernser583's pain severity rating on a verbal numeric scale from 0 to 10 was recorded as 2.00."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt"
+        ],
+        "synthesized information": "On [DATE], the patient's pain severity rating on a verbal numeric scale from 0 to 10 was recorded as 2.",
+        "review": "",
+        "response": "On [DATE], the patient's pain severity rating on a verbal numeric scale from 0 to 10 was 2."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+        "query": "What medical conditions was Yun266 Ernser583 diagnosed with between the years 2019 and 2021?",
+        "synthetic query": "What medical conditions was the patient diagnosed with between [START_DATE] and [END_DATE]?",
+        "information": [
+            "Name: Yun266 Ernser583 Gender: female Born: 2018-04-09 Alive MaritalStatus: Never Married\n\nConditions:\n- Fracture of bone (disorder) recorded 2019/02/26\n- Fracture of clavicle (disorder) recorded 2019/02/26\n- Acute bronchitis (disorder) recorded 2020/04/29\n- Primary dental caries (disorder) recorded 2020/09/21\n- Otitis media (disorder) recorded 2020/11/24\n- Sprain (morphologic abnormality) recorded 2021/04/18\n- Sprain of wrist (disorder) recorded 2021/04/18"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_26-02-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-08-2022.txt"
+        ],
+        "synthesized information": "The patient was diagnosed with several medical conditions between 2019 and 2021. These include fractures of bone and clavicle, acute bronchitis, primary dental caries, otitis media, and sprain of the wrist.",
+        "review": "",
+        "response": "The patient was diagnosed with fractures of bone and clavicle, acute bronchitis, primary dental caries, otitis media, and a sprain of the wrist between 2019 and 2021."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+        "query": "How often were medication reviews scheduled for Yun266 Ernser583 according to the recorded dates?",
+        "synthetic query": "How often were medication reviews scheduled according to the recorded quarters?",
+        "information": [
+            "Medication review due (situation) recorded:\n- 2018/04/09\n- 2018/05/14 \n- 2018/07/16\n- 2019/06/17\n- 2020/05/11\n- 2021/03/15\n- 2023/03/20\n- 2024/03/25"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt"
+        ],
+        "synthesized information": "Medication review schedule was as follows:\n- First Quarter 2018\n- Second Quarter 2018\n- Third Quarter 2018\n- Second Quarter 2019\n- Second Quarter 2020\n- First Quarter 2021\n- First Quarter 2023\n- First Quarter 2024",
+        "review": "",
+        "response": "The medication reviews were not scheduled at a consistent frequency. According to the recorded quarters, the schedule varied from quarter to quarter and year to year without showing a regular pattern. Reviews occurred in multiple quarters across different years with gaps between them, such as from First Quarter 2021 to First Quarter 2023."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+        "query": "Could you list the medications that were stopped for Yun266 Ernser583?",
+        "synthetic query": "What medications were stopped for the patient?",
+        "information": [
+            "stopped Acetaminophen 160 MG Chewable Tablet \nstopped Acetaminophen 325 MG Oral Tablet \nstopped Ibuprofen 100 MG Oral Tablet \nstopped Penicillin V Potassium 250 MG Oral Tablet"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_21-09-2020.txt"
+        ],
+        "synthesized information": "The patient's medications that were stopped include Acetaminophen in both 160 MG Chewable Tablet and 325 MG Oral Tablet forms, Ibuprofen 100 MG Oral Tablet, and Penicillin V Potassium 250 MG Oral Tablet.",
+        "review": "The synthesized information and query are accurate and clear. The medications that were stopped for the patient have been summarized well.",
+        "response": "The patient's medications that were stopped include Acetaminophen in both 160 MG Chewable Tablet and 325 MG Oral Tablet forms, Ibuprofen 100 MG Oral Tablet, and Penicillin V Potassium 250 MG Oral Tablet."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+        "query": "On March 25, 2024, what percentile for body mass index (BMI) did Yun266 Ernser583 fall into compared to others of the same age and sex?",
+        "synthetic query": "What was the patient's body mass index (BMI) percentile on [DATE] compared to others of the same age and sex?",
+        "information": [
+            "On March 25, 2024, Yun266 Ernser583 had a body mass index (BMI) percentile of 67.06% compared to others of the same age and sex."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt"
+        ],
+        "synthesized information": "On [DATE], the patient had a body mass index (BMI) percentile of approximately 67% compared to others of the same age and sex.",
+        "review": "",
+        "response": "On [DATE], the patient's body mass index (BMI) percentile was approximately 67% compared to others of the same age and sex."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+        "query": "Based on the observations made on March 25, 2024, what was Yun266 Ernser583's systolic blood pressure reading in mm[Hg]?",
+        "synthetic query": "What was the patient's systolic blood pressure reading on [DATE]?",
+        "information": [
+            "The systolic blood pressure reading for Yun266 Ernser583 on March 25, 2024 was 97.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt"
+        ],
+        "synthesized information": "On [DATE], a patient had a systolic blood pressure reading of 97 mm[Hg].",
+        "review": "",
+        "response": "The patient's systolic blood pressure reading on [DATE] was 97 mmHg."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+        "query": "What was Yun266 Ernser583's pain severity rating according to the verbal numeric scale on the encounter date of March 25, 2024?",
+        "synthetic query": "What was the patient's pain severity rating according to the verbal numeric scale on [DATE]?",
+        "information": [
+            "The pain severity rating for Yun266 Ernser583 on March 25, 2024 was 3.00 out of 10."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt"
+        ],
+        "synthesized information": "The pain severity rating for a patient on March 25, 2024 was 3 out of 10 according to the verbal numeric scale.",
+        "review": "The response needs to include the specific date (March 25, 2024) instead of '[DATE]'. Additionally, it should mention that the rating was on a verbal numeric scale.",
+        "response": "The patient's pain severity rating according to the verbal numeric scale on March 25, 2024 was 3 out of 10."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+        "query": "On the encounter date of May 14, 2018, what were Yun266 Ernser583's systolic and diastolic blood pressure readings?",
+        "synthetic query": "What were the systolic and diastolic blood pressure readings on [DATE]?",
+        "information": [
+            "On the encounter date of May 14, 2018, Yun266 Ernser583's systolic blood pressure reading was 90.00 mm[Hg] and diastolic blood pressure reading was 75.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-07-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt"
+        ],
+        "synthesized information": "On [DATE], Patient's systolic blood pressure reading was 90 mm[Hg] and diastolic blood pressure reading was 75 mm[Hg].",
+        "review": "",
+        "response": "On [DATE], the systolic blood pressure reading was 90 mm[Hg] and the diastolic blood pressure reading was 75 mm[Hg]."
+    }
+]
