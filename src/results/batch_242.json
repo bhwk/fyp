@@ -1,0 +1,191 @@
+[
+    {
+        "file": "temp/flat/Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f/Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f_29-11-2023.txt",
+        "query": "What was the purpose or outcome of completing a medication reconciliation for Wade235 Emmerich580 during this encounter?",
+        "synthetic query": "What was the purpose or outcome of completing a medication reconciliation for this patient during these encounters?",
+        "information": [
+            "Procedures for Wade235 Emmerich580:\n\n- completed Medication reconciliation (procedure) on 29-11-2023\n- completed Medication reconciliation (procedure) on 28-08-2024\n- completed Medication reconciliation (procedure) on 01-03-2023\n\nMedications for Wade235 Emmerich580:\n- stopped Amoxicillin 500 MG Oral Tablet\n- stopped Ibuprofen 100 MG Oral Tablet\n- stopped Acetaminophen 160 MG Chewable Tablet"
+        ],
+        "nodes": [
+            "Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f_patient_info.txt",
+            "Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f_28-08-2024.txt",
+            "Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f_29-11-2023.txt",
+            "Wade235_Emmerich580_13cc1678-474c-7932-a719-c64f3a7adc9f_01-03-2023.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt"
+        ],
+        "synthesized information": "The patient had multiple medication reconciliations performed. During these procedures, several medications were stopped including Amoxicillin 500 MG Oral Tablet, Ibuprofen 100 MG Oral Tablet, and Acetaminophen 160 MG Chewable Tablet.",
+        "review": "",
+        "response": "The purpose of completing a medication reconciliation for this patient during the encounters was to review and update their list of medications. This process led to stopping several medications including Amoxicillin 500 MG Oral Tablet, Ibuprofen 100 MG Oral Tablet, and Acetaminophen 160 MG Chewable Tablet. The outcome of these reconciliations likely aimed at improving the patient's medication regimen by eliminating unnecessary or potentially harmful drugs, thereby enhancing safety and efficacy of their overall treatment plan."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+        "query": "Can you determine Ettie537 Farrell962's Body Mass Index (BMI) percentile for her age and sex based on the given observations from April 8, 2019?",
+        "synthetic query": "Can you determine the patient's Body Mass Index (BMI) percentile for her age and sex based on the closest available observations?",
+        "information": [
+            "Based on the available data points in the provided context information, there is no specific record for the encounter date of April 8, 2019. The closest dates are from January 22, 2017 and July 23, 2017, but neither matches the requested date.\n\nTherefore, we cannot provide the Body Mass Index (BMI) percentile for Ettie537 Farrell962 as of April 8, 2019 from this information."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_21-08-2022.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_22-01-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_23-07-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_01-09-2024.txt"
+        ],
+        "synthesized information": "There is no record of BMI percentile for the specified date. The closest records are from earlier dates.",
+        "review": "",
+        "response": "Based on the provided information, it is not possible to determine the exact BMI percentile for the patient's age and sex as there is no recorded data for the specified date, and only earlier observations exist. Without specific values or a complete set of recent measurements that include weight, height, age, and sex, calculating or estimating the current BMI percentile accurately cannot be done from the closest available records alone."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+        "query": "What was Ettie537 Farrell962's pain severity rating on the verbal numeric scale during her encounter on April 8, 2019?",
+        "synthetic query": "What was the pain severity rating on the verbal numeric scale during the patient's encounter closest to April 8, 2019?",
+        "information": [
+            "The provided context does not contain an entry for April 8, 2019. The closest dates are August 4, 2019, and July 23, 2017. Since there is no specific data available for the queried date, a direct answer to the query cannot be given based on the provided information.\n\nHowever, if we were to use the nearest encounter date which is August 4, 2019, the pain severity rating was:\n\nEncounter Date: 04-08-2019 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 1.00 {score}."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_22-01-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_23-07-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_09-08-2020.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_01-09-2024.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_15-08-2021.txt"
+        ],
+        "synthesized information": "The medical record does not have an entry on the specific date requested (April 8, 2019). However, the closest recorded encounter was on August 4, 2019. On this date, the patient reported a pain severity rating of 1 out of 10.",
+        "review": "The response accurately provides the pain severity rating on the closest available date, August 4, 2019, since there was no record for April 8, 2019. The synthesized information and query are clear and concise.",
+        "response": "Based on the information provided, there is no record of a patient's encounter on April 8, 2019. The closest recorded encounter was on August 4, 2019, where the patient reported a pain severity rating of 1 out of 10 on the verbal numeric scale."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+        "query": "What was recorded as Ettie537 Farrell962's blood pressure (both systolic and diastolic values) during the encounter on April 8, 2019?",
+        "synthetic query": "What were the systolic and diastolic blood pressure values recorded during the patient's encounter?",
+        "information": [
+            "On April 8, 2019, during the encounter with Ettie537 Farrell962, her blood pressure was recorded as follows: Systolic Blood Pressure - 101.00 mm[Hg] and Diastolic Blood Pressure - 86.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_21-08-2022.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_26-07-2015.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_01-09-2024.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_09-08-2020.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_15-08-2021.txt"
+        ],
+        "synthesized information": "During a medical encounter, the patient's blood pressure was recorded as follows: Systolic Blood Pressure - 101 mm[Hg] and Diastolic Blood Pressure - 86 mm[Hg].",
+        "review": "",
+        "response": "The systolic blood pressure recorded during the patient's encounter was 101 mm[Hg], and the diastolic blood pressure was 86 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+        "query": "What disorders has Ettie537 Farrell962 been diagnosed with since her birth in 2013?",
+        "synthetic query": "What disorders has the patient been diagnosed with since their birth?",
+        "information": [
+            "Conditions recorded for Ettie537 Farrell962 since birth in 2013:\n\n- Concussion injury of brain (disorder) recorded 2017/08/11\n- Concussion with no loss of consciousness (disorder) recorded 2017/08/11\n- Otitis media (disorder) recorded 2018/10/21\n- Viral sinusitis (disorder) recorded 2020/05/31\n- Gingivitis (disorder) recorded 2021/08/15\n- Gingivitis (disorder) recorded 2024/09/01"
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_15-08-2021.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_22-01-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_01-09-2024.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_05-08-2018.txt"
+        ],
+        "synthesized information": "The patient was diagnosed with several disorders since their birth:\n\n- Concussion injury of brain and concussion without loss of consciousness (diagnosed in 2017).\n- Otitis media (middle ear infection) in 2018.\n- Viral sinusitis in 2020.\n- Gingivitis, which was diagnosed twice: once in 2021 and again in 2024.",
+        "review": "The synthesized report should be reviewed for accuracy, readability, and whether it answers the original question. The response lists disorders but lacks a summary format that allows quick comprehension at a glance.",
+        "response": "The patient has been diagnosed with the following disorders since their birth:\n\n- Concussion injury of brain and concussion without loss of consciousness (diagnosed in 2017).\n- Otitis media (middle ear infection) in 2018.\n- Viral sinusitis in 2020.\n- Gingivitis, diagnosed twice: once in 2021 and again in 2024. \n\nIt's important to note that these conditions were diagnosed at different times throughout the patient\u2019s life, with the earliest listed condition being from 2017."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+        "query": "Which medications were stopped for Ettie537 Farrell962 and when was the last time a medication review was due?",
+        "synthetic query": "What medications were stopped for the patient and when was the last time a medication review was due?",
+        "information": [
+            "Medications stopped for Ettie537 Farrell962: \n- Amoxicillin 500 MG Oral Tablet \n- Ibuprofen 100 MG Oral Tablet \n\nLast medication review due: recorded 2022/08/21"
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_patient_info.txt",
+            "Lon587_Kuhic920_6c602779-9775-f512-2724-fa4e0d0788f5_patient_info.txt"
+        ],
+        "synthesized information": "The patient's medications that were stopped include Amoxicillin 500 MG Oral Tablet and Ibuprofen 100 MG Oral Tablet. The last medication review was due on a date recorded as [DATE].",
+        "review": "The response should summarize that Amoxicillin 500 MG Oral Tablet and Ibuprofen 100 MG Oral Tablet were stopped for the patient. The last medication review was due on a date recorded as [DATE]. The information should be presented clearly with names anonymized.",
+        "response": "The medications that were stopped for the patient are Amoxicillin 500 MG Oral Tablet and Ibuprofen 100 MG Oral Tablet. The last medication review was due on [DATE]. Please note that \"[DATE]\" should be replaced with the actual date when the medication review was scheduled to take place."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+        "query": "When was the last medication review recorded for Ettie537 Farrell962?",
+        "synthetic query": "When was the last medication review recorded?",
+        "information": [
+            "The last medication review for Ettie537 Farrell962 was recorded on 2022/08/21."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_patient_info.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_15-08-2021.txt"
+        ],
+        "synthesized information": "The last medication review for a patient was recorded on [DATE].",
+        "review": "The response needs a specific date and should be more concise. The patient's name has not been anonymized.",
+        "response": "The last medication review was recorded on [DATE]. \n\nNote: Since the specific date is represented by \"[DATE]\" in the given information, it should be replaced with the actual date from your records to provide an accurate answer."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+        "query": "Based on the provided data, what were the systolic and diastolic blood pressure readings for Ettie537 Farrell962 during her check-up on January 24, 2016?",
+        "synthetic query": "What were the systolic and diastolic blood pressure readings for [PATIENT] during their check-up on [DATE]?",
+        "information": [
+            "On January 24, 2016, the systolic blood pressure reading for Ettie537 Farrell962 was 117.00 mm[Hg] and the diastolic blood pressure reading was 88.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_21-08-2022.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-05-2020.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_01-09-2024.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_04-08-2019.txt"
+        ],
+        "synthesized information": "On [DATE], the systolic blood pressure reading for [PATIENT] was 117 mm[Hg] and the diastolic blood pressure reading was 88 mm[Hg].",
+        "review": "",
+        "response": "On [DATE], the systolic blood pressure reading for [PATIENT] was 117 mm[Hg], and the diastolic blood pressure reading was 88 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+        "query": "What was Ettie537 Farrell962's body mass index (BMI) percentile according to the observations made on the encounter date of 24-01-2016?",
+        "synthetic query": "What was the patient's body mass index (BMI) percentile according to the observations made on a specific encounter date?",
+        "information": [
+            "Ettie537 Farrell962's body mass index (BMI) percentile on the encounter date of 24-01-2016 was 87.85%."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_21-08-2022.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_27-08-2023.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_22-01-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-05-2020.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_23-07-2017.txt"
+        ],
+        "synthesized information": "Patient's body mass index (BMI) percentile on a specific encounter date was 87.85%. The exact day of the observation is not required for this summary.",
+        "review": "",
+        "response": "The patient's body mass index (BMI) percentile according to the observations made on the specified encounter date was 87.85%."
+    },
+    {
+        "file": "temp/flat/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813/Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+        "query": "What is the Head Occipital-frontal circumference of Ettie537 Farrell962 as recorded in the observations made on the encounter date of 24-01-2016?",
+        "synthetic query": "What was the Head Occipital-frontal circumference of [PATIENT] as recorded on a specific encounter date?",
+        "information": [
+            "The Head Occipital-frontal circumference of Ettie537 Farrell962 as recorded on the encounter date 24-01-2016 is 46.08 cm."
+        ],
+        "nodes": [
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_26-07-2015.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_25-01-2015.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-01-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_24-07-2016.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_22-01-2017.txt",
+            "Ettie537_Farrell962_d8638449-e632-1ac7-6695-eb60c8773813_23-07-2017.txt"
+        ],
+        "synthesized information": "The Head Occipital-frontal circumference of [PATIENT] as recorded on a specific encounter date is approximately 46 cm.",
+        "review": "",
+        "response": "The Head Occipital-frontal circumference of the patient as recorded on the specific encounter date is approximately 46 cm."
+    }
+]

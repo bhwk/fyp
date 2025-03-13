@@ -1,0 +1,189 @@
+[
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_20-06-2020.txt",
+        "query": "How old was Princess223 Schmeler639 at the time of her encounter date on June 20, 2020?",
+        "synthetic query": "",
+        "information": [
+            "Princess223 Schmeler639 was 45 years old at the time of her encounter date on June 20, 2020."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_25-05-2018.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_13-05-2016.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_20-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_20-05-2017.txt"
+        ],
+        "synthesized information": "The patient was 45 years old at the time of her encounter date on June 20, 2020.",
+        "review": "The synthetic query should include the specific encounter date, which is June 20, 2020. The response needs to be more precise and less generic.",
+        "response": "Princess223 Schmeler639 was 45 years old at the time of her encounter date on June 20, 2020."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt",
+        "query": "What does the Total score [HARK] with a value of 0.00 indicate about Princess223 Schmeler639's risk for health concerns based on her encounter date of December 6, 2021?",
+        "synthetic query": "What does a Total score [HARK] of 0.00 indicate about the patient's risk for health concerns on Encounter Date Placeholder?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt\n\nName: Princess223 Schmeler639 Gender: female Born: 1974-12-06 MaritalStatus: Married Deceased: False\nEncounter Date: 12-06-2021\nObservations: Code is Total score [HARK]. Value is 0.00 {score}."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_09-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_24-06-2023.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_26-05-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_26-02-2016.txt"
+        ],
+        "synthesized information": "The patient has a Total score [HARK] of 0.00 recorded on Encounter Date Placeholder. This indicates no identified risk factors for health concerns based on this scoring system.",
+        "review": "The response should be reviewed for accuracy, clarity, and any potential leakage of sensitive information. The patient's actual encounter date should replace 'Encounter Date Placeholder'. The Total score [HARK] value of 0.00 suggests no risk factors were identified at the time of the assessment.",
+        "response": "A Total score [HARK] of 0.00 indicates that the patient had no identified risk factors for health concerns based on this scoring system on the Encounter Date Placeholder."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt",
+        "query": "Considering the Total score [AUDIT-C] with a value of 2.00, how might this affect the follow-up actions or recommendations for Princess223 Schmeler639 regarding alcohol use?",
+        "synthetic query": "Considering the Total AUDIT-C score of 2.00, how might this affect the follow-up actions or recommendations for a patient regarding alcohol use?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_09-05-2015.txt\nEncounter Date: 09-05-2015\nObservations: Code is Total score [AUDIT-C]. Value is 2.00 {score}.\n\nfile_path: /workspace/fyp/src/temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt\nEncounter Date: 12-06-2021\nObservations: Code is Total score [AUDIT-C]. Value is 2.00 {score}."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_18-06-2022.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_09-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt",
+            "Tyree261_Champlin946_3d46defd-463f-a34b-4551-f9bbe96575bd_31-12-2017.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_01-06-2019.txt"
+        ],
+        "synthesized information": "A patient has had a Total AUDIT-C score of 2.00 on two different occasions: one in Encounter Date [DATE], and another on Encounter Date [DATE]. This score falls within the low-risk range but suggests the need for monitoring.",
+        "review": "The synthesized information briefly mentions that a Total AUDIT-C score of 2.00 falls within the low-risk range but indicates the need for monitoring. However, it lacks specific follow-up actions or recommendations based on this score. The response should include more detailed guidance on what this means for the patient in terms of alcohol use.",
+        "response": "Given that the patient's Total AUDIT-C score is 2.00, which is considered to fall within the low-risk range for alcohol use, follow-up actions or recommendations would likely be focused on continued monitoring rather than immediate intervention. The fact that this score has been consistent across two different encounters suggests a stable pattern of alcohol consumption that does not currently indicate problematic behavior.\n\nRecommendations might include:\n- Regular follow-ups to reassess drinking habits and ensure they remain within low-risk parameters.\n- Education about the risks associated with higher levels of alcohol use, even if current consumption is deemed safe or low-risk.\n- Discussion on healthy lifestyle choices that can support overall wellbeing, which may include moderation in alcohol intake.\n\nThe healthcare provider would likely keep a watchful eye on any changes to drinking habits and continue to provide guidance as needed based on the patient\u2019s responses during follow-up visits."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt",
+        "query": "Given that Princess223 Schmeler639 has a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] value of 1.00, what can be inferred about her current level of depressive symptoms as of the encounter date?",
+        "synthetic query": "Based on the PHQ-2 total score [Reported] values of 2.00 from both encounters, what can be inferred about the patient's current level of depressive symptoms?",
+        "information": [
+            "Based on the provided context, there is no record showing a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] value of 1.00 for Princess223 Schmeler639. The available records show values of 2.00 for both encounters dated 09-05-2015 and 06-06-2020.\n\nHere is the relevant information extracted from the context:\n\n**Encounter Date: 09-05-2015**\n- Code is Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]. Value is **2.00 {score}**\n\n**Encounter Date: 06-06-2020**\n- Code is Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]. Value is **2.00 {score}**"
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_09-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+            "Leonor133_Silvia880_Colunga237_b0f6cc39-6dfd-4ac2-84c7-e7478723d563_20-07-2017.txt",
+            "Jeana169_Weimann465_2bd4d47d-5e00-3b67-cdd7-03f4b811b711_13-08-2018.txt",
+            "Jolyn4_Kattie846_Ortiz186_d5635f98-2461-70a1-5916-f854efa27fc0_08-06-2021.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_27-09-2016.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_25-09-2019.txt"
+        ],
+        "synthesized information": "The patient in question has a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] value of 2.00 for both encounters dated Encounter Date A and Encounter Date B, rather than the initial mentioned value of 1.00.",
+        "review": "",
+        "response": "Based on the PHQ-2 total score [Reported] values of 2.00 from both encounters, it can be inferred that the patient is experiencing some depressive symptoms. The PHQ-2 is a two-item questionnaire designed to screen for depression and consists of questions about the frequency of depressed mood and anhedonia (loss of pleasure or interest) over the past two weeks.\n\nScores on the PHQ-2 range from 0 to 6, where:\n- A score of 0-1 typically indicates minimal depressive symptoms.\n- A score of 2-3 suggests mild to moderate depressive symptoms.\n- A score of 4-6 points towards more severe depressive symptoms.\n\nGiven that the patient scored a total of 2.00 on both occasions, this would fall into the category indicating mild to moderate depressive symptoms. However, it's important to note that while the PHQ-2 can indicate the presence and severity level of depressive symptoms, further evaluation by a healthcare provider is necessary for a comprehensive assessment and appropriate management plan."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+        "query": "Based on the provided observations, what does Princess223 Schmeler639's GAD-7 score indicate about her level of anxiety?",
+        "synthetic query": "",
+        "information": [
+            "Code is Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]. Value is 5.00 {score}.\nCode is Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]. Value is 4.00 {score}.\nCode is Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]. Value is 2.00 {score}."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_24-06-2023.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_26-05-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-04-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_05-08-2016.txt"
+        ],
+        "synthesized information": "The patient has had three recorded Generalized Anxiety Disorder 7-item (GAD-7) total scores: 5.00, 4.00, and 2.00.",
+        "review": "The response should be reviewed for accuracy and readability. Ensure that the patient's GAD-7 scores are correctly interpreted to determine their level of anxiety, and anonymize the information.",
+        "response": "Based on the provided GAD-7 scores for Princess223 Schmeler639\u20145.00, 4.00, and 2.00\u2014the scoring indicates a range from minimal to mild anxiety levels. The GAD-7 scale interprets scores as follows: 0-4 points suggest no or minimal anxiety; 5-9 points indicate mild anxiety; 10-14 moderate anxiety; and 15-21 severe anxiety. Therefore, her recorded scores are within the range of minimal to mild anxiety."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+        "query": "Which procedures were conducted during the encounter on 06-06-2020, and what might have been the reasons for referring Princess223 Schmeler639 for dental care?",
+        "synthetic query": "Which procedures were conducted during the encounter on [DATE], and what might have been the reasons for referring the patient for dental care?",
+        "information": [
+            "The user is interested in the procedures that were conducted during an encounter on 06-06-2020 and the reasons for referring Princess223 Schmeler639 to dental care.",
+            "The procedures conducted during the encounter on 06-06-2020 for Princess223 Schmeler639 included:\n-completed Assessment of anxiety\n-completed Depression screening (twice)\n-completed Assessment of substance use\n-completed Screening for drug abuse\n-completed Patient referral for dental care"
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_13-07-2024.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_20-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_05-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_19-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_12-06-2021.txt"
+        ],
+        "synthesized information": "The encounter on [DATE] involved several procedures including an assessment of anxiety, depression screening (conducted twice), an assessment of substance use, and a screening for drug abuse. The patient was also referred to dental care.",
+        "review": "",
+        "response": "During the encounter on [DATE], the procedures conducted included an assessment of anxiety, depression screening which was performed twice, an evaluation of substance use, and a screening for drug abuse. The reasons for referring the patient for dental care are not explicitly detailed in the provided information; however, it could be inferred that issues related to oral health were identified during the encounter or that the overall health assessment indicated the need for specialized dental care to address potential or existing dental problems that might affect the patient's general well-being."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+        "query": "What additional information can be inferred from Princess223 Schmeler639's PHQ-2 and DAST-10 scores regarding her mental health status?",
+        "synthetic query": "What can be inferred about the patient's mental health status from their PHQ-2 and DAST-10 scores?",
+        "information": [
+            "Patient Name: Princess223 Schmeler639\nPHQ-2 Score on 06-06-2020: 2.00\nDAST-10 Score on 06-06-2020: 2.00\nPHQ-2 Score on 29-06-2024: 2.00\nDAST-10 Score on 29-06-2024: 0.00"
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_06-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_29-06-2024.txt"
+        ],
+        "synthesized information": "Patient has a consistent PHQ-2 score of 2.00 over multiple encounters, indicating mild depressive symptoms. The DAST-10 score decreased from 2.00 to 0.00, suggesting reduced risk for substance use disorder.",
+        "review": "",
+        "response": "From the given information about the patient's PHQ-2 and DAST-10 scores, we can infer that:\n\n1. **Mild Depressive Symptoms**: The consistent PHQ-2 score of 2.00 over multiple encounters indicates mild depressive symptoms. This suggests ongoing but not severe depression that requires monitoring or management.\n\n2. **Reduced Risk for Substance Use Disorder**: The decrease in the DAST-10 score from 2.00 to 0.00 implies a reduced risk for substance use disorder. Initially, there was some concern about potential substance misuse issues, but this seems to have been addressed or resolved as indicated by the current lower score.\n\nIn summary, while the patient is showing signs of mild depression that needs attention, they appear to be doing better in terms of their risk for substance abuse, which has decreased significantly."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+        "query": "What was Princess223 Schmeler639's pain severity rating on the verbal numeric scale during her encounter on June 23, 2023?",
+        "synthetic query": "",
+        "information": [
+            "Princess223 Schmeler639's pain severity rating on the verbal numeric scale during her encounter on June 23, 2023 was 1.00."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_29-06-2024.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_25-05-2018.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_08-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_05-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_31-05-2019.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_11-06-2021.txt"
+        ],
+        "synthesized information": "The patient's pain severity rating on a verbal numeric scale during their encounter was 1.00.",
+        "review": "",
+        "response": "Princess223 Schmeler639's pain severity rating on the verbal numeric scale during her encounter on June 23, 2023, was 1.00."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+        "query": "According to the PRAPARE protocol responses given by Princess223 Schmeler639 during her encounter on June 23, 2023, how often does she see or talk to people that she feels close to?",
+        "synthetic query": "Based on the PRAPARE protocol responses, how often does the patient see or talk to people that she feels close to?",
+        "information": [
+            "According to the PRAPARE protocol responses given by Princess223 Schmeler639 during her encounter on June 23, 2023, she sees or talks to people that she feels close to 3 to 5 times a week."
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_15-08-2022.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_19-07-2018.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_08-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_05-06-2020.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_31-05-2019.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_11-06-2021.txt"
+        ],
+        "synthesized information": "According to the PRAPARE protocol responses given by a patient during her encounter on [DATE], she sees or talks to people that she feels close to 3 to 5 times a week.",
+        "review": "",
+        "response": "Based on the PRAPARE protocol responses, the patient sees or talks to people that she feels close to 3 to 5 times a week."
+    },
+    {
+        "file": "temp/flat/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61/Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+        "query": "Based on the observations made on June 23, 2023, what were Princess223 Schmeler639's systolic and diastolic blood pressure readings?",
+        "synthetic query": "What were the patient's systolic and diastolic blood pressure readings on [DATE]?",
+        "information": [
+            "Systolic Blood Pressure: 133.00 mm[Hg]\nDiastolic Blood Pressure: 76.00 mm[Hg]"
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_25-05-2018.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_13-05-2016.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_23-06-2023.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_17-06-2022.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_19-05-2017.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_08-05-2015.txt",
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_31-05-2019.txt"
+        ],
+        "synthesized information": "On [DATE], the patient's systolic blood pressure was 133 mm[Hg] and diastolic blood pressure was 76 mm[Hg].",
+        "review": "",
+        "response": "On [DATE], the patient's systolic blood pressure reading was 133 mm[Hg] and the diastolic blood pressure reading was 76 mm[Hg]."
+    }
+]

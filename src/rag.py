@@ -165,4 +165,9 @@ class RAGWorkflow(Workflow):
 
         response = await synthesizer.asynthesize(query, ev.nodes)
 
-        return StopEvent(result=response)
+        result = {
+            "information": str(response),
+            "nodes": [node.metadata["file_name"] for node in ev.nodes],
+        }
+
+        return StopEvent(result=result)

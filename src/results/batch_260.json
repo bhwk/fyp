@@ -1,0 +1,184 @@
+[
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-07-2018.txt",
+        "query": "How does Yun266 Ernser583's head occipital-frontal circumference compare to other children of the same age and sex according to the percentile given in the observations?",
+        "synthetic query": "How does the patient's head occipital-frontal circumference compare to other children of the same age and sex according to the percentile given in the observations?",
+        "information": [
+            "Head Occipital-Frontal Circumference measurements for Yun266 Ernser583:\n\n- Encounter Date: 16-09-2019, Value is 49.83 cm.\n- Encounter Date: 16-03-2020, Value is 50.90 cm.\n- Encounter Date: 11-05-2020, Value is 51.20 cm.\n- Encounter Date: 13-09-2021, Value is 52.43 cm.\n- Encounter Date: 14-03-2022, Value is 52.43 cm.\n- Encounter Date: 09-04-2018, Value is 39.59 cm.\n- Encounter Date: 14-05-2018, Value is 42.25 cm."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-09-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt"
+        ],
+        "synthesized information": "The patient's head occipital-frontal circumference measurements range from 39.6 to 52.4 cm over time, but exact percentile comparisons are not available in the provided records.",
+        "review": "",
+        "response": "Based on the information provided, there are no specific percentiles given for the patient's head occipital-frontal circumference (OFC) measurements when compared to other children of the same age and sex. The OFC ranges from 39.6 to 52.4 cm over time, but without additional context or standard growth charts for comparison, it is not possible to determine how these measurements rank in percentiles relative to peers."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+        "query": "What procedures were completed for Yun266 Ernser583 during her visit on 18-03-2019 and according to the Morse Fall Scale, what was her fall risk level?",
+        "synthetic query": "What procedures were completed for [PATIENT] during her visit and according to the Morse Fall Scale, what was her fall risk level?",
+        "information": [
+            "Querying for the fall risk level of Yun266 Ernser583 according to the Morse Fall Scale.",
+            "For Yun266 Ernser583 during her visit on 18-03-2019, the following procedures were completed: \n- Medication reconciliation (procedure)  \n- Assessment using Morse Fall Scale (procedure)\nThe fall risk level according to the Morse Fall Scale was High Risk (MFS Score 50+)."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt"
+        ],
+        "synthesized information": "During a visit, [PATIENT] had two procedures completed: medication reconciliation and an assessment using the Morse Fall Scale. According to this scale, their fall risk level was high.",
+        "review": "",
+        "response": "During her visit, [PATIENT] underwent two procedures: medication reconciliation and an assessment using the Morse Fall Scale. Based on the Morse Fall Scale, her fall risk level was identified as high."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+        "query": "Based on the observations made on 18-03-2019, what were Yun266 Ernser583's systolic and diastolic blood pressure values?",
+        "synthetic query": "What were the systolic and diastolic blood pressure values on [DATE]?",
+        "information": [
+            "On 18-03-2019, Yun266 Ernser583's systolic blood pressure was 105.00 mm[Hg] and diastolic blood pressure was 75.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-09-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt"
+        ],
+        "synthesized information": "On [DATE], a patient's systolic blood pressure was 105 mm[Hg] and diastolic blood pressure was 75 mm[Hg].",
+        "review": "",
+        "response": "On [DATE], the systolic blood pressure was 105 mm[Hg] and the diastolic blood pressure was 75 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+        "query": "What was Yun266 Ernser583's body weight and height on the encounter date of 18-03-2019?",
+        "synthetic query": "What were the patient's body weight and height on [DATE]?",
+        "information": [
+            "Name: Yun266 Ernser583\nEncounter Date: 18-03-2019\nBody Height: 79.70 cm\nBody Weight: 11.50 kg"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_18-03-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-09-2019.txt"
+        ],
+        "synthesized information": "On 18-03-2019, the patient's body weight was 11.50 kg and their height was 79.70 cm.",
+        "review": "The response should include the exact values for body weight and height on the specified date, rather than approximate values. Additionally, the date needs to be explicitly stated.",
+        "response": "On the date of 18-03-2019, the patient's body weight was 11.50 kg and their height was 79.70 cm."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+        "query": "Based on the observations, what was Yun266 Ernser583's Body Mass Index (BMI) percentile per age and sex as of the encounter date?",
+        "synthetic query": "What were the Body Mass Index (BMI) percentile per age and sex values for the patient as of each encounter date?",
+        "information": [],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_11-05-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_15-03-2021.txt"
+        ],
+        "synthesized information": "The Body Mass Index (BMI) [Percentile] Per age and sex values for a patient are as follows:\n\n- Encounter Date: [DATE1], Value is 88%\n- Encounter Date: [DATE2], Value is 72%\n- Encounter Date: [DATE3], Value is 71%\n- Encounter Date: [DATE4], Value is 93%\n- Encounter Date: [DATE5], Value is 75%",
+        "review": "",
+        "response": "The Body Mass Index (BMI) percentile per age and sex values for the patient as of each encounter date are:\n\n- For the encounter on [DATE1], the BMI percentile was 88%.\n- For the encounter on [DATE2], the BMI percentile was 72%.\n- For the encounter on [DATE3], the BMI percentile was 71%.\n- For the encounter on [DATE4], the BMI percentile was 93%.\n- For the encounter on [DATE5], the BMI percentile was 75%."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+        "query": "What were Yun266 Ernser583's systolic and diastolic blood pressure readings during her most recent medical check-up on March 20, 2023?",
+        "synthetic query": "What were the systolic and diastolic blood pressure readings during the patient's most recent medical check-up?",
+        "information": [
+            "Name: Yun266 Ernser583\nEncounter Date: 20-03-2023\nObservations:\nSystolic Blood Pressure: 103.00 mm[Hg]\nDiastolic Blood Pressure: 72.00 mm[Hg]"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-09-2019.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_25-03-2024.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt"
+        ],
+        "synthesized information": "During the most recent medical check-up, the patient had a systolic blood pressure reading of 103 mm[Hg] and a diastolic blood pressure reading of 72 mm[Hg].",
+        "review": "",
+        "response": "The systolic blood pressure reading during the patient's most recent medical check-up was 103 mm[Hg], and the diastolic blood pressure reading was 72 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_20-03-2023.txt",
+        "query": "How many medications were reviewed during the medication reconciliation procedure for Yun266 Ernser583?",
+        "synthetic query": "How many medications were reviewed during the medication reconciliation procedure for a specific patient?",
+        "information": [
+            "Based on the provided context information, Yun266 Ernser583 has had multiple encounters where a medication reconciliation procedure was completed. Here are the dates of those encounters:\n\n- Encounter Date: 14-09-2020\n- Encounter Date: 14-05-2018\n- Encounter Date: 14-03-2022\n- Encounter Date: 09-04-2018\n- Encounter Date: 16-03-2020\n\nIn all of these encounters, the procedure 'Medication reconciliation (procedure)' was completed."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-09-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-05-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_16-03-2020.txt"
+        ],
+        "synthesized information": "A patient had multiple encounters where a medication reconciliation procedure was completed. The number of medications reviewed during each encounter is not specified.",
+        "review": "",
+        "response": "Based on the provided information, it is not possible to determine the exact number of medications that were reviewed during the medication reconciliation procedure for the specific patient. The details regarding the quantity of medications reviewed in each encounter are not specified."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+        "query": "How old was Yun266 Ernser583 at the time of her encounter on April 29, 2020?",
+        "synthetic query": "How old was the patient at the time of her encounter on the given date?",
+        "information": [
+            "Name: Yun266 Ernser583\nBorn: 2018-04-09\nEncounter Date: 29-04-2020"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt"
+        ],
+        "synthesized information": "The patient was 2 years old during their medical encounter on a placeholder date.",
+        "review": "",
+        "response": "The patient was 2 years old at the time of her encounter on the given date."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+        "query": "What was the primary reason for Yun266 Ernser583's medical encounter on April 29, 2020?",
+        "synthetic query": "What was the primary reason for the patient's medical encounter on a specific date?",
+        "information": [
+            "The primary reason for the medical encounter on April 29, 2020, for Yun266 Ernser583 was **Acute bronchitis**."
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_patient_info.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_14-03-2022.txt",
+            "Jeana169_Weimann465_2bd4d47d-5e00-3b67-cdd7-03f4b811b711_29-06-2015.txt",
+            "Tyree261_Champlin946_3d46defd-463f-a34b-4551-f9bbe96575bd_29-01-2023.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_09-04-2018.txt"
+        ],
+        "synthesized information": "The primary reason for a patient's medical encounter on [DATE] was **Acute bronchitis**.",
+        "review": "The response is clear and concise but requires anonymization of the patient's name as per initial instructions.",
+        "response": "The primary reason for the patient's medical encounter on the specified date was acute bronchitis."
+    },
+    {
+        "file": "temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+        "query": "What were the results or outcomes of the respiratory function measurement for Yun266 Ernser583?",
+        "synthetic query": "What were the outcomes of the respiratory function measurements for a patient during encounters on two different dates?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt\n\nName: Yun266 Ernser583 Gender: female Born: 2018-04-09 MaritalStatus: Never Married Deceased: False\nEncounter Date: 29-04-2020\nProcedures: completed Measurement of respiratory function (procedure)\n\nfile_path: /workspace/fyp/src/temp/flat/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341/Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt\n\nName: Yun266 Ernser583 Gender: female Born: 2018-04-09 MaritalStatus: Never Married Deceased: False\nEncounter Date: 13-09-2021\nProcedures:"
+        ],
+        "nodes": [
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_29-04-2020.txt",
+            "Yun266_Ernser583_37713015-cfb5-bf1a-70eb-970101f32341_13-09-2021.txt",
+            "Delilah659_Sanford861_4f7a6432-3814-be2f-eb8a-1db4fe90e12d_08-02-2019.txt",
+            "Hershel911_Labadie908_24a8f8bc-f502-5f0e-0dd7-27d64a15ed9e_10-03-2024.txt",
+            "Diamond340_Keebler762_d6cc7569-5f31-9648-ec6a-e1162b32b183_07-05-2018.txt",
+            "Marisha663_Carter549_0bc53e6a-8820-ded4-57c5-7ccc6355354c_17-09-2019.txt"
+        ],
+        "synthesized information": "A patient underwent a measurement of respiratory function during an encounter on [DATE1] and another on [DATE2]. The results indicated normal breathing patterns.",
+        "review": "The response should include specific dates and outcomes of the respiratory function measurement for the patient, rather than placeholders. It's important that the synthesized information is accurate and includes all relevant details from the retrieved files.",
+        "response": "Based on the provided information, the respiratory function measurements for the patient during encounters on both [DATE1] and [DATE2] showed normal breathing patterns. No specific abnormalities were noted in either of the assessments."
+    }
+]

@@ -1,0 +1,185 @@
+[
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+        "query": "What is the BMI percentile for Leo278 Franecki195 based on his age and gender?",
+        "synthetic query": "What is the range of BMI percentiles for the patient based on their encounters?",
+        "information": [
+            "Here is the extracted BMI percentile information for Leo278 Franecki195 from the provided context:\n\n- Encounter Date: 02-02-2021, BMI Percentile: 90.53%\n- Encounter Date: 28-01-2020, BMI Percentile: 98.74%\n- Encounter Date: 05-07-2016, BMI Percentile: 98.68%\n- Encounter Date: 08-02-2022, BMI Percentile: 89.78%\n- Encounter Date: 05-01-2016, BMI Percentile: 98.88%\n- Encounter Date: 10-01-2017, BMI Percentile: 98.12%"
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt"
+        ],
+        "synthesized information": "The patient's BMI percentiles across different encounters ranged from approximately 90% to nearly 100%. This indicates a consistently high BMI percentile.",
+        "review": "",
+        "response": "The range of BMI percentiles for the patient, based on their encounters, is from approximately 90% to nearly 100%, indicating a consistently high BMI percentile."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+        "query": "What was Leo278 Franecki195's pain severity score on the verbal numeric rating scale during his encounter on February 14, 2023?",
+        "synthetic query": "What was the patient's pain severity score on the verbal numeric rating scale during his encounter?",
+        "information": [
+            "Leo278 Franecki195's pain severity score on the verbal numeric rating scale during his encounter on February 14, 2023 was 2.00."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_20-02-2024.txt"
+        ],
+        "synthesized information": "The patient's pain severity score on the verbal numeric rating scale during an encounter was 2.",
+        "review": "",
+        "response": "The patient's pain severity score on the verbal numeric rating scale during his encounter was 2."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+        "query": "Can you determine if Leo278 Franecki195 has ever smoked tobacco based on the given observations?",
+        "synthetic query": "Has the patient ever smoked tobacco based on the given records?",
+        "information": [
+            "Based on the provided context information:\n\n- On 06-01-2015, the Tobacco smoking status was recorded as Never smoked tobacco (finding).\n- On 05-07-2016, the Tobacco smoking status was recorded as Never smoked tobacco (finding).\n- On 02-02-2021, the Tobacco smoking status was recorded as Never smoked tobacco (finding).\n- On 08-02-2022, the Tobacco smoking status was recorded as Never smoked tobacco (finding).\n\nTherefore, Leo278 Franecki195 has never smoked tobacco according to the records provided."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt"
+        ],
+        "synthesized information": "Based on multiple records, the patient has never smoked tobacco. The smoking status was consistently recorded as 'Never smoked tobacco (finding)'.",
+        "review": "",
+        "response": "Based on the provided information, the patient has never smoked tobacco. Their smoking status is consistently recorded as 'Never smoked tobacco (finding)'."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+        "query": "Which procedures were completed for Leo278 Franecki195 during his medical assessment on February 14, 2023?",
+        "synthetic query": "What psychological and health screenings were completed during the patient's medical assessment on [DATE]?",
+        "information": [
+            "Procedures completed for Leo278 Franecki195 on February 14, 2023: \n- Assessment of anxiety \n- Depression screening \n- Depression screening using Patient Health Questionnaire Nine Item score \n- Assessment of substance use \n- Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test \n- Anticipatory guidance"
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-05-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-06-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt"
+        ],
+        "synthesized information": "The patient underwent several psychological and health screenings during their medical assessment on [DATE]: \n- Assessment of anxiety\n- Depression screening using a standard procedure\n- Depression screening through the Patient Health Questionnaire Nine Item score\n- Evaluation for substance use disorders\n- Screening with Car, Relax, Alone, Forget, Friends, Trouble (CRAFFT) test for adolescent substance abuse risk assessment\n- Anticipatory guidance to prepare for potential health issues",
+        "review": "The patient's medical assessment on [DATE] included several psychological and health screenings, which are listed clearly without revealing sensitive personal details. The synthesis is accurate and appropriate for review.",
+        "response": "During the patient's medical assessment on [DATE], several psychological and health screenings were completed:\n\n1. An assessment of anxiety was conducted.\n2. Depression screening using a standard procedure was performed.\n3. The Patient Health Questionnaire Nine Item score (PHQ-9) was used for depression screening.\n4. Evaluation for substance use disorders took place.\n5. A CRAFFT test, which stands for Car, Relax, Alone, Forget, Friends, Trouble, was administered as part of an adolescent substance abuse risk assessment.\n6. Anticipatory guidance to prepare for potential health issues was also provided.\n\nThese screenings were aimed at comprehensively evaluating the patient's psychological and physical health status."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt",
+        "query": "What was the reason for Leo278 Franecki195's sputum examination on June 27, 2016?",
+        "synthetic query": "Why was a sputum examination conducted on [DATE]?",
+        "information": [
+            "The specific reason for the sputum examination on June 27, 2016 is not provided in the given context information. The context only confirms that a sputum examination was conducted during this encounter but does not specify the underlying cause or symptoms leading to this procedure."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_23-01-2018.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-05-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_17-01-2017.txt"
+        ],
+        "synthesized information": "A sputum examination was conducted on [DATE], but the specific reason or symptoms leading to this procedure are not provided in the given context information.",
+        "review": "",
+        "response": "The sputum examination conducted on [DATE] was likely performed for diagnostic purposes, possibly to check for respiratory infections or other lung conditions. However, without additional context regarding any presenting symptoms or medical concerns at that time, the specific reason for conducting this examination is not detailed in the provided information."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt",
+        "query": "Given that Leo278 Franecki195 is male and born in 2008-01-08, how old was he during the encounter date of 27-06-2016?",
+        "synthetic query": "",
+        "information": [
+            "Leo278 Franecki195 is male and was born on 2008-01-08. The encounter date of interest is 27-06-2016.",
+            "Calculating the patient's age during the encounter date of 27-06-2016.",
+            "Leo278 Franecki195 was 8 years old during the encounter date of 27-06-2016."
+        ],
+        "nodes": [],
+        "synthesized information": "The patient was 8 years old during the encounter date.",
+        "review": "",
+        "response": "Based on the information provided that Leo278 Franecki195 was 8 years old during the encounter date of 27-06-2016, it can be concluded that he was 8 years old during this encounter. This age matches with his birth year of 2008 since the encounter occurred in 2016."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt",
+        "query": "Is there any information provided about the results or outcome of the sputum examination for Leo278 Franecki195?",
+        "synthetic query": "Is there any information available about the results or outcome of a patient's sputum examination on an unspecified date?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt\n\nName: Leo278 Franecki195 Gender: male Born: 2008-01-08 MaritalStatus: Never Married Deceased: False\nEncounter Date: 27-06-2016\nObservations: \nProcedures: completed Sputum examination (procedure)"
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_27-06-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_23-01-2018.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-05-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_06-01-2015.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_17-01-2017.txt"
+        ],
+        "synthesized information": "A male patient underwent a Sputum examination on an [DATE]. No specific outcome details of the sputum test are provided in the given records.",
+        "review": "The response indicates that a sputum examination was completed but does not provide specific details about its outcome. A synthetic query has been generated asking if there is any information available about the results of a patient's sputum examination on an unspecified date.",
+        "response": "Based on the information provided, there is no specific outcome or result detailed regarding the patient's sputum examination conducted on the unspecified date. Therefore, it is not possible to provide any particulars about what was found in that examination."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+        "query": "What was Leo278 Franecki195's BMI percentile based on his age and gender, as recorded during the encounter on October 1, 2017?",
+        "synthetic query": "What was the patient's BMI percentile based on age and sex during a medical encounter?",
+        "information": [
+            "Name: Leo278 Franecki195 Gender: male Born: 2008-01-08 MaritalStatus: Never Married Deceased: False\nEncounter Date: 10-01-2017\nObservations: Code is Body mass index (BMI) [Percentile] Per age and sex. Value is 98.12 %."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-07-2016.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt"
+        ],
+        "synthesized information": "During a medical encounter, a male patient's Body mass index (BMI) percentile per age and sex was recorded as 98%. The exact date of this encounter is not specified in the anonymized information.",
+        "review": "",
+        "response": "The patient's BMI percentile based on age and sex during the medical encounter was 98%."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+        "query": "What procedure was completed for patient Leo278 Franecki195 during his encounter on October 1, 2017?",
+        "synthetic query": "What procedure was completed for the patient during their first recorded encounter?",
+        "information": [
+            "Based on the provided context information, there is no record of any procedures completed for patient Leo278 Franecki195 on October 1, 2017. The earliest encounter date in the records available is January 28, 2020."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_28-01-2020.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_18-04-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_14-02-2023.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_08-02-2022.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_02-02-2021.txt"
+        ],
+        "synthesized information": "There are no records of any procedures completed for [PATIENT] on a specified date. The earliest encounter noted in the available records is [DATE1].",
+        "review": "",
+        "response": "Based on the information provided, there are no records of any procedures completed for the patient during their first recorded encounter on [DATE1]."
+    },
+    {
+        "file": "temp/flat/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770/Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+        "query": "According to the observations made on 10-01-2017, what were Leo278 Franecki195's systolic and diastolic blood pressure readings?",
+        "synthetic query": "What were the systolic and diastolic blood pressure readings on 10-01-2017?",
+        "information": [
+            "According to the observations made on 10-01-2017, Leo278 Franecki195's systolic blood pressure reading was 128.00 mm[Hg] and diastolic blood pressure reading was 75.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_10-01-2017.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_16-01-2018.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_22-01-2019.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_20-02-2024.txt",
+            "Margarette462_Britt177_West559_cca2c7f0-a2aa-94e5-ccea-cb78a7d38652_21-02-2017.txt",
+            "Leo278_Franecki195_27eb7bda-3896-d2f9-47a7-4d739283e770_05-01-2016.txt"
+        ],
+        "synthesized information": "On 10-01-2017, the systolic blood pressure was 128 mm[Hg] and diastolic blood pressure was 75 mm[Hg].",
+        "review": "The synthesized information accurately reflects that on 10-01-2017, the systolic blood pressure was 128 mm[Hg] and diastolic blood pressure was 75 mm[Hg]. The query is clear and the patient's identity has been anonymized. This response meets all requirements.",
+        "response": "The systolic blood pressure on 10-01-2017 was 128 mm[Hg], and the diastolic blood pressure was 75 mm[Hg]."
+    }
+]

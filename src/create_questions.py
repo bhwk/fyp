@@ -35,7 +35,7 @@ async def load_file(file: pathlib.Path):
 
 async def process_file(file: pathlib.Path):
     prompt = PromptTemplate(
-        "Generate a series of 5 questions about the following text: {text}"
+        "Generate a series of 3 questions about the following text: {text}"
     )
     # load the content of the file
     # then we pass it to the LLM to generate a series of questions,

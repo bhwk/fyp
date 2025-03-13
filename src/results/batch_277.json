@@ -1,0 +1,192 @@
+[
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_25-04-2016.txt",
+        "query": "What were Yolanda648 Baca589's blood pressure readings (both systolic and diastolic values) during the medical examination on April 25, 2016?",
+        "synthetic query": "What were the blood pressure readings (both systolic and diastolic values) during a medical examination on [DATE]?",
+        "information": [
+            "Yolanda648 Baca589's blood pressure readings on April 25, 2016 were: Diastolic Blood Pressure was 85.00 mm[Hg] and Systolic Blood Pressure was 135.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_25-04-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_19-01-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_20-04-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_23-01-2017.txt"
+        ],
+        "synthesized information": "The patient's blood pressure readings during a medical examination on [DATE] were as follows: Diastolic Blood Pressure was approximately 85 mm[Hg], and Systolic Blood Pressure was around 135 mm[Hg].",
+        "review": "The response has accurate blood pressure readings but lacks the explicit mention of the date. The synthesized query should also include the specific examination date.",
+        "response": "The blood pressure readings during the medical examination on [DATE] were as follows: the systolic blood pressure was around 135 mm[Hg], and the diastolic blood pressure was approximately 85 mm[Hg]."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_25-04-2016.txt",
+        "query": "According to the provided information, what dental-related procedure was Yolanda648 Baca589 referred for, and what does this suggest about her dental health status at that time?",
+        "synthetic query": "What does the series of dental-related procedures performed on a patient indicate about their dental health status?",
+        "information": [
+            "Procedures related to dental care for Yolanda648 Baca589:\n\n- Dental consultation and report (procedure)\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure)\n- Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure)\n- Examination of gingivae (procedure)\n- Dental surgical procedure (procedure)\n- Dental application of desensitizing medicament (procedure)\n- Gingivectomy or gingivoplasty, per tooth (procedure)\n- Postoperative care for dental procedure (regime/therapy)\n- Dental fluoride treatment (procedure)\n- Oral health education (procedure)\n- Application of composite dental filling material to dentin of tooth following fracture of tooth (procedure)\n- Dental plain X-ray bitewing (procedure)"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_21-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_31-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt"
+        ],
+        "synthesized information": "The patient was referred for several dental-related procedures which suggest she had significant oral hygiene issues. These included removal of both supragingival and subgingival plaque and calculus, indicating a substantial accumulation of tartar that required professional cleaning. Additionally, the patient underwent a gingivectomy or gingivoplasty, suggesting gum disease or other gum issues requiring surgical intervention. The application of composite dental filling material following tooth fracture implies she had at least one damaged tooth. Overall, these procedures suggest her dental health status was compromised and needed comprehensive care.",
+        "review": "The synthetic query and information accurately summarize the patient's dental procedures and suggest their compromised dental health status. However, to maintain anonymity, all references to 'Yolanda648 Baca589' should be anonymized in the final response.",
+        "response": "The series of dental-related procedures performed on the patient indicates a compromised state of their dental health. Procedures such as the removal of both supragingival (above the gum line) and subgingival (below the gum line) plaque and calculus point to significant oral hygiene issues, likely due to poor brushing habits or other factors that allowed for substantial tartar buildup. The necessity for surgical interventions like a gingivectomy or gingivoplasty suggests the presence of gum disease or other serious conditions affecting the gums. Furthermore, the application of composite dental fillings after a tooth fracture indicates damage to at least one tooth. Collectively, these procedures suggest that the patient required comprehensive care due to multiple issues in their oral health."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+        "query": "Based on the provided medical history, which of the following conditions was first recorded in Yolanda648 Baca589's record in 2014?",
+        "synthetic query": "Which of the following conditions was first recorded in [YEAR]? - Acute bacterial sinusitis (disorder) or Viral sinusitis (disorder).",
+        "information": [
+            "Conditions recorded in 2014 for Yolanda648 Baca589:\n\n- Acute bacterial sinusitis (disorder) recorded 2014/12/24\n- Viral sinusitis (disorder) recorded 2015/02/17"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_22-01-2018.txt",
+            "Kieth891_McKenzie376_081abe99-9641-1098-8903-61de9e66d9fa_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt"
+        ],
+        "synthesized information": "Conditions recorded in [YEAR]:\n\n- Acute bacterial sinusitis (disorder) recorded on [DATE]\n- Viral sinusitis (disorder) recorded on [EARLY_NEXT_YEAR]",
+        "review": "",
+        "response": "Based on the information provided, Acute bacterial sinusitis (disorder) was first recorded in [YEAR] on [DATE], whereas Viral sinusitis (disorder) was recorded later in the next year on [EARLY_NEXT_YEAR]. Therefore, Acute bacterial sinusitis was first recorded in [YEAR]."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+        "query": "What significant life event did Yolanda648 Baca589 experience in both 2015 and 2021 as indicated by her medical records?",
+        "synthetic query": "What significant life event did the patient experience in both [DATE] and [DATE] as indicated by their medical records?",
+        "information": [
+            "Based on the provided context information, here are some significant life events for Yolanda648 Baca589:\n\n- Recorded **Acute bacterial sinusitis** (disorder) on 2014/12/24.\n- Recorded **Normal pregnancy** (finding) on 2015/05/04.\n- Completed Evaluation of uterine fundal height and Auscultation of the fetal heart during an encounter on 01-06-2015, indicating she was pregnant at this time.\n- Recorded another **Normal pregnancy** (finding) on 2017/09/04.\n- Completed Evaluation of uterine fundal height and Auscultation of the fetal heart again during an encounter on 02-04-2018, indicating she was pregnant at this time as well.\n- Recorded **Received higher education** (finding) on 2017/05/01.\n- Recorded **Full-time employment** (finding) on 2017/05/01 and again on 2021/05/17, indicating changes in her employment status over time.\n- Recorded **Lack of access to transportation** (finding) on 2018/05/07 and noted that lack of transportation has kept her from non-medical meetings or appointments.\n- Recorded **Has a criminal record** (finding) on 2018/05/07, which could be a significant event in her life.\n- Recorded **Disease caused by severe acute respiratory syndrome coronavirus 2** (disorder) on 2021/01/19.\n- Recorded another **Normal pregnancy** (finding) on 2021/09/13.\n\nThese events represent some of the key health, life status changes, and significant occurrences in Yolanda648 Baca589's records."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_18-01-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-06-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-04-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt"
+        ],
+        "synthesized information": "The patient experienced a **Normal pregnancy** (finding) on [DATE] in both 2015 and 2021. This indicates significant life events related to childbirth during these years.",
+        "review": "",
+        "response": "The patient experienced normal pregnancies in both 2015 and 2021, as indicated by their medical records. These pregnancies represent significant life events related to childbirth during those years."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+        "query": "How many different types of fractures are noted in Yolanda648 Baca589's medical history?",
+        "synthetic query": "",
+        "information": [
+            "Fractures recorded for Yolanda648 Baca589:\n- Fracture of bone (disorder) recorded on 2016/02/18\n- Fracture of rib (disorder) recorded on 2016/02/18"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-04-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt"
+        ],
+        "synthesized information": "There are two different types of fractures noted in the patient's medical history: a fracture of bone and a rib fracture.",
+        "review": "The response should be revised to clearly state 'There are 2 types of fractures noted in Yolanda648 Baca589's medical history.' This revision will directly answer the query with a numerical count as requested.",
+        "response": "There are two different types of fractures noted in Yolanda648 Baca589's medical history: a fracture of bone and a rib fracture."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_11-04-2022.txt",
+        "query": "What was the primary reason for Yolanda648 Baca589's medical encounter on November 4, 2022?",
+        "synthetic query": "What was the primary reason for a patient's medical encounter on a specific date, when there is no record of any such encounter?",
+        "information": [
+            "There is no record of a medical encounter for Yolanda648 Baca589 on November 4, 2022. The closest documented encounters are on May 30, 2022; May 17, 2021; and other dates that do not match the query date."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_30-05-2022.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-05-2024.txt"
+        ],
+        "synthesized information": "There is no record of a medical encounter on [DATE] for [PATIENT]. The closest documented encounters are on [DATE]; [DATE]; and other dates that do not match the query date.",
+        "review": "",
+        "response": "Based on the information provided, there is no record of any medical encounter for the patient on the specific date in question. Therefore, it's not possible to determine a primary reason for an encounter that did not occur according to the available records. The closest documented encounters are on different dates and do not provide information about the unspecified date mentioned in the query."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_11-04-2022.txt",
+        "query": "What additional information might be useful to have about Yolanda648 Baca589's medical history to better understand the context of these procedures?",
+        "synthetic query": "What additional information might be useful to have about the patient's medical history to better understand the context of these procedures?",
+        "information": [
+            "Medical History for Yolanda648 Baca589:\n\n- **Acute bacterial sinusitis (disorder)** recorded on 2014/12/24\n- **Viral sinusitis (disorder)** recorded on 2015/02/17 and 2015/12/04\n- **Fracture of bone (disorder)** recorded on 2016/02/18, including a fracture of rib (disorder)\n- **Gingivitis (disorder)** recorded on 2016/04/25 and 2021/05/17\n- **Acute infective cystitis (disorder)** recorded on 2017/01/23\n- **Concussion injury of brain (disorder)** and **Concussion with no loss of consciousness (disorder)** both recorded on 2018/02/23\n- **Suspected disease caused by Severe acute respiratory coronavirus 2 (situation)**, along with symptoms like cough, sputum finding, fatigue, fever, and loss of taste, all recorded on 2021/01/19\n- Confirmed **Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)** recorded on 2021/01/19\n- **Acute bronchitis (disorder)** recorded on 2021/05/24\n\n**Medications:**\n- Stopped medications include Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet, Naproxen sodium 220 MG Oral Tablet, cephalexin 500 MG Oral Tablet, Acetaminophen 325 MG Oral Tablet\n- Active medication: Jolivette 28 Day Pack\n\n**Pregnancies:**\n- Normal pregnancy (finding) recorded on 2015/05/04 and 2021/09/13"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_22-01-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt"
+        ],
+        "synthesized information": "Medical History for Patient:\n\n- **Acute bacterial sinusitis (disorder)** recorded in 2014.\n- **Viral sinusitis (disorder)** recorded in early and late 2015.\n- **Fracture of bone (disorder)** including a rib fracture, recorded in early 2016.\n- **Gingivitis (disorder)** recorded in mid 2016 and mid 2021.\n- **Acute infective cystitis (disorder)** recorded in early 2017.\n- **Concussion injury of brain (disorder)** and **Concussion with no loss of consciousness (disorder)** both recorded in early 2018.\n- Suspected and confirmed cases of **Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)**, along with symptoms like cough, sputum finding, fatigue, fever, and loss of taste, all recorded around the start of 2021.\n- **Acute bronchitis (disorder)** recorded in mid 2021.\n\n**Medications:**\n- Stopped medications include Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet, Naproxen sodium 220 MG Oral Tablet, cephalexin 500 MG Oral Tablet, Acetaminophen 325 MG Oral Tablet.\n- Active medication: Jolivette 28 Day Pack.\n\n**Pregnancies:**\n- Normal pregnancy (finding) recorded in mid 2015 and late 2021.",
+        "review": "",
+        "response": "To better understand the context of the medical procedures related to this patient, several additional pieces of information might be useful:\n\n1. **Specific Dates of Procedures**: Knowing when specific medical procedures were conducted can help correlate them with other significant health events or changes in medication use.\n\n2. **Reasons for Stopping Medications**: Understanding why certain medications like Amoxicillin/Clavulanate, Naproxen sodium, Cephalexin, and Acetaminophen were stopped could provide insight into the patient's current condition and any allergies or adverse reactions they might have had to these drugs.\n\n3. **Details on Active Medication (Jolivette 28 Day Pack)**: More details about why this medication is being used, how it fits into her treatment plan, especially given her recent pregnancies, could be important for understanding her overall health management.\n\n4. **Severity and Treatment of Previous Conditions**: Information on the severity of conditions such as acute bacterial sinusitis, viral sinusitis, fractures, gingivitis, cystitis, concussions, and respiratory illnesses would help in assessing the effectiveness of past treatments and their potential impact on current health status.\n\n5. **Details About Pregnancy Outcomes**: Knowing more about the outcomes of her pregnancies in mid 2015 and late 2021 could provide context for any post-pregnancy health issues or ongoing care needs, especially if there were complications during pregnancy or delivery.\n\n6. **Allergies and Adverse Reactions**: Any known allergies to medications or other substances would be crucial to avoid potential complications in treatment planning.\n\n7. **Family Medical History**: Information about her family's medical history could provide insights into possible genetic predispositions to certain conditions, which might affect the patient\u2019s diagnosis and treatment plan.\n\n8. **Lifestyle Factors**: Details regarding lifestyle factors such as diet, exercise habits, smoking status, alcohol consumption, and occupational exposures can significantly influence health outcomes and should be considered in the context of medical procedures.\n\n9. **Immunization Records**: Knowing her immunization history could help predict susceptibility to certain diseases and guide preventive care measures.\n\n10. **Recent Health Screenings or Tests**: Information on any recent screenings, lab tests, or imaging studies would provide a current snapshot of her health status and aid in understanding the necessity and timing of medical procedures."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_11-04-2022.txt",
+        "query": "Based on the procedures completed during her visit, can we infer that Yolanda648 Baca589 is or may be pregnant?",
+        "synthetic query": "Can we infer from the procedures that the patient may be pregnant?",
+        "information": [
+            "Based on the provided context information, here are the pregnancy-related procedures performed for Yolanda648 Baca589:\n\n- **Encounter Date:** 08-11-2021  \n    - Procedures: \n        - Completed Fetal anatomy study (procedure)\n        - Completed Alpha-fetoprotein test - antenatal (procedure)  \n        - Completed Evaluation of uterine fundal height (procedure)  \n        - Completed Auscultation of the fetal heart (procedure)\n\n- **Encounter Date:** 02-10-2017  \n    - Procedures: \n        - Completed Evaluation of uterine fundal height (procedure)\n        - Completed Auscultation of the fetal heart (procedure)\n        - Completed Detection of chromosomal aneuploidy in prenatal amniotic fluid specimen using fluorescence in situ hybridization screening technique (procedure)\n\n- **Encounter Date:** 13-09-2021  \n    - Procedures: \n        - Completed Standard pregnancy test (procedure)  \n        - Completed Ultrasound scan for fetal viability (procedure)  \n        - Completed Evaluation of uterine fundal height (procedure)  \n        - Completed Auscultation of the fetal heart (procedure)\n\n- **Encounter Date:** 04-09-2017  \n    - Procedures: \n        - Completed Standard pregnancy test (procedure)\n        - Completed Ultrasound scan for fetal viability (procedure)\n        - Completed Evaluation of uterine fundal height (procedure)  \n        - Completed Auscultation of the fetal heart (procedure)\n\n- **Encounter Date:** 04-05-2015  \n    - Procedures: \n        - Completed Standard pregnancy test (procedure)\n        - Completed Ultrasound scan for fetal viability (procedure)\n        - Completed Evaluation of uterine fundal height (procedure)  \n        - Completed Auscultation of the fetal heart (procedure)\n\nThese encounters reflect a series of procedures that are typical during prenatal care, including standard tests to confirm pregnancy and monitor the health of both mother and fetus."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-10-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-04-2018.txt"
+        ],
+        "synthesized information": "The patient underwent multiple procedures indicative of prenatal care, including fetal anatomy studies, alpha-fetoprotein tests, evaluations of uterine fundal height, auscultation of the fetal heart, standard pregnancy tests, and ultrasound scans for fetal viability. These procedures were conducted on different dates over several years.",
+        "review": "",
+        "response": "Yes, we can infer from the procedures that the patient may be pregnant. The information provided lists a series of medical examinations and tests typically associated with prenatal care, such as fetal anatomy studies, alpha-fetoprotein tests, evaluations of uterine fundal height, auscultation of the fetal heart, standard pregnancy tests, and ultrasound scans for fetal viability. These procedures are specifically conducted to monitor and ensure the health of both the mother and the fetus during pregnancy. Therefore, the presence of these prenatal care-related activities strongly suggests that the patient is pregnant or has been pregnant at different times over several years as mentioned in the information."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+        "query": "What was the primary purpose of Yolanda648 Baca589's medical encounter on 08-11-2021?",
+        "synthetic query": "What was the primary purpose of [PATIENT]'s medical encounter on [DATE]?",
+        "information": [
+            "file_path: /workspace/fyp/src/temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt\n\nName: Yolanda648 Baca589 Gender: female Born: 1999-03-08 MaritalStatus: Never Married Deceased: False\nEncounter Date: 08-11-2021\nObservations: \nProcedures: completed Fetal anatomy study (procedure) completed Alpha-fetoprotein test - antenatal (procedure) completed Evaluation of uterine fundal height (procedure) completed Auscultation of the fetal heart (procedure)"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_18-01-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_08-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-03-2021.txt"
+        ],
+        "synthesized information": "The patient, referred to as [PATIENT], had a medical encounter on [DATE]. The primary purpose of this visit was for prenatal care. This included completing several procedures: fetal anatomy study, alpha-fetoprotein test, evaluation of uterine fundal height, and auscultation of the fetal heart.",
+        "review": "The response provides a clear summary of the primary purpose of the medical encounter, which was for prenatal care. It lists the procedures completed during the visit in a concise manner. The information is anonymized and presented clearly.",
+        "response": "The primary purpose of [PATIENT]'s medical encounter on [DATE] was for prenatal care, which involved conducting a fetal anatomy study, an alpha-fetoprotein test, evaluating the uterine fundal height, and listening to the fetal heartbeat."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+        "query": "Which specific procedures were conducted during Yolanda648 Baca589's visit to the healthcare provider on November 8, 2021?",
+        "synthetic query": "What specific procedures were conducted during the patient's visit to the healthcare provider on [DATE]?",
+        "information": [
+            "Based on the provided context information, there is no record of any procedures conducted for Yolanda648 Baca589 on November 8, 2021. The records available are from dates other than the queried date. \n\nHere's a summary of the available encounter dates:\n- 04-05-2015\n- 02-05-2016\n- 23-01-2017\n- 04-09-2017\n- 13-09-2021\n\nNone of these dates match the date specified in the query."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_23-01-2017.txt"
+        ],
+        "synthesized information": "There are no records of any procedures conducted on [DATE]. The available medical encounters for this patient were on different dates: [DATE1], [DATE2], [DATE3], [DATE4], and [DATE5].",
+        "review": "Approve: The response is well-summarized, dates are clearly presented in a readable format, synthetic query aligns with synthesized information, and name anonymization is maintained.",
+        "response": "Based on the information provided, there are no records indicating that any specific procedures were conducted during the patient's visit to the healthcare provider on the specified date. The medical encounters recorded for this patient occurred on different dates: [DATE1], [DATE2], [DATE3], [DATE4], and [DATE5]."
+    }
+]

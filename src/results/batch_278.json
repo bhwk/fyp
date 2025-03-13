@@ -1,0 +1,190 @@
+[
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+        "query": "Based on the provided information, how old was Yolanda648 Baca589 at the time of her medical encounter on 08-11-2021?",
+        "synthetic query": "How old was the patient at the time of her medical encounter?",
+        "information": [
+            "Yolanda648 Baca589 was 22 years old at the time of her medical encounter on 08-11-2021."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_18-01-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-11-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_08-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-03-2021.txt"
+        ],
+        "synthesized information": "Patient was 22 years old at the time of her medical encounter on [DATE].",
+        "review": "The patient was 22 years old at the time of her medical encounter on [DATE]. This answer contains no sensitive information and appropriately answers the query without including any names or specific dates that could identify the individual.",
+        "response": "The patient was 22 years old at the time of her medical encounter."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_09-09-2019.txt",
+        "query": "How old was Yolanda648 Baca589 when she received her intramuscular injection in 2019?",
+        "synthetic query": "When was the earliest intramuscular injection recorded for [PATIENT]?",
+        "information": [
+            "Based on the provided context information, there are no records of intramuscular injections for Yolanda648 Baca589 in the year 2019. All available records indicate procedures completed after this date, with the earliest being from March 9, 2020."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_14-06-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-09-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-03-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-06-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-12-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_09-03-2020.txt"
+        ],
+        "synthesized information": "There are no records of intramuscular injections for [PATIENT] in the year 2019. All available records indicate procedures completed after this date, with the earliest being from March 9, 2020.",
+        "review": "",
+        "response": "The earliest recorded intramuscular injection for [PATIENT] was on March 9, 2020."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_09-09-2019.txt",
+        "query": "Given that Yolanda648 Baca589 has never been married as of the encounter date, are there any notes or predictions about her future marital status?",
+        "synthetic query": "Are there any notes or predictions about Patient A's future marital status given that she has never been married as of the encounter date?",
+        "information": [
+            "Name: Yolanda648 Baca589\nGender: female\nBorn: 1999-03-08\nMaritalStatus: Never Married\nDeceased: False\n\nBased on the provided information, Yolanda648 Baca589's marital status is listed as 'Never Married' across multiple encounter dates. There are no notes or predictions in the given records regarding any changes to her marital status. Therefore, based solely on the available data, it can be concluded that she has consistently been noted as never married throughout the recorded encounters.\n\nPrediction: Without additional information about future events or plans, there is no basis within the provided context to predict a change in Yolanda648 Baca589's marital status."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_30-05-2022.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_28-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_03-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-05-2024.txt"
+        ],
+        "synthesized information": "The patient, identified as Patient A, is noted to have a marital status of 'Never Married' across multiple encounters. No notes or predictions are provided regarding any changes in her future marital status based on the available records.",
+        "review": "",
+        "response": "Based on the information provided, there are no notes or predictions about any changes in Patient A's future marital status. The records only indicate that she has never been married as of the encounter dates but do not speculate on her future marital status."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_09-09-2019.txt",
+        "query": "What was the purpose of the intramuscular injection given to Yolanda648 Baca589 on September 9, 2019?",
+        "synthetic query": "What was the purpose of the intramuscular injection given to [PATIENT] on [DATE]?",
+        "information": [
+            "Based on the context information provided, there is no record of an intramuscular injection for Yolanda648 Baca589 on September 9, 2019. The earliest records available are from March 9, 2020."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-09-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_14-06-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-03-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_08-06-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-12-2020.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_09-03-2020.txt"
+        ],
+        "synthesized information": "There is no record of an intramuscular injection for [PATIENT] on [DATE]. The earliest records available are from March 9, 2020.",
+        "review": "The SynthAgent has successfully generated a synthetic query and synthesized the correct information from the retrieved data. The patient's name and date have been anonymized, and there are no records of an intramuscular injection on the specified date. The earliest available record is from March 9, 2020.",
+        "response": "There is no recorded information about an intramuscular injection given to the patient on the specified date. The earliest medical records available start from March 9, 2020, and there is no mention of any intramuscular injections within those records."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+        "query": "Based on the procedures Yolanda648 Baca589 underwent on April 9, 2017, what significant medical condition was being assessed or managed?",
+        "synthetic query": "Based on the procedures [PATIENT] underwent, what significant medical condition was being assessed or managed?",
+        "information": [
+            "Procedures undergone on April 9, 2017 for Yolanda648 Baca589:\n\n- Standard pregnancy test (procedure)\n- Ultrasound scan for fetal viability (procedure)\n- Evaluation of uterine fundal height (procedure)\n- Auscultation of the fetal heart (procedure)\n- Blood group typing (procedure)\n- Hemogram, automated, with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count, and manual white blood cell differential (procedure)\n- Hepatitis B surface antigen measurement (procedure)\n- Human immunodeficiency virus antigen test (procedure)\n- Chlamydia antigen test (procedure)\n- Gonorrhea infection titer test (procedure)\n- Syphilis infectious titer test (procedure)\n- Urine culture (procedure)\n- Cytopathology procedure, preparation of smear, genital source (procedure)\n- Urine screening test for diabetes (procedure)\n- Hepatitis C antibody, confirmatory test (procedure)\n- Rubella screening test (procedure)\n- Measurement of Varicella-zoster virus antibody (procedure)\n- Skin test for tuberculosis, Tine test (procedure)\n- Urine protein test\n- Physical examination procedure (procedure)"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_23-01-2017.txt"
+        ],
+        "synthesized information": "On a specific date, [PATIENT] underwent numerous procedures:\n\n- Standard pregnancy test\n- Ultrasound scan for fetal viability\n- Evaluation of uterine fundal height\n- Auscultation of the fetal heart\n- Blood group typing\n- Hemogram with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count and manual white blood cell differential\n- Hepatitis B surface antigen measurement\n- Human immunodeficiency virus antigen test\n- Chlamydia antigen test\n- Gonorrhea infection titer test\n- Syphilis infectious titer test\n- Urine culture\n- Cytopathology procedure, preparation of smear from a genital source\n- Urine screening test for diabetes\n- Hepatitis C antibody confirmatory test\n- Rubella screening test\n- Measurement of Varicella-zoster virus antibody\n- Skin test for tuberculosis\n- Urine protein test\n- Physical examination",
+        "review": "",
+        "response": "Based on the procedures [PATIENT] underwent, the significant medical condition being assessed or managed appears to be a pregnancy. This conclusion is supported by several specific procedures such as the standard pregnancy test, ultrasound scan for fetal viability, evaluation of uterine fundal height, and auscultation of the fetal heart. Additionally, tests related to infectious diseases (like Hepatitis B, HIV, Chlamydia, Gonorrhea, Syphilis), diabetes screening, and immunity status against certain viruses (such as Rubella and Varicella-zoster) are common during prenatal care to ensure both maternal health and fetal well-being."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+        "query": "Which specific infectious diseases were screened for during Yolanda648 Baca589's encounter on April 9, 2017?",
+        "synthetic query": "Which specific infectious diseases were screened for during a patient's encounter on [DATE]?",
+        "information": [
+            "The infectious diseases screened for during the encounter on April 9, 2017 for Yolanda648 Baca589 include:\n\n- Hepatitis B surface antigen measurement (procedure)\n- Human immunodeficiency virus antigen test (procedure) \n- Chlamydia antigen test (procedure)\n- Gonorrhea infection titer test (procedure)\n- Syphilis infectious titer test (procedure)\n- Urine culture (procedure)\n- Cytopathology procedure, preparation of smear, genital source (procedure)\n- Hepatitis C antibody, confirmatory test (procedure) \n- Rubella screening test (procedure)\n- Measurement of Varicella-zoster virus antibody (procedure)\n- Skin test for tuberculosis, Tine test (procedure)"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_17-05-2021.txt"
+        ],
+        "synthesized information": "The infectious diseases screened for during a patient's encounter on [DATE] include:\n\n- Hepatitis B surface antigen measurement (procedure)\n- Human immunodeficiency virus antigen test (procedure) \n- Chlamydia antigen test (procedure)\n- Gonorrhea infection titer test (procedure)\n- Syphilis infectious titer test (procedure)\n- Urine culture (procedure)\n- Cytopathology procedure, preparation of smear from a genital source (procedure)\n- Hepatitis C antibody, confirmatory test (procedure) \n- Rubella screening test (procedure)\n- Measurement of Varicella-zoster virus antibody (procedure)\n- Skin test for tuberculosis, Tine test (procedure)",
+        "review": "",
+        "response": "During the patient's encounter on [DATE], the following specific infectious diseases were screened for:\n\n1. Hepatitis B\n2. HIV (Human Immunodeficiency Virus)\n3. Chlamydia\n4. Gonorrhea\n5. Syphilis\n6. Urinary tract infections (through a urine culture, though the specific pathogen isn't listed)\n7. Cervical or genital cytological abnormalities (cytopathology procedure, which can detect various sexually transmitted infections and other conditions but is not specific to one infectious disease)\n8. Hepatitis C\n9. Rubella\n10. Varicella-zoster virus (which causes chickenpox and shingles)\n11. Tuberculosis\n\nPlease note that the procedures listed include general tests for infection presence or immune response, such as antigen tests and antibody measurements, which are used to diagnose these specific infectious diseases."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+        "query": "How many different types of tests related to fetal health and development are mentioned in the list of procedures completed for Yolanda648 Baca589?",
+        "synthetic query": "How many different types of tests related to fetal health and development are mentioned in the synthesized list?",
+        "information": [
+            "Here is a compiled list of procedures completed for Yolanda648 Baca589 based on the provided context:\n\n- Standard pregnancy test (procedure)\n- Ultrasound scan for fetal viability (procedure)\n- Evaluation of uterine fundal height (procedure)\n- Auscultation of the fetal heart (procedure)\n- Blood group typing (procedure)\n- Hemogram, automated, with red blood cells, white blood cells, hemoglobin, hematocrit, indices, platelet count, and manual white blood cell differential (procedure)\n- Hepatitis B surface antigen measurement (procedure)\n- Human immunodeficiency virus antigen test (procedure)\n- Chlamydia antigen test (procedure)\n- Gonorrhea infection titer test (procedure)\n- Syphilis infectious titer test (procedure)\n- Urine culture (procedure)\n- Cytopathology procedure, preparation of smear, genital source (procedure)\n- Urine screening test for diabetes (procedure)\n- Hepatitis C antibody, confirmatory test (procedure)\n- Rubella screening test (procedure)\n- Measurement of Varicella-zoster virus antibody (procedure)\n- Skin test for tuberculosis, Tine test (procedure)\n- Urine protein test\n- Physical examination procedure (procedure)\n- Dental consultation and report (procedure)\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure)\n- Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure)\n- Examination of gingivae (procedure)\n- Dental surgical procedure (procedure)\n- Dental application of desensitizing medicament (procedure)\n- Gingivectomy or gingivoplasty, per tooth (procedure)\n- Postoperative care for dental procedure (regime/therapy)\n- Dental fluoride treatment (procedure)\n- Oral health education (procedure)\n- History taking (procedure)\n- Discussion about signs and symptoms (procedure)\n- Triage: emergency center (procedure)\n- Taking patient vital signs (procedure)\n- History and physical examination with evaluation and management of patient (procedure)\n- Urinalysis with reflex to microscopy and culture (procedure)\n- Urine specimen collection (procedure)\n- Antibiotic therapy (procedure)\n- Patient discharge (procedure)"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_23-01-2017.txt"
+        ],
+        "synthesized information": "- Ultrasound scan for fetal viability\n- Auscultation of the fetal heart\n- Evaluation of uterine fundal height",
+        "review": "",
+        "response": "The synthesized list mentions three different types of tests related to fetal health and development:\n\n1. Ultrasound scan for fetal viability\n2. Auscultation of the fetal heart\n3. Evaluation of uterine fundal height\n\nTherefore, there are 3 different types of tests mentioned in the synthesized list."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+        "query": "What specific dental procedures were performed during Yolanda648 Baca589's visit on May 15, 2017?",
+        "synthetic query": "What specific dental procedures were performed during the patient's visit on [DATE]?",
+        "information": [
+            "On May 15, 2017, the following dental procedures were performed for Yolanda648 Baca589:\n\n- Dental consultation and report\n- Dental care\n- Removal of supragingival plaque and calculus from all teeth using a dental instrument\n- Removal of subgingival plaque and calculus from all teeth using a dental instrument\n- Examination of gingivae\n- Application of composite dental filling material to dentin of tooth following fracture of tooth\n- Dental fluoride treatment\n- Oral health education"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_21-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_31-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_01-05-2017.txt"
+        ],
+        "synthesized information": "On [DATE], the following dental procedures were performed for [PATIENT]:\n\n- Dental consultation and report\n- Dental care\n- Removal of supragingival plaque and calculus from all teeth using a dental instrument\n- Removal of subgingival plaque and calculus from all teeth using a dental instrument\n- Examination of gingivae\n- Application of composite dental filling material to dentin of tooth following fracture of tooth\n- Dental fluoride treatment\n- Oral health education",
+        "review": "",
+        "response": "During the patient's visit on [DATE], the specific dental procedures performed were:\n\n- A dental consultation and report.\n- General dental care services.\n- Scaling to remove supragingival (above the gum line) plaque and calculus from all teeth using a dental instrument.\n- Root planing or deep cleaning to remove subgingival (below the gum line) plaque and calculus from all teeth using a dental instrument.\n- An examination of the gingivae (gums).\n- Application of composite filling material to repair dentin damage following a tooth fracture.\n- A dental fluoride treatment to help prevent cavities.\n- Oral health education to inform the patient about maintaining good oral hygiene."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+        "query": "According to the observations made during the encounter on May 15, 2017, what preventive measure was provided to Yolanda648 Baca589 after completing the procedures?",
+        "synthetic query": "What preventive measures were provided to the patient after completing the procedures during their encounter?",
+        "information": [
+            "Based on the provided context information for Yolanda648 Baca589 on May 15, 2017:\n\nProcedures:\n- Dental consultation and report (procedure)\n- Dental care (regime/therapy)\n- Removal of supragingival plaque and calculus from all teeth using dental instrument (procedure)\n- Removal of subgingival plaque and calculus from all teeth using dental instrument (procedure)\n- Examination of gingivae (procedure)\n- Application of composite dental filling material to dentin of tooth following fracture of tooth (procedure)\n- Dental fluoride treatment (procedure)\n- Oral health education (procedure)\n\nThese procedures indicate preventive measures focused on oral hygiene, including the removal of plaque and calculus, examination for any gingival issues, application of a dental filling where necessary, fluoride treatment, and providing oral health education."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_patient_info.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-09-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_13-09-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_04-05-2015.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_24-05-2021.txt"
+        ],
+        "synthesized information": "The patient underwent several preventive measures focused on oral hygiene during their encounter, including the removal of plaque and calculus, examination for any gingival issues, application of a dental filling where necessary, fluoride treatment, and providing oral health education.",
+        "review": "",
+        "response": "After completing the procedures during their encounter, the preventive measures provided to the patient included maintaining oral hygiene through the removal of plaque and calculus. Additionally, an examination was conducted to check for any gingival issues. Where necessary, a dental filling was applied, and the patient received fluoride treatment. Oral health education was also provided as part of these preventive efforts."
+    },
+    {
+        "file": "temp/flat/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c/Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+        "query": "How old was Yolanda648 Baca589 at the time of her encounter with dental care on May 15, 2017?",
+        "synthetic query": "What age was the patient during their dental visit on [DATE]?",
+        "information": [
+            "Yolanda648 Baca589 was born on 1999-03-08 and had a dental care encounter on May 15, 2017."
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_15-05-2017.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_02-05-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_21-05-2018.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_31-05-2021.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt"
+        ],
+        "synthesized information": "Patient was [AGE] years old during a dental care visit on [DATE].",
+        "review": "",
+        "response": "The patient was [AGE] years old during their dental visit on [DATE]."
+    }
+]

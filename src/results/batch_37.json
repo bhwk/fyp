@@ -1,0 +1,196 @@
+[
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-01-2021.txt",
+        "query": "On a verbal numeric rating scale from 0 to 10, with 0 being no pain and 10 being the worst possible pain, what pain severity score did Dudley365 Blick895 report during his dialysis session on January 29, 2021?",
+        "synthetic query": "What was the reported pain severity score for a patient on a verbal numeric rating scale during their dialysis session?",
+        "information": [
+            "Dudley365 Blick895 reported a pain severity score of 3.00 on the verbal numeric rating scale during his dialysis session on January 29, 2021."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_4-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_12-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-02-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-03-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-01-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-04-2021.txt"
+        ],
+        "synthesized information": "A patient reported a pain severity score of 3 on the verbal numeric rating scale during their dialysis session.",
+        "review": "",
+        "response": "The reported pain severity score for the patient on the verbal numeric rating scale during their dialysis session was 3."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_29-01-2021.txt",
+        "query": "Given that Dudley365 Blick895 was born on April 28, 1950, how old was he at the time of his renal dialysis procedure on January 29, 2021?",
+        "synthetic query": "Given that the patient was born on [DATE_OF_BIRTH], how old was he at the time of his renal dialysis procedure on [PROCEDURE_DATE]?",
+        "information": [
+            "Name: Dudley365 Blick895 Gender: male Born: 1950-04-28 MaritalStatus: Married Deceased: False\n\nEncounter Date: 24-11-2021\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 11-11-2021\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 08-04-2019\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 01-01-2020\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 06-07-2020\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 08-03-2019\nProcedures: completed Renal dialysis (procedure)\n\nEncounter Date: 01-01-2021\nProcedures: completed Renal dialysis (procedure)"
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_11-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2021.txt"
+        ],
+        "synthesized information": "Patient had multiple encounters for renal dialysis procedures from early 2019 to late 2021. The patient was born in [DATE_OF_BIRTH] and underwent a renal dialysis procedure on [PROCEDURE_DATE].",
+        "review": "",
+        "response": "To calculate the age of the patient at the time of the renal dialysis procedure, we need to know the specific dates for `[DATE_OF_BIRTH]` and `[PROCEDURE_DATE]`. Since these values are placeholders in your query and not actual dates, I can't compute a precise numerical answer. However, if you provide me with the exact birth date and the date of the renal dialysis procedure, I can calculate how old the patient was at that time.\n\nFor example, if the `[DATE_OF_BIRTH]` is January 1, 1970, and the `[PROCEDURE_DATE]` is March 15, 2020, then we would subtract the birth date from the procedure date to find out the age of the patient at the time of the dialysis.\n\nWould you like to provide specific dates for these placeholders so I can calculate the exact age?"
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2018.txt",
+        "query": "What abnormalities did the urine test strip reveal about Dudley365 Blick895's urine on March 24, 2018, including any findings related to glucose, bilirubin, ketones, and protein?",
+        "synthetic query": "What abnormalities did the urine test strip reveal on [DATE], including any findings related to glucose, bilirubin, ketones, and protein?",
+        "information": [
+            "Name: Dudley365 Blick895 \nEncounter Date: 24-03-2018 \nObservations: \nCode is Appearance of Urine. Value is Cloudy urine (finding). \nCode is Odor of Urine. Value is Urine smell ammoniacal (finding). \nCode is Clarity of Urine. Value is Translucent (qualifier value). \nCode is Color of Urine. Value is Brown color (qualifier value). \nCode is Glucose [Mass/volume] in Urine by Test strip. Value is 1.96 mg/dL. \nCode is Glucose [Presence] in Urine by Test strip. Value is Urine glucose test = ++ (finding). \nCode is Bilirubin.total [Mass/volume] in Urine by Test strip. Value is 0.24 mg/dL. \nCode is Bilirubin.total [Presence] in Urine by Test strip. Value is Finding of bilirubin in urine (finding). \nCode is Ketones [Mass/volume] in Urine by Test strip. Value is 1.85 mg/dL. \nCode is Ketones [Presence] in Urine by Test strip. Value is Urine ketone test = +++ (finding). \nCode is Protein [Mass/volume] in Urine by Test strip. Value is 252.83 mg/dL. \nCode is Protein [Presence] in Urine by Test strip. Value is Urine protein test = +++ (finding)."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-09-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_17-08-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2017.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-06-2016.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt"
+        ],
+        "synthesized information": "On [DATE], a urine test strip showed abnormalities in the patient's urine, including cloudy appearance, an ammoniacal odor, and a brown color. The glucose level was elevated to approximately 2 mg/dL (marked as ++), indicating possible hyperglycemia or another condition affecting glucose metabolism. Bilirubin levels were also detected at about 0.24 mg/dL, suggesting potential liver dysfunction or hemolysis. Ketone presence was noted with a level of roughly 1.85 mg/dL and marked as +++ (indicating high ketones), which could be associated with diabetes or fasting states. Protein in the urine was found at around 250 mg/dL and also marked as +++ (signifying significant proteinuria). Nitrites, blood, and leukocyte esterase were not detected.",
+        "review": "",
+        "response": "On [DATE], the urine test strip revealed several abnormalities:\n\n- **Glucose:** Elevated to approximately 2 mg/dL (marked as ++), suggesting possible hyperglycemia or another condition affecting glucose metabolism.\n- **Bilirubin:** Detected at about 0.24 mg/dL, which may suggest potential liver dysfunction or hemolysis.\n- **Ketones:** Presence noted with a level of roughly 1.85 mg/dL and marked as +++ (indicating high ketones), potentially associated with diabetes or fasting states.\n- **Protein:** Found at around 250 mg/dL and also marked as +++ (signifying significant proteinuria).\n\nAdditionally, the urine had a cloudy appearance, an ammoniacal odor, and was brown in color. Nitrites, blood, and leukocyte esterase were not detected."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2018.txt",
+        "query": "What was Dudley365 Blick895's weight difference before and after his dialysis session on the encounter date of March 24, 2018?",
+        "synthetic query": "What was the patient's weight difference before and after his dialysis session on [DATE]?",
+        "information": [
+            "Dudley365 Blick895's weight difference before and after his dialysis session on March 24, 2018 was recorded as 1.25 kg."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_30-09-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-01-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-01-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-06-2016.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-02-2018.txt"
+        ],
+        "synthesized information": "The patient's weight difference before and after his dialysis session on [DATE] was 1.25 kg.",
+        "review": "The synthesized query and information are correct, but they should be presented in a more readable summary format. The name has been anonymized appropriately.",
+        "response": "The patient's weight difference before and after his dialysis session on the specified date was 1.25 kg."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_24-03-2018.txt",
+        "query": "On the same encounter date for Dudley365 Blick895, what were the levels of protein and albumin in his blood serum or plasma?",
+        "synthetic query": "On a specific encounter date, what were the levels of protein and albumin in the patient's blood serum or plasma?",
+        "information": [
+            "For Dudley365 Blick895, the protein and albumin levels in blood serum or plasma across different encounter dates are as follows:\n\n- **Encounter Date: 17-11-2021**\n    - Protein [Mass/volume] in Serum or Plasma: 7.98 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 3.66 g/dL\n\n- **Encounter Date: 14-03-2021**\n    - Protein [Mass/volume] in Serum or Plasma: 7.36 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 4.78 g/dL\n\n- **Encounter Date: 01-05-2020**\n    - Protein [Mass/volume] in Serum or Plasma: 7.24 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 5.32 g/dL\n\n- **Encounter Date: 08-04-2019**\n    - Protein [Mass/volume] in Serum or Plasma: 6.18 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 5.02 g/dL\n\n- **Encounter Date: 08-03-2019**\n    - Protein [Mass/volume] in Serum or Plasma: 7.74 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 3.97 g/dL\n\n- **Encounter Date: 06-07-2020**\n    - Protein [Mass/volume] in Serum or Plasma: 7.22 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 5.13 g/dL\n\n- **Encounter Date: 03-06-2022**\n    - Protein [Mass/volume] in Serum or Plasma: 7.51 g/dL\n    - Albumin [Mass/volume] in Serum or Plasma: 4.67 g/dL"
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_17-11-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_14-03-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-06-2022.txt"
+        ],
+        "synthesized information": "On the encounter date of 17-11-2021, the patient had the following levels in their blood serum or plasma:\n- Protein: 8 g/dL\n- Albumin: 3.7 g/dL",
+        "review": "The response now correctly specifies the encounter date and provides accurate protein and albumin levels. It is clear and concise.",
+        "response": "On the encounter date of 17-11-2021, the patient's blood serum or plasma had protein levels at 8 g/dL and albumin levels at 3.7 g/dL."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2018.txt",
+        "query": "Given that Dudley365 Blick895 is still alive as of the encounter date (02-09-2018), can we infer anything about his condition or treatment plan based on his pain level and weight difference post-dialysis?",
+        "synthetic query": "Can we infer anything about the patient's condition or treatment plan based on their pain level range (2.00-5.00) and weight difference post-dialysis fluctuation (1 kg to 5 kg)?",
+        "information": [
+            "Name: Dudley365 Blick895 Gender: male Born: 1950-04-28 MaritalStatus: Married Deceased: False\n\nEncounter Date: 01-07-2022 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 1.29 kg.\n\nEncounter Date: 23-07-2022 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 3.48 kg.\n\nEncounter Date: 01-01-2020 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 4.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 2.80 kg.\n\nEncounter Date: 08-03-2019 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 2.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 4.99 kg.\n\nEncounter Date: 06-07-2020 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 5.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 3.80 kg.\n\nEncounter Date: 08-04-2019 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 5.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 4.07 kg.\n\nEncounter Date: 01-01-2021 \nObservations: Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}. Weight difference [Mass difference] --pre dialysis - post dialysis. Value is 1.68 kg."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-07-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_23-07-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-03-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-07-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_08-04-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2021.txt"
+        ],
+        "synthesized information": "The patient's pain levels have ranged from 2.00 to 5.00 on a verbal numeric rating scale during multiple encounters. The weight difference post-dialysis has fluctuated between approximately 1 kg and 5 kg.",
+        "review": "",
+        "response": "Based solely on the provided information about the patient's pain level range (2.00-5.00) and weight fluctuations post-dialysis (1 kg to 5 kg), we can infer limited aspects of their condition or treatment plan:\n\n1. **Pain Level**: The verbal numeric rating scale ranges from 0 (no pain) to 10 (worst possible pain). A range of 2.00-5.00 suggests that the patient experiences mild to moderate pain. This could indicate ongoing discomfort related to their condition, possibly chronic in nature or related to dialysis treatment itself.\n\n2. **Weight Fluctuation Post-Dialysis**: The fluctuation between 1 kg and 5 kg post-dialysis is within a normal range for patients undergoing hemodialysis. Hemodialysis often leads to weight loss as excess fluid is removed from the body. A moderate fluctuation could suggest that dialysis treatments are effectively managing fluid retention without causing significant dehydration or overhydration.\n\nHowever, these inferences are quite general and do not provide specific insights into the patient's overall condition or their detailed treatment plan, which would require additional clinical information such as medical history, lab results, and specific health conditions."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2018.txt",
+        "query": "What was Dudley365 Blick895's weight difference before and after his renal dialysis session on 02-09-2018?",
+        "synthetic query": "What was the patient's weight difference before and after his renal dialysis session?",
+        "information": [
+            "Dudley365 Blick895's weight difference before and after his renal dialysis session on 02-09-2018 was 4.85 kg."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_18-05-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-01-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-02-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-12-2018.txt"
+        ],
+        "synthesized information": "The patient's weight difference before and after a renal dialysis session was approximately 4.85 kg.",
+        "review": "The response should summarize Dudley365 Blick895's weight difference before and after his renal dialysis session on 02-09-2018. The name should be anonymized, and the information should be presented in a readable format at a glance.",
+        "response": "The patient's weight difference before and after his renal dialysis session was approximately 4.85 kg."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2018.txt",
+        "query": "On a verbal numeric rating scale from 0 to 10, with 0 being no pain at all and 10 being the worst possible pain, what level of pain did Dudley365 Blick895 report during his dialysis session on 02-09-2018?",
+        "synthetic query": "On a verbal numeric rating scale from 0 to 10, with 0 being no pain at all and 10 being the worst possible pain, what level of pain did the patient report during his dialysis session on [DATE]?",
+        "information": [
+            "Name: Dudley365 Blick895\nEncounter Date: 02-09-2018\nObservations: Code is Pain severity - 0-10 verbal numeric rating [Score] - Reported. Value is 3.00 {score}."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_04-04-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-01-2022.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-09-2019.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-01-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-02-2018.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_02-12-2018.txt"
+        ],
+        "synthesized information": "During the dialysis session on [DATE], the patient reported a pain level of 3 out of 10 on the verbal numeric rating scale.",
+        "review": "The response provides a clear and concise summary of the patient's pain level during the specified dialysis session. The information is presented in an easily readable format at a glance and does not require any further changes or synthesis.",
+        "response": "The patient reported a pain level of 3 out of 10 on the verbal numeric rating scale during his dialysis session on [DATE]."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+        "query": "According to the observations, what is Dudley365 Blick895's pain severity rating as reported by him on the verbal numeric scale from 0-10 during his encounter date of 01-05-2020?",
+        "synthetic query": "What is the patient's pain severity rating on a verbal numeric scale from 0-10 as reported by him during his encounter?",
+        "information": [
+            "Dudley365 Blick895's pain severity rating on the verbal numeric scale from 0-10, as reported by him during his encounter date of 01-05-2020, was 3.00."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_patient_info.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_21-05-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2015.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_15-05-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-02-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-01-2020.txt"
+        ],
+        "synthesized information": "Patient's pain severity rating on the verbal numeric scale from 0-10, as reported by him during his encounter date was 3.",
+        "review": "",
+        "response": "The patient's pain severity rating on a verbal numeric scale from 0-10, as reported by him during his encounter, was 3."
+    },
+    {
+        "file": "temp/flat/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae/Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt",
+        "query": "What was the glomerular filtration rate/1.73 sq M predicted in mL/min for Dudley365 Blick895 based on a creatinine-based formula (MDRD) as observed on his encounter date, 01-05-2020?",
+        "synthetic query": "What was the glomerular filtration rate/1.73 sq M predicted in mL/min for a patient based on a creatinine-based formula (MDRD) as observed on an encounter date?",
+        "information": [
+            "The glomerular filtration rate/1.73 sq M predicted in mL/min for Dudley365 Blick895 based on a creatinine-based formula (MDRD) as observed on his encounter date, 01-05-2020 was 12.89 mL/min."
+        ],
+        "nodes": [
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_4f159375-4ee4-36ab-b464-6d38f6ff2dae_01-05-2020.txt"
+        ],
+        "synthesized information": "The glomerular filtration rate/1.73 sq M predicted in mL/min for a patient based on a creatinine-based formula (MDRD) as observed on an encounter date was approximately 13 mL/min.",
+        "review": "",
+        "response": "The glomerular filtration rate (GFR)/1.73 sq m predicted in mL/min for the patient, based on a creatinine-based formula (MDRD), as observed on the encounter date, was approximately 13 mL/min."
+    }
+]

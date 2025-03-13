@@ -1,0 +1,180 @@
+[
+    {
+        "file": "temp/flat/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_18-11-2016.txt",
+        "query": "What could be the reason for Nichol11 Stiedemann542's body temperature being recorded at 37.63 degrees Celsius on the encounter date of 18-11-2016?",
+        "synthetic query": "What could cause a patient's body temperature to rise slightly above normal?",
+        "information": [
+            "On the encounter date of 18-11-2016, Nichol11 Stiedemann542's body temperature was recorded at 37.63 degrees Celsius."
+        ],
+        "nodes": [
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_18-11-2016.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_11-03-2018.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_27-11-2016.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_28-02-2016.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_13-11-2022.txt",
+            "German382_Ebert178_bad5a231-3709-952a-cf44-f8d6a52cc214_30-11-2016.txt"
+        ],
+        "synthesized information": "A patient had a recorded body temperature of approximately 38 degrees Celsius during an encounter. This slight fever could indicate conditions such as infection, inflammation or other medical issues.",
+        "review": "",
+        "response": "A body temperature slightly above normal, such as the 38 degrees Celsius mentioned in the information, can be caused by several factors including infection and inflammation. Other medical issues may also lead to a mild elevation in body temperature."
+    },
+    {
+        "file": "temp/flat/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+        "query": "What is the most frequent disorder recorded in Nichol11 Stiedemann542's medical history?",
+        "synthetic query": "What is the most frequent disorder recorded in the patient's medical history?",
+        "information": [
+            "The most frequent disorder recorded for Nichol11 Stiedemann542 is Gingivitis (disorder), which has been noted multiple times on different dates including:\n- Recorded 2016/11/27\n- Recorded 2019/03/17 \n- Recorded 2020/03/22\n- Recorded 2022/11/13\n- Recorded 2023/04/09"
+        ],
+        "nodes": [
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_28-03-2021.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_14-04-2024.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_09-04-2023.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_03-04-2022.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_13-11-2022.txt"
+        ],
+        "synthesized information": "The patient's medical history indicates that Gingivitis is the most frequently recorded disorder, noted on multiple occasions over several years.",
+        "review": "",
+        "response": "The most frequent disorder recorded in the patient's medical history is Gingivitis."
+    },
+    {
+        "file": "temp/flat/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+        "query": "Can you identify a pattern or trend in when Nichol11 Stiedemann542 had her 'Medication review due' situations recorded?",
+        "synthetic query": "Can you identify a pattern or trend in when the patient had her 'Medication review due' situations recorded?",
+        "information": [
+            "Medication review due (situation) recorded for Nichol11 Stiedemann542:\n- 2015/02/22\n- 2016/02/28\n- 2018/03/11\n- 2020/03/22\n- 2021/03/28\n- 2022/04/03\n- 2024/04/14"
+        ],
+        "nodes": [
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_28-03-2021.txt"
+        ],
+        "synthesized information": "The patient had their 'Medication review due' recorded on several occasions between 2015 and 2024. The dates of these situations were:\n- Early February 2015\n- Late February 2016\n- Mid March 2018\n- Early March 2020\n- Late March 2021\n- Early April 2022\n- Mid April 2024",
+        "review": "",
+        "response": "Based on the provided dates, there isn't a strictly consistent pattern in when the patient had their 'Medication review due.' However, it appears that most reviews were scheduled sometime between February and April. Specifically, three out of seven occurrences happened in March (mid-March 2018, early March 2020, late March 2021), two in April (early April 2022, mid-April 2024), and the remaining two in February (early February 2015, late February 2016). There's also a noticeable gap of nearly two years between 2016 and 2018. Overall, it seems that medication reviews were typically conducted during the first four months of each year, though the frequency and exact timing varied over time."
+    },
+    {
+        "file": "temp/flat/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e/Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+        "query": "Which medication did Nichol11 Stiedemann542 stop taking, and which one is currently active?",
+        "synthetic query": "Which medications did the patient stop taking, and which one is currently active?",
+        "information": [
+            "Based on the provided context information regarding Nichol11 Stiedemann542, there is no explicit mention of any specific medication changes. However, we can infer that some medications have been stopped and one is currently active:\n\n- **Stopped Medications**:\n  - Penicillin V Potassium 250 MG Oral Tablet\n  - Acetaminophen 325 MG Oral Tablet\n\n- **Active Medication**:\n  - Yaz 28 Day Pack\n\nNo specific date or reason for the stopping of these medications is provided within the given context. The only active medication listed in her records is Yaz 28 Day Pack."
+        ],
+        "nodes": [
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_patient_info.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_28-03-2021.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_22-02-2015.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_05-03-2017.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_17-03-2019.txt",
+            "Nichol11_Stiedemann542_d3526c15-a6eb-ec69-d2ce-7f4dfac7fc5e_20-08-2023.txt"
+        ],
+        "synthesized information": "The patient stopped taking Penicillin V Potassium 250 MG Oral Tablet and Acetaminophen 325 MG Oral Tablet. The active medication currently in use is Yaz 28 Day Pack.",
+        "review": "",
+        "response": "The patient stopped taking Penicillin V Potassium 250 MG Oral Tablet and Acetaminophen 325 MG Oral Tablet. The currently active medication is Yaz 28 Day Pack."
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_26-03-2016.txt",
+        "query": "Based on the provided information, what is Khadijah960 Veum823's marital status, and when was she born?",
+        "synthetic query": "What is the patient's marital status, and what is their birth year?",
+        "information": [],
+        "nodes": [],
+        "synthesized information": "The patient is married. The patient was born in the year [YEAR].",
+        "review": "",
+        "response": "The patient's marital status is married, and they were born in the year [YEAR]. Note that \"[YEAR]\" should be replaced with the specific birth year of the patient if it is provided."
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_26-03-2016.txt",
+        "query": "What were some of the health indicators recorded during the encounter on March 26, 2016? Specifically, provide her blood pressure readings (systolic and diastolic) and her body mass index (BMI).",
+        "synthetic query": "What were some of the health indicators recorded during the encounter on [DATE]? Specifically, provide her blood pressure readings (systolic and diastolic) and her body mass index (BMI).",
+        "information": [
+            "Encounter Date: 26-01-2016\nBMI: 28.38 kg/m2.\nSystolic Blood Pressure: 103.00 mm[Hg]\nDiastolic Blood Pressure: 78.00 mm[Hg]"
+        ],
+        "nodes": [
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_25-04-2016.txt",
+            "Yolanda648_Baca589_355f70c7-b1f4-b1db-8843-56b8b193a30c_07-05-2018.txt",
+            "Erasmo545_Connelly992_3e96ffd1-e286-f5ac-1606-539e37c7c46a_26-01-2016.txt",
+            "Britteny287_Brigida296_Carter549_9e9b5929-6880-fd20-f386-026109e24028_26-04-2022.txt",
+            "Domenica436_Rau926_3648fb36-1cd1-3641-0b1c-1f00d1e7e7de_14-08-2022.txt",
+            "Aleisha941_Treutel973_2d799deb-df07-0c4a-8692-42cce7595251_28-03-2022.txt",
+            "Diamond340_Keebler762_d6cc7569-5f31-9648-ec6a-e1162b32b183_20-07-2024.txt"
+        ],
+        "synthesized information": "Encounter Date: [DATE]\nBMI: 28 kg/m2.\nSystolic Blood Pressure: 103 mm[Hg]\nDiastolic Blood Pressure: 78 mm[Hg]",
+        "review": "",
+        "response": "During the encounter on [DATE], the health indicators recorded were as follows:\n\n- Systolic Blood Pressure: 103 mm[Hg]\n- Diastolic Blood Pressure: 78 mm[Hg]\n- Body Mass Index (BMI): 28 kg/m\u00b2\n\nThese values indicate her blood pressure and BMI at that specific encounter date."
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_26-03-2016.txt",
+        "query": "In terms of social factors and mental health, what information was collected about Khadijah960 Veum823's feelings of safety, frequency of interactions with close people, stress level, and anxiety as measured by the GAD-7 total score?",
+        "synthetic query": "What information was collected about the patient's feelings of safety, frequency of interactions with close people, stress level range, and anxiety as measured by the GAD-7 total score?",
+        "information": [
+            "Name: Khadijah960 Veum823 Gender: female Born: 1964-03-14 MaritalStatus: Married Deceased: False\n\nEncounter Date: 07-04-2018 \nObservations: \n- Do you feel physically and emotionally safe where you currently live?. Value is Yes \n- How often do you see or talk to people that you care about and feel close to. Value is 3 to 5 times a week \n- Stress level. Value is Not at all \n- Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]. Value is 2.00 {score} \n\nEncounter Date: 01-04-2017 \nObservations: \n- Do you feel physically and emotionally safe where you currently live?. Value is Yes \n- How often do you see or talk to people that you care about and feel close to. Value is 5 or more times a week \n- Stress level. Value is Somewhat \n- Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]. Value is 0.00 {score}"
+        ],
+        "nodes": [
+            "Princess223_Bobbi508_Schmeler639_33828cb4-a2f6-3a66-fe02-c990fa88af61_24-06-2023.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_07-04-2018.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_05-08-2016.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-04-2020.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_03-09-2021.txt",
+            "Dudley365_Blick895_4f159375-4ee4-36ab-b464-6d38f6ff2dae_06-10-2023.txt"
+        ],
+        "synthesized information": "The patient feels physically and emotionally safe in their living environment. They interact with close people 3-5 times per week during one encounter, and more than five times a week during another encounter. Their stress level ranges from 'not at all' to 'somewhat'. The GAD-7 total score for anxiety was measured as low (2 out of 21) in one assessment and no anxiety (0 out of 21) in another.",
+        "review": "",
+        "response": "The collected information about the patient includes their feeling of being physically and emotionally safe within their living environment. Regarding frequency of interactions with close people, the data indicates that these interactions occur 3-5 times per week during one period and more than five times per week during another. The patient's stress level is reported to range from 'not at all' stressed to 'somewhat' stressed. Anxiety levels were assessed using the GAD-7 scale, where the total score was measured as low (2 out of 21) in one assessment and no anxiety (0 out of 21) in another."
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+        "query": "Based on the PRAPARE observations, how often does Khadijah960 Veum823 see or talk to people she cares about and feels close to?",
+        "synthetic query": "Based on the PRAPARE observations, how often does the patient see or talk to people she cares about and feels close to?",
+        "information": [],
+        "nodes": [
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_07-11-2018.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_22-03-2019.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_18-04-2020.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_06-05-2023.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_07-04-2018.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_11-05-2024.txt"
+        ],
+        "synthesized information": "Based on PRAPARE observations, the patient sees or talks to people that they care about and feel close to ranging from less than once a week up to five or more times a week.",
+        "review": "The synthesized response clearly answers how often the patient sees or talks to people they care about, based on PRAPARE observations. The answer is presented within a range and does not disclose any sensitive information.",
+        "response": "According to the PRAPARE observations, the frequency with which the patient sees or talks to people she cares about and feels close to ranges from less than once a week up to five or more times a week."
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+        "query": "Which procedures were completed for Khadijah960 Veum823 during her encounter on 01-04-2017?",
+        "synthetic query": "Which procedures were completed for a patient during her encounter on [DATE]?",
+        "information": [
+            "Procedures completed for Khadijah960 Veum823 during her encounter on 01-04-2017: \n- Sleep apnea assessment \n- Assessment of health and social care needs \n- Assessment of anxiety \n- Screening for domestic abuse \n- Assessment of substance use \n- Assessment using Alcohol Use Disorders Identification Test - Consumption"
+        ],
+        "nodes": [
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_22-03-2019.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_21-03-2024.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_21-04-2018.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_04-04-2015.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_18-04-2020.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_09-04-2016.txt"
+        ],
+        "synthesized information": "Procedures completed for a patient during her encounter on [DATE]: \n- Sleep apnea assessment \n- Assessment of health and social care needs \n- Assessment of anxiety \n- Screening for domestic abuse \n- Assessment of substance use \n- Assessment using Alcohol Use Disorders Identification Test - Consumption",
+        "review": "The procedures are listed correctly and summarized well. However, the response should replace the specific date with [DATE] to maintain anonymization.",
+        "response": "For the patient's encounter on [DATE], the following procedures were completed:\n\n1. Sleep apnea assessment\n2. Assessment of health and social care needs\n3. Assessment of anxiety\n4. Screening for domestic abuse\n5. Assessment of substance use\n6. Assessment using Alcohol Use Disorders Identification Test - Consumption (AUDIT-C)"
+    },
+    {
+        "file": "temp/flat/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335/Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+        "query": "What was Khadijah960 Veum823's blood pressure reading on the encounter date of 01-04-2017?",
+        "synthetic query": "What was the patient's blood pressure reading on [DATE]?",
+        "information": [
+            "Blood pressure reading for Khadijah960 Veum823 on 01-04-2017 was Diastolic Blood Pressure of 71.00 mm[Hg] and Systolic Blood Pressure of 121.00 mm[Hg]."
+        ],
+        "nodes": [
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_24-04-2021.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_18-04-2020.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_01-04-2017.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_30-04-2022.txt",
+            "Khadijah960_Maryalice613_Veum823_9e24368b-f85b-f38f-ae0b-db191e224335_07-04-2018.txt"
+        ],
+        "synthesized information": "On [DATE], the blood pressure reading was a diastolic of 71 mm[Hg] and systolic of 121 mm[Hg].",
+        "review": "",
+        "response": "The patient's blood pressure reading on [DATE] was a systolic of 121 mm[Hg] and a diastolic of 71 mm[Hg]."
+    }
+]
