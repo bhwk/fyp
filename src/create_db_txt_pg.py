@@ -63,11 +63,13 @@ async def create_db(callback_manager):
     )
     documents = await load_documents()
 
-    connection_pool = get_db_connection_pool()
-    conn = connection_pool.getconn()
+    connection_string = "postgresql://postgres:password@postgres:5432"
+    conn = psycopg2.connect(connection_string)
     conn.autocommit = True
 
-    url = make_url(os.environ.get("DATABASE_URL"))  # type: ignore
+    connection_string = os.environ.get("DATABASE_URL")
+    url = make_url(connection_string)  # type: ignore
+
     with conn.cursor() as c:
         c.execute(f"DROP DATABASE IF EXISTS {url.database}")
         c.execute(f"CREATE DATABASE {url.database}")
