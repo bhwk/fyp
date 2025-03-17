@@ -260,7 +260,7 @@ async def process_batch(batch):
 
 
 async def load_and_process_bundles(dir_path: pathlib.Path, batch_size=100):
-    filenames = [file for file in dir_path.iterdir()][:30]
+    filenames = [file for file in dir_path.iterdir()]
     results = []
     start_time = time.time()
 
