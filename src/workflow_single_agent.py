@@ -33,7 +33,7 @@ VECTOR_INDEX, KEYWORD_INDEX = get_db()
 JSON_DIR = "single_agent_results"
 BATCH_SIZE = 10
 
-semaphore = asyncio.Semaphore(5)
+semaphore = asyncio.Semaphore(10)
 
 os.makedirs(JSON_DIR, exist_ok=True)
 

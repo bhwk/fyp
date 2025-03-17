@@ -34,7 +34,7 @@ JSON_DIR = "results"
 BATCH_SIZE = 10
 
 os.makedirs(JSON_DIR, exist_ok=True)
-semaphore = asyncio.Semaphore(5)
+semaphore = asyncio.Semaphore(10)
 
 
 async def save_batch(batch, batch_index):
@@ -297,7 +297,6 @@ async def main():
 
     # Process and save each batch before moving to the next batch
     await asyncio.gather(*tasks)
-    tasks.clear()  # Clear tasks after processing the batch
 
     if batch:
         await save_batch(batch, batch_index[0])
