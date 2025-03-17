@@ -18,13 +18,16 @@ from llama_index.core.workflow import Context
 from query_db_postgres import get_db
 from rag import RAGWorkflow
 
-rag = RAGWorkflow(verbose=True, timeout=120.0)
+rag = RAGWorkflow(
+    # verbose=True,
+    timeout=120.0
+)
 
 
 llm = Ollama(
     model="qwen2.5:32b",
     request_timeout=3600,
-    context_window=32000,
+    context_window=16000,
     base_url=os.environ.get("OLLAMA_URL"),  # pyright: ignore
     temperature=0.7,
     additional_kwargs={"top_k": 20, "top_p": 0.8, "min_p": 0.05},
@@ -200,7 +203,6 @@ review_agent = FunctionAgent(
 VECTOR_INDEX, KEYWORD_INDEX = get_db()
 
 JSON_DIR = "results"
-BATCH_SIZE = 10
 
 os.makedirs(JSON_DIR, exist_ok=True)
 semaphore = asyncio.Semaphore(10)
@@ -213,32 +215,33 @@ async def process_question(
     workflow,
     context,
 ):
-    handler = workflow.run(question, ctx=context)
+    async with semaphore:
+        handler = workflow.run(question, ctx=context)
 
-    print(f"Starting processing: {question}")
-    async for event in handler.stream_events():
-        if isinstance(event, ToolCallResult):
-            print(f"Tool called: {event.tool_name} -> {event.tool_output}")
+        print(f"Starting processing: {question}")
+        async for event in handler.stream_events():
+            if isinstance(event, ToolCallResult):
+                print(f"Tool called: {event.tool_name}")
 
-    state = await handler.ctx.get("state")  # type: ignore
+        state = await handler.ctx.get("state")  # type: ignore
 
-    final_query = state.get("synth_query", question)
-    response = await llm.acomplete(
-        f"Based only on the retrieved information and the query, answer the query."
-        f"\nQuery: {final_query}.\nInformation: {state.get('synthesized_information', '')}\nAnswer:"
-    )
+        final_query = state.get("synth_query", question)
+        response = await llm.acomplete(
+            f"Based only on the retrieved information and the query, answer the query."
+            f"\nQuery: {final_query}.\nInformation: {state.get('synthesized_information', '')}\nAnswer:"
+        )
 
-    # Append the current result to the batch
-    return {
-        "file": str(file_path),
-        "query": str(question),
-        "synthetic query": state.get("synth_query", ""),
-        "information": state.get("information", []),
-        "nodes": state.get("nodes", []),
-        "synthesized information": state.get("synthesized_information", ""),
-        "review": state.get("review", ""),
-        "response": str(response),
-    }
+        # Append the current result to the batch
+        return {
+            "file": str(file_path),
+            "query": str(question),
+            "synthetic query": state.get("synth_query", ""),
+            "information": state.get("information", []),
+            "nodes": state.get("nodes", []),
+            "synthesized information": state.get("synthesized_information", ""),
+            "review": state.get("review", ""),
+            "response": str(response),
+        }
 
 
 async def save_batch(batch, batch_index):
@@ -269,12 +272,11 @@ async def process_batch(batch):
     return await asyncio.gather(*tasks)
 
 
-async def load_and_process_questions(batch_size=100):
+async def load_and_process_questions(batch_size=10):
     with open("questions.json") as f:
         obj = json.load(f)
 
     batch = []
-    batch_size = 100
     files = obj["files"]
     file_queue = deque(files)
 
@@ -287,7 +289,7 @@ async def load_and_process_questions(batch_size=100):
         results.extend(batch_results)
 
         # Write results in larger batches to reduce I/O overhead
-        if len(results) % (batch_size * 2) == 0 or not file_queue:
+        if len(results) % 100 == 0 or not file_queue:
             json_file = os.path.join(JSON_DIR, f"batch_{len(results)}.json")
             async with aiofiles.open(json_file, "w", encoding="utf-8") as f:
                 await f.write(json.dumps(results, indent=4))

@@ -1,5 +1,10 @@
-from llama_index.core import VectorStoreIndex, StorageContext, PromptTemplate
-from llama_index.core.response_synthesizers import CompactAndRefine
+from llama_index.core import (
+    VectorStoreIndex,
+    StorageContext,
+    PromptTemplate,
+    get_response_synthesizer,
+)
+from llama_index.core.response_synthesizers import CompactAndRefine, ResponseMode
 from llama_index.core.schema import NodeWithScore
 from llama_index.llms.ollama import Ollama
 from llama_index.vector_stores.postgres import PGVectorStore
@@ -156,12 +161,19 @@ class RAGWorkflow(Workflow):
 
         query = await ctx.get("query", default=None)
 
-        synthesizer = CompactAndRefine(
+        synthesizer = get_response_synthesizer(
             llm=llm,
             verbose=True,
             text_qa_template=qa_prompt,
-            refine_template=refine_prompt,
+            response_mode=ResponseMode.COMPACT,
         )
+
+        # synthesizer = CompactAndRefine(
+        #     llm=llm,
+        #     verbose=True,
+        #     text_qa_template=qa_prompt,
+        #     refine_template=refine_prompt,
+        # )
 
         response = await synthesizer.asynthesize(query, ev.nodes)
 

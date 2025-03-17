@@ -118,7 +118,10 @@ async def record_nodes(ctx: Context, nodes: list[NodeWithScore]) -> str:
 
 async def main():
     print("Starting main process...")
-    rag = RAGWorkflow(verbose=True, timeout=120.0)
+    rag = RAGWorkflow(
+        # verbose=True,
+        timeout=120.0
+    )
 
     async def retrieve_medical_readings_for_patient(
         query: str,
