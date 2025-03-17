@@ -35,33 +35,17 @@ FILE_DIR = os.path.join(file_path, "temp", "flat")
 
 # FILE_DIR = pathlib.Path("./temp/flat/")
 #
-def get_db_connection_pool():
-    connection_string = os.environ.get(
-        "DATABASE_URL", "postgresql://postgres:password@postgres:5432"
-    )
-    url = make_url(connection_string)
-    return psycopg2.pool.SimpleConnectionPool(1, 10, connection_string)
 
 
-async def load_documents():
+async def create_db():
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
         embed_batch_size=100,
     )
-    documents = await asyncio.to_thread(
-        SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data,
-        num_workers=10,
-        show_progress=True,
-    )
-    return documents
 
-
-async def create_db(callback_manager):
-    embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5",
-        embed_batch_size=100,
+    documents = SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data(
+        num_workers=10, show_progress=True
     )
-    documents = await load_documents()
 
     connection_string = "postgresql://postgres:password@postgres:5432"
     conn = psycopg2.connect(connection_string)
@@ -119,8 +103,6 @@ if __name__ == "__main__":
 
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
-    llama_debug = LlamaDebugHandler(print_trace_on_end=True)
-    callback_manager = CallbackManager([llama_debug])
     # Set to local llm
 
     Settings.llm = Ollama(
@@ -132,4 +114,4 @@ if __name__ == "__main__":
 
     nest_asyncio.apply()
 
-    asyncio.run(create_db(callback_manager))
+    asyncio.run(create_db())

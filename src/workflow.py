@@ -1,4 +1,6 @@
 import csv
+import asyncio
+import aiofiles
 import json
 import os
 from llama_index.core.agent.workflow import (
@@ -32,13 +34,14 @@ JSON_DIR = "results"
 BATCH_SIZE = 10
 
 os.makedirs(JSON_DIR, exist_ok=True)
+semaphore = asyncio.Semaphore(5)
 
 
 async def save_batch(batch, batch_index):
     """Save the current batch to a JSON file."""
     json_file = os.path.join(JSON_DIR, f"batch_{batch_index}.json")
-    with open(json_file, "w", encoding="utf-8") as f:
-        json.dump(batch, f, indent=4)
+    async with aiofiles.open(json_file, "w", encoding="utf-8") as f:
+        await f.write(json.dumps(batch, indent=4))
     print(f"Saved batch {batch_index} to {json_file}")
 
 
@@ -53,44 +56,45 @@ async def process_question(
     workflow,
     context,
 ):
-    handler = workflow.run(question, ctx=context)
+    async with semaphore:
+        handler = workflow.run(question, ctx=context)
 
-    print(f"Starting processing: {question}")
-    async for event in handler.stream_events():
-        if isinstance(event, ToolCallResult):
-            print(f"Tool called: {event.tool_name} -> {event.tool_output}")
+        print(f"Starting processing: {question}")
+        async for event in handler.stream_events():
+            if isinstance(event, ToolCallResult):
+                print(f"Tool called: {event.tool_name} -> {event.tool_output}")
 
-    state = await handler.ctx.get("state")  # type: ignore
+        state = await handler.ctx.get("state")  # type: ignore
 
-    final_query = state.get("synth_query", question)
-    response = await llm.acomplete(
-        f"Based only on the retrieved information and the query, answer the query."
-        f"\nQuery: {final_query}.\nInformation: {state.get('synthesized_information', '')}\nAnswer:"
-    )
-    progress[0] += 1
-    print(f"Progress: {progress[0]}/{total} questions completed.")
+        final_query = state.get("synth_query", question)
+        response = await llm.acomplete(
+            f"Based only on the retrieved information and the query, answer the query."
+            f"\nQuery: {final_query}.\nInformation: {state.get('synthesized_information', '')}\nAnswer:"
+        )
+        progress[0] += 1
+        print(f"Progress: {progress[0]}/{total} questions completed.")
 
-    # Append the current result to the batch
-    batch.append(
-        {
-            "file": str(file_path),
-            "query": str(question),
-            "synthetic query": state.get("synth_query", ""),
-            "information": state.get("information", []),
-            "nodes": state.get("nodes", []),
-            "synthesized information": state.get("synthesized_information", ""),
-            "review": state.get("review", ""),
-            "response": str(response),
-        }
-    )
+        # Append the current result to the batch
+        batch.append(
+            {
+                "file": str(file_path),
+                "query": str(question),
+                "synthetic query": state.get("synth_query", ""),
+                "information": state.get("information", []),
+                "nodes": state.get("nodes", []),
+                "synthesized information": state.get("synthesized_information", ""),
+                "review": state.get("review", ""),
+                "response": str(response),
+            }
+        )
 
-    # Save the batch to JSON if the batch size is reached
-    if len(batch) >= BATCH_SIZE:
-        await save_batch(batch, batch_index[0])
-        batch.clear()  # Clear the batch after saving
-        batch_index[0] += 1  # Increment the batch index
+        # Save the batch to JSON if the batch size is reached
+        if len(batch) >= BATCH_SIZE:
+            await save_batch(batch, batch_index[0])
+            batch.clear()  # Clear the batch after saving
+            batch_index[0] += 1  # Increment the batch index
 
-    print(f"Completed processing: {question}")
+        print(f"Completed processing: {question}")
 
 
 async def record_information(ctx: Context, information: str) -> str:
@@ -291,9 +295,9 @@ async def main():
                     )
                 )
 
-            # Process and save each batch before moving to the next batch
-            await asyncio.gather(*tasks)
-            tasks.clear()  # Clear tasks after processing the batch
+    # Process and save each batch before moving to the next batch
+    await asyncio.gather(*tasks)
+    tasks.clear()  # Clear tasks after processing the batch
 
     if batch:
         await save_batch(batch, batch_index[0])
