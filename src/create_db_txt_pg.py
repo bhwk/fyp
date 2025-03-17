@@ -1,3 +1,4 @@
+from json import load
 import logging
 import sys
 import os
@@ -20,6 +21,7 @@ from llama_index.llms.ollama import Ollama
 import pathlib
 from llama_index.vector_stores.postgres import PGVectorStore
 import psycopg2
+import psycopg2.pool
 from sqlalchemy import make_url
 
 # Uncomment to see debug logs
@@ -29,7 +31,29 @@ from sqlalchemy import make_url
 file_path = os.path.dirname(os.path.abspath(__file__))
 
 FILE_DIR = os.path.join(file_path, "temp", "flat")
+
+
 # FILE_DIR = pathlib.Path("./temp/flat/")
+#
+def get_db_connection_pool():
+    connection_string = os.environ.get(
+        "DATABASE_URL", "postgresql://postgres:password@postgres:5432"
+    )
+    url = make_url(connection_string)
+    return psycopg2.pool.SimpleConnectionPool(1, 10, connection_string)
+
+
+async def load_documents():
+    embed_model = HuggingFaceEmbedding(
+        model_name="BAAI/bge-base-en-v1.5",
+        embed_batch_size=100,
+    )
+    documents = await asyncio.to_thread(
+        SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data,
+        num_workers=10,
+        show_progress=True,
+    )
+    return documents
 
 
 async def create_db(callback_manager):
@@ -37,18 +61,13 @@ async def create_db(callback_manager):
         model_name="BAAI/bge-base-en-v1.5",
         embed_batch_size=100,
     )
+    documents = await load_documents()
 
-    documents = SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data(
-        show_progress=True
-    )
-
-    connection_string = "postgresql://postgres:password@postgres:5432"
-    conn = psycopg2.connect(connection_string)
+    connection_pool = get_db_connection_pool()
+    conn = connection_pool.getconn()
     conn.autocommit = True
 
-    connection_string = os.environ.get("DATABASE_URL")
-    url = make_url(connection_string)  # type: ignore
-
+    url = make_url(os.environ.get("DATABASE_URL"))  # type: ignore
     with conn.cursor() as c:
         c.execute(f"DROP DATABASE IF EXISTS {url.database}")
         c.execute(f"CREATE DATABASE {url.database}")
@@ -83,7 +102,10 @@ async def create_db(callback_manager):
     )
 
     keyword_index = KeywordTableIndex.from_documents(
-        documents, storage_context=storage_context, show_progress=True, use_async=True
+        documents,
+        storage_context=storage_context,
+        show_progress=True,
+        use_async=True,
     )
 
     storage_context.persist("./index/")
