@@ -87,7 +87,7 @@ class RAGWorkflow(Workflow):
         vector_index = await ctx.get("vector_index")
         if not vector_index:
             print("vector_index not loaded")
-        print(f"Query vector index with: {query}")
+        # print(f"Query vector index with: {query}")
 
         vector_retriever = VectorIndexRetriever(
             index=vector_index,
@@ -96,7 +96,7 @@ class RAGWorkflow(Workflow):
         )
 
         nodes = await vector_retriever.aretrieve(query)
-        print(f"Retrieved {len(nodes)} nodes")
+        # print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
 
@@ -115,11 +115,11 @@ class RAGWorkflow(Workflow):
         keyword_index = await ctx.get("keyword_index")
         if not keyword_index:
             print("keyword_index not loaded")
-        print(f"Query keyword index with {query}")
+        # print(f"Query keyword index with {query}")
 
         keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index)
         nodes = await keyword_retriever.aretrieve(query)
-        print(f"Retrieved {len(nodes)} nodes")
+        # print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
 
