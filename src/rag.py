@@ -97,7 +97,7 @@ class RAGWorkflow(Workflow):
         vector_retriever = VectorIndexRetriever(
             index=vector_index,
             vector_store_query_mode="hybrid",  # type: ignore
-            sparse_top_k=5,
+            sparse_top_k=3,
         )
 
         nodes = await vector_retriever.aretrieve(query)
@@ -143,19 +143,6 @@ class RAGWorkflow(Workflow):
             Answer: """
         qa_prompt = PromptTemplate(qa_prompt_template)
 
-        refine_prompt_template = """The original query is as follows: {query_str}
-            We have provided an existing answer. {existing_answer}
-            We have the opportunity to refine the existing answer (if needed) with more context below.
-            ------
-            {context_msg}
-            ------
-            Given the new context, refine the existing answer to better answer the query.
-            If the context is not useful, return the original answer.
-            Ensure that your answer is concise.
-            Refined answer: """
-
-        refine_prompt = PromptTemplate(refine_prompt_template)
-
         # get llm from global context
         llm: Ollama = await ctx.get("llm")
 
@@ -163,7 +150,7 @@ class RAGWorkflow(Workflow):
 
         synthesizer = get_response_synthesizer(
             llm=llm,
-            verbose=True,
+            use_async=True,
             text_qa_template=qa_prompt,
             response_mode=ResponseMode.COMPACT,
         )

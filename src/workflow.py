@@ -20,7 +20,7 @@ from rag import RAGWorkflow
 
 rag = RAGWorkflow(
     # verbose=True,
-    timeout=120.0
+    timeout=240.0
 )
 
 
@@ -136,24 +136,13 @@ synth_agent = FunctionAgent(
         "The information that you synthesize should not contain any Personally Identifiable Information (i.e., names or addresses) about patients that show up."
         "You can call the SearchAgent to retrieve more information."
         "Once the information is generated, you mut pass it to the ReviewAgent where it will check if there is any sensitive information."
-        "Follow these rules:"
-        """- Anonymization:
-        - The patient's name must be removed and replaced with pseudonyms.
-        - Replace specific locations (e.g, cities, countries, landmarks) with placeholders.
-        - Unless asked in query, replace specific dates with placeholders.
-        - Replace phone numbers, email addresses, and postal addresses with "[CONTACT]"."""
-        """- Medical Reporting:
-        - Summarize and round all vitals with appropriate medical context.
-        - If there are multiple readings of the same type for a patient, summarize it into a range of values.
-        - Replace values with rounded values for lab results and vital signs. Use approximate ranges if values fluctuate."""
-        """- Summarization:
-        - Extract the key points from the text and summarize it.
-        - When possible, rewrite your answer such that it omits any PII only if it doesn't affect the original meaning of the answer."""
-        """- Query:
-        - Based on the anonymized text, alter the provided query such that it can be answered by the anonymized text, while retaining its original meaning."""
-        """- Reviewing:
-        - Once the information has been generated, you must handoff to ReviewAgent who will check your response.
-        """
+        "The patient's name must be removed and replaced with pseudonyms."
+        "Replace specific locations (e.g, cities, countries, landmarks) with placeholders."
+        "Replace specific dates with placeholders."
+        "Replace phone numbers, email addresses, and postal addresses with [CONTACT]"
+        "Summarize and round all vitals with appropriate medical context."
+        "When possible, rewrite your answer such that it omits any PII only if it doesn't affect the original meaning of the answer."
+        "Once the information has been generated, you must handoff to ReviewAgent who will check your response."
     ),
     tools=[
         FunctionTool.from_defaults(async_fn=synthesize_query),
@@ -284,6 +273,7 @@ async def load_and_process_questions(batch_size=10):
     start_time = time.time()
 
     while file_queue:
+        # resume from batch number 900
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
         batch_results = await process_batch(batch)
         results.extend(batch_results)
