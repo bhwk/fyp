@@ -302,7 +302,7 @@ async def main():
 
     results = await load_and_process_questions()
 
-    with open("results.json", "w") as fp:
+    with open(os.path.join(JSON_DIR, "results.json"), "w") as fp:
         json.dump(results, fp, indent=4, sort_keys=True)
 
     print("Processing complete.")
