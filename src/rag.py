@@ -1,5 +1,10 @@
-from llama_index.core import VectorStoreIndex, StorageContext, PromptTemplate
-from llama_index.core.response_synthesizers import CompactAndRefine
+from llama_index.core import (
+    VectorStoreIndex,
+    StorageContext,
+    PromptTemplate,
+    get_response_synthesizer,
+)
+from llama_index.core.response_synthesizers import CompactAndRefine, ResponseMode
 from llama_index.core.schema import NodeWithScore
 from llama_index.llms.ollama import Ollama
 from llama_index.vector_stores.postgres import PGVectorStore
@@ -87,16 +92,16 @@ class RAGWorkflow(Workflow):
         vector_index = await ctx.get("vector_index")
         if not vector_index:
             print("vector_index not loaded")
-        print(f"Query vector index with: {query}")
+        # print(f"Query vector index with: {query}")
 
         vector_retriever = VectorIndexRetriever(
             index=vector_index,
             vector_store_query_mode="hybrid",  # type: ignore
-            sparse_top_k=5,
+            sparse_top_k=3,
         )
 
         nodes = await vector_retriever.aretrieve(query)
-        print(f"Retrieved {len(nodes)} nodes")
+        # print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
 
@@ -115,11 +120,11 @@ class RAGWorkflow(Workflow):
         keyword_index = await ctx.get("keyword_index")
         if not keyword_index:
             print("keyword_index not loaded")
-        print(f"Query keyword index with {query}")
+        # print(f"Query keyword index with {query}")
 
         keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index)
         nodes = await keyword_retriever.aretrieve(query)
-        print(f"Retrieved {len(nodes)} nodes")
+        # print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
 
@@ -138,30 +143,24 @@ class RAGWorkflow(Workflow):
             Answer: """
         qa_prompt = PromptTemplate(qa_prompt_template)
 
-        refine_prompt_template = """The original query is as follows: {query_str}
-            We have provided an existing answer. {existing_answer}
-            We have the opportunity to refine the existing answer (if needed) with more context below.
-            ------
-            {context_msg}
-            ------
-            Given the new context, refine the existing answer to better answer the query.
-            If the context is not useful, return the original answer.
-            Ensure that your answer is concise.
-            Refined answer: """
-
-        refine_prompt = PromptTemplate(refine_prompt_template)
-
         # get llm from global context
         llm: Ollama = await ctx.get("llm")
 
         query = await ctx.get("query", default=None)
 
-        synthesizer = CompactAndRefine(
+        synthesizer = get_response_synthesizer(
             llm=llm,
-            verbose=True,
+            use_async=True,
             text_qa_template=qa_prompt,
-            refine_template=refine_prompt,
+            response_mode=ResponseMode.COMPACT,
         )
+
+        # synthesizer = CompactAndRefine(
+        #     llm=llm,
+        #     verbose=True,
+        #     text_qa_template=qa_prompt,
+        #     refine_template=refine_prompt,
+        # )
 
         response = await synthesizer.asynthesize(query, ev.nodes)
 

@@ -1,3 +1,4 @@
+from json import load
 import logging
 import sys
 import os
@@ -20,6 +21,7 @@ from llama_index.llms.ollama import Ollama
 import pathlib
 from llama_index.vector_stores.postgres import PGVectorStore
 import psycopg2
+import psycopg2.pool
 from sqlalchemy import make_url
 
 # Uncomment to see debug logs
@@ -29,17 +31,20 @@ from sqlalchemy import make_url
 file_path = os.path.dirname(os.path.abspath(__file__))
 
 FILE_DIR = os.path.join(file_path, "temp", "flat")
+
+
 # FILE_DIR = pathlib.Path("./temp/flat/")
+#
 
 
-async def create_db(callback_manager):
+async def create_db():
     embed_model = HuggingFaceEmbedding(
         model_name="BAAI/bge-base-en-v1.5",
         embed_batch_size=100,
     )
 
     documents = SimpleDirectoryReader(input_dir=FILE_DIR, recursive=True).load_data(
-        show_progress=True
+        num_workers=10, show_progress=True
     )
 
     connection_string = "postgresql://postgres:password@postgres:5432"
@@ -83,7 +88,10 @@ async def create_db(callback_manager):
     )
 
     keyword_index = KeywordTableIndex.from_documents(
-        documents, storage_context=storage_context, show_progress=True, use_async=True
+        documents,
+        storage_context=storage_context,
+        show_progress=True,
+        use_async=True,
     )
 
     storage_context.persist("./index/")
@@ -95,8 +103,6 @@ if __name__ == "__main__":
 
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
-    llama_debug = LlamaDebugHandler(print_trace_on_end=True)
-    callback_manager = CallbackManager([llama_debug])
     # Set to local llm
 
     Settings.llm = Ollama(
@@ -108,4 +114,4 @@ if __name__ == "__main__":
 
     nest_asyncio.apply()
 
-    asyncio.run(create_db(callback_manager))
+    asyncio.run(create_db())

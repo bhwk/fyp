@@ -23,7 +23,7 @@ llm = Ollama(
 
 class Questions(BaseModel):
     questions: list[str] = Field(
-        description="A list of questions generated from the file content"
+        description="The question generated from the file content"
     )
 
 
@@ -35,15 +35,9 @@ async def load_file(file: pathlib.Path):
 
 async def process_file(file: pathlib.Path):
     prompt = PromptTemplate(
-        "Generate a series of 3 questions about the following text: {text}"
+        "Generate a single question about the following text. Avoid general queries such as marriage status/death. Text: {text}"
     )
-    # load the content of the file
-    # then we pass it to the LLM to generate a series of questions,
-    # finally we write to individual files
     content = await load_file(file)
-    # TODO: implement LLM generation
-    # TODO: also implement writing contents
-
     response = await llm.astructured_predict(
         Questions,
         prompt=prompt,
@@ -53,7 +47,6 @@ async def process_file(file: pathlib.Path):
     output = json.loads(json_output)
 
     obj = {"file": str(file), "questions": output["questions"]}
-
     return obj
 
 
@@ -62,7 +55,7 @@ async def process_batch(batch):
     return await asyncio.gather(*tasks)
 
 
-async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
+async def load_and_process_files(dir_path: pathlib.Path, batch_size=500):
     filenames = []
     for root, _, files in os.walk(dir_path):
         for file in files:
@@ -77,9 +70,11 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
         batch_results = await process_batch(batch)
         results.extend(batch_results)
 
-        with open(f"batch_{len(results)}.json", "w") as fp:
-            obj = {"files": batch_results}
-            json.dump(obj, fp)
+        # Write results in larger batches to reduce I/O overhead
+        if len(results) % (batch_size * 2) == 0 or not file_queue:
+            with open(f"batch_{len(results)}.json", "w") as fp:
+                obj = {"files": results}
+                json.dump(obj, fp, indent=4, sort_keys=True)  # Formatted JSON
 
         elapsed_time = time.time() - start_time
         estimated_total_time = (elapsed_time / len(results)) * len(filenames)
@@ -91,7 +86,6 @@ async def load_and_process_files(dir_path: pathlib.Path, batch_size=100):
             f"| Remaining: {remaining_time:.2f}s "
         )
 
-        await asyncio.sleep(0.01)
     return results
 
 
@@ -101,7 +95,7 @@ async def main():
     obj = {"files": results}
 
     with open("questions.json", "w") as fp:
-        json.dump(obj, fp)
+        json.dump(obj, fp, indent=4, sort_keys=True)  # Formatted JSON
 
 
 if __name__ == "__main__":
