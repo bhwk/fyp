@@ -43,6 +43,10 @@ async def process_bundle(bundle_path: pathlib.Path):
         patient_object["patient_info"]["maritalStatus"] = patient_data["maritalStatus"][
             "text"
         ]
+        patient_object["patient_info"]["address"] = patient_data["address"][0]["line"][
+            0
+        ]
+        patient_object["patient_info"]["contact"] = patient_data["telecom"][0]["value"]
         if "deceasedDateTime" in patient_data:
             patient_object["patient_info"]["deceased"] = True
         elif "deceasedBoolean" in patient_data:
@@ -95,7 +99,9 @@ async def process_bundle(bundle_path: pathlib.Path):
         patient = (
             f"Name: {patient_info["name"]} Gender: {patient_info["gender"]} Born: {patient_info["birthDate"]} "
             + ("Alive " if patient_info["deceased"] is False else "Deceased ")
-            + f"MaritalStatus: {patient_info["maritalStatus"]}"
+            + f"MaritalStatus: {patient_info["maritalStatus"]} "
+            + f"Contact: {patient_info["contact"]} "
+            + f"Address: {patient_info["address"]}"
         )
 
         combined_conditions = " ".join(patient_info["conditions"])

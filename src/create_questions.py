@@ -35,7 +35,7 @@ async def load_file(file: pathlib.Path):
 
 async def process_file(file: pathlib.Path):
     prompt = PromptTemplate(
-        "Generate a single question about the following text. Avoid general queries such as marriage status/death. Text: {text}"
+        "Generate a single question about the following text. Avoid general queries such as marriage status, death, age, contact, address. Text: {text}"
     )
     content = await load_file(file)
     response = await llm.astructured_predict(
