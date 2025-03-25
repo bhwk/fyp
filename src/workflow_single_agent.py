@@ -180,7 +180,7 @@ async def process_batch(batch):
 
 
 async def load_and_process_questions(batch_size=10):
-    with open("questions.json") as f:
+    with open("random_select.json") as f:
         obj = json.load(f)
 
     batch = []
@@ -191,7 +191,6 @@ async def load_and_process_questions(batch_size=10):
     start_time = time.time()
 
     while file_queue:
-        # resume from batch number 900
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
         batch_results = await process_batch(batch)
         results.extend(batch_results)
