@@ -48,6 +48,11 @@ class RAGWorkflow(Workflow):
     async def query(
         self, ctx: Context, ev: StartEvent
     ) -> SemanticSearchEvent | KeywordSearchEvent | None:
+        if ev.get("k") is not None:
+            k = ev.get("k")
+        else:
+            k = 3
+
         llm = ev.get("llm")
         query = ev.get("query")
         mode = ev.get("mode")
@@ -66,6 +71,7 @@ class RAGWorkflow(Workflow):
         await ctx.set("vector_index", vector_index)
         await ctx.set("keyword_index", keyword_index)
         await ctx.set("llm", llm)
+        await ctx.set("k", k)
 
         if mode is None:
             print("Pass in retrieval mode")
@@ -84,6 +90,7 @@ class RAGWorkflow(Workflow):
         ev: SemanticSearchEvent,
     ) -> RetrieverEvent | None:
         query = ev.query
+        k = await ctx.get("k")
 
         if not query:
             return None
@@ -97,7 +104,7 @@ class RAGWorkflow(Workflow):
         vector_retriever = VectorIndexRetriever(
             index=vector_index,
             vector_store_query_mode="hybrid",  # type: ignore
-            sparse_top_k=3,
+            sparse_top_k=k,
         )
 
         nodes = await vector_retriever.aretrieve(query)
@@ -112,6 +119,7 @@ class RAGWorkflow(Workflow):
         ev: KeywordSearchEvent,
     ) -> RetrieverEvent | None:
         query = ev.query
+        k = await ctx.get("k")
 
         if not query:
             return None
@@ -122,8 +130,12 @@ class RAGWorkflow(Workflow):
             print("keyword_index not loaded")
         # print(f"Query keyword index with {query}")
 
-        keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index)
-        nodes = await keyword_retriever.aretrieve(query)
+        keyword_retriever = KeywordTableSimpleRetriever(
+            index=keyword_index, num_chunks_per_query=k
+        )
+        nodes = await keyword_retriever.aretrieve(
+            query,
+        )
         # print(f"Retrieved {len(nodes)} nodes")
 
         return RetrieverEvent(nodes=nodes)
