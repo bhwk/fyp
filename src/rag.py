@@ -160,12 +160,12 @@ class RAGWorkflow(Workflow):
 
         query = await ctx.get("query", default=None)
 
-        # synthesizer = get_response_synthesizer(
-        #     llm=llm,
-        #     use_async=True,
-        #     text_qa_template=qa_prompt,
-        #     response_mode=ResponseMode.COMPACT,
-        # )
+        synthesizer = get_response_synthesizer(
+            llm=llm,
+            use_async=True,
+            text_qa_template=qa_prompt,
+            response_mode=ResponseMode.COMPACT,
+        )
 
         # synthesizer = CompactAndRefine(
         #     llm=llm,
@@ -174,10 +174,10 @@ class RAGWorkflow(Workflow):
         #     refine_template=refine_prompt,
         # )
 
-        # response = await synthesizer.asynthesize(query, ev.nodes)
+        response = await synthesizer.asynthesize(query, ev.nodes)
 
         result = {
-            "information": "",
+            "information": str(response),
             "nodes": [node.metadata["file_name"] for node in ev.nodes],
         }
 
