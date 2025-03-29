@@ -148,7 +148,7 @@ agent = FunctionAgent(
         "You must record any of the information that you retrieve, alongside the nodes retrieved."
         "Extract the key points from the text and summarize it."
         "Replace the patient's name and age with placeholders."
-        "Your response should not include any of the patient's PII"
+        "Your response should not include any of the patient's PII."
     ),
     tools=[
         record_information,
@@ -180,18 +180,17 @@ async def process_batch(batch):
 
 
 async def load_and_process_questions(batch_size=10):
-    with open("questions.json") as f:
+    with open("random_select.json") as f:
         obj = json.load(f)
 
     batch = []
-    files = obj["files"]
+    files = obj
     file_queue = deque(files)
 
     results = []
     start_time = time.time()
 
     while file_queue:
-        # resume from batch number 900
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
         batch_results = await process_batch(batch)
         results.extend(batch_results)

@@ -1,4 +1,5 @@
 import csv
+import random
 import time
 from collections import deque
 import asyncio
@@ -266,14 +267,18 @@ async def load_and_process_questions(batch_size=10):
         obj = json.load(f)
 
     batch = []
-    files = obj["files"]
+    # randomly sample 100 files here
+    files = random.sample(obj["files"], k=100)
+
+    async with aiofiles.open("random_select.json", "w", encoding="utf-8") as f:
+        await f.write(json.dumps(files, indent=4))
+
     file_queue = deque(files)
 
     results = []
     start_time = time.time()
 
     while file_queue:
-        # resume from batch number 900
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
         batch_results = await process_batch(batch)
         results.extend(batch_results)

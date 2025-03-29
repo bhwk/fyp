@@ -1,0 +1,107 @@
+import json
+import evaluate
+import torch
+import bert_score
+from sklearn.metrics.pairwise import cosine_similarity
+from transformers import AutoTokenizer, AutoModel
+
+
+def load_json(file_path):
+    """Load JSON data from a file."""
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def extract_information(data):
+    """Extract 'information' and 'synthesized information' fields, excluding missing ones."""
+    valid_pairs = [
+        (
+            " ".join(item.get("information", "")),
+            item.get("synthesized information", "").strip(),
+        )
+        for item in data
+    ]
+    return zip(*[(info, synth_info) for info, synth_info in valid_pairs if synth_info])
+
+
+def compute_bleu_rouge(references, predictions):
+    """Compute BLEU and ROUGE scores."""
+    bleu = evaluate.load("bleu")
+    rouge = evaluate.load("rouge")
+
+    bleu_score = bleu.compute(predictions=predictions, references=references)
+    rouge_score = rouge.compute(predictions=predictions, references=references)
+
+    return bleu_score, rouge_score
+
+
+def compute_bert_score(references, predictions):
+    """Compute BERTScore using the bert_score package."""
+    P, R, F1 = bert_score.score(
+        predictions, references, lang="en", rescale_with_baseline=True
+    )
+    return {
+        "precision": P.mean().item(),
+        "recall": R.mean().item(),
+        "f1": F1.mean().item(),
+    }
+
+
+def compute_embeddings(texts, model, tokenizer, device):
+    """Compute embeddings for a list of texts."""
+    inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to(
+        device
+    )
+    with torch.no_grad():
+        outputs = model(**inputs)
+    return outputs.last_hidden_state[:, 0, :].cpu().numpy()
+
+
+def compute_sem_score(
+    references, predictions, model_name="sentence-transformers/all-MiniLM-L6-v2"
+):
+    """Compute SemScore using cosine similarity of embeddings."""
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModel.from_pretrained(model_name).to(device)
+
+    ref_embeddings = compute_embeddings(references, model, tokenizer, device)
+    pred_embeddings = compute_embeddings(predictions, model, tokenizer, device)
+
+    scores = cosine_similarity(pred_embeddings, ref_embeddings)
+    return scores.diagonal().mean()
+
+
+def main(reference_file):
+    """Load information, compute scores, and print results."""
+    data = load_json(reference_file)
+
+    information, synthesized_information = extract_information(data)
+    if not information:
+        print("No valid synthesized information found. Exiting.")
+        return
+
+    bleu_score, rouge_score = compute_bleu_rouge(information, synthesized_information)
+    bert_score_result = compute_bert_score(information, synthesized_information)
+    sem_score = compute_sem_score(information, synthesized_information)
+
+    print("BLEU Score:", bleu_score)
+    print("ROUGE Scores:", rouge_score)
+    print("BERTScore:", bert_score_result)
+    print(f"SemScore: {sem_score:.4f}")
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Compute BLEU, ROUGE, BERTScore, and SemScore between information and synthesized information."
+    )
+    parser.add_argument(
+        "reference_file",
+        type=str,
+        help="Path to the JSON file with reference information.",
+    )
+
+    args = parser.parse_args()
+    main(args.reference_file)
