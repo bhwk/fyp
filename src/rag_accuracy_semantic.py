@@ -160,12 +160,6 @@ async def load_and_process_questions(batch_size=10):
         batch_results = await process_batch(batch)
         results.extend(batch_results)
 
-        # Write results in larger batches to reduce I/O overhead
-        if len(results) % 100 == 0 or not file_queue:
-            json_file = os.path.join(JSON_DIR, f"batch_{len(results)}.json")
-            async with aiofiles.open(json_file, "w", encoding="utf-8") as f:
-                await f.write(json.dumps(results, indent=4))
-
         elapsed_time = time.time() - start_time
         estimated_total_time = (elapsed_time / len(results)) * len(files)
         remaining_time = estimated_total_time - elapsed_time
@@ -184,7 +178,7 @@ async def main():
 
     results = await load_and_process_questions()
 
-    with open(os.path.join(JSON_DIR, "results.json"), "w") as fp:
+    with open("semantic_results.json", "w") as fp:
         json.dump(results, fp, indent=4, sort_keys=True)
 
     print("Processing complete.")
