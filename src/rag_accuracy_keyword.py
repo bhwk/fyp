@@ -1,4 +1,5 @@
 import random
+import argparse
 import time
 from collections import deque
 import asyncio
@@ -17,7 +18,7 @@ from rag import RAGWorkflow
 
 rag = RAGWorkflow(
     # verbose=True,
-    timeout=300.0
+    timeout=None
 )
 
 llm = Ollama(
@@ -48,56 +49,21 @@ async def save_batch(batch, batch_index):
     print(f"Saved batch {batch_index} to {json_file}")
 
 
-async def process_question(
-    file_path,
-    question,
-    workflow,
-    context,
-):
+async def process_question(file_path, question, k):
     async with semaphore:
-        handler = workflow.run(question, ctx=context)
-
         print(f"Starting processing: {question}")
-        async for event in handler.stream_events():
-            if isinstance(event, ToolCallResult):
-                print(f"Tool called: {event.tool_name}")
-
-        state = await handler.ctx.get("state")  # type: ignore
+        result = await search_for_information(question, k)
 
         # Append the current result to the batch
         return {
             "file": str(file_path),
             "query": str(question),
-            "information": state.get("information", []),
-            "nodes": state.get("nodes", []),
+            "information": result.get("information", []),
+            "nodes": result.get("nodes", []),
         }
 
 
-async def record_information(ctx: Context, information: str) -> str:
-    """Useful for recording information for a given query. Your input should be information written in plain text."""
-    current_state = await ctx.get("state")
-    if "information" not in current_state:
-        current_state["information"] = []
-    current_state["information"].append(information)
-    await ctx.set("state", current_state)
-
-    return "Information recorded."
-
-
-async def record_nodes(ctx: Context, nodes: list[NodeWithScore]) -> str:
-    """Useful for recording the nodes retrieved from a search. Your input should be the list of nodes retrieved"""
-    current_state = await ctx.get("state")
-    if "nodes" not in current_state:
-        current_state["nodes"] = []
-    current_state["nodes"].extend(nodes)
-
-    await ctx.set("state", current_state)
-    return "Nodes recorded"
-
-
-async def search_for_information(
-    query: str,
-):
+async def search_for_information(query: str, k):
     """A tool to search for patient information on a database.
     Only contains patient information on a local database."""
     result = await rag.run(
@@ -106,44 +72,19 @@ async def search_for_information(
         vector_index=VECTOR_INDEX,
         keyword_index=KEYWORD_INDEX,
         llm=llm,
+        k=k,
     )
     return result
 
 
-agent = FunctionAgent(
-    name="Agent",
-    description="General purpose agent for queries",
-    llm=llm,
-    system_prompt=(
-        "You are a general purpose agent."
-        "You must make use of all your tools to answer the query."
-        "You have the ability to search a patient database for any information you may need."
-        "You must record any of the information that you retrieve, alongside the nodes retrieved."
-    ),
-    tools=[record_information, record_nodes, search_for_information],  # type: ignore
-)
-
-
-async def process_batch(batch):
+async def process_batch(batch, k):
     tasks = []
     for file in batch:
-        workflow = AgentWorkflow(
-            agents=[agent],
-            root_agent=agent.name,
-        )
-        context = Context(workflow)
-        tasks.append(
-            process_question(
-                file["file"],
-                file["questions"][0],
-                workflow,
-                context,
-            )
-        )
+        tasks.append(process_question(file["file"], file["questions"][0], k))
     return await asyncio.gather(*tasks)
 
 
-async def load_and_process_questions(batch_size=10):
+async def load_and_process_questions(k, batch_size=10):
     with open("questions.json") as f:
         obj = json.load(f)
 
@@ -156,7 +97,7 @@ async def load_and_process_questions(batch_size=10):
 
     while file_queue:
         batch = [file_queue.popleft() for _ in range(min(batch_size, len(file_queue)))]
-        batch_results = await process_batch(batch)
+        batch_results = await process_batch(batch, k)
         results.extend(batch_results)
 
         elapsed_time = time.time() - start_time
@@ -172,12 +113,13 @@ async def load_and_process_questions(batch_size=10):
     return results
 
 
-async def main():
+async def main(k):
     print("Starting main process...")
 
-    results = await load_and_process_questions()
+    results = await load_and_process_questions(k=k)
+    output_file = f"keyword_k{k}_{int(time.time())}.json"
 
-    with open("keyword_results.json", "w") as fp:
+    with open(output_file, "w") as fp:
         json.dump(results, fp, indent=4, sort_keys=True)
 
     print("Processing complete.")
@@ -188,4 +130,13 @@ if __name__ == "__main__":
     import asyncio
 
     nest_asyncio.apply()
-    asyncio.run(main())
+
+    parser = argparse.ArgumentParser(
+        description="Run RAG keyword accuracy with a specified k value."
+    )
+    parser.add_argument(
+        "k", type=int, help="Top k results to fetch in search_for_information"
+    )
+    args = parser.parse_args()
+
+    asyncio.run(main(args.k))
