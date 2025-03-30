@@ -119,7 +119,6 @@ class RAGWorkflow(Workflow):
         ev: KeywordSearchEvent,
     ) -> RetrieverEvent | None:
         query = ev.query
-        k = await ctx.get("k")
 
         if not query:
             return None
@@ -131,7 +130,7 @@ class RAGWorkflow(Workflow):
         # print(f"Query keyword index with {query}")
 
         keyword_retriever = KeywordTableSimpleRetriever(
-            index=keyword_index, num_chunks_per_query=k
+            index=keyword_index, num_chunks_per_query=10
         )
         nodes = await keyword_retriever.aretrieve(
             query,
