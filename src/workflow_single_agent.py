@@ -20,7 +20,7 @@ from rag import RAGWorkflow
 
 rag = RAGWorkflow(
     # verbose=True,
-    timeout=300.0
+    timeout=None
 )
 
 llm = Ollama(

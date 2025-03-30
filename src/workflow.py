@@ -21,7 +21,7 @@ from rag import RAGWorkflow
 
 rag = RAGWorkflow(
     # verbose=True,
-    timeout=240.0
+    timeout=None
 )
 
 
