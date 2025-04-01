@@ -18,16 +18,24 @@ services:
     container_name: ollama
     depends_on:
       - postgres
+    tty: true
     ports:
       - "7869:11434" # Adjust based on Ollama's API port
     environment:
       DATABASE_URL: postgres://postgres:password@postgres:5432/vector_db
+      OLLAMA_NUM_PARALLEL: 4
+      OLLAMA_FLASH_ATTENTION: 1
     volumes:
       - ollama_data:/data
-      - ./entrypoint.sh:/entrypoint.sh
-    entrypoint: ["/usr/bin/bash", "/entrypoint.sh"]
     networks:
       - ollama-docker
+    deploy:
+          resources:
+            reservations:
+              devices:
+                - driver: nvidia
+                  device_ids: ['1', '2']
+                  capabilities: [gpu]
 
   dev-container:
     build:
