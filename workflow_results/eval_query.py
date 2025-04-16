@@ -37,14 +37,17 @@ def compute_bleu_rouge(references, predictions):
 
 
 def compute_bert_score(references, predictions):
-    """Compute BERTScore using the bert_score package."""
-    P, R, F1 = bert_score.score(
-        predictions, references, lang="en", rescale_with_baseline=True
+    from statistics import mean
+
+    """Compute BERTScore using the evaluate package."""
+    bertscore = evaluate.load("bertscore")
+    results = bertscore.compute(
+        predictions=predictions, references=references, lang="en"
     )
     return {
-        "precision": P.mean().item(),
-        "recall": R.mean().item(),
-        "f1": F1.mean().item(),
+        "precision": mean(results["precision"]),  # type: ignore
+        "recall": mean(results["recall"]),  # type: ignore
+        "f1": mean(results["f1"]),  # type: ignore
     }
 
 

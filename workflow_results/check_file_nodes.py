@@ -22,15 +22,12 @@ def is_file_in_nodes(data):
 
 def check_file_in_json(json_file):
     """Load JSON data from file and check if each file is in its respective nodes array."""
+    print(json_file)
     with open(json_file, "r") as f:
         data = json.load(f)
 
     # Check if each file is in its respective nodes array
     results, total_files, total_matches = is_file_in_nodes(data)
-
-    # Print results
-    for file, found in results.items():
-        print(f"File '{file}' found in nodes: {found}")
 
     # Print totals
     print(f"\nTotal files: {total_files}")

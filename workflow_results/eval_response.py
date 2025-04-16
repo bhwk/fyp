@@ -14,7 +14,10 @@ def load_json(file_path):
 
 def extract_responses(data):
     """Extract only the 'response' field from the JSON objects."""
-    return [item["response"] for item in data]
+    return (
+        [item["original_response"] for item in data],
+        [item["response"] for item in data],
+    )
 
 
 def compute_bleu_rouge(references, predictions):
@@ -29,14 +32,17 @@ def compute_bleu_rouge(references, predictions):
 
 
 def compute_bert_score(references, predictions):
-    """Compute BERTScore using the bert_score package."""
-    P, R, F1 = bert_score.score(
-        predictions, references, lang="en", rescale_with_baseline=True
+    from statistics import mean
+
+    """Compute BERTScore using the evaluate package."""
+    bertscore = evaluate.load("bertscore")
+    results = bertscore.compute(
+        predictions=predictions, references=references, lang="en"
     )
     return {
-        "precision": P.mean().item(),
-        "recall": R.mean().item(),
-        "f1": F1.mean().item(),
+        "precision": mean(results["precision"]),  # type: ignore
+        "recall": mean(results["recall"]),  # type: ignore
+        "f1": mean(results["f1"]),  # type: ignore
     }
 
 
@@ -86,13 +92,11 @@ def compute_sem_score(
     return sum(scores) / len(scores)
 
 
-def main(reference_file, prediction_file):
+def main(reference_file):
     """Load responses, compute scores, and print results."""
     reference_data = load_json(reference_file)
-    prediction_data = load_json(prediction_file)
 
-    references = extract_responses(reference_data)
-    predictions = extract_responses(prediction_data)
+    references, predictions = extract_responses(reference_data)
 
     if len(references) != len(predictions):
         print("Warning: The number of reference and predicted responses do not match!")
@@ -116,13 +120,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "reference_file",
         type=str,
-        help="Path to the JSON file with reference responses.",
-    )
-    parser.add_argument(
-        "prediction_file",
-        type=str,
-        help="Path to the JSON file with predicted responses.",
+        help="Path to the JSON file.",
     )
 
     args = parser.parse_args()
-    main(args.reference_file, args.prediction_file)
+    main(args.reference_file)
